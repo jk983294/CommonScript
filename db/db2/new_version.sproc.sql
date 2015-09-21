@@ -22,3 +22,8 @@ BEGIN
 	insert into my_table (A, B, C, VERSION_CREATED_BY, VERSION_CREATED_TIME) 
 		values (I_A, v_B, I_C, I_VERSION_CREATED_BY, v_VERSION_CREATED_TIME);
 BEGIN
+    DECLARE c1 CURSOR WITH RETURN TO CLIENT FOR 
+    SELECT * FROM my_table where A = I_A and B = v_B;
+    OPEN c1 ;
+END;
+END 
