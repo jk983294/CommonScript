@@ -1,0 +1,20 @@
+jstat
+	# get java process id
+	jps
+	# format
+	jstat -option <pid> <interval> <count>
+	jstat -gc id 1000 10   # output 10 times every 1000ms the gc status
+	# get basic info about java process
+	jstat -gcutil id
+	S0     S1     E(eden)  O(old generation)   P(permanent)   YGC(yong gc)    YGCT(ygc time)    FGC(full gc)    FGCT(full gc time)     GCT
+	0.00  61.74   2.20      60.17      	           ?     		 11              0.170            1               0.079               0.249
+	# gc cause
+	jstat -gccause id
+	S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT    LGCC                  GCC
+    0.00  61.74   3.71  60.17   ?     11    0.170     1    0.079    0.249 Allocation Failure      No GC
+	# gc capacity each memory space
+	jstat -gccapacity id
+	NGCMN    NGCMX     NGC     S0C      S1C       EC         OGCMN      OGCMX      OGC   OC      PGCMN    PGCMX     PGC       PC     YGC    FGC
+    21504.0 345088.0 345088.0 18944.0 18432.0   307712.0    44032.0    691200.0    650  24.0    65024.0     ?        ?        ?        ?     11     1
+	# all gc info
+	jstat -gc id
