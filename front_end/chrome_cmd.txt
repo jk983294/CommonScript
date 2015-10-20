@@ -1,0 +1,2 @@
+$x('//*[@id="articlelistnew"]/div[87]/span/span')
+$$('#articlelistnew > div.pager > span')
