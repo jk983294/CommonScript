@@ -1,0 +1,34 @@
+-- group
+h1,h2,h3,h4,h5,h6 { color: green; }
+
+-- wildcards
+* {color:red;}												(universal selector)每个元素都为红色
+
+-- class selector
+.center {text-align: center}					 			center 类的 HTML 元素均为居中
+td.fancy { color: #f60; }									<td class="fancy">
+.fancy td { color: #f60; }									类名为 fancy 的更大的元素内部的表格单元
+.important.warning {background:silver;}						<p class="important warning"> 多类选择器
+
+-- id selector
+#red { color:red; }
+#green { color:green; }
+#sidebar p { color:green; }									在 id 是 sidebar 的元素内的段落
+
+-- attribute selector
+[title] { color:red; }
+[title=W3School] { color:red; }
+[title~=hello] { color:red; }								由空格分隔的属性值
+[lang|=en] { color:red; }									连字符分隔的属性值
+a[href][title] {color:red;}									将同时有 href 和 title 属性的 HTML 超链接的文本设置为红色
+
+-- descendant selector
+ul em {color:red;}											从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深
+
+-- child selector
+h1 > strong {color:red;}									h1 元素子元素的 strong 元素
+
+-- adjacent sibling selector								可选择紧接在另一元素后的元素，且二者有相同父元素
+h1 + p {margin-top:50px;}									在 h1 元素后出现的段落的上边距
+
+-- Pseudo-classes
