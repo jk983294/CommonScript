@@ -2,33 +2,33 @@
 h1,h2,h3,h4,h5,h6 { color: green; }
 
 -- wildcards
-* {color:red;}												(universal selector)Ã¿¸öÔªËØ¶¼ÎªºìÉ«
+* {color:red;}												(universal selector)æ¯ä¸ªå…ƒç´ éƒ½ä¸ºçº¢è‰²
 
 -- class selector
-.center {text-align: center}					 			center ÀàµÄ HTML ÔªËØ¾ùÎª¾ÓÖĞ
+.center {text-align: center}					 			center ç±»çš„ HTML å…ƒç´ å‡ä¸ºå±…ä¸­
 td.fancy { color: #f60; }									<td class="fancy">
-.fancy td { color: #f60; }									ÀàÃûÎª fancy µÄ¸ü´óµÄÔªËØÄÚ²¿µÄ±í¸ñµ¥Ôª
-.important.warning {background:silver;}						<p class="important warning"> ¶àÀàÑ¡ÔñÆ÷
+.fancy td { color: #f60; }									ç±»åä¸º fancy çš„æ›´å¤§çš„å…ƒç´ å†…éƒ¨çš„è¡¨æ ¼å•å…ƒ
+.important.warning {background:silver;}						<p class="important warning"> å¤šç±»é€‰æ‹©å™¨
 
 -- id selector
 #red { color:red; }
 #green { color:green; }
-#sidebar p { color:green; }									ÔÚ id ÊÇ sidebar µÄÔªËØÄÚµÄ¶ÎÂä
+#sidebar p { color:green; }									åœ¨ id æ˜¯ sidebar çš„å…ƒç´ å†…çš„æ®µè½
 
 -- attribute selector
 [title] { color:red; }
 [title=W3School] { color:red; }
-[title~=hello] { color:red; }								ÓÉ¿Õ¸ñ·Ö¸ôµÄÊôĞÔÖµ
-[lang|=en] { color:red; }									Á¬×Ö·û·Ö¸ôµÄÊôĞÔÖµ
-a[href][title] {color:red;}									½«Í¬Ê±ÓĞ href ºÍ title ÊôĞÔµÄ HTML ³¬Á´½ÓµÄÎÄ±¾ÉèÖÃÎªºìÉ«
+[title~=hello] { color:red; }								ç”±ç©ºæ ¼åˆ†éš”çš„å±æ€§å€¼
+[lang|=en] { color:red; }									è¿å­—ç¬¦åˆ†éš”çš„å±æ€§å€¼
+a[href][title] {color:red;}									å°†åŒæ—¶æœ‰ href å’Œ title å±æ€§çš„ HTML è¶…é“¾æ¥çš„æ–‡æœ¬è®¾ç½®ä¸ºçº¢è‰²
 
 -- descendant selector
-ul em {color:red;}											´Ó ul ÔªËØ¼Ì³ĞµÄËùÓĞ em ÔªËØ£¬¶ø²»ÂÛ em µÄÇ¶Ì×²ã´Î¶àÉî
+ul em {color:red;}											ä» ul å…ƒç´ ç»§æ‰¿çš„æ‰€æœ‰ em å…ƒç´ ï¼Œè€Œä¸è®º em çš„åµŒå¥—å±‚æ¬¡å¤šæ·±
 
 -- child selector
-h1 > strong {color:red;}									h1 ÔªËØ×ÓÔªËØµÄ strong ÔªËØ
+h1 > strong {color:red;}									h1 å…ƒç´ å­å…ƒç´ çš„ strong å…ƒç´ 
 
--- adjacent sibling selector								¿ÉÑ¡Ôñ½ô½ÓÔÚÁíÒ»ÔªËØºóµÄÔªËØ£¬ÇÒ¶şÕßÓĞÏàÍ¬¸¸ÔªËØ
-h1 + p {margin-top:50px;}									ÔÚ h1 ÔªËØºó³öÏÖµÄ¶ÎÂäµÄÉÏ±ß¾à
+-- adjacent sibling selector								å¯é€‰æ‹©ç´§æ¥åœ¨å¦ä¸€å…ƒç´ åçš„å…ƒç´ ï¼Œä¸”äºŒè€…æœ‰ç›¸åŒçˆ¶å…ƒç´ 
+h1 + p {margin-top:50px;}									åœ¨ h1 å…ƒç´ åå‡ºç°çš„æ®µè½çš„ä¸Šè¾¹è·
 
 -- Pseudo-classes

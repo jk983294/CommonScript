@@ -1,51 +1,51 @@
 -- examples
-/																	Document RootÎÄµµ¸ù.
-/*																	Ñ¡ÔñÎÄµµ¸ùÏÂÃæµÄËùÓĞÔªËØ½Úµã£¬¼´¸ù½Úµã£¨XMLÎÄµµÖ»ÓĞÒ»¸ö¸ù½Úµã£©
-/node()																¸ùÔªËØÏÂËùÓĞµÄ½Úµã£¨°üÀ¨ÎÄ±¾½Úµã£¬×¢ÊÍ½ÚµãµÈ£©
-/text()																²éÕÒÎÄµµ¸ù½ÚµãÏÂµÄËùÓĞÎÄ±¾½Úµã
-/messages/message													messages½ÚµãÏÂµÄËùÓĞmessage½Úµã
-/messages/message[1]												messages½ÚµãÏÂµÄµÚÒ»¸ömessage½Úµã
-/messages/message[1]/self::node()									µÚÒ»¸ömessage½Úµã£¨selfÖá±íÊ¾×ÔÉí£¬node()±íÊ¾Ñ¡ÔñËùÓĞ½Úµã£©
-/messages/message[1]/*[last()]										µÚÒ»¸ömessage½ÚµãµÄ×îºóÒ»¸ö×Ó½Úµã
-/messages/message[1]/node()[last()]									µÚÒ»¸ömessage½ÚµãµÄ×îºóÒ»¸ö×Ó½Úµã
-/messages/message[1]/text()											µÚÒ»¸ömessage½ÚµãµÄËùÓĞ×Ó½Úµã
-/messages/message[1]//text()										µÚÒ»¸ömessage½ÚµãÏÂµİ¹éÏÂ½µ²éÕÒËùÓĞµÄÎÄ±¾½Úµã£¨ÎŞÏŞÉî¶È£©
-/messages/message[1]/child::node()									µÚÒ»¸ömessage½ÚµãÏÂµÄËùÓĞ×Ó½Úµã
+/																	Document Rootæ–‡æ¡£æ ¹.
+/*																	é€‰æ‹©æ–‡æ¡£æ ¹ä¸‹é¢çš„æ‰€æœ‰å…ƒç´ èŠ‚ç‚¹ï¼Œå³æ ¹èŠ‚ç‚¹ï¼ˆXMLæ–‡æ¡£åªæœ‰ä¸€ä¸ªæ ¹èŠ‚ç‚¹ï¼‰
+/node()																æ ¹å…ƒç´ ä¸‹æ‰€æœ‰çš„èŠ‚ç‚¹ï¼ˆåŒ…æ‹¬æ–‡æœ¬èŠ‚ç‚¹ï¼Œæ³¨é‡ŠèŠ‚ç‚¹ç­‰ï¼‰
+/text()																æŸ¥æ‰¾æ–‡æ¡£æ ¹èŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰æ–‡æœ¬èŠ‚ç‚¹
+/messages/message													messagesèŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰messageèŠ‚ç‚¹
+/messages/message[1]												messagesèŠ‚ç‚¹ä¸‹çš„ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹
+/messages/message[1]/self::node()									ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹ï¼ˆselfè½´è¡¨ç¤ºè‡ªèº«ï¼Œnode()è¡¨ç¤ºé€‰æ‹©æ‰€æœ‰èŠ‚ç‚¹ï¼‰
+/messages/message[1]/*[last()]										ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹çš„æœ€åä¸€ä¸ªå­èŠ‚ç‚¹
+/messages/message[1]/node()[last()]									ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹çš„æœ€åä¸€ä¸ªå­èŠ‚ç‚¹
+/messages/message[1]/text()											ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹çš„æ‰€æœ‰å­èŠ‚ç‚¹
+/messages/message[1]//text()										ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹ä¸‹é€’å½’ä¸‹é™æŸ¥æ‰¾æ‰€æœ‰çš„æ–‡æœ¬èŠ‚ç‚¹ï¼ˆæ— é™æ·±åº¦ï¼‰
+/messages/message[1]/child::node()									ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰å­èŠ‚ç‚¹
 /messages/message[1]/node()	
 /messages/message[position()=1]/node()
-//message[@id=1]/node()												Ñ¡Ôñid=1µÄmessage½Úµã
-//message[@id=1]//child::node()										µİ¹éËùÓĞ×Ó½Úµã£¨ÎŞÏŞÉî¶È£©
-/messages/message[1]/parent::*										Messages½Úµã
-/messages/message[1]/body/attachments/parent::node()				attachments½ÚµãµÄ¸¸½Úµã¡£¸¸½ÚµãÖ»ÓĞÒ»¸ö,ËùÒÔnode()ºÍ* ·µ»Ø½á¹ûÒ»Ñù¡£
+//message[@id=1]/node()												é€‰æ‹©id=1çš„messageèŠ‚ç‚¹
+//message[@id=1]//child::node()										é€’å½’æ‰€æœ‰å­èŠ‚ç‚¹ï¼ˆæ— é™æ·±åº¦ï¼‰
+/messages/message[1]/parent::*										MessagesèŠ‚ç‚¹
+/messages/message[1]/body/attachments/parent::node()				attachmentsèŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹ã€‚çˆ¶èŠ‚ç‚¹åªæœ‰ä¸€ä¸ª,æ‰€ä»¥node()å’Œ* è¿”å›ç»“æœä¸€æ ·ã€‚
 /messages/message[1]/body/attachments/parent::* 
-/messages/message[1]/body/attachments/..							£¨..Ò²±íÊ¾¸¸½Úµã. ±íÊ¾×ÔÉí½Úµã£©
-//message[@id=0]/ancestor::*										AncestorÖá±íÊ¾ËùÓĞµÄ×æ±²£¬¸¸£¬×æ¸¸µÈ¡£ÏòÉÏµİ¹é
-//message[@id=0]/ancestor-or-self::*								ÏòÉÏµİ¹é,°üº¬×ÔÉí
-//message[@id=0]/ancestor::node()									¶Ô±ÈÊ¹ÓÃ*,¶àÒ»¸öÎÄµµ¸ùÔªËØ(Document root)
-/messages/message[1]/descendant::node()								µİ¹éÏÂ½µ²éÕÒmessage½ÚµãµÄËùÓĞ½Úµã
+/messages/message[1]/body/attachments/..							ï¼ˆ..ä¹Ÿè¡¨ç¤ºçˆ¶èŠ‚ç‚¹. è¡¨ç¤ºè‡ªèº«èŠ‚ç‚¹ï¼‰
+//message[@id=0]/ancestor::*										Ancestorè½´è¡¨ç¤ºæ‰€æœ‰çš„ç¥–è¾ˆï¼Œçˆ¶ï¼Œç¥–çˆ¶ç­‰ã€‚å‘ä¸Šé€’å½’
+//message[@id=0]/ancestor-or-self::*								å‘ä¸Šé€’å½’,åŒ…å«è‡ªèº«
+//message[@id=0]/ancestor::node()									å¯¹æ¯”ä½¿ç”¨*,å¤šä¸€ä¸ªæ–‡æ¡£æ ¹å…ƒç´ (Document root)
+/messages/message[1]/descendant::node()								é€’å½’ä¸‹é™æŸ¥æ‰¾messageèŠ‚ç‚¹çš„æ‰€æœ‰èŠ‚ç‚¹
 //messages/message[1]//node()	
-/messages/message[1]/sender/following::*							²éÕÒµÚÒ»¸ömessage½ÚµãµÄsender½ÚµãºóµÄËùÓĞÍ¬¼¶½Úµã£¬²¢¶ÔÃ¿Ò»¸öÍ¬¼¶½Úµãµİ¹éÏòÏÂ²éÕÒ¡£
-//message[@id=1]/sender/following-sibling::*						²éÕÒid=1µÄmessage½ÚµãµÄsender½ÚµãµÄËùÓĞºóĞøµÄÍ¬¼¶½Úµã¡£
-//message[@id=1]/datetime/@date										²éÕÒid=1µÄmessage½ÚµãµÄdatetime½ÚµãµÄdateÊôĞÔ
-//message[@id=1]/datetime[@date]									²éÕÒid=1µÄmessage½ÚµãµÄËùÓĞº¬ÓĞdateÊôĞÔµÄdatetime½Úµã
+/messages/message[1]/sender/following::*							æŸ¥æ‰¾ç¬¬ä¸€ä¸ªmessageèŠ‚ç‚¹çš„senderèŠ‚ç‚¹åçš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ï¼Œå¹¶å¯¹æ¯ä¸€ä¸ªåŒçº§èŠ‚ç‚¹é€’å½’å‘ä¸‹æŸ¥æ‰¾ã€‚
+//message[@id=1]/sender/following-sibling::*						æŸ¥æ‰¾id=1çš„messageèŠ‚ç‚¹çš„senderèŠ‚ç‚¹çš„æ‰€æœ‰åç»­çš„åŒçº§èŠ‚ç‚¹ã€‚
+//message[@id=1]/datetime/@date										æŸ¥æ‰¾id=1çš„messageèŠ‚ç‚¹çš„datetimeèŠ‚ç‚¹çš„dateå±æ€§
+//message[@id=1]/datetime[@date]									æŸ¥æ‰¾id=1çš„messageèŠ‚ç‚¹çš„æ‰€æœ‰å«æœ‰dateå±æ€§çš„datetimeèŠ‚ç‚¹
 //message/datetime[attribute::date]	
-//message[datetime]													²éÕÒËùÓĞº¬ÓĞdatetime½ÚµãµÄmessage½Úµã
-//message/datetime/attribute::*										·µ»Ømessage½ÚµãÏÂdatetime½ÚµãµÄËùÓĞÊôĞÔ½Úµã
+//message[datetime]													æŸ¥æ‰¾æ‰€æœ‰å«æœ‰datetimeèŠ‚ç‚¹çš„messageèŠ‚ç‚¹
+//message/datetime/attribute::*										è¿”å›messageèŠ‚ç‚¹ä¸‹datetimeèŠ‚ç‚¹çš„æ‰€æœ‰å±æ€§èŠ‚ç‚¹
 //message/datetime/attribute::node()	
 //message/datetime/@*	
-//message/datetime[attribute::*]									Ñ¡ÔñËùÓĞº¬ÓĞÊôĞÔµÄdatetime½Úµã
+//message/datetime[attribute::*]									é€‰æ‹©æ‰€æœ‰å«æœ‰å±æ€§çš„datetimeèŠ‚ç‚¹
 //message/datetime[attribute::node()]	
 //message/datetime[@*]	
 //message/datetime[@node()]	
-//attribute::*														Ñ¡Ôñ¸ù½ÚµãÏÂµÄËùÓĞÊôĞÔ½Úµã
-//message[@id=0]/body/preceding::node()								Ë³ĞòÑ¡Ôñbody½ÚµãËùÔÚ½ÚµãÇ°µÄËùÓĞÍ¬¼¶½Úµã¡££¨²éÕÒË³ĞòÎª£ºÏÈÕÒµ½body½ÚµãµÄ¶¥¼¶½Úµã£¨¸ù½Úµã£©,µÃµ½¸ù½Úµã±êÇ©Ç°µÄËùÓĞÍ¬¼¶½Úµã£¬Ö´ĞĞÍê³Éºó¼ÌĞøÏòÏÂÒ»¼¶£¬Ë³ĞòµÃµ½¸Ã½Úµã±êÇ©Ç°µÄËùÓĞÍ¬¼¶½Úµã£¬ÒÀ´ÎÀàÍÆ¡££©
-//message[@id=0]/body/preceding-sibling::node()						Ë³Ğò²éÕÒbody±êÇ©Ç°µÄËùÓĞÍ¬¼¶½Úµã¡££¨ºÍÉÏÀıÒ»¸ö×î´óµÄÇø±ğÊÇ£º²»´Ó×î¶¥²ã¿ªÊ¼µ½body½ÚµãÖğ²ã²éÕÒ¡£ÎÒÃÇ¿ÉÒÔÀí½â³ÉÉÙÁËÒ»¸öÑ­»·£¬¶øÖ»²éÕÒµ±Ç°½ÚµãÇ°µÄÍ¬¼¶½Úµã£©
-//message[@id=1]//*[namespace::amazon]								²éÕÒid=1µÄËùÓĞmessage½ÚµãÏÂµÄËùÓĞÃüÃû¿Õ¼äÎªamazonµÄ½Úµã¡£
-//namespace::*														ÎÄµµÖĞµÄËùÓĞµÄÃüÃû¿Õ¼ä½Úµã¡££¨°üÀ¨Ä¬ÈÏÃüÃû¿Õ¼äxmlns:xml£©
-//message[@id=0]//books/*[local-name()='book']						Ñ¡ÔñbooksÏÂµÄËùÓĞµÄbook½Úµã£¬×¢Òâ£ºÓÉÓÚbook½Úµã¶¨ÒåÁËÃüÃû¿Õ¼ä<amazone:book>.ÈôĞ´³É//message[@id=0]//books/bookÔò²éÕÒ²»³öÈÎºÎ½Úµã¡£
-//message[@id=0]//books/*[local-name()='book' and namespace-uri()='http://www.amazon.com/books/schema']		Ñ¡ÔñbooksÏÂµÄËùÓĞµÄbook½Úµã£¬(½ÚµãÃûºÍÃüÃû¿Õ¼ä¶¼Æ¥Åä)
-//message[@id=0]//books/*[local-name()='book'][year>2006]			Ñ¡Ôñyear½ÚµãÖµ>2006µÄbook½Úµã
-//message[@id=0]//books/*[local-name()='book'][1]/year>2006			Ö¸Ê¾µÚÒ»¸öbook½ÚµãµÄyear½ÚµãÖµÊÇ·ñ´óÓÚ2006. ·µ»Øxs:boolean: true
+//attribute::*														é€‰æ‹©æ ¹èŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰å±æ€§èŠ‚ç‚¹
+//message[@id=0]/body/preceding::node()								é¡ºåºé€‰æ‹©bodyèŠ‚ç‚¹æ‰€åœ¨èŠ‚ç‚¹å‰çš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ã€‚ï¼ˆæŸ¥æ‰¾é¡ºåºä¸ºï¼šå…ˆæ‰¾åˆ°bodyèŠ‚ç‚¹çš„é¡¶çº§èŠ‚ç‚¹ï¼ˆæ ¹èŠ‚ç‚¹ï¼‰,å¾—åˆ°æ ¹èŠ‚ç‚¹æ ‡ç­¾å‰çš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ï¼Œæ‰§è¡Œå®Œæˆåç»§ç»­å‘ä¸‹ä¸€çº§ï¼Œé¡ºåºå¾—åˆ°è¯¥èŠ‚ç‚¹æ ‡ç­¾å‰çš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ï¼Œä¾æ¬¡ç±»æ¨ã€‚ï¼‰
+//message[@id=0]/body/preceding-sibling::node()						é¡ºåºæŸ¥æ‰¾bodyæ ‡ç­¾å‰çš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ã€‚ï¼ˆå’Œä¸Šä¾‹ä¸€ä¸ªæœ€å¤§çš„åŒºåˆ«æ˜¯ï¼šä¸ä»æœ€é¡¶å±‚å¼€å§‹åˆ°bodyèŠ‚ç‚¹é€å±‚æŸ¥æ‰¾ã€‚æˆ‘ä»¬å¯ä»¥ç†è§£æˆå°‘äº†ä¸€ä¸ªå¾ªç¯ï¼Œè€ŒåªæŸ¥æ‰¾å½“å‰èŠ‚ç‚¹å‰çš„åŒçº§èŠ‚ç‚¹ï¼‰
+//message[@id=1]//*[namespace::amazon]								æŸ¥æ‰¾id=1çš„æ‰€æœ‰messageèŠ‚ç‚¹ä¸‹çš„æ‰€æœ‰å‘½åç©ºé—´ä¸ºamazonçš„èŠ‚ç‚¹ã€‚
+//namespace::*														æ–‡æ¡£ä¸­çš„æ‰€æœ‰çš„å‘½åç©ºé—´èŠ‚ç‚¹ã€‚ï¼ˆåŒ…æ‹¬é»˜è®¤å‘½åç©ºé—´xmlns:xmlï¼‰
+//message[@id=0]//books/*[local-name()='book']						é€‰æ‹©booksä¸‹çš„æ‰€æœ‰çš„bookèŠ‚ç‚¹ï¼Œæ³¨æ„ï¼šç”±äºbookèŠ‚ç‚¹å®šä¹‰äº†å‘½åç©ºé—´<amazone:book>.è‹¥å†™æˆ//message[@id=0]//books/bookåˆ™æŸ¥æ‰¾ä¸å‡ºä»»ä½•èŠ‚ç‚¹ã€‚
+//message[@id=0]//books/*[local-name()='book' and namespace-uri()='http://www.amazon.com/books/schema']		é€‰æ‹©booksä¸‹çš„æ‰€æœ‰çš„bookèŠ‚ç‚¹ï¼Œ(èŠ‚ç‚¹åå’Œå‘½åç©ºé—´éƒ½åŒ¹é…)
+//message[@id=0]//books/*[local-name()='book'][year>2006]			é€‰æ‹©yearèŠ‚ç‚¹å€¼>2006çš„bookèŠ‚ç‚¹
+//message[@id=0]//books/*[local-name()='book'][1]/year>2006			æŒ‡ç¤ºç¬¬ä¸€ä¸ªbookèŠ‚ç‚¹çš„yearèŠ‚ç‚¹å€¼æ˜¯å¦å¤§äº2006. è¿”å›xs:boolean: true
 
 
 item = [node, atomic value]
@@ -54,55 +54,55 @@ relation = [parent, children, sibling, ancestor, descendant]
 
 
 
--- ±í´ïÊ½	ÃèÊö						Â·¾¶±í´ïÊ½			½á¹û
-nodename	Ñ¡È¡´Ë½ÚµãµÄËùÓĞ×Ó½Úµã¡£	bookstore			Ñ¡È¡ bookstore ÔªËØµÄËùÓĞ×Ó½Úµã¡£
-/			´Ó¸ù½ÚµãÑ¡È¡¡£				/bookstore			Ñ¡È¡¸ùÔªËØ bookstore¡£´ËÂ·¾¶Ê¼ÖÕ´ú±íµ½Ä³ÔªËØµÄ¾ø¶ÔÂ·¾¶£¡
-//			²»¿¼ÂÇËüÃÇµÄÎ»ÖÃ¡£			bookstore/book		Ñ¡È¡ÊôÓÚ bookstore µÄ×ÓÔªËØµÄËùÓĞ book ÔªËØ¡£
-.			Ñ¡È¡µ±Ç°½Úµã¡£				//book				Ñ¡È¡ËùÓĞ book ×ÓÔªËØ£¬¶ø²»¹ÜËüÃÇÔÚÎÄµµÖĞµÄÎ»ÖÃ¡£
-..			Ñ¡È¡µ±Ç°½ÚµãµÄ¸¸½Úµã¡£		bookstore//book		Ñ¡ÔñÊôÓÚ bookstore ÔªËØµÄºó´úµÄËùÓĞ book ÔªËØ¡£
-@			Ñ¡È¡ÊôĞÔ¡£					//@lang				Ñ¡È¡ÃûÎª lang µÄËùÓĞÊôĞÔ¡£
+-- è¡¨è¾¾å¼	æè¿°						è·¯å¾„è¡¨è¾¾å¼			ç»“æœ
+nodename	é€‰å–æ­¤èŠ‚ç‚¹çš„æ‰€æœ‰å­èŠ‚ç‚¹ã€‚	bookstore			é€‰å– bookstore å…ƒç´ çš„æ‰€æœ‰å­èŠ‚ç‚¹ã€‚
+/			ä»æ ¹èŠ‚ç‚¹é€‰å–ã€‚				/bookstore			é€‰å–æ ¹å…ƒç´  bookstoreã€‚æ­¤è·¯å¾„å§‹ç»ˆä»£è¡¨åˆ°æŸå…ƒç´ çš„ç»å¯¹è·¯å¾„ï¼
+//			ä¸è€ƒè™‘å®ƒä»¬çš„ä½ç½®ã€‚			bookstore/book		é€‰å–å±äº bookstore çš„å­å…ƒç´ çš„æ‰€æœ‰ book å…ƒç´ ã€‚
+.			é€‰å–å½“å‰èŠ‚ç‚¹ã€‚				//book				é€‰å–æ‰€æœ‰ book å­å…ƒç´ ï¼Œè€Œä¸ç®¡å®ƒä»¬åœ¨æ–‡æ¡£ä¸­çš„ä½ç½®ã€‚
+..			é€‰å–å½“å‰èŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹ã€‚		bookstore//book		é€‰æ‹©å±äº bookstore å…ƒç´ çš„åä»£çš„æ‰€æœ‰ book å…ƒç´ ã€‚
+@			é€‰å–å±æ€§ã€‚					//@lang				é€‰å–åä¸º lang çš„æ‰€æœ‰å±æ€§ã€‚
 
 --Predicates
-/bookstore/book[1]						Ñ¡È¡ÊôÓÚ bookstore ×ÓÔªËØµÄµÚÒ»¸ö book ÔªËØ¡£
-/bookstore/book[last()]					Ñ¡È¡ÊôÓÚ bookstore ×ÓÔªËØµÄ×îºóÒ»¸ö book ÔªËØ¡£
-/bookstore/book[last()-1]				Ñ¡È¡ÊôÓÚ bookstore ×ÓÔªËØµÄµ¹ÊıµÚ¶ş¸ö book ÔªËØ¡£
-/bookstore/book[position()<3]			Ñ¡È¡×îÇ°ÃæµÄÁ½¸öÊôÓÚ bookstore ÔªËØµÄ×ÓÔªËØµÄ book ÔªËØ¡£
-//title[@lang]							Ñ¡È¡ËùÓĞÓµÓĞÃûÎª lang µÄÊôĞÔµÄ title ÔªËØ¡£
-//title[@lang='eng']					Ñ¡È¡ËùÓĞ title ÔªËØ£¬ÇÒÕâĞ©ÔªËØÓµÓĞÖµÎª eng µÄ lang ÊôĞÔ¡£
-/bookstore/book[price>35.00]			Ñ¡È¡ bookstore ÔªËØµÄËùÓĞ book ÔªËØ£¬ÇÒÆäÖĞµÄ price ÔªËØµÄÖµĞë´óÓÚ 35.00¡£
-/bookstore/book[price>35.00]/title		Ñ¡È¡ bookstore ÔªËØÖĞµÄ book ÔªËØµÄËùÓĞ title ÔªËØ£¬ÇÒÆäÖĞµÄ price ÔªËØµÄÖµĞë´óÓÚ 35.00¡£
+/bookstore/book[1]						é€‰å–å±äº bookstore å­å…ƒç´ çš„ç¬¬ä¸€ä¸ª book å…ƒç´ ã€‚
+/bookstore/book[last()]					é€‰å–å±äº bookstore å­å…ƒç´ çš„æœ€åä¸€ä¸ª book å…ƒç´ ã€‚
+/bookstore/book[last()-1]				é€‰å–å±äº bookstore å­å…ƒç´ çš„å€’æ•°ç¬¬äºŒä¸ª book å…ƒç´ ã€‚
+/bookstore/book[position()<3]			é€‰å–æœ€å‰é¢çš„ä¸¤ä¸ªå±äº bookstore å…ƒç´ çš„å­å…ƒç´ çš„ book å…ƒç´ ã€‚
+//title[@lang]							é€‰å–æ‰€æœ‰æ‹¥æœ‰åä¸º lang çš„å±æ€§çš„ title å…ƒç´ ã€‚
+//title[@lang='eng']					é€‰å–æ‰€æœ‰ title å…ƒç´ ï¼Œä¸”è¿™äº›å…ƒç´ æ‹¥æœ‰å€¼ä¸º eng çš„ lang å±æ€§ã€‚
+/bookstore/book[price>35.00]			é€‰å– bookstore å…ƒç´ çš„æ‰€æœ‰ book å…ƒç´ ï¼Œä¸”å…¶ä¸­çš„ price å…ƒç´ çš„å€¼é¡»å¤§äº 35.00ã€‚
+/bookstore/book[price>35.00]/title		é€‰å– bookstore å…ƒç´ ä¸­çš„ book å…ƒç´ çš„æ‰€æœ‰ title å…ƒç´ ï¼Œä¸”å…¶ä¸­çš„ price å…ƒç´ çš„å€¼é¡»å¤§äº 35.00ã€‚
 
 -- Wildcards
-/bookstore/*							Ñ¡È¡ bookstore ÔªËØµÄËùÓĞ×ÓÔªËØ¡£
-//*										Ñ¡È¡ÎÄµµÖĞµÄËùÓĞÔªËØ¡£
-//title[@*]								Ñ¡È¡ËùÓĞ´øÓĞÊôĞÔµÄ title ÔªËØ¡£
+/bookstore/*							é€‰å– bookstore å…ƒç´ çš„æ‰€æœ‰å­å…ƒç´ ã€‚
+//*										é€‰å–æ–‡æ¡£ä¸­çš„æ‰€æœ‰å…ƒç´ ã€‚
+//title[@*]								é€‰å–æ‰€æœ‰å¸¦æœ‰å±æ€§çš„ title å…ƒç´ ã€‚
 
 -- releational operator (|)
-//book/title | //book/price				Ñ¡È¡ book ÔªËØµÄËùÓĞ title ºÍ price ÔªËØ¡£
+//book/title | //book/price				é€‰å– book å…ƒç´ çš„æ‰€æœ‰ title å’Œ price å…ƒç´ ã€‚
 
 -- Axes
--- ÖáÃû³Æ								½á¹û
-ancestor								Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÏÈ±²£¨¸¸¡¢×æ¸¸µÈ£©¡£
-ancestor-or-self						Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÏÈ±²£¨¸¸¡¢×æ¸¸µÈ£©ÒÔ¼°µ±Ç°½Úµã±¾Éí¡£
-attribute								Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÊôĞÔ¡£
-child									Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ×ÓÔªËØ¡£
-descendant								Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞºó´úÔªËØ£¨×Ó¡¢ËïµÈ£©¡£
-descendant-or-self						Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞºó´úÔªËØ£¨×Ó¡¢ËïµÈ£©ÒÔ¼°µ±Ç°½Úµã±¾Éí¡£
-following								Ñ¡È¡ÎÄµµÖĞµ±Ç°½ÚµãµÄ½áÊø±êÇ©Ö®ºóµÄËùÓĞ½Úµã¡£
-namespace								Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÃüÃû¿Õ¼ä½Úµã¡£
-parent									Ñ¡È¡µ±Ç°½ÚµãµÄ¸¸½Úµã¡£
-preceding								Ñ¡È¡ÎÄµµÖĞµ±Ç°½ÚµãµÄ¿ªÊ¼±êÇ©Ö®Ç°µÄËùÓĞ½Úµã¡£
-preceding-sibling						Ñ¡È¡µ±Ç°½ÚµãÖ®Ç°µÄËùÓĞÍ¬¼¶½Úµã¡£
-self									Ñ¡È¡µ±Ç°½Úµã¡£
+-- è½´åç§°								ç»“æœ
+ancestor								é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å…ˆè¾ˆï¼ˆçˆ¶ã€ç¥–çˆ¶ç­‰ï¼‰ã€‚
+ancestor-or-self						é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å…ˆè¾ˆï¼ˆçˆ¶ã€ç¥–çˆ¶ç­‰ï¼‰ä»¥åŠå½“å‰èŠ‚ç‚¹æœ¬èº«ã€‚
+attribute								é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å±æ€§ã€‚
+child									é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å­å…ƒç´ ã€‚
+descendant								é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰åä»£å…ƒç´ ï¼ˆå­ã€å­™ç­‰ï¼‰ã€‚
+descendant-or-self						é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰åä»£å…ƒç´ ï¼ˆå­ã€å­™ç­‰ï¼‰ä»¥åŠå½“å‰èŠ‚ç‚¹æœ¬èº«ã€‚
+following								é€‰å–æ–‡æ¡£ä¸­å½“å‰èŠ‚ç‚¹çš„ç»“æŸæ ‡ç­¾ä¹‹åçš„æ‰€æœ‰èŠ‚ç‚¹ã€‚
+namespace								é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å‘½åç©ºé—´èŠ‚ç‚¹ã€‚
+parent									é€‰å–å½“å‰èŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹ã€‚
+preceding								é€‰å–æ–‡æ¡£ä¸­å½“å‰èŠ‚ç‚¹çš„å¼€å§‹æ ‡ç­¾ä¹‹å‰çš„æ‰€æœ‰èŠ‚ç‚¹ã€‚
+preceding-sibling						é€‰å–å½“å‰èŠ‚ç‚¹ä¹‹å‰çš„æ‰€æœ‰åŒçº§èŠ‚ç‚¹ã€‚
+self									é€‰å–å½“å‰èŠ‚ç‚¹ã€‚
 -- example
--- Àı×Ó									½á¹û
-child::book								Ñ¡È¡ËùÓĞÊôÓÚµ±Ç°½ÚµãµÄ×ÓÔªËØµÄ book ½Úµã¡£
-attribute::lang							Ñ¡È¡µ±Ç°½ÚµãµÄ lang ÊôĞÔ¡£
-child::*								Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ×ÓÔªËØ¡£
-attribute::*							Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÊôĞÔ¡£
-child::text()							Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞÎÄ±¾×Ó½Úµã¡£
-child::node()							Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ×Ó½Úµã¡£
-descendant::book						Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ book ºó´ú¡£
-ancestor::book							Ñ¡Ôñµ±Ç°½ÚµãµÄËùÓĞ book ÏÈ±²¡£
-ancestor-or-self::book					Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ book ÏÈ±²ÒÔ¼°µ±Ç°½Úµã£¨Èç¹û´Ë½ÚµãÊÇ book ½Úµã£©
-child::*/child::price					Ñ¡È¡µ±Ç°½ÚµãµÄËùÓĞ price Ëï½Úµã¡£
+-- ä¾‹å­									ç»“æœ
+child::book								é€‰å–æ‰€æœ‰å±äºå½“å‰èŠ‚ç‚¹çš„å­å…ƒç´ çš„ book èŠ‚ç‚¹ã€‚
+attribute::lang							é€‰å–å½“å‰èŠ‚ç‚¹çš„ lang å±æ€§ã€‚
+child::*								é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å­å…ƒç´ ã€‚
+attribute::*							é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å±æ€§ã€‚
+child::text()							é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰æ–‡æœ¬å­èŠ‚ç‚¹ã€‚
+child::node()							é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰å­èŠ‚ç‚¹ã€‚
+descendant::book						é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰ book åä»£ã€‚
+ancestor::book							é€‰æ‹©å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰ book å…ˆè¾ˆã€‚
+ancestor-or-self::book					é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰ book å…ˆè¾ˆä»¥åŠå½“å‰èŠ‚ç‚¹ï¼ˆå¦‚æœæ­¤èŠ‚ç‚¹æ˜¯ book èŠ‚ç‚¹ï¼‰
+child::*/child::price					é€‰å–å½“å‰èŠ‚ç‚¹çš„æ‰€æœ‰ price å­™èŠ‚ç‚¹ã€‚
