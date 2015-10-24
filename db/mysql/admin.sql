@@ -10,22 +10,15 @@
 --		\c
 
 -- investigate
-show databases;
 USE test;
-SHOW TABLES;
+show databases;
+show TABLES;
 DESCRIBE pet;
+show CREATE TABLE pet;
 
 -- current database
-SELECT DATABASE();
+select DATABASE();
 
--- data
+-- data import
 LOAD DATA LOCAL INFILE '/path/pet.txt' INTO TABLE pet;
 LOAD DATA LOCAL INFILE '/path/pet.txt' INTO TABLE pet LINES TERMINATED BY '\r\n';	-- windows specific
-
-
--- select explore
-SELECT VERSION(), CURRENT_DATE;
-SELECT SIN(PI()/4), (4+1)*5;
-SELECT VERSION(); 
-SELECT NOW();
-SELECT user();

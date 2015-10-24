@@ -1,0 +1,17 @@
+.x-grid-center-icon {
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    cursor:hand;
+}
+.grid-newAdded-row .x-grid-cell {
+    background-color: #9fed98;
+}
+.grid-editing-row .x-grid-cell {
+    background-color: #98c0f4;
+}
+.grid-deleted-row .x-grid-cell {
+    background-color: #fde8f3;
+    color: #a29d9d;
+    text-decoration: line-through;
+}
