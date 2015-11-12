@@ -2,9 +2,9 @@ CREATE TABLE "schema"."table1" (
 	"a" VARCHAR(20) NOT NULL,
 	"b" VARCHAR(50) NOT NULL,
 	"c" INTEGER,
-	"d" VARCHAR(20)
-	"e" VARCHAR(20)
-	"f" TIMESTAMP ,
+	"d" VARCHAR(20),
+	"e" VARCHAR(20),
+	"f" TIMESTAMP,
 	"g" VARCHAR(20)
 )
 in PROC_BASE
