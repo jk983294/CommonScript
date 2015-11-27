@@ -10,6 +10,8 @@ CREATE TABLE "schema"."table1" (
 in PROC_BASE
 INDEX in PROC_BASE_IX;
 
+CREATE TABLE schema.table1_temp LIKE schema.table1;
+
 ALTER TABLE "schema"."table1" ADD CONSTRAINT "table1_PRIMARY_KEY" PRIMARY KEY ("a","b");
 
 drop table "schema"."table1";
