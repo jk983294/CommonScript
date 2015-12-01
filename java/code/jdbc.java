@@ -18,6 +18,9 @@ public class jdbc {
                     Pojo pojo = new Pojo();
                     pojo.setField1(rs.getInt("field1"));
                     pojo.setField2(rs.getString("field2"));
+                    if(rs.wasNull()){   // --------- check this field is null
+                        pojo.setField2(null);
+                    }
                     return pojo;
                 }
             }, field1, field2);
