@@ -21,6 +21,7 @@ ALTER TABLE schema.table1 DROP COLUMN column1;
 -- alter 
 ALTER TABLE schema.table1 RENAME COLUMN UPDATED_BY TO CREATED_BY;
 ALTER TABLE schema.table1 ADD CONSTRAINT "table1_PRIMARY_KEY" PRIMARY KEY ("a","b");
+ALTER TABLE schema.table1 ALTER COLUMN field1 SET DATA TYPE VARCHAR(200);
 
 -- export, replace 'null' with null
 SELECT 'INSERT INTO schema.table1 VALUES ('''
