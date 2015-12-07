@@ -3,7 +3,7 @@ insert into my_table values (value1,value2,value3);
 insert into my_table (column1,column2,column3) values (value1,value2,value3);
 insert into table2 select * from table1;
 insert into table2 (column1,column2,column3) select column1,column2,column3 from table1;
-insert into table2 valuses ('first'||chr(10)||'last');    -- insert with \n
+insert into table2 values ('first'||chr(10)||'last');    -- insert with \n
 
 -- delete
 delete from my_table where some_column = some_value;
