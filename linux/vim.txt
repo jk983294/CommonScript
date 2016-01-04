@@ -1,0 +1,119 @@
+-- vi/vim
+:q!                         -- quit without save
+:qw                         -- quit with save
+ZZ                          -- quit with save
+:w filename2                -- save to another file filename2
+
+Cursor Move
+0 or |	                    Positions cursor at beginning of line.
+$	                        Positions cursor at end of line.
+w	                        Positions cursor to the next word.
+b	                        Positions cursor to previous word.
+(	                        Positions cursor to beginning of current sentence.
+)	                        Positions cursor to beginning of next sentence.
+E	                        Move to the end of Blank delimited word
+{	                        Move a paragraph back
+}	                        Move a paragraph forward
+[[	                        Move a section back
+]]	                        Move a section forward
+n|	                        Moves to the column n in the current line
+1G	                        Move to the first line of the file
+G	                        Move to the last line of the file
+nG	                        Move to nth line of the file
+:n	                        Move to nth line of the file
+H	                        Move to top of screen
+nH	                        Moves to nth line from the top of the screen
+M	                        Move to middle of screen
+L	                        Move to botton of screen
+nL	                        Moves to nth line from the bottom of the screen
+:n	                        Colon followed by a number would position the cursor on line number represented by n
+
+Control Commands
+CTRL+d	                    Move forward 1/2 screen
+CTRL+f	                    Move forward one full screen
+CTRL+u	                    Move backward 1/2 screen
+CTRL+b	                    Move backward one full screen
+CTRL+e	                    Moves screen up one line
+CTRL+y	                    Moves screen down one line
+
+Editing Files
+i	                        Inserts text before current cursor location.
+I	                        Inserts text at beginning of current line.
+a	                        Inserts text after current cursor location.
+A	                        Inserts text at end of current line.
+o	                        Creates a new line for text entry below cursor location.
+O	                        Creates a new line for text entry above cursor location.
+
+Deleting Characters
+x	                        Deletes the character under the cursor location.
+X	                        Deletes the character before the cursor location.
+dw	                        Deletes from the current cursor location to the next word.
+d^	                        Deletes from current cursor position to the beginning of the line.
+d$	                        Deletes from current cursor position to the end of the line.
+D	                        Deletes from the cursor position to the end of the current line.
+dd	                        Deletes the line the cursor is on.
+
+Change Commands
+cc	                        Removes contents of the line, leaving you in insert mode.
+cw	                        Changes the word the cursor is on from the cursor to the end of the word.
+r	                        Replaces the character under the cursor. vi returns to command mode after the replacement is entered.
+R	                        Overwrites multiple characters beginning with the character currently under the cursor. You must use Esc to stop the overwriting.
+s	                        Replaces the current character with the character you type. Afterward, you are left in insert mode.
+S	                        Deletes the line the cursor is on and replaces with new text. After the new text is entered, vi remains in insert mode.
+
+Copy and Past Commands
+yy	                        Copies the current line.
+yw	                        Copies the current word from the character the cursor is on until the end of the word.
+p	                        Puts the copied text after the cursor.
+P	                        Puts the yanked text before the cursor.
+
+Advanced Commands
+J	                        Join the current line with the next one. A count joins that many lines.
+<<	                        Shifts the current line to the left by one shift width.
+>>	                        Shifts the current line to the right by one shift width.
+~	                        Switch the case of the character under the cursor.
+^G	                        Press CNTRL and G keys at the same time to show the current filename and the status.
+U	                        Restore the current line to the state it was in before the cursor entered the line.
+u	                        Undo the last change to the file. Typing 'u' again will re-do the change.
+:f	                        Displays current position in the file in % and file name, total number of file.
+:f filename	                Renames current file to filename.
+:w filename	                Write to file filename.
+:e filename	                Opens another file with filename.
+:cd dirname	                Changes current working directory to dirname.
+:e #	                    Use to toggle between two opened files.
+:n	                        In case you open multiple files using vi, use :n to go to next file in the series.
+:p	                        In case you open multiple files using vi, use :p to go to previous file in the series.
+:N	                        In case you open multiple files using vi, use :N to go to previous file in the series.
+:r file	                    Reads file and inserts it after current line
+:nr file	                Reads file and inserts it after line n.
+
+Word and Character Searching
+/                           searches forwards (downwards) in the file.
+?                           searches backwards (upwards) in the file.
+f                           search forwards for a character on the current line only
+F                           search backwards for a character on the current line only
+t                           search for a character on the current line only, for t, the cursor moves to the position before the character
+T                           search for a character on the current line only, for t, the cursor moves to the position after the character
+special character
+^	                        Search at the beginning of the line. (Use at the beginning of a search expression.)
+$	                        End of the line (Use at the end of the search expression.)
+.	                        Matches a single character.
+*	                        Matches zero or more of the previous character.
+[	                        Starts a set of matching, or non-matching expressions.
+<	                        Put in an expression escaped with the backslash to find the ending or beginning of a word.
+>	                        See the '<' character description above.
+
+Replacing Text
+:s/search/replace/g         substitute search with replace
+
+Set Commands
+:set ic	                    Ignores case when searching
+:set ai	                    Sets auto-indent
+:set noai	                To unset auto-indent.
+:set nu	                    Displays lines with line numbers on the left side.
+:set sw	                    Sets the width of a software tabstop. For example you would set a shift width of 4 with this command: :set sw=4
+:set ws	                    If wrapscan is set, if the word is not found at the bottom of the file, it will try to search for it at the beginning.
+:set wm	                    If this option has a value greater than zero, the editor will automatically "word wrap". For example, to set the wrap margin to two characters, you would type this: :set wm=2
+:set ro	                    Changes file type to "read only"
+:set term	                Prints terminal type
+:set bf	                    Discards control characters from input
