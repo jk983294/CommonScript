@@ -5,10 +5,12 @@ ZZ                          -- quit with save
 :w filename2                -- save to another file filename2
 
 Cursor Move
+h/j/k/l	                    向上/向下/向上/向右移动
+$/0/^	                    行尾/行首/首字符
+H/M/L	                    屏幕顶部/中间/底部
+*/#	                        当前字符下一次/上一次出现的位置
+w/b	                        上一个词/下一个词
 0 or |	                    Positions cursor at beginning of line.
-$	                        Positions cursor at end of line.
-w	                        Positions cursor to the next word.
-b	                        Positions cursor to previous word.
 (	                        Positions cursor to beginning of current sentence.
 )	                        Positions cursor to beginning of next sentence.
 E	                        Move to the end of Blank delimited word
@@ -21,18 +23,13 @@ n|	                        Moves to the column n in the current line
 G	                        Move to the last line of the file
 nG	                        Move to nth line of the file
 :n	                        Move to nth line of the file
-H	                        Move to top of screen
 nH	                        Moves to nth line from the top of the screen
-M	                        Move to middle of screen
-L	                        Move to botton of screen
 nL	                        Moves to nth line from the bottom of the screen
 :n	                        Colon followed by a number would position the cursor on line number represented by n
 
 Control Commands
-CTRL+d	                    Move forward 1/2 screen
-CTRL+f	                    Move forward one full screen
-CTRL+u	                    Move backward 1/2 screen
-CTRL+b	                    Move backward one full screen
+ctrl+f/b	                向上/向下翻页
+ctrl+d/u	                向上/向下翻半页
 CTRL+e	                    Moves screen up one line
 CTRL+y	                    Moves screen down one line
 
@@ -105,6 +102,13 @@ $	                        End of the line (Use at the end of the search expressi
 
 Replacing Text
 :s/search/replace/g         substitute search with replace
+:s/s1/s2	                下一个s1替换为s2
+:%s/s1/s2	                s1全部替换为s2
+:s/s1/s2/g	                当前行的s1替换为s2
+:n1,n2 s/s1/s2/g	        从n1到n2行的s1替换为s2
+/xxxx	                    查找xxxx，找到以后按n向下继续查找、N则向上继续查找
+mx	                        插入书签（x为小写字母），以后可以用`x跳转到该书签处
+`.	                        上次编辑的位置
 
 Set Commands
 :set ic	                    Ignores case when searching
@@ -117,3 +121,15 @@ Set Commands
 :set ro	                    Changes file type to "read only"
 :set term	                Prints terminal type
 :set bf	                    Discards control characters from input
+
+多屏操作
+vim -On file1 file2 ...     垂直分屏打开多个文件
+vim -on file1 file2 ...     水平分屏打开多个文件
+ctrl+w s                    上下分割当前文件
+ctrl+w v                    水平分割当前文件
+:sp filename                上下分割打开新文件
+:vsp filename               水平分割打开新文件
+ctrl+w h/j/k/l/w            切换工作屏幕, h/j/k/l是按照方向移动，w是移动到下一个屏幕
+ctrl+w =                    所有屏幕都一样的高度
+ctrl+w -                    降低高度
+ctrl+w +                    增加高度
