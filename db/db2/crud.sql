@@ -16,6 +16,9 @@ UPDATE table1 t1 SET (col1, col2) = (SELECT col3, col4 FROM  table2 t2 WHERE t1.
 select * from my_table where upper(field) like '%x%' and upper(field) not like 'x%' order by field;
 -- select max field c
 select * from my_table where a = 'a' and b = 'b' order by c desc FETCH FIRST 1 ROWS ONLY;
+-- inner join multiply table
+SELECT s.*, hp.field1, h.field2 FROM table1 s INNER JOIN table2 hp on s.field1 = hp.field1
+    INNER JOIN table3 h on hp.field2 = h.field2;
 
 -- compare two table
 with param AS (select 1 as param1, 2 as param2 from dual),
