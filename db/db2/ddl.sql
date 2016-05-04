@@ -23,6 +23,7 @@ ALTER TABLE schema.table1 RENAME COLUMN UPDATED_BY TO CREATED_BY;
 ALTER TABLE schema.table1 ADD new_column VARCHAR(256);
 ALTER TABLE schema.table1 ADD CONSTRAINT "table1_PRIMARY_KEY" PRIMARY KEY ("a","b");
 ALTER TABLE schema.table1 ALTER COLUMN field1 SET DATA TYPE VARCHAR(200);
+ALTER TABLE schema.table1 ALTER COLUMN field1 SET DEFAULT 0;
 
 -- export, replace 'null' with null
 SELECT 'INSERT INTO schema.table1 VALUES ('''
