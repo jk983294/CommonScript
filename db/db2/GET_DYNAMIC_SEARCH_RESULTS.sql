@@ -23,7 +23,7 @@ BEGIN
   END IF;
   IF P_PARAM3 IS NOT NULL THEN
     IF P_PARAM3 = 'Y' THEN
-      set V_WHERE_CONDITION = V_WHERE_CONDITION || ' and (t.PPARAM3 is not null) ';
+      set V_WHERE_CONDITION = V_WHERE_CONDITION || ' and (t.PARAM3 is not null) ';
     ELSEIF P_PARAM3 = 'N' THEN
       set V_WHERE_CONDITION = V_WHERE_CONDITION || ' and (t.PARAM3 is null) ';
     END IF;
