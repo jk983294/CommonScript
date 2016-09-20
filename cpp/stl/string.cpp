@@ -103,10 +103,35 @@ double string_to_number(const string &s){
     return x;
 }
 
+bool is_int(const string& s){
+    string::const_iterator it = s.begin();
+    while(it != s.end() && isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+int count_space(const string& s){
+    return count(s.begin(), s.end(), ' ');
+}
+string condense(const string& str){
+    if(str.empty()) return "";
+    int i = 0, j = str.size() - 1;
+    while(i <= j && str[i] == ' ') i++;
+    while(j >= 0 && str[j] == ' ') j--;
+    if(i > j) return "";
+    string result = "";
+    int len = 0;
+    for(int k = i; k <= j; k++){
+        if(str[k] == ' ' && result[result.size() - 1] == ' ') continue;
+        result += str[k];
+    }
+    return result;
+}
 
 int main() {
     cout<<number_to_string(1.2)<<endl;
     cout<<string_to_number("1.2")<<endl;
+    cout<<is_int("1.2")<<" "<<is_int("1a1.2")<<endl;
+    cout<<count_space(" 1.1  2 ")<<endl;
+    cout<<condense(" 1.1    5   2 ")<<endl;
     crud();
     reverse_string();
     basic_operation();
