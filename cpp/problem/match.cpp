@@ -22,7 +22,7 @@
 #include <unordered_map>
 
 using namespace std;
-// https://www.hackerrank.com/tests/ae1g19p47rd/login?b=eyJ1c2VybmFtZSI6ImprOTgzMjk0QDEyNi5jb20iLCJwYXNzd29yZCI6ImQzNDU0NTY4IiwiaGlkZSI6dHJ1ZX0=
+
 class order {
 public:
     long long price;
@@ -76,6 +76,32 @@ bool compare_order_high_first (const order& first, const order& second){
     }
 }
 
+bool is_number(const string& s)
+{
+    string::const_iterator it = s.begin();
+    while(it != s.end() && isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+int count_space(const string& s){
+	return count(s.begin(), s.end(), ' ');
+}
+
+
+string process_str(const string& str){
+	if(str.empty()) return "";
+	int i = 0, j = str.size() - 1;
+	while(i <= j && str[i] == ' ') i++;
+	while(j >= 0 && str[j] == ' ') j--;
+	if(i > j) return "";
+	string result = "";
+	int len = 0;
+	for(int k = i; k <= j; k++){
+		if(str[k] == ' ' && result[result.size() - 1] == ' ') continue;
+		result += str[k];
+	}
+	return result;
+}
+
 class match_system {
 public:
     list<order> buy;    // from high to low
@@ -83,44 +109,69 @@ public:
     long long time;
 
     void trade(){
-        string t1, t2, order_id;
-        long long price, qty;
+        string t1 = "", t2 = "", order_id = "", line = "", price_str = "", qty_str = "";
+		stringstream ss;
+        long long price = 0, qty = 0;
         long long time = 0;
-        while (cin>>t1){
+        while (getline(cin,line)){
+			if(line.empty()) continue;
+			line = process_str(line);
+			ss.clear();
+			ss<<line;
+			ss>>t1;
             if(t1 == "BUY" || t1 == "SELL"){
-                cin>>t2>>price>>qty>>order_id;
-                if(t2 == "GFD" || t2 == "IOC"){
-                    deal_order(order(price, qty, t1 == "BUY", time++, t2 == "GFD", order_id, t1));
-                }
+				if(count_space(line) == 4){
+					ss>>t2>>price_str>>qty_str>>order_id;
+					if(is_number(price_str) && is_number(qty_str) && (t2 == "GFD" || t2 == "IOC")){
+						ss.clear();
+						ss<<price_str<<" "<<qty_str;
+						ss>>price>>qty;
+						deal_order(order(price, qty, t1 == "BUY", time++, t2 == "GFD", order_id, t1));
+					}
+				}    
             } else if(t1 == "CANCEL"){
-                cin>>order_id;
-                deal_order(order(order_id, t1));
+				if(count_space(line) == 1){
+					ss>>order_id;
+					deal_order(order(order_id, t1));
+				}
             } else if(t1 == "PRINT"){
-                deal_order(order(t1));
+				if(count_space(line) == 0){
+					deal_order(order(t1));
+				}
             } else if(t1 == "MODIFY"){
-                cin>>order_id>>t2>>price>>qty;
-                if(t2 == "BUY" || t2 == "SELL"){
-                    deal_order(order(price, qty, t2 == "BUY", time++, true, order_id, t1));
-                }
+				if(count_space(line) == 4){
+					ss>>order_id>>t2>>price_str>>qty_str;
+					if(is_number(price_str) && is_number(qty_str) && (t2 == "BUY" || t2 == "SELL")){
+						ss.clear();
+						ss<<price_str<<" "<<qty_str;
+						ss>>price>>qty;
+						deal_order(order(price, qty, t2 == "BUY", time++, true, order_id, t1));
+					}
+				}
             }
         }
     }
 
     void simulate(){
-        /*
+        
         deal_order(order(10, 10, true, 1, true, "order1", "BUY"));
         deal_order(order(9, 10, true, 2, true, "order2", "BUY"));
         deal_order(order(11, 10, true, 3, true, "order3", "BUY"));
         deal_order(order(10, 10, true, 4, true, "order4", "BUY"));
-
         deal_order(order(20, 10, false, 5, true, "order5", "SELL"));
         deal_order(order(19, 10, false, 6, true, "order6", "SELL"));
         deal_order(order(21, 10, false, 7, true, "order7", "SELL"));
         deal_order(order(20, 10, false, 8, true, "order8", "SELL"));
-        */
-
+		//deal_order(order("order8", "CANCEL"));
+		
+        deal_order(order("PRINT"));
+		/*
         deal_order(order(1000, 10, true, 1, true, "order1", "BUY"));
         deal_order(order(900, 20, false, 8, true, "order9", "SELL"));
+		*/
+		deal_order(order(10, 22, false, 9, false, "order9", "SELL"));
+		deal_order(order("order4", "CANCEL"));
+		deal_order(order("order1", "CANCEL"));
 
 
 
@@ -166,7 +217,7 @@ public:
 
     void print_book(){
         long long p = -1, q = -1;
-        cout<<"SELL"<<endl;
+        cout<<"SELL:"<<endl;
         for (list<order>::reverse_iterator i = sell.rbegin(); i != sell.rend(); ++i){
             if(p < 0){
                 p = i->price;
@@ -182,7 +233,7 @@ public:
         if(p > 0) cout <<p<<" "<<q<<endl;
         p = -1, q = -1;
 
-        cout<<"BUY"<<endl;
+        cout<<"BUY:"<<endl;
         for (list<order>::iterator i = buy.begin(); i != buy.end(); ++i){
             if(p < 0){
                 p = i->price;
@@ -211,7 +262,7 @@ public:
                            fill_count = s.remain_qty();
                        }
                        print_trade(o, s, fill_count);
-                       if(s.remain_qty() == 0){
+                       if(s.remain_qty() <= 0){
                            sell.pop_front();
                        }
                    } else {
@@ -232,7 +283,7 @@ public:
                             fill_count = b.remain_qty();
                         }
                         print_trade(o, b, fill_count);
-                        if(b.remain_qty() == 0){
+                        if(b.remain_qty() <= 0){
                             buy.pop_front();
                         }
                     } else {
