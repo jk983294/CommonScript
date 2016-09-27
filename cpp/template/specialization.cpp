@@ -67,6 +67,18 @@ public:
     }
 };
 
+template<class T> 
+void f( T ){
+	cout << "template function." << endl;
+}
+/**
+* !!! this is an overload, function templates can't be partially specialized
+*/
+template<class T> // (b) a second base template, overloads (a) 
+void f( T* ){
+	cout << "template overload function." << endl;
+}
+
 int main() {
     Kitty<int>::meow();
     Kitty<const char *>::meow();
