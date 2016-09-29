@@ -8,7 +8,7 @@ public:
     virtual void fun(){};
 };
 class Derived : public Base {};
-class MoreDerived : public Derived {};
+class NonRelevant {};
 
 void test_dynamic_cast()
 {
@@ -32,8 +32,28 @@ void test_dynamic_cast()
     }
 }
 
+void test_static_cast(){
+    float f =1.012;
+    int i = static_cast<int>(f);
+}
+
+void test_const_cast(){
+    const NonRelevant *a = new NonRelevant;
+    NonRelevant *b = const_cast<NonRelevant *>(a);
+}
+
+void test_reinterpret_cast(){
+    Derived *pa = new Derived();
+    NonRelevant* p1 = reinterpret_cast<NonRelevant*>(pa);
+    p1 = nullptr;
+    delete pa;
+}
+
 int main() {
-    cout<<boolalpha;
+    cout << boolalpha;
     test_dynamic_cast();
+    test_static_cast();
+    test_reinterpret_cast();
+    test_const_cast();
     return 0;
 }
