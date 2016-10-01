@@ -16,9 +16,9 @@ void test_dynamic_cast()
     Derived* p1 = new Derived();
 
     Base* p = dynamic_cast<Base*>(p1);
-    cout << "dynamic_cast<Base *>(p1) success " << (p != NULL)<<endl;
+    cout << "dynamic_cast<Base *>(p1) success " << (p != nullptr)<<endl;
     Derived* pd = dynamic_cast<Derived*>(pb);
-    cout << "dynamic_cast<Derived *>(pb); success " << (pd != NULL) << endl;
+    cout << "dynamic_cast<Derived *>(pb); success " << (pd != nullptr) << endl;
 
     delete pb;
     delete p1;
@@ -41,7 +41,9 @@ void test_const_cast(){
     const NonRelevant *a = new NonRelevant;
     NonRelevant *b = const_cast<NonRelevant *>(a);
 }
-
+/**
+ * allows any pointer to be converted into any other pointer type
+ */
 void test_reinterpret_cast(){
     Derived *pa = new Derived();
     NonRelevant* p1 = reinterpret_cast<NonRelevant*>(pa);
@@ -49,11 +51,19 @@ void test_reinterpret_cast(){
     delete pa;
 }
 
+void test_conversion_operator(){
+    int i = 6;
+    float f =1.012;
+    i = (int) f;                        // C style
+    i = int (f);                        // C++ functional, int is a function
+}
+
 int main() {
     cout << boolalpha;
-    test_dynamic_cast();
-    test_static_cast();
-    test_reinterpret_cast();
-    test_const_cast();
+    test_dynamic_cast();                // run time
+    test_static_cast();                 // compile time
+    test_reinterpret_cast();            // compile time
+    test_const_cast();                  // compile time
+    test_conversion_operator();         // compile time
     return 0;
 }
