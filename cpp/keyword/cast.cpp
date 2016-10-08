@@ -40,7 +40,14 @@ void test_static_cast(){
 void test_const_cast(){
     const NonRelevant *a = new NonRelevant;
     NonRelevant *b = const_cast<NonRelevant *>(a);
+
+    const volatile double d = 5.5;
+    const volatile double *dp = &d;
+    *(const_cast<double *>(dp)) = 1.1;
+    cout << *dp << " " << d << endl;
 }
+
+void foo(){}
 /**
  * allows any pointer to be converted into any other pointer type
  */
@@ -49,6 +56,9 @@ void test_reinterpret_cast(){
     NonRelevant* p1 = reinterpret_cast<NonRelevant*>(pa);
     p1 = nullptr;
     delete pa;
+
+    int (*f)();
+    f = reinterpret_cast<int (*)()>(foo);
 }
 
 void test_conversion_operator(){

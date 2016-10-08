@@ -19,14 +19,16 @@ g++ -Wall -Werror -ansi -pedantic
 
 
 # process address layout
-high address        Stack
+high address        Kernel
+     .              Stack
      .                .
      .                .
      .                .
      .              Heap
      .              BSS
      .              Data
-low address         Text
+     .              Text
+low address    interrupt table
 
 
 # compile single file
@@ -47,6 +49,7 @@ nm demo
 # compile using lib
 gcc -c printlib.c
 gcc -o demo2 demo2.c printlib.o
+gcc thread.c -l pthread
 
 
 # static/dynamic linking
