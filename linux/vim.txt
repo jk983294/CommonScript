@@ -63,6 +63,7 @@ yy	                        Copies the current line.
 yw	                        Copies the current word from the character the cursor is on until the end of the word.
 p	                        Puts the copied text after the cursor.
 P	                        Puts the yanked text before the cursor.
+shift + insert              in edit mode, copy
 
 Advanced Commands
 J	                        Join the current line with the next one. A count joins that many lines.
