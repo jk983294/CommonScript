@@ -5,15 +5,25 @@
 
 using namespace std;
 
+/**
+ * unique_ptr, exclusively owns object, cannot be copied / assigned, can be moved
+ * shared_ptr, reference count, can be copied / assigned, can be moved
+ * weak_ptr, circle reference
+ */
+
 unique_ptr<int> clone(int p) {
     unique_ptr<int> pInt(new int(p));
     return pInt;
 }
 
+void destroy_int(int* p){
+    std::cout << "deleting p, value is : " << *p << endl;
+    delete p;
+}
 void unique_ptr_demo(){
-    unique_ptr<int> fPtr1;
-    unique_ptr<int> fPtr2(new int(4));
-    unique_ptr<int> fPtr3(new int(5));
+    unique_ptr<int, void(*)(int*)> fPtr1(nullptr, destroy_int);
+    unique_ptr<int, void(*)(int*)> fPtr2(new int(4), destroy_int);
+    unique_ptr<int, void(*)(int*)> fPtr3(new int(5), destroy_int);
 
     cout << "fPtr2 release before: " << fPtr2.get() << endl;
     int *pF = fPtr2.release();
@@ -23,14 +33,6 @@ void unique_ptr_demo(){
     cout << "move after fPtr1 address: " << fPtr1.get() << " fPtr3 address: " << fPtr3.get() << endl;
     fPtr1.reset();
     cout << "move after fPtr1 address: " << fPtr1.get() << endl;
-
-    unique_ptr<int> pInt(new int(5));
-    cout << *pInt << endl;
-    // unique_ptr<int> pInt2(pInt);                             // cannot copy
-    // unique_ptr<int> pInt3 = pInt;                            // cannot assign
-    unique_ptr<int> pInt2 = move(pInt);                         // transfer custody
-    //cout << *pInt << endl;                                    // error£¬original pInt is nullptr
-    cout << *pInt2 << endl;
 
     int p = 5;
     unique_ptr<int> ret = clone(p);
@@ -55,7 +57,6 @@ public:
     ~A () {
         cout<< "A released" << endl;
     }
-
 };
 
 class B {
@@ -64,7 +65,6 @@ public:
     ~B () {
         cout<< "B released" << endl;
     }
-
     void output () {
         cout<< "I'm B" << endl;
     }
@@ -76,14 +76,44 @@ shared_ptr<T> make_shared_array(size_t size) {
 }
 
 void shared_ptr_demo(){
+    shared_ptr<int> sp = shared_ptr<int>(nullptr);
+    cout << sp.use_count() << endl;
+    cout << sp.unique() << endl;
+    sp = make_shared<int>(5);
+    cout << sp.use_count() << endl;
+    cout << sp.unique() << endl;
+    shared_ptr<int> sp1 = sp;
+    cout << sp.use_count() << endl;
+    cout << sp.unique() << endl;
+    cout << (sp == sp1) << endl;
+
     auto sp_array = make_shared_array<char>(100);
     strcpy(sp_array.get(), "hello smart pointer");
     sp_array.get()[0] = 'a';
     cout << sp_array << endl;
+}
+
+void weak_ptr_demo(){
+    cout << "weak_ptr_demo" << endl;
+    shared_ptr<int> sp = shared_ptr<int>(new int(5));
+    weak_ptr<int> wp = weak_ptr<int>(sp);
+    cout << "this time not expired " << wp.expired() << endl;
+    cout << wp.use_count() << endl;
+    if(shared_ptr<int> locked = wp.lock()){				// get strong reference from weak pointer
+        cout << *locked << endl;
+    }
+    sp = nullptr;
+    cout << "this time expired " << wp.expired() << endl;
+    cout << wp.use_count() << endl;
+    if(shared_ptr<int> locked = wp.lock()){
+        cout << *locked << endl;
+    } else {
+        wp.reset();										// although manged object is released, this release reference control block
+    }
 
     shared_ptr<A> a(new A());
     shared_ptr<B> b(new B());
-
+    // weak_ptr won't add reference count of shared_ptr, used in cyclic reference
     a->b = b;
     b->a = a;
 
@@ -95,9 +125,9 @@ void shared_ptr_demo(){
 }
 
 
-int main() {
+auto main() -> int {
+    cout << boolalpha;
     unique_ptr_demo();
     shared_ptr_demo();
-    // weak_ptr won't add reference count of shared_ptr, used in cyclic reference
-    return 0;
+    weak_ptr_demo();
 }

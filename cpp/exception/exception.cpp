@@ -28,10 +28,10 @@ using namespace std;
 
 void my_unexpected() {
     cerr << "unexpected handler called" << endl;
-    throw;
+    throw;                                      // rethrow current exception
 }
 
-void my_function() throw (int,std::bad_exception) {
+void my_function() throw (int, std::bad_exception) {
     throw 'x';                                  // throws char (not in exception-specification)
 }
 
