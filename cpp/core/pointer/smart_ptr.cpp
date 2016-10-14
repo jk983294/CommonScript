@@ -7,8 +7,13 @@ using namespace std;
 
 /**
  * unique_ptr, exclusively owns object, cannot be copied / assigned, can be moved
+ * it is some kind of raw pointer, so you need to deep copy unique_ptr member of a class
  * shared_ptr, reference count, can be copied / assigned, can be moved
  * weak_ptr, circle reference
+ *
+ * for observe purpose(no ownership)
+ * use weak_ptr for shared_ptr
+ * use raw pointer for unique_ptr / solid object
  */
 
 unique_ptr<int> clone(int p) {

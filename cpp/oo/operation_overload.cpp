@@ -82,7 +82,10 @@ public:
 
     friend bool operator<(const Number& left, const Number& right);
     friend bool operator>(const Number& left, const Number& right);
+    friend bool operator<=(const Number& left, const Number& right);
+    friend bool operator>=(const Number& left, const Number& right);
     friend bool operator==(const Number& left, const Number& right);
+    friend bool operator!=(const Number& left, const Number& right);
 
     friend ostream& operator<<(ostream& s, const Number);
     friend istream& operator>>(istream& s, Number&);
@@ -120,6 +123,15 @@ bool operator>(const Number& left, const Number& right){
 }
 bool operator==(const Number& left, const Number& right){
     return left.data == right.data;
+}
+bool operator<=(const Number& left, const Number& right){
+    return left.data <= right.data;
+}
+bool operator>=(const Number& left, const Number& right){
+    return left.data >= right.data;
+}
+bool operator!=(const Number& left, const Number& right){
+    return left.data != right.data;
 }
 int main() {
     Number n(3);
