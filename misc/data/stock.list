@@ -1,0 +1,24 @@
+#查市盈率的：
+#http://biz.finance.sina.com.cn/company/compare/img_syl_compare.php?stock_code=600036,&limit=2400
+#600036改成想查的股票代码 2400改成任何你想查看的多少天
+
+#查市净率的：
+#http://biz.finance.sina.com.cn/company/compare/img_sjl_compare.php?stock_code=600036,&limit=2400
+#600036改成想查的股票代码 2400改成任何你想查看的多少天
+
+#如果同时查询多支个股可以在股票代码后面加逗号和股票代码就行了
+#比如：http://biz.finance.sina.com.cn/company/compare/img_syl_compare.php?stock_code=000002,000001,600030&limit=1500
+
+#理性人网站上提供了个股的历史PE、PB、PS数据。
+#例如国药一致，https://www.rational-person.com/analytics/company#/000028/detail/chart
+
+
+
+http://stockjs.finance.qq.com/fundUnitNavAll/data/year_all/150216.js
+
+http://q.stock.sohu.com/hisHq?code=zs_000001&start=20000504&end=20151215&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp&r=0.8391495715053367&0.9677250558488026
+http://q.stock.sohu.com/hisHq?code=zs_000001&start=20000504&end=20151215&stat=1&order=D&period=d&callback=historySearchHandler&rt=jsonp&r=0.8391495715053367&0.9677250558488026
+http://xueqiu.com/stock/quote.json?code=SH000001%2CSZ399001&_=1441781801093
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=100&sort=symbol&asc=1&node=hs_a&symbol=&_s_r_a=init#
+quotes.money.163.com/service/chddata.html%3Fcode%3D1002566%26start%3D20150104%26end%3D20160108
+https://www.jisilu.cn/data/sfnew/fundb_list/
