@@ -1,0 +1,3 @@
+Tab 建议编辑器插入2个空格键而不是制表符 Tabs: Settings > Preferences > Edit Components > Tab settings
+自动换行 Settings > Preferences > MISC for auto-indent. （MISC 其他）
+格式转换 编辑 > 档案格式转换 > Unix

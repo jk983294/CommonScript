@@ -1,0 +1,27 @@
+VS工具栏-工具-选项-文本编辑器-所有语言-显示行号
+
+Home                                    快速跳到这一行的首部
+End                                     快速跳到这一行的尾部
+Shift+Home                              快速选中这一行光标前的部分
+Shift+End                               快速选中这一行光标后的部分
+Shift+direction                         快速选择文字
+
+F10                                     逐过程调试
+F11                                     逐语句调试（一句一句执行）
+F12                                     转到定义，到变量或函数定义的地方，与ctrl+-配合使用非常方便
+Ctrl+]                                  匹配选中的括号（大括号、小括号都行），在多层循环+判断语句时非常方便
+ctrl+Space                              代码补全
+ctrl+tab                                在VS中切换打开的窗口，即切换各个文件
+ctrl+I                                  递增搜索，与ctrl+F不同的是搜索期间不显示搜索对话框，且ctrl+F搜索下一个直接按Enter即可，而ctrl+I搜索下一个按ctrl+I或F3，Escape退出，连续按两次ctrl+I重复上次搜索
+Ctrl+Shift+F                            旧式的文件搜索对话框（与记事本中的搜索替换框差不多，可以替换）
+Ctrl+F3                                 为当前选中的部分进行搜索（不需要再输入要搜索的内容）
+Shift+Alt+Enter                         最大化代码编写区域（代码全屏模式），即去掉所有其它辅助窗口只留下代码编写窗口，再按一次返回到原来界面
+ctrl+K+C                                注释一段代码块
+ctrl+K+U                                取消注释一段代码块
+ctrl+K+D                                代码整理
+ctrl+K+F                                只整理你选中的部分
+Ctrl+L                                  删除当前行
+Ctrl+M                                  展开或折叠当前的代码（展开或收缩方法，类等）
+
+ALT+SHIFT+Arrow                         多行选取
+Ctrl+G or double click line number      跳转到指定行号
