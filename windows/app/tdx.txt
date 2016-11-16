@@ -1,0 +1,132 @@
+.400                            热门板块分析
+.401                            历史行情(指标排序),使用自定义指标
+.402                            强弱分析报表,设置基准,查看一年内最强最弱
+.403                            区间涨跌幅度
+.404                            区间换手排名
+.405                            区间量变幅度
+.406                            区间振荡幅度
+
+Ctrl+F                          公式管理器
+Alt+S                           修改指标公式
+ALT+T                           调整指标参数
+Ctrl+E                          专家系统提示,买卖点提示
+Ctrl+K                          五彩系统提示
+Ctrl+T                          条件选股
+
+公式系统
+H/HIGH                          最高价
+L/LOW                           最低价
+C/CLOSE                         收盘价
+O/OPEN                          开盘价
+V/VOL                           成交量
+AMO/AMOUNT                      成交额
+ADVANCE                         上涨家数
+DECLINE                         下跌家数
+ASKPRICE                        委卖价
+ASKVOL                          委卖量
+BIDPRICE                        委买价
+BIDVOL                          委买量
+BUYVOL                          主动性买盘
+SELLVOL                         主动性卖盘
+
+DRAWNULL                        无效数
+BACKSET(CLOSE>OPEN,5)           若收阳则将前5个周期设为1
+BARSCOUNT(X)                    第一个有效数据到当前的天数
+CURRBARSCOUNT                   求到最后交易日的周期数
+TOTALBARSCOUNT                  求总的周期数
+BARSLAST(CLOSE/REF(CLOSE,1)>=1.1) 表示上一个涨停板到当前的周期数
+BARSSINCE(HIGH>10)              表示股价超过10元时到当前的周期数
+COUNT(CLOSE>OPEN,20)            表示统计20周期内收阳的周期数
+
+HHV(HIGH,30)                    表示求30日最高价
+HHVBARS(X,N)                    求N周期内X最高值到当前周期数
+LLV(X,N)                        求N周期内X最低值
+LLVBARS(HIGH,20)                求得20日最低点到当前的周期数
+SUM(X,N)                        统计N周期中X 的总和
+REVERSE(X)                      返回-X
+FILTER                          过滤连续出现的信号
+SUMBARS(X,A)                    将X向前累加直到大于等于A,返回这个区间的周期数
+
+SMA(X,N,M)                      X的M日移动平均,M 为权重
+MA(X,M)                         X的M日简单移动平均
+DMA(X,A)                        X的动态移动平均
+EMA(X,M)                        X的M日指数移动平均
+MEMA(X,M)                       X的M日平滑移动平均
+EXPMEMA                         指数平滑移动平均
+
+RANGE(A,B,C)                    表示A大于B同时小于C时返回1,否则返回0
+CROSS(X, Y)                     X向上穿过了Y
+LONGCROSS(A,B,N)                表示A在N周期内都小于B
+UPNDAY(CLOSE,M)                 表示连涨M个周期
+DOWNNDAY(CLOSE,M)               表示连跌M个周期
+NDAY(CLOSE,OPEN,3)              表示连续3日收阳线
+EXIST(CLOSE>OPEN,10)            表示前10日内存在着阳线
+EVERY(CLOSE>OPEN,10)            表示前10日内一直阳线
+LAST(CLOSE>OPEN,10,5)           表示从前10日到前5日内一直阳线
+
+REF(X, M)                       M天前的X
+REF(CLOSE,20011208)             表示2001年12月08日的收盘价
+CONST(A)                        取A 最后的值为常量
+
+X AND Y
+X OR Y
+NOT(X)
+IF(CLOSE>OPEN,HIGH,LOW)         表示该周期收阳则返回最高值,否则返回最低值
+IFF(CLOSE>OPEN,HIGH,LOW)        表示该周期收阳则返回最高值,否则返回最低值
+IFN(CLOSE>OPEN,HIGH,LOW)        表示该周期收阴则返回最高值,否则返回最低值
+
+BETWEEN(A,B,C)                  表示A处于B和C之间时返回1,否则返回0
+MAX(A,B)                        返回A和B中的较大值
+MIN(A,B)                        返回A和B中的较小值
+
+AVEDEV                          平均绝对方差
+AVEDEV(X,N)                     返回平均绝对方差
+DEVSQ                           数据偏差平方和
+DEVSQ(X,N)                      返回数据偏差平方和
+FORCAST                         线性回归预测值
+FORCAST(X,N)                    返回线性回归预测值
+SLOPE                           线性回归斜率
+SLOPE(X,N)                      返回线性回归斜率
+STD                             估算标准差
+STD(X,N)                        返回估算标准差
+STDP                            总体标准差
+STDP(X,N)                       返回总体标准差
+VAR                             估算样本方差
+VAR(X,N)                        返回估算样本方差
+VARP                            总体样本方差
+VARP(X,N)                       返回总体样本方差
+
+C < FINANCE(34);                跌破净资产
+
+
+V1：=MA(VOL，5);
+V2：=VOL/REF(V1，1)＞2;
+PZ1：=MA(CLOSE，M);
+PZ2：=HHV(HIGH，M);
+PZ3：=LLV(LOW，M);
+PZ4：=(PZ2-PZ1)/PZ1;
+PZ5：=(PZ1-PZ3)/PZ1;
+PZ：=REF(PZ4，1)＜0.15 AND REF(PZ5，1)＜0.15;
+TP1：HHV(HIGH，M);
+TP：=HIGH=TP1;
+V2 AND PZ AND TP;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ctrl+J                          主力监控精灵
+.910                            市场雷达
+.911                            市场雷达预警列表
+.918/Ctrl+Y                     条件公式预警
+.919                            条件公式预警列表

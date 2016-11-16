@@ -1,0 +1,8 @@
+Task Manager
+Process -> View -> Columns                      add more item to watch
+Performance -> View -> shown kernel time
+
+
+NTSD & CDB user mode debugger, KD kernel mode debugger
+WinDbg user mode debugger & kernel mode debugger
+DbgEng.dll

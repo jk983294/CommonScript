@@ -1,0 +1,2 @@
+concurrent modification exception
+ArrayList getIterator first, then call Collections.sort(list) which invalid iterator
