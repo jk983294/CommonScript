@@ -25,3 +25,26 @@ Ctrl+M                                  展开或折叠当前的代码（展开或收缩方法，类
 
 ALT+SHIFT+Arrow                         多行选取
 Ctrl+G or double click line number      跳转到指定行号
+
+
+give option in VS: Configuration Properties -> Debugging -> Command Arguments
+
+
+Static Lib
+Property Pages -> Common Properties -> References -> Add New Reference -> MyStaticLib
+Property Pages -> Configuration Properties -> C/C++ -> General -> Additional Include Directories -> add .h dir
+
+DLL Lib
+Property Pages -> Configuration Properties -> C/C++ -> General -> Additional Include Directories -> add .h dir
+Property Pages -> Configuration Properties -> Linker -> Input -> Additional Dependencies -> ..\Debug\SimpleDll.lib
+
+
+Target platform X64 VS X86
+Check your properties options in your linker settings at: Properties > Configuration Properties > Linker > Advanced > Target Machine. Select MachineX64 if you are targeting a 64 bit build, or MachineX86 if you are making a 32 bit build.
+Select Build > Configuration Manager from the main menu in visual studio. Make sure your project has the correct platform specified. It is possible for the IDE to be set to build x64 but an individual project in the solution can be set to target win32. So yeah, visual studio leaves a lot of rope to hang yourself, but that's life.
+Check your library files that they really are of the type of platform are targeting. This can be used by using dumpbin.exe which is in your visual studio VC\bin directory. use the -headers option to dump all your functions. Look for the machine entry for each function. it should include x64 if it's a 64 bit build.
+In visual studio, select Tools > Options from the main menu. select Projects and Solutions > VC++ Directories. Select x64 from the Platform dropdown. Make sure that the first entry is: $(VCInstallDir)\bin\x86_amd64 followed by $(VCInstallDir)\bin.
+
+
+error C4996: Function call with parameters that may be unsafe
+Configuration Properties -> C/C++ -> Preprocessor -> Preprocessor Definitions       add _SCL_SECURE_NO_WARNINGS
