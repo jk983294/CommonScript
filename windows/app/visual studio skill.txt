@@ -6,6 +6,7 @@ Shift+Home                              快速选中这一行光标前的部分
 Shift+End                               快速选中这一行光标后的部分
 Shift+direction                         快速选择文字
 
+F9    　　  　　　　                      设置断点
 F10                                     逐过程调试
 F11                                     逐语句调试（一句一句执行）
 F12                                     转到定义，到变量或函数定义的地方，与ctrl+-配合使用非常方便
@@ -20,11 +21,23 @@ ctrl+K+C                                注释一段代码块
 ctrl+K+U                                取消注释一段代码块
 ctrl+K+D                                代码整理
 ctrl+K+F                                只整理你选中的部分
-Ctrl+L                                  删除当前行
+Ctrl+L                                  剪切当前行
+Ctrl+Shift+L                            删除当前行
 Ctrl+M                                  展开或折叠当前的代码（展开或收缩方法，类等）
+Ctrl+Z/Alt+Backspace                    Undo
+Ctrl+Shift+Z/Ctrl+Y                     Redo
 
 ALT+SHIFT+Arrow                         多行选取
 Ctrl+G or double click line number      跳转到指定行号
+
+vax最有用的几个快捷键：
+Alt + G                                 在定义与声明之间互跳
+Alt + O                                 在.h与.cpp之间互跳
+Alt + Shift + Q                         鼠标定位到函数名上，若是在h文件中，按此快捷键会弹出右键菜单，里面有个选项--创建定义；若是在cpp文件中，则按此快捷键会弹出右键菜单，里面有一个选项--创建声明。 这在定义好接口之后，再来写实现时，配合Alt+O是非常快捷的。当然，这种情况下，鼠标右击与Alt+O配合会更快
+Alt + Shift + R                         当想改掉一个类名或是其他东西的命名时，可能已经有很多地方引用这个名称了，这时按下此快捷键，可以很方便的辅助你重命名
+Alt + Shift + S                         方便你寻找某个对象或变量等等
+Alt + Shift + O                         定位文件。项目文件太多时，这个会帮上大忙，当然，你的文件名命名最好有个比较好的规范
+Alt + Shift + F                         光标放到某个字符串上，按下此键，会找出所有引用了这个字符串的地方
 
 
 give option in VS: Configuration Properties -> Debugging -> Command Arguments
