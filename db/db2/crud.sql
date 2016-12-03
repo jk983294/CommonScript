@@ -11,6 +11,10 @@ delete from my_table where some_column = some_value;
 -- update
 update my_table set filed_name = 'x', filed_name1 = 'x1' where filed_name = 'y';
 UPDATE table1 t1 SET (col1, col2) = (SELECT col3, col4 FROM  table2 t2 WHERE t1.col8=t2.col9);
+UPDATE schema.my_table dest SET SUM_FIELD1 =
+	(SELECT src.SUM_FIELD1 FROM
+		(SELECT field2, field3, SUM(field1) AS SUM_FIELD1 FROM schema.my_table GROUP BY field2, field3) src
+			WHERE src.field2 = dest.field2 AND src.field3 = dest.field3);
 -- update target row based on source row
 UPDATE schema.my_table t1 SET (field1, field2) =
     (SELECT field1, field2 FROM schema.my_table t2 WHERE t2.field3 = P_SOURCE and t2.field4 = P_FIELD4)

@@ -12,7 +12,7 @@ BEGIN
   -- error handling
   if v_RECORD_COUNT = 0 then
     SIGNAL SQLSTATE '75002'
-    SET MESSAGE_TEXT = 'record count shouldn't be zero';
+    SET MESSAGE_TEXT = 'record count should not be zero';
   end if;
 
   DECLARE c1 CURSOR WITH RETURN TO CLIENT FOR

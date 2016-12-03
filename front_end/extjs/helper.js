@@ -68,6 +68,22 @@ Ext.require([
         },
 
         /**
+         * renderer for displayfield's field value with color, there is no API to change the fieldCls dynamically, use this hack
+         */
+        numberColor: function (value, metaData) {
+            if (isNA(value)) {
+                return '-';
+            }
+
+            var data = ((value * 100).toFixed(2) + "%");
+            if(value > 1.0){
+                return '<font color="red">' + data +'</font>';
+            } else {
+                return '<font color="green">' + data +'</font>';
+            }
+        },
+
+        /**
          * format number to percentage
          * @param number
          * @returns {string}
