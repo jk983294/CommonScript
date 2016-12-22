@@ -12,5 +12,6 @@ add linker in VS        configuration properties -> C/C++ -> General -> Addition
 
 
 linker for whole project, choose Configuration to All Configurations, VC++ Directories
-    Include Directories     E:\boost_1_62_0
-    Library Directories     E:\boost_1_62_0\lib
+    Include Directories         E:\boost_1_62_0
+    x86 Library Directories     E:\boost_1_62_0\libs
+    x64 Library Directories     E:\boost_1_62_0\lib64-msvc-12.0

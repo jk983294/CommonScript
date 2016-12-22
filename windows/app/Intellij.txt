@@ -1,0 +1,6 @@
+register:
+修改系统时间为n年后，再激活30天试用版。
+如果已经激活，则删除
+C:\Users\jk\.IntelliJIdea15\config\eval
+C:\Users\jk\.IntelliJIdea15\config\webstorm90.key
+重启idea，即可重新激活。弄好了退出idea 调回正常的时间 IntelliJIdea15为JetBrains系列产品名字
