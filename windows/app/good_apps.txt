@@ -1,0 +1,4 @@
+grepwin：可以快速搜索某个文件夹下文件的内容
+autohotkey：可以自定义快捷键完成琐碎工作，并且支持脚本
+xplorer2 ：一个功能强大的shell
+HttpAnalyzer，WireShark这类的抓包工具也是必备

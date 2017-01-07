@@ -24,3 +24,12 @@ TechBeamers                     http://www.techbeamers.com/
 ProgramTalk                     http://programtalk.com/
 Instance Of Java                http://www.instanceofjava.com/p/java-tutorial-java-updates-online-free.html
 Concrete Page                   http://www.concretepage.com/
+
+
+python Bokeh
+
+http://stackoverflow.com/questions/884943/how-do-i-send-an-e-mail-in-java
+simple-java-mail
+Apache Commons mail
+Spring mail
+JavaMail
