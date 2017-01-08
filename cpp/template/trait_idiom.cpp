@@ -12,13 +12,13 @@ using namespace std;
 template< typename T > struct is_void_trait{
     static const bool value = false;
 };
-template<> struct is_void_trait< void >{				            // use full specilization
+template<> struct is_void_trait< void >{				            // use full specialization
     static const bool value = true;
 };
 template< typename T > struct is_pointer_trait{
     static const bool value = false;
 };
-template< typename T > struct is_pointer_trait< T* >{               // use partial specilization
+template< typename T > struct is_pointer_trait< T* >{               // use partial specialization
     static const bool value = true;
 };
 
