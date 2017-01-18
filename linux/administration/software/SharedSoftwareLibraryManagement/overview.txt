@@ -1,0 +1,10 @@
+.so         standard modules used by user space programs
+.ko         kernel modules used by kernel or priviledged programs
+
+LD_LIBRARY_PATH variable name that maintain the path to modules
+
+/etc/ld.so.conf is a file that maintains the same structure to search for modules
+
+run ldconfig after modifying the ld.so.conf file
+
+for module parameters look in the /etx/modprobe.d directory

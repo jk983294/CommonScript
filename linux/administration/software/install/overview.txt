@@ -1,0 +1,3 @@
+.rpm files for Red Hat / Fedora / CentOS, yum repository
+.deb files for Debian / Ubuntu, apt repository
+.rpm for SUSE / open SUSE, zypper repository

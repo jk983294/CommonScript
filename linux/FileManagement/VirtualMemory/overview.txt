@@ -1,0 +1,4 @@
+virtual memory in linux can be either a disk partition or a swap file
+
+swapon / swapoff -> turn on or off swap
+mkswap -> creation

@@ -1,0 +1,7 @@
+CTRL + L                                            clear history, leave current command there
+CTRL + D                                            log out
+CTRL + Z                                            exit
+CTRL + ALT + Fx                                     go to console x, tty1 - tty6 is physical terminal, tty7 after is pesudo-terminal
+CTRL + ALT + F1                                     go to physical terminal tty1
+CTRL + ALT + F7                                     go to pesudo terminal
+ALT + F2                                            open something

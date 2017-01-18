@@ -1,0 +1,6 @@
+physical: Dual Boot
+virtualization: Vmware / Virtual Box / HypeV
+media: ISO / DVD / PXE
+
+PXE(preboot execute environment): network boot
+initrd (init ram disk) for two phase boot
