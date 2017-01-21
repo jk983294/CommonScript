@@ -10,6 +10,16 @@
 公司主要在做什么，我进来后会做什么，需要什么技术？
 
 disagreement with your boss:
-两个grid，第二个grid是第一个grid某行的具体信息，可以只load一次，双击之后client端直接显示，不需要第二次call去获得，问题是一次性拿所有数据有性能问题，
-用户体验不好，一次性load需要30s，如果分批load，main grid需要7s, secondary grid每次需要1s。性能的确是由于数据的volume引起的，因为fetch时间和volume严格线性相关
+两个grid，第二个grid是第一个grid某行的具体信息，可以只load一次，双击之后client端直接显示，不需要第二次call去获得，也可以分两次load；
+问题是一次性拿所有数据有性能问题，用户体验不好，一次性load需要30s，如果分批load，main grid需要7s, secondary grid每次需要1s。
+性能的确是由于数据的volume引起的，因为fetch时间和volume严格线性相关
+
+improvement of dev:
+don't rely on stackoverflow too much since my dev problem is unique to myself, it waste too much time on searching or directing to wrong direction
+don't try to model and setup complicated schema at first place, try NoSQL solution, put all config json string into one field (like managed view's config)
+
+motivation:
+wanna to narrow down my expertise
+
+
 

@@ -1,3 +1,5 @@
 Journal of Financial and Quantitative Analysis
 
 pandas SciPy/NumPy sckikit-learn matplotlib statsmodels Seaborn
+
+http://code.tradeclassroom.com/
