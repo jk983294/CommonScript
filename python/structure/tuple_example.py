@@ -16,6 +16,6 @@ print cmp((123, 'xyz'), (456, 'abc'))                                       # -1
 max((456, 700, 200))                                                        # 700
 min((456, 700, 200))                                                        # 200
 aList = (123, 'xyz', 'zara', 'abc');
-tuple1((456, 700, 200))
+tuple((456, 700, 200))
 for x in (1, 2, 3):
     print x

@@ -23,13 +23,13 @@ dict1 = dict1.fromkeys(('name', 'age', 'sex'), 10)  # {'age': 10, 'name': 10, 's
 dict2 = dict1.copy()  # shallow copy
 print tiny_dict.keys()  # ['dept', 'code', 'name']
 print tiny_dict.values()  # ['sales', 6734, 'john']
-del dict1['one']  # remove entry with key 'one'
+del dict1['age']  # remove entry with key 'age'
 dict1.clear()  # remove all entries in dict
 
 # Convert a list to a dictionary in Python
 a = ['hello', 'world', '1', '2']
 i = iter(a)
-b = dict1(izip(i, i))  # {'1': '2', 'hello': 'world'}
+b = dict(izip(i, i))  # {'1': '2', 'hello': 'world'}
 
 # iterate
 prices = {"Orange": 110, "Apple": 240}

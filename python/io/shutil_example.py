@@ -1,5 +1,4 @@
 from shutil import *
-from glob import glob
 
 # a number of high-level operations on files and collections of files
 
