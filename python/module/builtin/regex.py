@@ -1,9 +1,9 @@
 import re
 
 # match / search returns None if the regexp doesn't match
-myregexp = re.compile(r"(\w+)\s*=\s*(.+)")
-myregexp.match("temp_dir = /tmp")
-myregexp.search("blabla temp_dir = /tmp")
+my_reg_exp = re.compile(r"(\w+)\s*=\s*(.+)")
+my_reg_exp.match("temp_dir = /tmp")
+my_reg_exp.search("blabla temp_dir = /tmp")
 
 # match email address
 re.match("[a-z]+://[a-zA-Z0-9][a-zA-Z0-9\.-]+/.*", "http://www.google.com/")
@@ -14,8 +14,8 @@ re.match("([a-z]+)://([a-zA-Z0-9][a-zA-Z0-9\.-]+)/(.*)", "http://www.google.com/
 re.match("([a-z]+)://([a-zA-Z0-9][a-zA-Z0-9\.-]+)/(.*)", "http://www.google.com/blalba/qwqq").groups()
 
 # keyed groups
-myregexp = re.compile(r"(?P<key>\w+)\s*=\s*(?P<value>.+)")
-myregexp.match("temp_dir = /tmp").groupdict()                           # {'key': 'temp_dir', 'value': '/tmp'}
+my_reg_exp = re.compile(r"(?P<key>\w+)\s*=\s*(?P<value>.+)")
+my_reg_exp.match("temp_dir = /tmp").groupdict()                         # {'key': 'temp_dir', 'value': '/tmp'}
 
 # replace / substitute
 re.sub(",\s*", ",", "this, line ,  contains,   more, items ")           # 'this,line,contains,more,items'

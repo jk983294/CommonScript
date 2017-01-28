@@ -15,11 +15,6 @@ results = parser.parse_args('--a 1 --b --c --d 5 --d 6 --str -vvv'.split())     
 print results.aValue                                                                # 1
 print results.eValue                                                                # False
 
-
-
-
-
-
 parser = OptionParser()
 parser.add_option("-f", "--file", dest="filename", help="write report to FILE")
 parser.add_option("-q", "--quiet", action="store_false", dest="verbose", default=True,

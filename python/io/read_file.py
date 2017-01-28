@@ -1,6 +1,6 @@
 # read file line by line
 fo = open("foo.txt", "r+")
-print file.readline()
+print fo.readline()
 fo.close()
 
 # read file of all lines

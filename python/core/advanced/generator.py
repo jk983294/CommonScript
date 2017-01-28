@@ -13,7 +13,7 @@ def fibonacci():
         yield b
 
 for i in fibonacci():
-    if i>100:
+    if i > 100:
         break
     print i
 
@@ -30,7 +30,7 @@ def my_gen():
         print "Generator received: %r" % received
         i += 1
 
-my = my_gen() # initialize
+my = my_gen()                                                   # initialize
 print "Caller received: %r" % my.next()                         # start the generator, get the next value
 print "Caller received: %r" % my.send("Hello world")            # sends the value back to the generator
 my.close()                                                      # raises GeneratorExit exception in the generator

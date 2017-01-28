@@ -11,8 +11,10 @@ class Fibonacci(object):
         self.a = 0
         self.b = 1
         self.state = 0
-    def __iter__ (self):
+
+    def __iter__(self):
         return self
+
     def next(self):
         if self.state < 2:
             self.state += 1
@@ -33,6 +35,15 @@ def display_iterator_content(o, stop_value=None):
             break
         print i,
     print
+
+L = [i * i for i in range(5)]
+# iterator with index
+for index, data in enumerate(L, 1):
+    print(index, ':',  data)
+
+# iterator reverse order
+for item in reversed(L):
+    print(item)
 
 # itertools module
 display_iterator_content(itertools.chain('ABC', 'DEF'))                                     # A B C D E F
@@ -56,15 +67,15 @@ display_iterator_content(itertools.islice('ABCDEFG', 0, None, 2))               
 display_iterator_content(itertools.izip('ABCD', 'xy'))                                      # ('A', 'x') ('B', 'y')
 display_iterator_content(itertools.izip_longest('ABCD', 'xy', fillvalue='-'))               # ('A', 'x') ('B', 'y') ('C', '-') ('D', '-')
 display_iterator_content(itertools.product('ABCD', 'xy'))                                   # Ax Ay Bx By Cx Cy Dx Dy
-display_iterator_content(itertools.product('ABCD', repeat=2))                               # AB AC AD BA BC BD CA CB CD DA DB DC
+display_iterator_content(itertools.product('ABCD', repeat=2))                               # AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
 display_iterator_content(itertools.permutations('ABC', 2))                                  # ('A', 'B') ('A', 'C') ('B', 'A') ('B', 'C') ('C', 'A') ('C', 'B')
-display_iterator_content(itertools.permutations(range(3))) permutations()                   # 012 021 102 120 201 210
+display_iterator_content(itertools.permutations(range(3)))                                  # 012 021 102 120 201 210
 display_iterator_content(itertools.combinations('ABC', 2))                                  # ('A', 'B') ('A', 'C') ('B', 'C')
 display_iterator_content(itertools.combinations_with_replacement('ABC', 2))                 # ('A', 'A') ('A', 'B') ('A', 'C') ('B', 'B') ('B', 'C') ('C', 'C')
 
 
 # test if one object is an iterator
-a=[1,2]
+a = [1, 2]
 li = a.__iter__()
 li.next()                                           # 1
 li.next()                                           # 2

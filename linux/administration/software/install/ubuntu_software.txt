@@ -1,1 +1,2 @@
 sudo apt-get install lsb-core                                           # No LSB modules are available
+sudo apt-get install python-requests                                    # python requests module

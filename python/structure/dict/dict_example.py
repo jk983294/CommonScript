@@ -18,7 +18,6 @@ dict1.update(tiny_dict)
 dict1.setdefault('Age', None)  # if has key 'Age', set it to None
 print dict1.items()  # [(2, 'This is two'), ('one', 'This is one')]
 dict1.has_key('No Exist')  # False
-# give default value for an entry if not exist
 dict1.get('No Exist', 'Never')  # 'Never'
 dict1 = dict1.fromkeys(('name', 'age', 'sex'), 10)  # {'age': 10, 'name': 10, 'sex': 10}
 dict2 = dict1.copy()  # shallow copy

@@ -1,4 +1,12 @@
-# decorator is a function which receives the function received in the first parameter, and returns a new function which would replace the old one
+import functools
+import os
+from symbol import decorator
+
+# decorator is a function which receives the function received in the first parameter,
+# and returns a new function which would replace the old one
+
+TRACE = True
+
 
 def tracer_decorator(func):
     def tracer(*args, **kwargs):
@@ -8,46 +16,53 @@ def tracer_decorator(func):
         if TRACE:
             print "%s is returning %s" % (func.__name__, repr(ret_val))
         return ret_val
+
     return tracer
+
 
 # usage like annotation
 @tracer_decorator
 def my_func(a, b):
-    return a+b
+    return a + b
 
 
 # entitlement check decorator
-def need_userid(userid):
+def need_user_id(user_id):
     def decorator(func):
-        def check_userid(*args, **kwargs):
-            if os.geteuid() == userid:
+        def check_user_id(*args, **kwargs):
+            if os.geteuid() == user_id:
                 return func(*args, **kwargs)
             else:
-                raise OSError, "Invalid userid: %d" % os.geteuid()
-        return check_userid
+                raise OSError, "Invalid user id: %d" % os.geteuid()
+
+        return check_user_id
+
     return decorator
 
+
 # decorator object
-class need_userid(object):
-    def __init__(self, userid):
-        self.userid = userid
+class NeedUserId(object):
+    def __init__(self, user_id):
+        self.user_id = user_id
 
     def __call__(self, func):
-        def check_userid(*args, **kwargs):
-            if os.geteuid() == self.userid:
+        def check_user_id(*args, **kwargs):
+            if os.geteuid() == self.user_id:
                 return func(*args, **kwargs)
             else:
-                raise OSError, "Invalid userid: %d" % os.geteuid()
-        return check_userid
+                raise OSError, "Invalid user id: %d" % os.geteuid()
+
+        return check_user_id
 
 
 # decorator object usage, nesting decorators
-@need_userid(5678)
+@NeedUserId(5678)
 @tracer_decorator
-def my_func(a,b):
-    return a+b
+def my_func(a, b):
+    return a + b
 
-my_func(6,7)            # equals to my_func = need_userid(107686)(tracer_decorator(my_func)) | my_func(6,7)
+
+my_func(6, 7)  # equals to my_func = NeedUserId(5678)(tracer_decorator(my_func)) | my_func(6,7)
 
 
 # An essential tool for wrapping an existing functions, copies the wrapped function's name, docstrings
@@ -58,7 +73,9 @@ def tracer_decorator(func):
         ret_val = func(*args, **kwargs)
         print "%s is returning" % func.__name__
         return ret_val
+
     return tracer
+
 
 # decorator package, eliminates the need of nesting functions
 @decorator

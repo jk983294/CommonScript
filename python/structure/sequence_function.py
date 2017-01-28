@@ -6,27 +6,23 @@
 # [:] means a copy of the object
 # m and n can be negative: counted back from the end (-1 means the last element)
 
-
-
-a=["A", "B", "C", "D", "E", "F"]
-a[-1]                                                       # 'F'
-a[1:4]                                                      # ['B', 'C', 'D']
-a[1:-1]                                                     # ['B', 'C', 'D', 'E']
-a[:-3]                                                      # ['A', 'B', 'C']
+a = ["A", "B", "C", "D", "E", "F"]
+a[-1]  # 'F'
+a[1:4]  # ['B', 'C', 'D']
+a[1:-1]  # ['B', 'C', 'D', 'E']
+a[:-3]  # ['A', 'B', 'C']
 text = "Hello Hi World"
-text[:5]+text[8:]                                           # 'Hello World'
-
+text[:5] + text[8:]  # 'Hello World'
 
 # functions
-map(round, [5.5, 6.2, 7.9, 11.123])                         # [6.0, 6.0, 8.0, 11.0]
-map(str, [6, 7, 8])                                         # ['6', '7', '8']
-filter(None, [1, 2, 2, 3, 0, 0, 1, 2])                      # [1, 2, 2, 3, 1, 2]
-filter(lambda x: x % 2 == 0, [1, 2, 2, 3, 0, 0, 1, 2])      # [2, 2, 0, 0, 2]
-
+map(round, [5.5, 6.2, 7.9, 11.123])  # [6.0, 6.0, 8.0, 11.0]
+map(str, [6, 7, 8])  # ['6', '7', '8']
+filter(None, [1, 2, 2, 3, 0, 0, 1, 2])  # [1, 2, 2, 3, 1, 2]
+filter(lambda x: x % 2 == 0, [1, 2, 2, 3, 0, 0, 1, 2])  # [2, 2, 0, 0, 2]
 
 # comprehension
 names = ["george", "kevin", "bob"]
-result = [name.capitalize() for name in names]              # ['George', 'Kevin', 'Bob']
-data = [1,2,3,5,6,7,44,55,66]
-filtered = [x*2 for x in data if x>6]                       # [14, 88, 110, 132]
-[y+44 for y in [x*2 for x in data if x>6] if y<100]         # [58, 132]
+result = [name.capitalize() for name in names]  # ['George', 'Kevin', 'Bob']
+data = [1, 2, 3, 5, 6, 7, 44, 55, 66]
+filtered = [x * 2 for x in data if x > 6]  # [14, 88, 110, 132]
+[y + 44 for y in [x * 2 for x in data if x > 6] if y < 100]  # [58, 132]

@@ -5,12 +5,12 @@ import random
 # Mutable : list, dictionary, set
 
 counter = 100                                                               # An integer assignment
-miles   = 1000.0                                                            # A floating point
-name    = "John"                                                            # A string
+miles = 1000.0                                                              # A floating point
+name = "John"                                                               # A string
 
 a = b = c = 1
 d, e, f = 1, 2, "john"
-list1 = [1, 2, 3, 4, 5 ]
+list1 = [1, 2, 3, 4, 5]
 
 
 # data type conversion
@@ -45,6 +45,10 @@ print a is b                                                                # Id
 print a is not b
 
 
+# any, check any row satisfy some condition
+def has_primary_key(rows):
+    return any(row[1] == 0 and row[9] != 'YES' for row in rows)
+
 # math
 print abs(-1)                                                               # The absolute value of x: the (positive) distance between x and zero.
 print math.ceil(1.1)                                                        # The ceiling of x: the smallest integer not less than x
@@ -64,7 +68,7 @@ print math.sqrt(100)                                                        # Th
 # random number
 random.seed(5)                                                              # Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function. Returns None.
 print random.choice([1, 2, 4])                                              # A random item from a list, tuple, or string.
-print random.randrange (1, 10, 2)                                           # A randomly selected element from range(start, stop, step), step is 2 means only odd number to be returned
+print random.randrange(1, 10, 2)                                           # A randomly selected element from range(start, stop, step), step is 2 means only odd number to be returned
 print random.random()                                                       # A random float r, such that 0 is less than or equal to r and r is less than 1
 print random.shuffle(list1)                                                 # Randomizes the items of a list in place. Returns None.
 print random.uniform(1.0, 5.0)                                              # A random float r, such that x is less than or equal to r and r is less than y

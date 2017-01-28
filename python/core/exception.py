@@ -27,9 +27,9 @@
 
 
 # assert
-def KelvinToFahrenheit(Temperature):
-    assert (Temperature >= 0),"Colder than absolute zero!"
-    return ((Temperature-273)*1.8)+32
+def kelvin2fahrenheit(temperature):
+    assert (temperature >= 0), "Colder than absolute zero!"
+    return ((temperature - 273) * 1.8) + 32
 
 
 # try catch
@@ -45,12 +45,12 @@ else:
     print "Written content in the file successfully"
     fh.close()
 finally:
-   print "must execute"
+    print "must execute"
 
 
 # catch all exceptions
 try:
-    x = opem("file.txt", "r")
+    x = open("file.txt", "r")
 except:
     print "Unable to open file.txt"
 

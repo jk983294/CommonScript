@@ -8,7 +8,7 @@ def get_website_data(url):
 
 
 def main():
-    urls = ['http://www.google.com',
+    urls = ['http://www.qq.com',
             'http://www.baidu.com',
             'http://www.163.com']
     pool = Pool(2)

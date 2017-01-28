@@ -1,7 +1,7 @@
 # write file
 fo = open("foo.txt", "w")
-fo.write( "Python is a great language.\n");
-fo.write( "Yeah its great!!\n");
+fo.write("Python is a great language.\n")
+fo.write("Yeah its great!!\n")
 fo.close()
 
 # write with
