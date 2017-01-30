@@ -1,0 +1,7 @@
+WinSCP
+
+load putty session
+
+chmod +x a.sh                   # add execute permission for uploaded file
+dos2unix a.sh                   # convert windows format to unix format, remove hidden characters
+./a.sh                          # run uploaded file

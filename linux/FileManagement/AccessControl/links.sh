@@ -21,3 +21,4 @@ stat file4                                                  # stat of file2 and 
 # symlink
 ln -s file3 file5
 ls -li                                                      # show inode, then file3 and file5's inode should be different
+readlink file5                                              # should display file5 -> file3

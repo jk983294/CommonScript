@@ -14,6 +14,8 @@ cd /dev
 ls sda*                                                                         # list all physical partitions
 
 cd /proc
+cat version
+cat /proc/sys/net/ipv4/ip_forward
 cat meminfo                                                                     # display memory usage information
 cat mounts                                                                      # show mounted devices
 cat interrupts                                                                  # show the currently connected devices and amount of interrupts the CPU deals with

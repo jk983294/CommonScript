@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 uname -m                                                            # the machine hardware name
 uname -r                                                            # kernel release
 uname -a                                                            # kernel all information

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 uptime                                                              # how long the system has been running, how many users currently logged on, and the system load averages for the past 1, 5, 15 minutes
 
 cal                                                                 # show calendar

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 lsusb                                                               # list USB devices
 
 # hardware_name: all, arch, bios, block, bluetooth, braille, bridge, camera, cdrom, chipcard, cpu, disk, dsl, dvb,

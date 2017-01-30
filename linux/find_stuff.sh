@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Finding all files containing a text string
 grep -rnw '/path/to/somewhere/' -e "pattern"
 grep --include=\*.{c,h} -rnw '/path/to/somewhere/' -e "pattern"
