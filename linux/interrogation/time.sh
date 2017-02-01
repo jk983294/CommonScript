@@ -9,3 +9,5 @@ cal 3 2017                                                          # show March
 date                                                                # current date
 date --date "30 days"                                               # current date + 30 days
 date --date "30 days ago"                                           # current date - 30 days
+
+time tar -czvf etc.tgz /etc                                         # measure the archive process with compress

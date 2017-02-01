@@ -20,12 +20,12 @@ mv file5 filenewname                # rename
 mv filenewname ../                  # move file to parent directory
 
 # list
-# file type: d directory, l link,
+# file type: d directory, l link, p pipe
 ls                                  # list all files under this directory
 ls -l                               # long list
 ls -lt                              # order by modified time from most recent
 ls -ltr                             # reverse order by modified time
-ls -F                               # list with file type, / directory, @ link, * executable
+ls -F                               # list with file type, / directory, @ link, * executable, | pipe
 ls --color=auto                     # list with color, dark blue directory, light blue link, green executable
 ls -R backup/                       # list recursively backup folder
 
