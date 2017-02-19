@@ -1,5 +1,6 @@
 赵炯. Linux内核完全注释 内核版本0.11
 http://antriver.com/linux/src/linux-3.15.7.html
+https://kernelnewbies.org/
 OpenGrok/ Source Insight
 Boost，Qt，Silicon，tufao，TreeFrog，WTL，STL，libev，Cocos2d-x，Dlib，Ultimate++，Asio，TinyXML，libxml++，CEGUI、FLTK、wxWidgets、Ogre 3D、Cairo、Skia、OpenCV、CxImage、Json++、Json11、CppUnit、OpenSSL、Crypto++、C++React、OpenCL、OpenAL、Vorbis、Memcached、libcurl、SQLite
 
@@ -7,3 +8,16 @@ Boost，Qt，Silicon，tufao，TreeFrog，WTL，STL，libev，Cocos2d-x，Dlib，Ultimate+
 unit test
 https://segmentfault.com/q/1010000002412786/a-1020000002414299
 https://github.com/philsquared/Catch
+
+
+Advanced C and C++ Compiling
+
+
+Thrift:用来进行可扩展且跨语言的服务的开发(类似的还有个Avro，Google protobuf)。
+libevent:是一个事件触发的网络库，适用于windows、linux、bsd等多种平台，内部使用select、epoll、kqueue等系统调用管理事件机制。（对了还有个libev呢）
+Boost:不多说了，准C++标准库
+Valgrind\Ptmalloc\Purify: 调试工具
+NetworkServer架构：acceptor->dispatcher->worker
+breakpad:崩溃转储和分析模块，很多crashreport会用到
+UI界面相关：MFC、BCG和QT这类的就不说了，高端一点的还有Html和DirectUI技术：libcef（基于chrome内核的，想想使用html5开发页面，还真有点小激动呢）、HtmlLayout、Duilib、Bolt，非C++的，还有node-webkit也不错，集成了node和webkit内核。
+

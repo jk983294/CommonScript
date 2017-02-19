@@ -61,3 +61,18 @@ In visual studio, select Tools > Options from the main menu. select Projects and
 
 error C4996: Function call with parameters that may be unsafe
 Configuration Properties -> C/C++ -> Preprocessor -> Preprocessor Definitions       add _SCL_SECURE_NO_WARNINGS
+
+
+
+Best practices for Subversion and Visual Studio projects
+You can add the following files to Visual Studio source control:
+
+Solution files (*.sln).
+Project files, for example, *.csproj, *.vbproj files.
+Application configuration files, based on XML, used to control run-time behavior of a Visual Studio project.
+Files that you cannot add to source control include the following:
+
+Solution user option files (*.suo).
+Project user option files, for example, *.csproj.user, *.vbproj.user files.
+Web information files, for example, *.csproj.webinfo, *.vbproj.webinfo, that control the virtual root location of a Web project.
+Build output files, for example, *.dll and *.exe files.

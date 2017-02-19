@@ -25,3 +25,7 @@ http://xueqiu.com/stock/quote.json?code=SH000001%2CSZ399001&_=1441781801093
 http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=100&sort=symbol&asc=1&node=hs_a&symbol=&_s_r_a=init#
 quotes.money.163.com/service/chddata.html%3Fcode%3D1002566%26start%3D20150104%26end%3D20160108
 https://www.jisilu.cn/data/sfnew/fundb_list/
+
+各种商品各种地区的现货价格
+http://www.smm.cn/
+http://www.sci99.com/

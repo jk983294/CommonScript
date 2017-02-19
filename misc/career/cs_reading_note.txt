@@ -1,0 +1,66 @@
+UNIX编程艺术
+200到400之间逻辑行（400-800的物理行）的代码是最佳点，可能的缺陷密度达到最小
+正交性：无论你控制的是什么系统，改变每个属性的方法有且只有一个
+SPOT（single point of truth）原则:真理的单点性
+前端程序宜用自顶向下，底层程序、系统程序宜采用自底向上，以函数或库来收集底层的域原语，这样，当高层设计变化时，底层原语仍然可以重用
+实际代码往往是自顶向下和自底向上的综合产物
+完美之道，不在无可增加，而在无可删减
+OO在GUI、仿真和图形取得的成功，主要原因之一可能是因为在这些领域里很难弄错类型的本体问题。OO显示出某种使程序员陷入过度分层陷阱的倾向
+数据文件元格式
+DSV（delimiter separated values）\转义符，\\表示\，设计的比CSV好，CSV中如果有逗号用双引号，有双引号又有其他规则，容易出bug
+record-jar格式，metadata之后由%%\n分割每条record，record由key value pair组成
+让UI沉默只做对了一半，真正的聪明是找到一个办法，可以访问细节，又不让它们太显眼
+SNG用于二进制PNG文件与纯文本双向无损转换
+pipe，所有子程序并行，等待前一个子程序的输入，产生输出到下一个子程序
+Bernstein chaining，每个继发阶段的程序取代了前一阶段的程序，而不是与之并行
+pidfile技巧，/var/run下，需要信号的程序把自己的pid写下，其他程序读该文件获得目标pid。pidfile也可用作为隐含的文件锁使用，还可以用来检测是否已经有本程序实例在运行
+SIGHUP用于系统deamon重新初始化信号，SIGTERM温和关闭信号，做GC后退出，SIGKILL立即杀死进程，而且本身不能被阻塞或另外处理
+AF_INET famaily。地址被解释为主机地址和服务编号对。AF_UNIX(AF_LOCAL) family支持同一台机器上两个进程之间的通信方式（名字被解析为特殊文件的位置，与双向命名管道类似）
+使用共享内存和信号量功能可以避免通过网络栈复制数据的开销
+IPC由于文本RPC(SOAP)优于二进制RPC(Corba)
+把线程、远程调用接口和重量级面向对象设计结合使用特别危险
+真实世界里的编程其实就是管理复杂度的问题。能够管理复杂度的工具都是好东西
+m4宏处理程序，用于文本转换
+awk程序运行时一行一行过滤输入文件，每一行都顺序经过模式/行为对检查，如果模式与行匹配，则执行相关的行为。awk正在逐渐被Perl取代
+bc(basic calculator)代数标记法计算器，dc(desk calculator)逆波兰标记法计算器，支持任意精度计算
+宏与带副作用的表达式之间的交互作用可能导致不幸的结果，而且难以诊断     #define max(x, y)   x > y ? x : y
+配置信息：1. /etc控制文件 2. 系统控制的环境变量 3. 用户主目录中点文件(.**rc) 4. 用户设置的环境变量 5. 启动程序的命令行参数； 后面的覆盖前面的，越后面的配置越local
+-D define -i initialize/interactive -I include
+接口模式： 1. 配置者/执行者 2. spooler/daemon 3. 驱动/引擎 4. client/server 5. CLI服务器
+premature optimization is the root of all evil
+最强大的优化技术就是不做优化
+最有效的代码优化就是保持代码短小简单。通常，指令加载要比执行花费的时间更多
+尽量避免协议的往返。每个要求握手的协议事务都可能从任何连接延迟发展到潜在的严重降速
+减少延时策略： 1. 对可以共享开启开销的事务进行批处理 2. 允许事务重叠 3. 缓存
+选择需要管理的上下文环境，并且按照边界所允许的最小化方式构建程序。只有实证了其他方法行不通时才写庞大程序
+C语言最佳之处是资源效率和接近机器语言。最糟糕的地方是其编程简直就是资源管理的炼狱
+C++最佳之处是编译效率以及面向对象和泛型编程的结合。最糟之处是它非常怪异复杂，往往鼓励过分复杂的设计
+shell最佳之处在于书写小型脚本非常自然快捷
+Perl最强功能是内置的对文本、面向行的数据格式进行模式导向的处理功能。最佳之处是作为强力工具以供大量涉及正则表达式匹配的小型胶合脚本使用。最糟之处在于当程序很大时Perl会变得丑陋刻板，几乎无法维护
+Python最佳之处在于它鼓励清晰易读的代码，易学易用，又能够扩展到大型项目。最糟之处在于效率低下、速度缓慢
+递归make有害论。 Recursive make considered harmful
+make all/ test/ clean/dist/distclean/realclean/install/uninstall
+GDB支持C/C++调试
+gprof可以处理C/C++的性能profiler
+代码重用，man -k something
+README  INSTALL/AUTHORS/NEWS/HISTORY/CHANGES/COPYING/LICENSE/FAQ
+
+
+OS
+context switch cost: 1) number of cycles for load & store instructions 2) cold cache, cache missing
+process creation:
+1) fork, copy the parent PCB into new child PCB, child continues execution at the instruction after fork
+2) exec, replace child image, load new program and start from first instruction
+init is the parent of all processes in UNIX-based OS, Zygote is the parent of all APP processes in Android OS
+IPC
+1) communication channel like shared buffer,  benefit is OS manages, exactly the same API, downside is overhead, copy data between user mode and kernel mode
+2) shared memory, OS establishes a shared channel and maps it into each process address space, benefit is fast since no kernel data copy overhead (but the shared memory setup is expensive, only when lots of messages, the amortised cost is cheap), downside is coder need to handle the complexity for no common API
+thread out performance process: 1) thread share the same address space, it means the cost for allocate address space is only once 2) data passing among thread (usually shared variables) is cheaper than process (IPC)
+单核使用thread有优势吗？有用，比如thread1读取disk，thread2可以做计算
+Join semantic: child_status = join(child_thread), called by parent, wait for child thread to finish, then retrieve the result of child status
+condition variable: 1) wait(mutex, cond), mutex is automatically released and go to wait queue, then re-acquire mutex for critical section 2) signal(cond), wake up one thread on waiting list 3) broadcast(cond), wake up all waiting threads
+spurious wake-ups: unnecessary wake up
+dead lock avoid: 1) get all locks at one shot 2) get locks in the same order (say A first then B) 3)
+multithreading pattern
+1) Boss/Worker, worker thread pool, Boss is the producer to produce task into queue, workers are consumers. locality give better performance, worker could be specialized to one task
+2) Pipeline,
