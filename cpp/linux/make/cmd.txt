@@ -1,0 +1,45 @@
+trivial way to compile:
+g++  main.cpp hello.cpp factorial.cpp -o hello
+
+Macros
+$@          he name of the file to be made.
+$?          the names of the changed dependents.
+$<          the name of the related file that caused the action.
+$*          the prefix shared by target and dependent files
+AS          Program for compiling assembly files; default is `as'.
+CC          Program for compiling C programs; default is `cc'.
+CXX         Program for compiling C++ programs; default is `g++'.
+CPP         Program for running the C preprocessor, with results to standard output; default is `$(CC) -E'.
+LINT        Program to use to run lint on source code; default is `lint'.
+RM          Command to remove a file; default is `rm -f'.
+CFLAGS      Extra flags to give to the C compiler.
+CXXFLAGS    Extra flags to give to the C compiler.
+CPPFLAGS    Extra flags to give to the C preprocessor and programs, which use it (such as C and Fortran compilers).
+LDFLAGS     Extra flags to give to compilers when they are supposed to invoke the linker, `ld'.
+LINTFLAGS   Extra flags to give to lint.
+
+make all − It compiles everything so that you can do local testing before installing applications.
+make install − It installs applications at right places. But watch out that things are installed in the right place for your system.
+make clean − It clean applications up, gets rid of the executables, any temporary files, object files, etc.
+
+Makefile Implicit Rules
+# make x out of x.c -- run cc on x.c and call the output x
+.cpp:
+	$(CC) $(CFLAGS) $@.cpp $(LDFLAGS) -o $@
+# construction of .o (object) files out of .cpp (source files)
+.cpp.o:
+	$(CC) $(CFLAGS) -c $*.cpp
+
+# Suffix Rules
+# make a .o file from a .c file
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+# recompile avoid
+# make checks its object file and compares the time stamps.
+# If source file is newer than the object file, then it generates new object file assuming that the source file has been changed.
+make -t                                     # mark all the object files as up to date
+make -o header_file                         # marks a specified file as "old"
+
+
+make -f your-makefile-name
