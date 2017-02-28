@@ -1,0 +1,9 @@
+ctrl + w                        close current window
+win + L                         lock
+win + E                         resource manager
+win + D                         hide everything
+win + tab                       3D tab window
+win + +                         zoom in
+win + R                         run something
+psr.exe                         record
+osk                             on-screen keyboard

@@ -60,7 +60,57 @@ thread out performance process: 1) thread share the same address space, it means
 Join semantic: child_status = join(child_thread), called by parent, wait for child thread to finish, then retrieve the result of child status
 condition variable: 1) wait(mutex, cond), mutex is automatically released and go to wait queue, then re-acquire mutex for critical section 2) signal(cond), wake up one thread on waiting list 3) broadcast(cond), wake up all waiting threads
 spurious wake-ups: unnecessary wake up
-dead lock avoid: 1) get all locks at one shot 2) get locks in the same order (say A first then B) 3)
-multithreading pattern
+dead lock avoid: 1) get all locks at one shot 2) get locks in the same order (say A first then B)
+multi-threading pattern
 1) Boss/Worker, worker thread pool, Boss is the producer to produce task into queue, workers are consumers. locality give better performance, worker could be specialized to one task
-2) Pipeline,
+2) Pipeline: use thread pool, use shared buffer based communication for passing data across stages
+3) layered pattern
+thread related data structures:
+1) PCB: [1] hard process state: virtual address mapping [2] light process state: signals, sys call args
+2) user level thread (ULT): UL thread ID, UL registers, thread stack
+3) kernel level thread (KLT): stack, registers
+thread management visibility:
+1) kernel sees: KLTs, CPUs, KL scheduler
+2) UL thread library sees: ULTs, available KLTs(decided by user mode thread / kernel mode thread mapping)
+thread pinning: bound one user mode thread to specified kernel mode thread, this improves locality
+adaptive mutex: on multi-CPU system, it is better to spin rather than block when the owner of the mutex is running on another CPU and critical section is short
+interrupts: events generated externally by hardware(IO, timer), asynchronously
+signals: triggered by code, synchronously or asynchronously
+interrupts vs signals similarity: 1) unique ID 2) can be masked, per-CPU interrupt mask(when masked, hardware interrupt will not be delivered to CPU), per-process signal mask(when masked, kernel sees mask and will not interrupt corresponding thread)
+interrupt can be directed to any CPU that has them enabled. we can designate one core to handle the interrupt so that other core won't get disturbed
+type of signals: 1) one shot signal: n signals pending == 1 signal pending, must be explicitly re-enabled 2) real time signals, if n signals raised, then handler is called n times
+interrupt handling can be divided two parts: 1) top half, execute in current stack, no need to launch another thread, fast, non-block, min amount of processing 2) bottom half, execute in another thread, arbitrary complexity
+linux thread support: 1) execution context abstraction is task 2) native POSIX threads library (NPTL), 1:1 model, 1 ULT : 1 KLT
+thread benefits: 1) parallelization, speed up 2) specialization, hot cache 3) efficiency, lower memory requirement and cheaper synchronization 4) hide latency of I/O
+performance metrics(measurable quantity):
+1) wait time 2) throughput 3) CPU utilization 4) execution time 5) platform efficiency 6) performance per money
+7) performance per power 8) percentage of SLA violations 9) client perceived performance 10) average resource usage
+11) bandwidth (bytes / time) 12) connection rate (request / time)
+Are threads useful? it depends on: 1) metrics 2) workload
+event driven model, state machine, single address space, single process, single thread of control, event dispatcher dispatch event event handlers, in event handler, when meet sync, it will give control back to dispatcher and put itself into block queue, helper is process which handle the block I/O operations
+multiple thread(MT) VS multiple process(MP) VS event driven model(EDM):
+MP, good: simple programming; bad: high memory usage, costly context switch, costly to maintain shared state across process
+MT, good: shared address space, shared state, cheap context switch; bad: not simple implementation, require synchronization, OS underlying support for threads
+EDM, good: single address space, single flow of control, smaller memory requirement, no context switch, no synchronization, asynchronous I/O; bad: applicability to certain classes of applications, not applicable to arbitrary applications, event routing on multi CPU systems
+Shortest Job First(SJF) gives best waiting time metric
+priority inversion: temp boost priority of mutex owner, then lower priority again when releasing mutex
+time slice: more I/O intensive, less time slice is better, more CPU intensive, more time slice is better
+multi-level feedback queue(MLFQ), different policy for different level
+linux O(1) scheduler, constant time to select/add task, real time (0-99), time sharing (100-139), user processes, default priority 120, nice value (-20-19), different time slice for different priority, user's program tend to CPU intensive which should be given high CPU time slice
+linux CFS(completely fair scheduler), red-black tree, order by "vruntime"(time spent on CPU), select task O(1), add task O(log N)
+multi-CPU, each CPU has private caches (L1, L2), the last level cache(LLC) may or may not be shared, DRAM is shared by CPUs
+multi-core, each core has privete L1, cores within same CPU share LLC and memory
+cache affinity important, hierarchical scheduler architecture, run-queue load balance for different CPUs, also NUMA(non-uniform memory access)-aware scheduling used for support
+hyper-threading(hardware multi-threading, chip multi-threading, simultaneous multi-threading), still 1 CPU but with very fast context switch, because multiple hardware supported(several sets of registers)
+hyper-threading scheduler use hardware informations, CPI(cycles-per-instruction), memory bound task tend to high CPI, CPU bound task tend to low CPI
+memory management hardware support:
+1) MMU(memory management unit): translate virtual to physical addresses
+2) register: pointer to page table, segment base& limit size
+3) cache: TLB(translation lookaside buffer)
+4) translation: actual physical address generation
+
+
+C++模板元编程
+编译期无法实现迭代，因此，对于元程序，递归是常用的手段
+我们可以通过引入一个额外的间接层来解决任何问题。由于primitve不能有内部嵌套类型，所以引入traits
+traits: value_type, reference, pointer, difference_type, iterator_category
