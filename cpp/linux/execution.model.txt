@@ -14,7 +14,7 @@ g++ -O3 fast.C
 g++ -c a.C b.C c.C -I/$HOME/myHeaders
 g++ a.o b.o c.o d.C -lmylib -L$HOME/myLibs
 # warn all, treat all warning as error
-g++ -Wall -Werror -ansi -pedantic
+g++ -Wall -Werror -ansi -pedantic -std=c++11
 
 
 
