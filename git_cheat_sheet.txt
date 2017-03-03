@@ -1,9 +1,13 @@
 创建
 	复制一个已创建的仓库:
 	$ git clone https://github.com/jk983294/CommonScript.git
+	$ git clone git@github.com:jk983294/Store.git
 	创建一个新的本地仓库:
 	$ git init
-	
+	$ git add .
+	$ git commit -am "initial commit"
+	$ git remote add origin ssh://git@github.com:jk983294/Store.git
+
 本地修改
 	显示工作路径下已修改的文件：
 	$ git status
@@ -87,6 +91,8 @@
 	git push <remote> --delete <branch> (since Git v1.7.0)
 	发布标签:
 	$ git push --tags
+	reset url from https to ssh
+	$ git remote set-url origin git+ssh://git@github.com/jk983294/CommonScript.git
 
 合并与重置
 	将分支合并到当前HEAD中：
@@ -114,6 +120,7 @@
 	移除缓存区的所有文件（i.e. 撤销上次git add）:
 	$ git reset HEAD
 	放弃某个文件的所有本地修改：
+	$ git checkout file_to_recover
 	$ git checkout HEAD <file>
 	重置一个提交（通过创建一个截然不同的新提交）
 	$ git revert <commit>

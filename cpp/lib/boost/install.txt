@@ -15,3 +15,6 @@ linker for whole project, choose Configuration to All Configurations, VC++ Direc
     Include Directories         E:\boost_1_62_0
     x86 Library Directories     E:\boost_1_62_0\libs
     x64 Library Directories     E:\boost_1_62_0\lib64-msvc-12.0
+
+sudo apt-cache search boost
+sudo apt-get install libboost-dev
