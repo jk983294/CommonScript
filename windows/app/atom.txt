@@ -1,0 +1,12 @@
+cmd-shift-P                                 命令面板
+cmd-O                                       open file
+cmd-shift-O                                 打开目录
+cmd-S                                       保存文件
+cmd-shift-S                                 文件另存为
+cmd-T / cmd-P                               模糊查找文件名
+cmd-B                                       查找文件名,只查找已经打开的文件
+
+
+
+ctrl-alt-b                                  atom-beautify
+apm install atom-beautify
