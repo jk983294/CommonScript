@@ -1,0 +1,5 @@
+script suffix is .sh
+add PATH variable
+add execute permission
+bash -x script_name.sh                                  # debug mode
+echo $?                                                 # last script quit code

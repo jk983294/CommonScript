@@ -108,6 +108,11 @@ memory management hardware support:
 2) register: pointer to page table, segment base& limit size
 3) cache: TLB(translation lookaside buffer)
 4) translation: actual physical address generation
+memory allocation challenges: external fragmentation (holes)
+linux allocators:
+1) Buddy Allocator, used in page allocation, start with 2^x area, subdivide into 2^x chunks and find smallest 2^x chunk that can satisfy request, encounter internal fragmentation because not all object is 2^y size
+2) Slab Allocator, categorize different object, allocate slabs for that kind of objects, a slab contains n entry for that objects, no internal or external fragmentation
+linux free up physical memory: parameters to tune thresholds, categorize pages into different types, "second chance" variation of LRU
 
 
 C++模板元编程

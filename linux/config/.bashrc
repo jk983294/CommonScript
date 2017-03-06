@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-        color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -116,11 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33'
-PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
-export TERM=xterm-color
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1
+# user specific aliases and functions
 export COLOR_NC='\e[0m' # No Color
 export COLOR_WHITE='\e[1;37m'
 export COLOR_BLACK='\e[0;30m'
@@ -140,3 +136,14 @@ export COLOR_GRAY='\e[0;30m'
 export COLOR_LIGHT_GRAY='\e[0;37m'
 alias g++="g++ -std=c++11"
 alias gcc="gcc -std=c++11"
+#set -o noclobber
+PROMPT_RED="\[\033[1;31m\][\u@\h \w]$\[\033[0m\] "
+PROMPT_BLUE="\[\033[1;34m\][\u@\h \w]$\[\033[0m\] "
+function prompt {
+    if [[ $1 = 'red' ]]
+    then
+        export PS1=$PROMPT_RED
+    else
+        export PS1=$PROMPT_BLUE
+    fi
+}

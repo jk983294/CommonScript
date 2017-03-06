@@ -5,3 +5,26 @@ CTRL + ALT + Fx                                     go to console x, tty1 - tty6
 CTRL + ALT + F1                                     go to physical terminal tty1
 CTRL + ALT + F7                                     go to pesudo terminal
 ALT + F2                                            open something
+
+# move
+ALT + B                                             向前移动一个单词
+ALT + F                                             向后移动一个单词
+CTRL + B                                            向前移动一个字母
+CTRL + F                                            向后移动一个字母
+CTRL + A                                            移动到命令起始处
+CTRL + E                                            移动到命令结尾处
+
+# delete
+CTRL + W                                            向左删一个单词
+CTRL + U                                            删除光标至起始处全部字符
+CTRL + K                                            删除光标后面的所有字符
+
+# copy & paste
+CTRL + U
+CTRL + W
+CTRL + K                                            cut
+CTRL + Y                                            Paste things deleted using CTRL + U, CTRL + W, CTRL + K
+
+# stop
+CTRL + C                                            terminate, sends a SIGINIT signal
+CTRL + Z                                            suspend

@@ -1,12 +1,73 @@
-cmd-shift-P                                 命令面板
-cmd-O                                       open file
-cmd-shift-O                                 打开目录
-cmd-S                                       保存文件
-cmd-shift-S                                 文件另存为
-cmd-T / cmd-P                               模糊查找文件名
-cmd-B                                       查找文件名,只查找已经打开的文件
+Ctrl-shift-P                                    命令面板
+Ctrl-O                                          open file
+Ctrl-shift-O                                    打开目录
+Ctrl-S                                          保存文件
+Ctrl-shift-S                                    文件另存为
+Ctrl-T / cmd-P                                  模糊查找文件名
+Ctrl-B                                          查找文件名,只查找已经打开的文件
+
+# Moving
+Ctrl+Left                                       Move to the beginning of word
+Ctrl+Right                                      Move to the end of word
+Home                                            Move to the first character of the current line
+End                                             Move to the end of the line
+Ctrl+Home                                       Move to the top of the file
+Ctrl+End                                        Move to the bottom of the file
+Ctrl+G row:column
+Ctrl+R                                          Navigating by Symbols, function name
+
+# Selections
+Ctrl+Shift+Left                                 Select to beginning of word
+Ctrl+Shift+Right                                Select to end of word
+Shift+End                                       Select to end of line
+Shift+Home                                      Select to first character of line
+Ctrl+Shift+Home                                 Select to top of file
+Ctrl+Shift+End                                  Select to bottom of file
+Ctrl+A                                          Select the entire contents of the file
+Ctrl+L                                          Select the entire line
+
+# Editing and Deleting Text
+Ctrl+Shift+K                                    Delete current line
+Ctrl+Backspace                                  Delete to beginning of word
+Ctrl+Delete                                     Delete to end of word
+
+Ctrl+Click                                      Add a new cursor at the clicked location
+Alt+Shift+Up/Down                               Add another cursor above/below the current cursor
+Ctrl+D                                          Select the next word in the document that is the same as the currently selected word
+Alt+F3                                          Select all words in the document that are the same as the currently selected word
+
+Ctrl+M                                          Jump to the bracket matching the one adjacent to the cursor. It jumps to the nearest enclosing bracket when there's no adjacent bracket.
+Alt+Ctrl+M                                      Select all the text inside the current brackets
+Alt+U                                           Toggle menu to change file encoding
+
+# Find and Replace
+Ctrl+F                                          Search within a buffer
+Ctrl+Shift+F                                    Search the entire project
+Esc                                             close search
+
+# Folding
+Alt+Ctrl+[                                      fold
+Alt+Ctrl+]                                      unfold
+Alt+Ctrl+Shift+[                                fold everything
+Alt+Ctrl+Shift+]                                unfold everything
 
 
+# Panes
+Ctrl+W                                          close a pane with close all pane items
 
-ctrl-alt-b                                  atom-beautify
+# Grammar
+Ctrl+Shift+L                                    Grammar Selector
+
+# Version Control
+Alt+Ctrl+Z                                      checks out the HEAD revision
+
+# Spell Checking
+Ctrl+Shift+;                                    possible corrections
+
+# Previews
+Ctrl+Shift+M                                    toggle Preview mode for Markdown.
+
+ctrl-alt-b                                      atom-beautify
 apm install atom-beautify
+apm install <package_name>                      install the latest version.
+apm install <package_name>@<package_version>    install a specific version.
