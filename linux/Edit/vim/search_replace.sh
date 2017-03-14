@@ -3,16 +3,18 @@
 # %                             specify the whole document
 # 103,199                       range of document
 
+# CTRL + O                      go back to where you came, repeat to go back further.
+# CTRL + I                      opposite of CTRL + O
+
 # Search
-# /str                          ²éÕÒstr£¬ÕÒµ½ÒÔºó°´nÏòÏÂ¼ÌĞø²éÕÒ¡¢NÔòÏòÉÏ¼ÌĞø²éÕÒ
-# /                             searches forwards (downwards) in the file.
-# ?                             searches backwards (upwards) in the file.
+# /str                          find str, press n for next occurrence, N for previous occurrence
+# ?str                          searches backwards (upwards), press n for previous occurrence, N for next occurrence
 # f                             search forwards for a character on the current line only
 # F                             search backwards for a character on the current line only
 # t                             search for a character on the current line only, for t, the cursor moves to the position before the character
 # T                             search for a character on the current line only, for t, the cursor moves to the position after the character
-# mx                            ²åÈëÊéÇ©£¨xÎªĞ¡Ğ´×ÖÄ¸£©£¬ÒÔºó¿ÉÒÔÓÃ`xÌø×ªµ½¸ÃÊéÇ©´¦
-# `.                            ÉÏ´Î±à¼­µÄÎ»ÖÃ
+# mx                            æ’å…¥ä¹¦ç­¾ï¼ˆxä¸ºå°å†™å­—æ¯ï¼‰ï¼Œä»¥åå¯ä»¥ç”¨`xè·³è½¬åˆ°è¯¥ä¹¦ç­¾å¤„
+# `.                            ä¸Šæ¬¡ç¼–è¾‘çš„ä½ç½®
 # special character
 # ^                             Search at the beginning of the line. (Use at the beginning of a search expression.)
 # $                             End of the line (Use at the end of the search expression.)
@@ -24,8 +26,8 @@
 
 # Replacing Text
 # :s/search/replace/g           substitute search with replace
-# :s/s1/s2                      ÏÂÒ»¸ös1Ìæ»»Îªs2
-# :%s/s1/s2                     s1È«²¿Ìæ»»Îªs2
-# :s/s1/s2/g                    µ±Ç°ĞĞµÄs1Ìæ»»Îªs2
-# :5,20s/s1/s2/g                ´Ó5µ½20ĞĞµÄs1Ìæ»»Îªs2
+# :s/s1/s2                      ä¸‹ä¸€ä¸ªs1æ›¿æ¢ä¸ºs2
+# :%s/s1/s2                     s1å…¨éƒ¨æ›¿æ¢ä¸ºs2
+# :s/s1/s2/g                    å½“å‰è¡Œçš„s1æ›¿æ¢ä¸ºs2
+# :5,20s/s1/s2/g                ä»5åˆ°20è¡Œçš„s1æ›¿æ¢ä¸ºs2
 # :5,20s/^/    /                indent 5-20 lines

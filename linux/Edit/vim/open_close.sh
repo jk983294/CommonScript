@@ -4,8 +4,8 @@ vim newfile
 vim +127 a.cpp                                      # open a.cpp, jump to 127th line
 vim +/pattern a.cpp                                 # open a.cpp, search text pattern, locate to that line
 vim +?/dev/sda1 /etc/fstab                          # open /etc/fstab, search the occurrence of /dev/sda1, locate the cursor to that line
-vim -On file1 file2 ...                             # ´¹Ö±·ÖÆÁ´ò¿ª¶à¸öÎÄ¼ş
-vim -on file1 file2 ...                             # Ë®Æ½·ÖÆÁ´ò¿ª¶à¸öÎÄ¼ş
+vim -On file1 file2 ...                             # å‚ç›´åˆ†å±æ‰“å¼€å¤šä¸ªæ–‡ä»¶
+vim -on file1 file2 ...                             # æ°´å¹³åˆ†å±æ‰“å¼€å¤šä¸ªæ–‡ä»¶
 
 
 # q                             quit without save
@@ -32,11 +32,11 @@ vim -on file1 file2 ...                             # Ë®Æ½·ÖÆÁ´ò¿ª¶à¸öÎÄ¼ş
 # :n                            go to next file in the series.
 # :p                            go to previous file in the series.
 # :N                            go to previous file in the series.
-# ctrl+w s                      ÉÏÏÂ·Ö¸îµ±Ç°ÎÄ¼ş
-# ctrl+w v                      Ë®Æ½·Ö¸îµ±Ç°ÎÄ¼ş
-# :sp filename                  ÉÏÏÂ·Ö¸î´ò¿ªĞÂÎÄ¼ş
-# :vsp filename                 Ë®Æ½·Ö¸î´ò¿ªĞÂÎÄ¼ş
-# ctrl+w h/j/k/l/w              ÇĞ»»¹¤×÷ÆÁÄ», h/j/k/lÊÇ°´ÕÕ·½ÏòÒÆ¶¯£¬wÊÇÒÆ¶¯µ½ÏÂÒ»¸öÆÁÄ»
-# ctrl+w =                      ËùÓĞÆÁÄ»¶¼Ò»ÑùµÄ¸ß¶È
-# ctrl+w -                      ½µµÍ¸ß¶È
-# ctrl+w +                      Ôö¼Ó¸ß¶È
+# ctrl+w s                      ä¸Šä¸‹åˆ†å‰²å½“å‰æ–‡ä»¶
+# ctrl+w v                      æ°´å¹³åˆ†å‰²å½“å‰æ–‡ä»¶
+# :sp filename                  ä¸Šä¸‹åˆ†å‰²æ‰“å¼€æ–°æ–‡ä»¶
+# :vsp filename                 æ°´å¹³åˆ†å‰²æ‰“å¼€æ–°æ–‡ä»¶
+# ctrl+w h/j/k/l/w              åˆ‡æ¢å·¥ä½œå±å¹•, h/j/k/læ˜¯æŒ‰ç…§æ–¹å‘ç§»åŠ¨ï¼Œwæ˜¯ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªå±å¹•
+# ctrl+w =                      æ‰€æœ‰å±å¹•éƒ½ä¸€æ ·çš„é«˜åº¦
+# ctrl+w -                      é™ä½é«˜åº¦
+# ctrl+w +                      å¢åŠ é«˜åº¦

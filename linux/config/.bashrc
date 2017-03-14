@@ -91,6 +91,10 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias psg='ps | grep -i '
+alias lsg='ls | grep -i '
+alias gitpull='git pull origin master'
+alias gitpush='git push origin master'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

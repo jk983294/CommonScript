@@ -136,9 +136,7 @@ config
     git config --list
 
 aliases
-    git config alias.st status
     git config --global alias.st status
-    git config --global alias.st "status --short --branch"
     git config --global alias.cma "commit --all -m"
     git config --global alias.pushom "push origin master"
     git config --global alias.pullom "pull origin master"
