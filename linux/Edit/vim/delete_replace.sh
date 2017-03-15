@@ -18,8 +18,8 @@
 # dj                            delete current line and cursor go to next line
 # dk                            delete current line and cursor go to previous line
 
-# put previously deleted text after the cursor
-# p                             put data next line when dd, next cursor when d3w
+# paste(put) previously deleted text after the cursor
+# p                             paste(put) data next line when dd, next cursor when d3w
 
 # change command, Esc to get out of change mode
 # ce                            change until the end of a word
@@ -27,10 +27,9 @@
 # cw                            change the word the cursor is on from the cursor to the end of the word.
 # c$                            change until the end of line
 # c3w                           change 3 words
+# s                             delete one character and leave you in insert mode
+# S                             delete the line and leave you in insert mode
 
 # replace command
-# rx                            replace the character at the cursor with  x
-# R                             overwrite multiple characters beginning with the character currently under the cursor. You must use Esc to stop the overwriting.
-
-# s                             replace the current character with the character you type. Afterward, you are left in insert mode.
-# S                             delete the line the cursor is on and replaces with new text. After the new text is entered, vi remains in insert mode.
+# rx                            replace only one character with  x
+# R                             replace multiple characters until ESC

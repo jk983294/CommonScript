@@ -6,7 +6,8 @@
 # $/0/^                             line end / line start / line start
 # H/M/L                             screen top(High) / middle / bottom(Low)
 # */#                               current character next occurrence / previous occurrence
-# w/b                               next word / back(previous) word
+# w/b                               start of [ next word / back(previous) ] word
+# e                                 end of next word
 # 5w                                next 5 words, count excluding current word
 # 5e                                next 5 words, count including current word
 # 2b                                previous 2 words

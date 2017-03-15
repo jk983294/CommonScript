@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-yy                          Copies the current line.
-yw                          Copies the current word from the character the cursor is on until the end of the word.
-p                           Puts the copied text after the cursor.
-P                           Puts the yanked text before the cursor.
+yy                          yank the current line
+yw                          yank the current word
+y$                          yank to the end of line
+p                           paste(put) the yanked text after the cursor.
+P                           paste(put) the yanked text before the cursor.
 shift + insert              in edit mode, copy
 
 # Before you paste, type this in normal mode:
