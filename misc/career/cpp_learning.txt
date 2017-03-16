@@ -1,8 +1,8 @@
-ÕÔ¾¼. LinuxÄÚºËÍêÈ«×¢ÊÍ ÄÚºË°æ±¾0.11
+èµµç‚¯. Linuxå†…æ ¸å®Œå…¨æ³¨é‡Š å†…æ ¸ç‰ˆæœ¬0.11
 http://antriver.com/linux/src/linux-3.15.7.html
 https://kernelnewbies.org/
 OpenGrok/ Source Insight
-Boost£¬Qt£¬Silicon£¬tufao£¬TreeFrog£¬WTL£¬STL£¬libev£¬Cocos2d-x£¬Dlib£¬Ultimate++£¬Asio£¬TinyXML£¬libxml++£¬CEGUI¡¢FLTK¡¢wxWidgets¡¢Ogre 3D¡¢Cairo¡¢Skia¡¢OpenCV¡¢CxImage¡¢Json++¡¢Json11¡¢CppUnit¡¢OpenSSL¡¢Crypto++¡¢C++React¡¢OpenCL¡¢OpenAL¡¢Vorbis¡¢Memcached¡¢libcurl¡¢SQLite
+Boostï¼ŒQtï¼ŒSiliconï¼Œtufaoï¼ŒTreeFrogï¼ŒWTLï¼ŒSTLï¼Œlibevï¼ŒCocos2d-xï¼ŒDlibï¼ŒUltimate++ï¼ŒAsioï¼ŒTinyXMLï¼Œlibxml++ï¼ŒCEGUIã€FLTKã€wxWidgetsã€Ogre 3Dã€Cairoã€Skiaã€OpenCVã€CxImageã€Json++ã€Json11ã€CppUnitã€OpenSSLã€Crypto++ã€C++Reactã€OpenCLã€OpenALã€Vorbisã€Memcachedã€libcurlã€SQLite
 
 
 unit test
@@ -13,11 +13,10 @@ https://github.com/philsquared/Catch
 Advanced C and C++ Compiling
 
 
-Thrift:ÓÃÀ´½øÐÐ¿ÉÀ©Õ¹ÇÒ¿çÓïÑÔµÄ·þÎñµÄ¿ª·¢(ÀàËÆµÄ»¹ÓÐ¸öAvro£¬Google protobuf)¡£
-libevent:ÊÇÒ»¸öÊÂ¼þ´¥·¢µÄÍøÂç¿â£¬ÊÊÓÃÓÚwindows¡¢linux¡¢bsdµÈ¶àÖÖÆ½Ì¨£¬ÄÚ²¿Ê¹ÓÃselect¡¢epoll¡¢kqueueµÈÏµÍ³µ÷ÓÃ¹ÜÀíÊÂ¼þ»úÖÆ¡££¨¶ÔÁË»¹ÓÐ¸ölibevÄØ£©
-Boost:²»¶àËµÁË£¬×¼C++±ê×¼¿â
-Valgrind\Ptmalloc\Purify: µ÷ÊÔ¹¤¾ß
-NetworkServer¼Ü¹¹£ºacceptor->dispatcher->worker
-breakpad:±ÀÀ£×ª´¢ºÍ·ÖÎöÄ£¿é£¬ºÜ¶àcrashreport»áÓÃµ½
-UI½çÃæÏà¹Ø£ºMFC¡¢BCGºÍQTÕâÀàµÄ¾Í²»ËµÁË£¬¸ß¶ËÒ»µãµÄ»¹ÓÐHtmlºÍDirectUI¼¼Êõ£ºlibcef£¨»ùÓÚchromeÄÚºËµÄ£¬ÏëÏëÊ¹ÓÃhtml5¿ª·¢Ò³Ãæ£¬»¹ÕæÓÐµãÐ¡¼¤¶¯ÄØ£©¡¢HtmlLayout¡¢Duilib¡¢Bolt£¬·ÇC++µÄ£¬»¹ÓÐnode-webkitÒ²²»´í£¬¼¯³ÉÁËnodeºÍwebkitÄÚºË¡£
-
+Thrift:ç”¨æ¥è¿›è¡Œå¯æ‰©å±•ä¸”è·¨è¯­è¨€çš„æœåŠ¡çš„å¼€å‘(ç±»ä¼¼çš„è¿˜æœ‰ä¸ªAvroï¼ŒGoogle protobuf)ã€‚
+libevent:æ˜¯ä¸€ä¸ªäº‹ä»¶è§¦å‘çš„ç½‘ç»œåº“ï¼Œé€‚ç”¨äºŽwindowsã€linuxã€bsdç­‰å¤šç§å¹³å°ï¼Œå†…éƒ¨ä½¿ç”¨selectã€epollã€kqueueç­‰ç³»ç»Ÿè°ƒç”¨ç®¡ç†äº‹ä»¶æœºåˆ¶ã€‚ï¼ˆå¯¹äº†è¿˜æœ‰ä¸ªlibevå‘¢ï¼‰
+Boost:ä¸å¤šè¯´äº†ï¼Œå‡†C++æ ‡å‡†åº“
+Valgrind\Ptmalloc\Purify: è°ƒè¯•å·¥å…·
+NetworkServeræž¶æž„ï¼šacceptor->dispatcher->worker
+breakpad:å´©æºƒè½¬å‚¨å’Œåˆ†æžæ¨¡å—ï¼Œå¾ˆå¤šcrashreportä¼šç”¨åˆ°
+UIç•Œé¢ç›¸å…³ï¼šMFCã€BCGå’ŒQTè¿™ç±»çš„å°±ä¸è¯´äº†ï¼Œé«˜ç«¯ä¸€ç‚¹çš„è¿˜æœ‰Htmlå’ŒDirectUIæŠ€æœ¯ï¼šlibcefï¼ˆåŸºäºŽchromeå†…æ ¸çš„ï¼Œæƒ³æƒ³ä½¿ç”¨html5å¼€å‘é¡µé¢ï¼Œè¿˜çœŸæœ‰ç‚¹å°æ¿€åŠ¨å‘¢ï¼‰ã€HtmlLayoutã€Duilibã€Boltï¼ŒéžC++çš„ï¼Œè¿˜æœ‰node-webkitä¹Ÿä¸é”™ï¼Œé›†æˆäº†nodeå’Œwebkitå†…æ ¸ã€‚

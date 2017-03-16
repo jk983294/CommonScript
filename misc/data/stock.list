@@ -1,18 +1,18 @@
-#²éÊĞÓ¯ÂÊµÄ£º
+#æŸ¥å¸‚ç›ˆç‡çš„ï¼š
 #http://biz.finance.sina.com.cn/company/compare/img_syl_compare.php?stock_code=600036,&limit=2400
-#600036¸Ä³ÉÏë²éµÄ¹ÉÆ±´úÂë 2400¸Ä³ÉÈÎºÎÄãÏë²é¿´µÄ¶àÉÙÌì
+#600036æ”¹æˆæƒ³æŸ¥çš„è‚¡ç¥¨ä»£ç  2400æ”¹æˆä»»ä½•ä½ æƒ³æŸ¥çœ‹çš„å¤šå°‘å¤©
 
-#²éÊĞ¾»ÂÊµÄ£º
+#æŸ¥å¸‚å‡€ç‡çš„ï¼š
 #http://biz.finance.sina.com.cn/company/compare/img_sjl_compare.php?stock_code=600036,&limit=2400
-#600036¸Ä³ÉÏë²éµÄ¹ÉÆ±´úÂë 2400¸Ä³ÉÈÎºÎÄãÏë²é¿´µÄ¶àÉÙÌì
+#600036æ”¹æˆæƒ³æŸ¥çš„è‚¡ç¥¨ä»£ç  2400æ”¹æˆä»»ä½•ä½ æƒ³æŸ¥çœ‹çš„å¤šå°‘å¤©
 
-#Èç¹ûÍ¬Ê±²éÑ¯¶àÖ§¸ö¹É¿ÉÒÔÔÚ¹ÉÆ±´úÂëºóÃæ¼Ó¶ººÅºÍ¹ÉÆ±´úÂë¾ÍĞĞÁË
-#±ÈÈç£ºhttp://biz.finance.sina.com.cn/company/compare/img_syl_compare.php?stock_code=000002,000001,600030&limit=1500
+#å¦‚æœåŒæ—¶æŸ¥è¯¢å¤šæ”¯ä¸ªè‚¡å¯ä»¥åœ¨è‚¡ç¥¨ä»£ç åé¢åŠ é€—å·å’Œè‚¡ç¥¨ä»£ç å°±è¡Œäº†
+#æ¯”å¦‚ï¼šhttp://biz.finance.sina.com.cn/company/compare/img_syl_compare.php?stock_code=000002,000001,600030&limit=1500
 
-#ÀíĞÔÈËÍøÕ¾ÉÏÌá¹©ÁË¸ö¹ÉµÄÀúÊ·PE¡¢PB¡¢PSÊı¾İ¡£
-#ÀıÈç¹úÒ©Ò»ÖÂ£¬https://www.rational-person.com/analytics/company#/000028/detail/chart
+#ç†æ€§äººç½‘ç«™ä¸Šæä¾›äº†ä¸ªè‚¡çš„å†å²PEã€PBã€PSæ•°æ®ã€‚
+#ä¾‹å¦‚å›½è¯ä¸€è‡´ï¼Œhttps://www.rational-person.com/analytics/company#/000028/detail/chart
 
-ÖĞ¹úÖ¸ÊıÓĞÏŞ¹«Ë¾
+ä¸­å›½æŒ‡æ•°æœ‰é™å…¬å¸
 http://www.csindex.com.cn/sseportal/csiportal/hy_syl/syl.jsp
 
 
@@ -26,6 +26,6 @@ http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Cente
 quotes.money.163.com/service/chddata.html%3Fcode%3D1002566%26start%3D20150104%26end%3D20160108
 https://www.jisilu.cn/data/sfnew/fundb_list/
 
-¸÷ÖÖÉÌÆ·¸÷ÖÖµØÇøµÄÏÖ»õ¼Û¸ñ
+å„ç§å•†å“å„ç§åœ°åŒºçš„ç°è´§ä»·æ ¼
 http://www.smm.cn/
 http://www.sci99.com/
