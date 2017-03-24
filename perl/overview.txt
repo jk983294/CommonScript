@@ -1,4 +1,0 @@
-# file path: /perl/execution.pl
-# active perl / strawberry perl
-# perl script.pl
-# perl -e 'print "Hello World\n"'
