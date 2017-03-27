@@ -14,6 +14,7 @@ cp file1 ..                         # copy file1 to parent directory
 cp -i file1 ..                      # copy with interaction if the same file already exist
 cp -i file* ..                      # copy all files start with file to parent directory
 cp -R files/ backup/                # copy files folder to backup folder recursively
+echo /dir1 /dir2 /dir3 | xargs -n 1 cp -v /path/tocopy              # copy tocopy to several destinations
 
 # move and rename
 mv file5 filenewname                # rename
@@ -52,5 +53,3 @@ dd if=/dev/sda of=/data/file count=1 bs=512
 dd if=/dev/zero of=/dev/sda count=1 bs=512
 # recover MBR from backup
 dd if=/data/file of=/dev/sda count=1 bs=512
-
-

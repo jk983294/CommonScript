@@ -1,0 +1,4 @@
+All Setting -> Time & Date -> Location Beijing
+All Setting -> Time & Date -> Clock -> time in other location -> Location Beijing & remove UTC
+then
+sudo hwclock --localtime --systohc                                  # sync local time to hardware time

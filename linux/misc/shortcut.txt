@@ -28,3 +28,4 @@ CTRL + Y                                            Paste things deleted using C
 # stop
 CTRL + C                                            terminate, sends a SIGINIT signal
 CTRL + Z                                            suspend
+Ctrl + \                                            terminate process, generate core dump

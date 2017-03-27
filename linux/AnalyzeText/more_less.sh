@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # more can only page down large file
 # space     page down
@@ -12,6 +12,6 @@ more /etc/services
 # /http                 search for http string
 # n                     go to next occurrence of http string
 # q                     quit
+# v                     editor mode, editor specified by $EDITOR
 less /etc/services
 ls -l /etc | less
-

@@ -18,6 +18,10 @@ tar -xvf etc.tar
 tar -xzvf etc.tgz
 tar -xjvf etc.tar.bz
 
+# expand to directory foo
+mkdir foo
+tar -xzf bar.tar.gz -C foo
+
 # check size of the archive
 ls -lh etc.t*
 du -sh /etc
@@ -37,3 +41,5 @@ file etc.tar                                # POSIX tar archive (GNU)
 file etc.tgz                                # gzip compressed data
 file etc.tar.bz                             # bzip2 compressed data, block size = 900k
 
+# remove all unziped files
+/bin/rm -f "$(tar ztf /path/to/file.tar.gz)"

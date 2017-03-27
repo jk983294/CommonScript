@@ -5,6 +5,9 @@ cat .bash_history               # show history
 history                         # show history
 
 !g                              # run last command starting with g
+!!                              # run last command
+sudo !!                         # run last command with root permission
+^old^new^                       # run last command, replace old with new
 
 cd /etc
 cd /usr

@@ -88,11 +88,12 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
+alias vi='vim'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias psg='ps | grep -i '
-alias lsg='ls | grep -i '
+alias psg='ps | grep -i'
+alias lsg='ls | grep -i'
 alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
 
@@ -138,6 +139,7 @@ export COLOR_BROWN='\e[0;33m'
 export COLOR_YELLOW='\e[1;33m'
 export COLOR_GRAY='\e[0;30m'
 export COLOR_LIGHT_GRAY='\e[0;37m'
+export EDITOR='vim'
 alias g++="g++ -std=c++11"
 alias gcc="gcc -std=c++11"
 #set -o noclobber
