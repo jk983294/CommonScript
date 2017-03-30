@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 # ~ looks for a field that contains the match string.
 awk '$0 ~ 9' score.txt

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 # Output Redirection  >> is append, > is create new file then append
 awk 'BEGIN { print "Hello, World !!!" > "message.txt" }'

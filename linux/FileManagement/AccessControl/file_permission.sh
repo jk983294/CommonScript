@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Permission: Read / Write / Execute
+# Permission: sticky bit, it allow user to access directory, delete his own files but cannot delete others' files
 # Entity: User / Group / Others(everyone else)
 # symbolic notation: RWX / RW- / R--
 # octal notation:     7  /  6  /  4

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 # built-in function
 awk 'BEGIN { PI = 3.14159265; x = -10; y = 10; result = atan2 (y,x) * 180 / PI; printf "result: %f \n", result}'

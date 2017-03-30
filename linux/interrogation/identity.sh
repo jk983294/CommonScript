@@ -10,3 +10,4 @@ exit                                                                        # lo
 
 which uptime                                                                # locate a command
 id                                                                          # print real and effective user and group IDs
+whoami                                                                      # show login id

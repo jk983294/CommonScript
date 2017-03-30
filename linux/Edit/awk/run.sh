@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 which awk
 awk --help

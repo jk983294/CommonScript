@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
+# -user <user name>
+# -group <group name>
+# -perm [-] <octal number>
+# -atime [+|-] <days>
+# -mtime [+|-] <days>
+# -ctime [+|-] <days>
+# -type [d|f|l]
+# -inum <i-node number>
+
 # action
 find . -newer file1 -print
 find . -newer file1 -delete                                             # delete all files newer than file1
 find . -newer file1 -type f -delete                                     # only delete regular files, not directory
-# {} is place-hold of found files, \; means the end of the command
+# {} is place-hold of found files, \; means the end of the command(mandatory)
 find . -name '*.conf' -exec ls -lh {} \;                                # search and then show me long list information
 
 # search by name
@@ -30,3 +39,8 @@ find . -type d                                                          # find d
 
 # search by size
 find . -size +142k                                                      # find files which size bigger than 142k
+find . -size -142k                                                      # find files which size less than 142k
+
+# group
+find / -atime +90 -size +200 -print
+find . -user root -perm -4000 -print

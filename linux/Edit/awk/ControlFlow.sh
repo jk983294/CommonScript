@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 awk 'BEGIN {num = 10; if (num % 2 == 0) printf "%d is even number.\n", num }'
 awk 'BEGIN {num = 11; if (num % 2 == 0) printf "%d is even number.\n", num; else printf "%d is odd number.\n", num }'
@@ -9,4 +9,4 @@ awk 'BEGIN {i = 1; do { print i; ++i } while (i < 6) }'
 awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) break; else print "Sum =", sum } }'
 awk 'BEGIN {for (i = 1; i <= 20; ++i) {if (i % 2 == 0) print i ; else continue} }'
 awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) exit(10); else print "Sum =", sum } }'
-awk '{if ($0 ~/Shyam/) next; print $0}' score.txt
+awk '{if ($0 ~/Mike/) next; print $0}' score.txt

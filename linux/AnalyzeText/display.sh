@@ -39,3 +39,13 @@ more /etc/services
 # v                     editor mode, editor specified by $EDITOR
 less /etc/services
 ls -l /etc | less
+
+# non-text files, never hard-code password
+strings /bin/ls                                     # print the strings of printable characters in files
+
+# octal dump, used to check un-printable character
+cat a.txt
+od a.txt
+od -x a.txt                                         # display in hexadecimal
+od -c a.txt                                         # display printable character where possible
+od -d a.txt                                         # display in decimal

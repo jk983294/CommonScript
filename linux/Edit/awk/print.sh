@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/awk
 
 awk '{print}' score.txt                                                     # display all content
 awk '{print $0}' score.txt                                                  # display all content
