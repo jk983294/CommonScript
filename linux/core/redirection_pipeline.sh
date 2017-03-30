@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# 0 standard input
+# 1 standard output
+# 2 standard error
+
 # standard output, it is default output
 echo "hello world" 1> a.txt
 echo "aha" 1>> a.txt

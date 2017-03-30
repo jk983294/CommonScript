@@ -2,15 +2,11 @@
 
 # File Name / Inode(metadata) / Data
 # hard link, one file have more than 1 file name
+# hard link cannot cross file system, because root's inode start from 1
 # soft link (symbolic link / symlink), complete different files, they have different inode, but the data the inode pointed to is the same
+# symbolic file contains pathname of file it refers to
 
-
-ls -ld /usr/share/doc
-find /usr/share/doc -maxdepth 1 -type d | wc -l
-# drwxr-xr-x 1868 root root 69632  Jan 13 22:55 /usr/share/doc, it contains 1866 sub-directories (1868 - 2)
-# because every sub-directory has a .. link back to parent directory
-# the directory itself have two link count (/usr/share/doc and .)
-
+# danger!!! cat will read symbolic link, it could trap into infinite loop when symlink is loop
 
 # hard link
 ln file2 file4

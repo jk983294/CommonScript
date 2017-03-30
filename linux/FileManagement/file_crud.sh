@@ -12,6 +12,7 @@ cp file1 file5                      # copy file1 to file5, the permission is the
 cp -a file1 file6                   # retain the permission of source file, archive mode
 cp file1 ..                         # copy file1 to parent directory
 cp -i file1 ..                      # copy with interaction if the same file already exist
+cp -p file1 ..                      # copy and perserve permission
 cp -i file* ..                      # copy all files start with file to parent directory
 cp -R files/ backup/                # copy files folder to backup folder recursively
 echo /dir1 /dir2 /dir3 | xargs -n 1 cp -v /path/tocopy              # copy tocopy to several destinations
@@ -35,6 +36,7 @@ rm file1
 rm -i file1                         # remove with interaction mode
 rm -i file*                         # remove all files start with file with interaction mode
 rmdir test/                         # remove test folder, test MUST be empty
+rm -ri test/                        # remove test folder with asking
 rm -rf test/                        # recursive and force, remove all file under test folder and test folder itself
 
 # rsync

@@ -6,6 +6,7 @@ using namespace std;
  * $> cdecl
  * cdecl> explain char *(*(*a)(void))[20];
  * declare a as pointer to function (void) returning pointer to array 20 of pointer to char
+ * C++右左规则 The right-left rule
  */
 
 typedef void (*FP_OUT)();                       // use typedef to help

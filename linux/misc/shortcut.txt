@@ -13,11 +13,14 @@ CTRL + B                                            向前移动一个字母
 CTRL + F                                            向后移动一个字母
 CTRL + A                                            移动到命令起始处
 CTRL + E                                            移动到命令结尾处
+CTRL + D                                            page down
+CTRL + U                                            page up
 
 # delete
 CTRL + W                                            向左删一个单词
 CTRL + U                                            删除光标至起始处全部字符
 CTRL + K                                            删除光标后面的所有字符
+CTRL + H                                            remove last character
 
 # copy & paste
 CTRL + U

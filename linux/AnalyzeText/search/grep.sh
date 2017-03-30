@@ -2,9 +2,19 @@
 
 # grep
 # i             case insensitive
-# v             reverse the search
-# e             more than one expression
+# v             reverse the search, display lines that do not match
+# w             search for expression as a word, must has delimiter
+# l             list names of files containing matching lines
+# e             more than one expression ( pattern1 || pattern2 )
 # E             enhanced complex expressions (egrep)
+# n             show row number
+# c             show match line count
+
+# regular expression
+# .                     any character
+# *                     zero or more
+# [abc] [a-z] [!a]
+# ^ $                   anchor
 
 grep Server /etc/ntp.conf                                   # search 'Server'
 grep -i Server /etc/ntp.conf                                # search 'Server' in case insensitive mode
@@ -13,3 +23,7 @@ grep '^server\b' /etc/ntp.conf                              # search for word 's
 grep '\bserver$' /etc/ntp.conf                              # search for word 'server' which is end of line
 grep -ve'^#' -ve'^$' /etc/ntp.conf                          # don't show commented line and empty line
 grep -E '[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s[0-9][A-Z]{2}' a.txt   # search for postcode
+grep -e pattern1 -e pattern2 file                           # pattern1 || pattern2
+grep pattern1 file | grep pattern2                          # pattern1 && pattern2
+
+grep [jk] file                                              # j or k
