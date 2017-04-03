@@ -1,4 +1,5 @@
 #!/bin/bash
 
-echo "hello world"
+echo -n "hello world. today is "                                                 # no new line
+date
 exit 0

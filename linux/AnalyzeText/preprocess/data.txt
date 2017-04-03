@@ -1,0 +1,3 @@
+| x.y.z | a.b.c | OK | - | 6 |
+| x.y1.z | a.b.c | OK | - | 16 |
+| x.y.z | a.b.c | ERROR | m,n | 6 |

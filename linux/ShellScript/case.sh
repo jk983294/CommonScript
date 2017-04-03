@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# case /etc directory should work
+# ./case.sh /etc directory should work
 
 if [[ ! -d $1 ]]; then
     echo "usage: $0 <directory>"
@@ -8,7 +8,7 @@ if [[ ! -d $1 ]]; then
 fi
 
 case $2 in
-    "directory")
+    "directory" | "dir")
         find $1 -maxdepth 1 -type d
         ;;
     "link")

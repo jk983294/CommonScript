@@ -11,3 +11,6 @@ kill 2758                           # send term signal to process 2758
 pkill sleep                         # send term signal to sleep process
 killall sleep                       # send term signal to all sleep process
 pkill -ujk                          # kill all jk's process
+
+# kill all processes match
+ps -ef | grep process_pattern | grep -v grep | awk '{print $2}' | xargs kill

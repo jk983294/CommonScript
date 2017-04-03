@@ -20,7 +20,21 @@ export PATH=${PATH}:/home/kun/bin
 
 # check all exported variables
 env
+printenv
+printenv HOME
 env | grep FRUIT
 
 # check all exported and local variables
 set | grep FRUIT
+
+# delete variable, if variable deleted in child, then parent still has this variable
+unset FRUIT
+
+# variable array, index base is 0
+my_array=(one two three four)
+echo $my_array                              # one
+echo ${my_array[2]}                         # three
+echo ${my_array[*]}                         # one two three four
+my_array[2]=THREE
+unset my_array[2]
+unset my_array                              # delete whole array
