@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
+# clean file, especially for big file
+cat /dev/null > somefile
 
+# temp file
+mktemp test.XXXXXX                  # under current directory
+mktemp -t test.XXXXXX               # under /tmp/
+mktemp -t test.XXXXXX               # create tmp directory
+
+# create file
 touch file1                         # create file1
 
 mkdir /a

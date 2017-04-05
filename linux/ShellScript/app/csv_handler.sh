@@ -10,3 +10,14 @@ for line in $(cat data.csv); do
     done
 done
 IFS=$IFS.OLD
+
+# an other approach
+outfile='output.sql'
+input='data.csv'
+IFS=','
+while read field1 field2
+do
+    cat >> $outfile << EOF
+INSERT INTO my_table (field1, field2) VALUES ("$field1", "$field2");
+EOF
+done < "$input"

@@ -23,7 +23,7 @@ dumpe2fs /dev/sda1 | less
 apt-get install extundelete
 mkdir dir1
 cp /etc/init/* .
-ls -li shutdown.conf                                            # 189860 -rw-r--r-- 1 root root 277  1ÔÂ 13 22:59 shutdown.conf
+ls -li shutdown.conf                                            # 189860 -rw-r--r-- 1 root root 277  1æœˆ 13 22:59 shutdown.conf
 cat shutdown.conf
 rm shutdown.conf
 extundelete --inode 189860 /dev/sda1

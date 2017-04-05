@@ -6,11 +6,22 @@
 # $@ all parameters except script name, several words
 # $# parameter count except script name
 # ${!#} last parameter
+# $? exit status of the most recently executed foreground pipeline
+# $$ the process ID of the shell
+# $! process ID of the job most recently placed into the background
+# $- set to the absolute pathname used to invoke the shell
+echo "script absolute pathname: $_"
 echo "running script $0"
 script_name=$(basename $0)
 echo "base script name $script_name"
 echo "script parameter count: $#"
 echo "last parameter: ${!#}"
+
+echo "exit status of the most recently executed foreground pipeline: $?"
+
+echo "the process ID of the shell: $$"
+sleep 100 &
+echo "process ID of the job most recently placed into the background: $!"
 
 # test parameter exist
 if [[ -n "$1" ]]; then
@@ -34,8 +45,4 @@ for param in "$@"; do
     echo "\$@ parameter: $param"
 done
 
-# read in
-echo -e "Enter your name: \c"
-read INPUT_NAME
-echo "hello $INPUT_NAME"
 exit 0
