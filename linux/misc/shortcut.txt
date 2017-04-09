@@ -32,3 +32,4 @@ CTRL + Y                                            Paste things deleted using C
 CTRL + C                                            terminate, sends a SIGINIT signal
 CTRL + Z                                            suspend
 Ctrl + \                                            terminate process, generate core dump
+CTRL + D                                            EOF signal, for app like awk

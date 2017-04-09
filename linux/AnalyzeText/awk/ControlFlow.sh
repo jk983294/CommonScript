@@ -10,3 +10,6 @@ awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) break; e
 awk 'BEGIN {for (i = 1; i <= 20; ++i) {if (i % 2 == 0) print i ; else continue} }'
 awk 'BEGIN {sum = 0; for (i = 0; i < 20; ++i) { sum += i; if (sum > 50) exit(10); else print "Sum =", sum } }'
 awk '{if ($0 ~/Mike/) next; print $0}' score.txt
+awk -F: '$1 ~ /kun/{print $1, $NF}' /etc/passwd
+awk -F: '$1 !~ /kun/{print $1, $NF}' /etc/passwd
+awk -F: '$1 == "kun"{print $1, $NF}' /etc/passwd

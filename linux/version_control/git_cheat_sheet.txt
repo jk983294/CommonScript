@@ -6,7 +6,7 @@
     $ git init
     $ git add .
     $ git commit -am "initial commit"
-    $ git remote add origin ssh://git@github.com:jk983294/Store.git
+    $ git remote add origin git@github.com:jk983294/Store.git
 
 本地修改
     显示工作路径下已修改的文件：

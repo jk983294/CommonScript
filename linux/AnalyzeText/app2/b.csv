@@ -1,4 +1,4 @@
-book id,book description
-1,a
-2,b
-3,c
+book id,book description,price
+1,a,5
+2,b,10
+3,c,15

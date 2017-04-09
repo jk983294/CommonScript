@@ -3,7 +3,7 @@ sudo apt-get install python-requests                                    # python
 
 # Windows install ubuntu
 # turn off secure boot
-# /boot     200M        逻辑分区
-# /swap     8G          逻辑分区
-# /         40G         逻辑分区
-# /home     rest        逻辑分区
+# /boot     512M        閫昏緫鍒嗗尯
+# /swap     8G          閫昏緫鍒嗗尯
+# /         40G         閫昏緫鍒嗗尯
+# /home     rest        閫昏緫鍒嗗尯

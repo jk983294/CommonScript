@@ -12,6 +12,8 @@ date +%x                                                            # format cur
 date +%F                                                            # 2017-03-12
 date --date "30 days"                                               # current date + 30 days
 date --date "30 days ago"                                           # current date - 30 days
+date -d @1491530248                                                 # 2017年 04月 07日 星期五 09:57:28 CST
+date -d @1491530248 +"%Y-%m-%d %H:%M:%S"                            # 2017-04-07 09:57:28
 
 # hardware time, BIOS time
 hwclock -r                                                          # show hardware clock

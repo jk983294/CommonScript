@@ -10,7 +10,7 @@
 # ERRNO	                            最后一个系统错误的描述
 # FIELDWIDTHS	                    字段宽度列表(用空格键分隔)
 # FILENAME	                        当前文件名
-# FNR	                            同NR，但相对于当前文件
+# FNR	                            同NR，但相对于当前文件, if multiply file, it will be reset for each file
 # FS	                            字段分隔符(默认是任何空格)
 # IGNORECASE	                    如果为真，则进行忽略大小写的匹配
 # NF	                            当前记录中的字段数
@@ -47,13 +47,14 @@ awk 'BEGIN { print "SUBSEP = " SUBSEP }' | cat -vte
 # NF represents the number of fields in current record.
 # For instance below example prints only those lines which contains more than two fields.
 echo -e "One Two\nOne Two Three\nOne Two Three Four" | awk 'NF > 2'
+echo -e "One Two\nOne Two Three\nOne Two Three Four" | awk '{print $NF}'        # print last field
 # NR represents the number of the current record.
 # For instance below example prints first two records
 echo -e "One Two\nOne Two Three\nOne Two Three Four\n one" | awk 'NR < 3'
 # RLENGTH represents the length of the string matched by match function. AWK's match function searches for a given string in the input-string.
-awk 'BEGIN { if (match("One Two Three", "One ")) { print RLENGTH } }'
+awk 'BEGIN { if (match("One Two Three", "One ")) { print RLENGTH } }'           # 4
 # RSTART represents the first position in the string matched by match function.
-awk 'BEGIN { if (match("One Two Three", "Thre")) { print RSTART } }'
+awk 'BEGIN { if (match("One Two Three", "Thre")) { print RSTART } }'            # 9
 # $0 represents the entire input record.
 awk '{print $0}' score.txt
 # $n represents nth field in current record where fields are separated by FS.
