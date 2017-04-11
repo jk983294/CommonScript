@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 vim newfile
+vim -R read_only_file                               # open with read only perm
 vim +127 a.cpp                                      # open a.cpp, jump to 127th line
 vim +/pattern a.cpp                                 # open a.cpp, search text pattern, locate to that line
 vim +?/dev/sda1 /etc/fstab                          # open /etc/fstab, search the occurrence of /dev/sda1, locate the cursor to that line
@@ -8,6 +9,7 @@ vim -On file1 file2 ...                             # open multiple files with v
 vim -on file1 file2 ...                             # open multiple files with horizontal mode
 
 
+# :e!                                               return to last saved state, basicly give up current edit
 # :q                                                quit without save
 # :q!                                               quit without save
 # :x                                                quit with save

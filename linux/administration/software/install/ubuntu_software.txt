@@ -7,3 +7,14 @@ sudo apt-get install python-requests                                    # python
 # /swap     8G          逻辑分区
 # /         40G         逻辑分区
 # /home     rest        逻辑分区
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install gdebi
+
+# remove app lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+
+# chrome unlock keyring
+1. rm -f ~/.gnome2/keyrings/login.keyring
+2. open Passwords and Keys, right click Passwords, delete

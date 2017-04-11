@@ -1,4 +1,8 @@
 创建
+    generate ssh key
+    $ ssh-keygen -t rsa -C "jk983294@gmail.com"
+    copy ssh key to github
+    $ cat id_rsa.pub
     复制一个已创建的仓库:
     $ git clone https://github.com/jk983294/CommonScript.git
     $ git clone git@github.com:jk983294/Store.git
@@ -134,6 +138,8 @@
 
 config
     git config --list
+    git config --global user.name "jk983294"
+    git config --global user.email "jk983294@gmail.com"
 
 aliases
     git config --global alias.st status

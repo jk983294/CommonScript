@@ -37,6 +37,7 @@ more /etc/services
 # n                     go to next occurrence of http string
 # q                     quit
 # v                     editor mode, editor specified by $EDITOR
+# -i                    search ignore case
 less /etc/services
 ls -l /etc | less
 

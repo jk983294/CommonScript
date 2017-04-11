@@ -35,6 +35,7 @@ ls                                  # list all files under this directory
 ls -l                               # long list
 ls -lt                              # order by modified time from most recent
 ls -ltr                             # reverse order by modified time
+ls -1tr                             # show latest file first, each file one line
 ls -F                               # list with file type, / directory, @ link, * executable, | pipe
 ls --color=auto                     # list with color, dark blue directory, light blue link, green executable
 ls -R backup/                       # list recursively backup folder
