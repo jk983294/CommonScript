@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 :set ic                     Ignores case when searching
 :set noic                   donot ignore case

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # %                             specify the whole document
 # 103,199                       range of document

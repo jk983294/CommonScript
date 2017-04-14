@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # i                               inserts text before current cursor location.
 # I                               inserts at start of current line.

@@ -1,0 +1,15 @@
+host12~\
+feed=sh~\
+region=ch~\
+mode=1~\
+instance=2~\
+data=admin:a1_admin,raw:b1~\
+enabled=f~\
+name=start_name2~\
+binary=/dist/prod.5.b/bin/a~\
+param=-a $A -b $B -c $ROOT/ctl/ctl.ssomething~\
+upstream=some2~\
+env_file=$ROOT\env\b.cfg~\
+env=A:100~\
+    B:106~\
+    ROOT:"/a/b/c.b/"

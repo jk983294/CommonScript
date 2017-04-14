@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 yy                          yank the current line
 yw                          yank the current word

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Cursor go
 # Ctrl + g                          show your location in the file and the file status, for further nav prepare

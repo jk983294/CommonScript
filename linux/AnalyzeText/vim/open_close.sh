@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 vim newfile
 vim -R read_only_file                               # open with read only perm

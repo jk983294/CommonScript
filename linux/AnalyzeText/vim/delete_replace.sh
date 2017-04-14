@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # x                             delete current character
 # 3x                            delete next 3 character
