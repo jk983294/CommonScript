@@ -317,3 +317,20 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cindent                                                 " C/C++ style indent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s       " C/C++ style indent option
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => TMUX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if exists('$TMUX')
+  set term=screen-256color
+endif
+
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &amp;t_SI = "<Esc>[3 q"
+    let &amp;t_EI = "<Esc>[0 q"
+  else
+    let &amp;t_SI = "<Esc>]50;CursorShape=1x7"
+    let &amp;t_EI = "<Esc>]50;CursorShape=0x7"
+  endif
+end
