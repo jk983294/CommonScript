@@ -1,3 +1,5 @@
-Tab ½¨Òé±à¼­Æ÷²åÈë2¸ö¿Õ¸ñ¼ü¶ø²»ÊÇÖÆ±í·û Tabs: Settings > Preferences > Edit Components > Tab settings
-×Ô¶¯»»ÐÐ Settings > Preferences > MISC for auto-indent. £¨MISC ÆäËû£©
-¸ñÊ½×ª»» ±à¼­ > µµ°¸¸ñÊ½×ª»» > Unix
+Tab å»ºè®®ç¼–è¾‘å™¨æ’å…¥2ä¸ªç©ºæ ¼é”®è€Œä¸æ˜¯åˆ¶è¡¨ç¬¦ Tabs: Settings > Preferences > Edit Components > Tab settings
+è‡ªåŠ¨æ¢è¡Œ Settings > Preferences > MISC for auto-indent. ï¼ˆMISC å…¶ä»–ï¼‰
+æ ¼å¼è½¬æ¢ ç¼–è¾‘ > æ¡£æ¡ˆæ ¼å¼è½¬æ¢ > Unix
+
+Settings > Preferences > Editing > enable Multi-Editing (Ctrl + Mouse click)

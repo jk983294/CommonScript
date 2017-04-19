@@ -1,2 +1,3 @@
 ln -s /home/kun/github/CommonScript/linux/config/.vimrc /home/kun/.vimrc
 ln -s /home/kun/github/CommonScript/linux/config/.tmux.conf /home/kun/.tmux.conf
+ln -s /home/kun/github/CommonScript/linux/config/.bashrc /home/kun/.bashrc
