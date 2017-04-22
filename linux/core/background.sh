@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 sleep 900 &                             # create job in background
 jobs                                    # show job

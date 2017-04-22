@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 PROMPT_RED="\[\033[1;31m\][\u@\h \w]$\[\033[0m\] "
 PROMPT_BLUE="\[\033[1;34m\][\u@\h \w]$\[\033[0m\] "

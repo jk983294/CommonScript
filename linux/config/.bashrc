@@ -85,6 +85,7 @@ alias psg='ps -ef | grep -i'
 alias lsg='ls | grep -i'
 alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
+alias chrome='google-chrome'
 
 alias g++="g++ -std=c++11"
 alias gcc="gcc -std=c++11"

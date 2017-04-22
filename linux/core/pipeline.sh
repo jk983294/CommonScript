@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # unnamed pipe |
 ls -l | wc -l                                           # count file

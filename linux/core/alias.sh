@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
