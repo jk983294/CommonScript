@@ -10,3 +10,5 @@ chmod 777 ~/bin/functions.sh
 cp .tmux.conf ~/.tmux.conf
 cp .vimrc ~/.vimrc
 cp .bashrc ~/.bashrc
+cp .clang-format ~/.clang-format
+cp .uncrustify ~/.uncrustify

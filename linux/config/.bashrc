@@ -82,13 +82,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias psg='ps -ef | grep -i'
-alias lsg='ls | grep -i'
+alias lsg='ll | grep -i'
 alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
 alias chrome='google-chrome'
 
-alias g++="g++ -std=c++11"
-alias gcc="gcc -std=c++11"
+alias g++="g++ -std=c++11 -pthread"
+alias gcc="gcc -std=c++11 -pthread"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
