@@ -27,6 +27,7 @@
 # cw                            change the word the cursor is on from the cursor to the end of the word.
 # c$                            change until the end of line
 # c3w                           change 3 words
+# C                             = c$
 # s                             delete one character and leave you in insert mode
 # S                             delete the line and leave you in insert mode
 
