@@ -1,3 +1,5 @@
+clang++ -std=c++11 -Wall -Wextra -o <output> <source>
+
 g++ [options] [source-files] [object-files] [libraries]
 -V                          print compiler version number
 -c                          compile only, produce .o for linking

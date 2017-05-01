@@ -10,6 +10,9 @@ cal 3 2017                                                          # show March
 date                                                                # current date
 date +%x                                                            # format current date with locale
 date +%F                                                            # 2017-03-12
+date --date "4:30pm"
+date --date "1 day 4:30pm"
+date --date "-1 day 4:30pm"
 date --date "30 days"                                               # current date + 30 days
 date --date "30 days ago"                                           # current date - 30 days
 date -d @1491530248                                                 # 2017年 04月 07日 星期五 09:57:28 CST

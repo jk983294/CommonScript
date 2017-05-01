@@ -38,6 +38,7 @@ more /etc/services
 # q                     quit
 # v                     editor mode, editor specified by $EDITOR
 # -i                    search ignore case
+# Alt + u               un-highlight last search, it is a toggle
 less /etc/services
 ls -l /etc | less
 
