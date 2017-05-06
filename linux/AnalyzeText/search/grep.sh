@@ -26,5 +26,6 @@ grep -E '[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s[0-9][A-Z]{2}' a.txt   # search for postcod
 grep -e pattern1 -e pattern2 file                           # pattern1 || pattern2
 grep pattern1 file | grep pattern2                          # pattern1 && pattern2
 grep -w word                                                # word must be delimitered by non-word constituent character
+grep -nr pattern folder/*                                   # search pattern under folder recursively, show line number
 
 grep [jk] file                                              # j or k

@@ -2,7 +2,7 @@ trivial way to compile:
 g++  main.cpp hello.cpp factorial.cpp -o hello
 
 Macros
-$@          he name of the file to be made.
+$@          the name of the file to be made.
 $?          the names of the changed dependents.
 $<          the name of the related file that caused the action.
 $*          the prefix shared by target and dependent files

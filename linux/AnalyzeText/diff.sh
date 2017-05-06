@@ -9,4 +9,4 @@ diff file1 file2                        # compare two files
 
 diff -e file1 file2                     # print an ed script
 
-diff /tmp/r/ /tmp/s/                    # compare two directory structure
+diff -arq folder1/ folder2/             # compare two dirs, treat all file as test file, recursively, briefly
