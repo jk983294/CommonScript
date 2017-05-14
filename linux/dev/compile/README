@@ -1,0 +1,107 @@
+### Compile
+
+## g++
+
+g++ [options] [source-files] [object-files] [libraries]
+
+clang++ -std=c++11 -Wall -Wextra -o [output] [source]
+
+| parameter  | explain   |
+| :--------: | :-----:   |
+|-V          | print compiler version number |
+|-c          | compile only, produce .o for linking |
+|-o          | set name of output executable |
+|-g          | prepare file for debugging, keep symbol table |
+|-O?         | control optimiser, -O3 highest |
+|-l          | add library to linkers list |
+|-L<path>    | add path to the library search path |
+|-I<path>    | add path to pre-processor include path |
+
+```bash
+$ g++ a.C b.C c.C -o prog
+$ g++ -g a.C b.C c.C
+$ g++ -O3 fast.C
+$ g++ -c a.C b.C c.C -I/$HOME/myHeaders
+$ g++ a.o b.o c.o d.C -lmylib -L$HOME/myLibs
+$ gcc thread.c -l pthread
+# warn all, treat all warning as error
+$ g++ -Wall -Werror -ansi -pedantic -std=c++11
+# compile single file
+$ g++ -c demo.c
+```
+
+## compile using static lib
+```bash
+$ g++ -c hello.cpp math.cpp
+$ ar rcs mylib.a hello.o math.o
+$ g++ -o main test.cpp mylib.a
+```
+
+## compile using dynamic lib
+```bash
+$ g++ -fPIC -c hello.cpp math.cpp
+$ g++ -shared hello.o math.o -o mylib.so
+$ g++ -o main test.cpp mylib.so
+```
+
+## useful utility
+```bash
+# check symbol table
+$ nm demo.o
+# check compiled ELF file (Executable and Linking Format)
+$ readelf -h demo.o
+# link
+$ g++ -o demo demo.o
+# check symbol table
+$ nm demo
+# execute
+$ ./demo
+# check dynamic linking lib
+$ ldd demo2
+# check process address space (/proc/pid/maps)
+$ cat maps
+```
+
+### compile type
+| name | compiler|
+| :--------: | :-----:   |
+|cc    | c compiler |
+|gcc   | gun c compiler |
+|g++   | gun c++ compiler |
+|csc   | c# compiler |
+
+### stage of compilation
+pre-processing
+
+compiling
+
+inline expansion
+
+template instantiation
+
+code analysis, optimisation & generation
+
+### compiled file extension
+| extension | file type|
+| :--------: | :-----:   |
+|.C .cc .cpp | source file |
+|.i          | pre-processor output |
+|.s .S       | assembler source |
+|.o          | object file |
+|.a          | static library for linker |
+|.so         | dynamic library for linker |
+
+
+### process address layout
+```
+high address        Kernel
+     .              Stack
+     .                .
+     .                .
+     .                .
+     .              Heap
+     .              BSS
+     .              Data
+     .              Text
+low address    interrupt table
+```

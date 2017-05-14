@@ -1,8 +1,24 @@
 #!/bin/bash
 
-is_root()
-{
+is_root() {
     [[ "$USER" = "root" ]] && return 0 || return 1
+}
+
+getip() {
+    ifconfig | awk '/inet addr:/{print $2}' | sed 's/addr://' | grep -v '127.0.0.1'
+}
+
+# usage regex <regex> <file>, it is good to support reverse search
+# example: '!/id jk/' '/id jk/' '//'
+regex(){
+    if (( $# != 2 )); then
+        echo "usage regex <regex> <file>"
+        return 1
+    fi
+    expression=$1
+    file2search=$2
+    # must use double quote since expression may contain space
+    awk "$expression" $file2search
 }
 
 export COLOR_NC='\e[0m' # No Color

@@ -2,6 +2,7 @@
 
 # estimate file space usage, h human readable, s summary
 du -hs /etc                                             # (file size, directory)
+du -h --max-depth=1 /etc                                # one depth <size, dir>
 
 # report file system disk space usage, h human readable, T type, l local
 df -hlT

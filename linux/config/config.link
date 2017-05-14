@@ -1,3 +1,4 @@
-ln -s /home/kun/github/CommonScript/linux/config/.vimrc /home/kun/.vimrc
-ln -s /home/kun/github/CommonScript/linux/config/.tmux.conf /home/kun/.tmux.conf
-ln -s /home/kun/github/CommonScript/linux/config/.bashrc /home/kun/.bashrc
+ln -s /home/$USER/github/CommonScript/linux/config/.vimrc /home/$USER/.vimrc
+ln -s /home/$USER/github/CommonScript/linux/config/.tmux.conf /home/$USER/.tmux.conf
+ln -s /home/$USER/github/CommonScript/linux/config/.bashrc /home/$USER/.bashrc
+ln -s /home/$USER/github/CommonScript/linux/config/.perltidyrc /home/$USER/.perltidyrc

@@ -1,0 +1,19 @@
+-pbp        # Start with Perl Best Practices
+-w          # Show all warnings
+-iob        # Ignore old breakpoints
+-l=120      # characters per line
+-mbl=2      # No more than 2 blank lines
+-i=4        # Indentation is 4columns
+-ci=4       # Continuation indentation is 4 columns
+# -lp       # Lining up with parentheses
+-vt=0       # Less vertical tightness
+-pt=1       # High parenthesis tightness
+-bt=2       # High brace tightness
+-sbt=2      # High square bracket tightness
+-isbc       # Don't indent comments without leading space
+-sct        # )};
+-ce         # else and elsif are follow immediately after the curly brace closing the previous block
+-nbl        # places an opening brace on the same line as the keyword introducing it.
+-nsfs       # --space-for-semicolon
+-nsak=s     # --nospace-after-keyword=s removes keywords.
+# -fnl
