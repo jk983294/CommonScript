@@ -18,3 +18,9 @@ sudo rm /var/lib/dpkg/lock
 # chrome unlock keyring
 1. rm -f ~/.gnome2/keyrings/login.keyring
 2. open Passwords and Keys, right click Passwords, delete
+
+# root space 0 error
+uname -a                                                    # current kernel version
+sudo apt-get remove linux-image-                            # two tab
+sudo apt-get remove linux-image-4.8.0-46-generic
+sudo /usr/sbin/update-grub

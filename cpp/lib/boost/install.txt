@@ -18,3 +18,15 @@ linker for whole project, choose Configuration to All Configurations, VC++ Direc
 
 sudo apt-cache search boost
 sudo apt-get install libboost-dev
+sudo apt-get remove libboost-dev
+sudo apt-get remove libboost-all-dev
+
+# install in ubuntu with root perm
+cd /home/jk/boost_1_64_0
+./bootstrap.sh
+vim project-config.jam
+# option.set libdir : /usr/lib ;  # then lib copy here /usr/lib/libboost_system.so
+./b2 install
+
+g++ syslogem.cpp -L/usr/lib -lboost_system
+LD_LIBRARY_PATH=/usr/lib
