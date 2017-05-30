@@ -1,18 +1,8 @@
-sudo apt-get update
-sudo apt-get install libtbb-dev
-sudo apt-get remove --auto-remove libtbb-dev
-sudo apt-get purge --auto-remove libtbb-dev
-
-sudo apt-get install tbb-examples
-sudo apt-get remove --auto-remove tbb-examples
-sudo apt-get purge --auto-remove tbb-examples
-
 g++ test.cpp -ltbb
 
-# /usr/include/tbb
-# /usr/share/doc/libtbb-doc
-# /usr/share/doc/tbb-examples
-# /usr/share/doc/tbb-examples/examples/parallel_for/tachyon/android/src/com/intel/tbb
-# /usr/share/doc/tbb-examples/examples/common/gui/xcode/tbbExample
-# /usr/share/doc/libtbb2
-# /usr/share/doc/libtbb-dev
+git clone https://github.com/01org/tbb.git
+cd tbb
+make
+vim ~/.bashrc
+# add
+source /home/$USER/github/tbb/build/linux_intel64_gcc_cc5.4.0_libc2.23_kernel4.8.0_release/tbbvars.sh
