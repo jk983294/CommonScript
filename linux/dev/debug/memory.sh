@@ -4,3 +4,6 @@
 # The shared  memory column represents Shmem value taken from the /proc/meminfo file.
 free                                                # display in kilobytes
 free -m                                             # display in megabytes
+
+# print process memory map
+pmap pid

@@ -1,11 +1,11 @@
-#include <iostream>
 #include <chrono>
 #include <ctime>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 
-void function_call_time_measure(){
+void function_call_time_measure() {
     /**
       * timing function call for performance tuning
       * steady_clock represents a monotonic clock, most suitable for measuring intervals
@@ -14,6 +14,13 @@ void function_call_time_measure(){
     cout << "Hello World" << endl;
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
     cout << "took " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " ms." << endl;
+}
+
+void date_of_days_after_epoch() {
+    typedef std::ratio<60 * 60 * 24, 1> Days;
+    std::chrono::system_clock::time_point epoch;
+    std::time_t t = std::chrono::system_clock::to_time_t(epoch + std::chrono::duration<int, Days>(5));
+    std::cout << ctime(&t) << std::endl;
 }
 
 int main() {
@@ -32,10 +39,10 @@ int main() {
     std::time_t today_time = std::chrono::system_clock::to_time_t(p2);
     std::cout << "today: " << std::ctime(&today_time);
 
-    std::cout << "hours since epoch: "
-        << std::chrono::duration_cast<std::chrono::hours>(p2.time_since_epoch()).count() << endl;
+    std::cout << "hours since epoch: " << std::chrono::duration_cast<std::chrono::hours>(p2.time_since_epoch()).count()
+              << endl;
     std::cout << "yesterday, hours since epoch: "
-        << std::chrono::duration_cast<std::chrono::hours>(p3.time_since_epoch()).count() << endl;
+              << std::chrono::duration_cast<std::chrono::hours>(p3.time_since_epoch()).count() << endl;
 
     /**
      * system_clock represents the system-wide real time wall clock
@@ -43,9 +50,10 @@ int main() {
      */
     std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
     std::time_t now_c = std::chrono::system_clock::to_time_t(now - std::chrono::hours(24));
-    cout << "24 hours ago, the time was " << std::put_time(std::localtime(&now_c), "%F %T") << endl; // g++5 fixed put_time
+    cout << "24 hours ago, the time was " << std::put_time(std::localtime(&now_c), "%F %T")
+         << endl;  // g++5 fixed put_time
 
     function_call_time_measure();
-
+    date_of_days_after_epoch();
     return 0;
 }

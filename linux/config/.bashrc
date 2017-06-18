@@ -4,9 +4,12 @@ case $- in
       *) return;;
 esac
 
+# for ubuntu normal user, user id starts with 1000
+UUSER=$(grep 1000:1000 /etc/passwd | awk -F":" '{print $1}');
+
 # my lib functions
-if [ -f /home/$USER/bin/functions.sh ]; then
-    . /home/$USER/bin/functions.sh
+if [ -f /home/$UUSER/bin/functions.sh ]; then
+    . /home/$UUSER/bin/functions.sh
 fi
 
 # history related
@@ -47,6 +50,7 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # aliases
+alias c="clear"
 alias rm='rm -i'
 alias rmall='rm -rf *'
 alias vi='vim'
@@ -56,10 +60,14 @@ alias l='ls -CF'
 alias psg='ps -ef | grep -i'
 alias lsg='ll | grep -i'
 alias asg='alias | grep -i'
+alias histg="history | grep -i"
 alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
 alias chrome='google-chrome'
 alias cdgit='cd ~/github/'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
@@ -67,6 +75,14 @@ alias gcc="gcc -std=c++11 -pthread"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# web related
+alias which2net="lsof -P -i -n"
+alias activeport='netstat -tulanp'
+alias publicipinfo="curl ifconfig.me && curl ifconfig.me/host"            # show your public network ip and host
+
+# funny
+alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
@@ -97,4 +113,6 @@ PERL_MB_OPT="--install_base \"/home/$USER/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/$USER/perl5"; export PERL_MM_OPT;
 
 # TBB
-source /home/$USER/github/tbb/build/linux_intel64_gcc_cc5.4.0_libc2.23_kernel4.8.0_release/tbbvars.sh
+if [ -f /home/$USER/.tbbvars.sh ]; then
+    . /home/$USER/.tbbvars.sh
+fi

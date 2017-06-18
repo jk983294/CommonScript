@@ -1,4 +1,4 @@
 e:
 cd E:\GitHub\midas_hand\midas_server\target
-java -jar midas.jar
+java -DDataDirPrefix=F:/Data -jar midas.jar
 pause

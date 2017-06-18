@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# column format
+mount | column -t
+
 # cat & tac
 cat file1 file2                                     # concatenate several files' content
 cat file3                                           # display from  top to bottom
