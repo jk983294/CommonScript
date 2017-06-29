@@ -5,4 +5,5 @@ ln -s /home/$USER/github/CommonScript/linux/config/.perltidyrc /home/$USER/.perl
 
 ln -s /opt/clion/bin/clion.sh clion.sh
 ln -s /opt/idea/bin/idea.sh idea.sh
+ln -s /opt/pycharm/bin/pycharm.sh pycharm.sh
 ln -s /home/$USER/github/tbb/build/linux_intel64_gcc_cc5.4.0_libc2.23_kernel4.8.0_release/tbbvars.sh /home/$USER/.tbbvars.sh
