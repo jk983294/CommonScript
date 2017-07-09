@@ -35,3 +35,11 @@ for x in [1, 2, 3]:
     print x
 for i, val in enumerate([1, 2, 3]):
     print i, val
+
+# find first element
+x = next(x for x in [7, 8, 5, 3, 0, 5, 7, 2] if x == 5)
+print x
+
+# find first element index
+idx = next(i for i, v in enumerate([7, 8, 5, 3, 0, 5, 7, 2]) if v == 5)
+print idx

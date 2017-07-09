@@ -1,4 +1,5 @@
 # slicing, tuple, list, and string objects can be sliced
+# [start:end:stride]
 # [n] means the n indexed element
 # [:n] means the first n elements
 # [n:] means the last elements from index n (inclusive)
@@ -7,12 +8,15 @@
 # m and n can be negative: counted back from the end (-1 means the last element)
 
 a = ["A", "B", "C", "D", "E", "F"]
-a[-1]  # 'F'
-a[1:4]  # ['B', 'C', 'D']
-a[1:-1]  # ['B', 'C', 'D', 'E']
-a[:-3]  # ['A', 'B', 'C']
+print a[-1]     # 'F'
+print a[1:4]    # ['B', 'C', 'D']
+print a[1:-1]   # ['B', 'C', 'D', 'E']
+print a[:-3]    # ['A', 'B', 'C']
+print a[::2]    # print odd ['A', 'C', 'E']
+print a[1::2]   # print even ['B', 'D', 'F']
+print a[::-1]   # reverse ['F', 'E', 'D', 'C', 'B', 'A']
 text = "Hello Hi World"
-text[:5] + text[8:]  # 'Hello World'
+print text[:5] + text[8:]  # 'Hello World'
 
 # functions
 map(round, [5.5, 6.2, 7.9, 11.123])  # [6.0, 6.0, 8.0, 11.0]
@@ -25,4 +29,4 @@ names = ["george", "kevin", "bob"]
 result = [name.capitalize() for name in names]  # ['George', 'Kevin', 'Bob']
 data = [1, 2, 3, 5, 6, 7, 44, 55, 66]
 filtered = [x * 2 for x in data if x > 6]  # [14, 88, 110, 132]
-[y + 44 for y in [x * 2 for x in data if x > 6] if y < 100]  # [58, 132]
+print [y + 44 for y in [x * 2 for x in data if x > 6] if y < 100]  # [58, 132]

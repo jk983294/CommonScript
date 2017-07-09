@@ -1,3 +1,4 @@
+import glob
 import os
 
 # std IO
@@ -15,7 +16,12 @@ os.rmdir("/tmp/test")
 os.mkdir("newdir")
 os.getcwd()                                                         # get the current directory
 os.chdir("newdir")                                                  # change the current directory
+os.makedirs('/tmp/a/b/c')                                           # makes all intermediate-level directories needed
 
+# remove all files under one dir, but leave dir un-touch, shutil.rmtree will remove dir itself
+data_files = glob.glob('/tmp/test/*')
+for data_file in data_files:
+    os.remove(data_file)
 
 # file open
 fo = open("foo.txt", "wb")

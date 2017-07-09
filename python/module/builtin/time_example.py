@@ -35,7 +35,9 @@ print t1 - t0, "seconds wall time"
 now = date.today()
 print now                                                                   # 2017-01-09
 newDate = now + datetime.timedelta(days=6)                                  # 2017-01-15
+print now.year
 print now.month                                                             # 1
+print now.day
 birthday = date(1978, 12, 26)
 age = now - birthday
 print age.days                                                              # 13894

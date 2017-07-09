@@ -58,6 +58,7 @@ print '88example88'.strip('8')                                  # 'example'
 print '88example88'.rstrip('8')                                 # '88example'
 print '88example88'.lstrip('8')                                 # 'example88'
 
+# join array data
 print '-'.join(("a", "b", "c"))                                 # 'a-b-c'
 # 'HELLO, world!'
 print 'hello, world!'.replace("hello", "HELLO")
