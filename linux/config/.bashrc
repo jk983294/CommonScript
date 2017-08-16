@@ -104,6 +104,8 @@ fi
 export EDITOR='vim'
 C_INCLUDE_PATH="/home/$USER/include"; export C_INCLUDE_PATH;
 CPLUS_INCLUDE_PATH="/home/$USER/include"; export CPLUS_INCLUDE_PATH;
+LIBRARY_PATH="./"; export LIBRARY_PATH;
+LD_LIBRARY_PATH="./"; export LD_LIBRARY_PATH;
 
 # perl lib related, choose 'local::lib'
 PATH="/home/$USER/perl5/bin${PATH:+:${PATH}}"; export PATH;

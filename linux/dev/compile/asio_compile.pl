@@ -14,7 +14,7 @@ foreach my $file (@files) {
     if ( !-e $file_no_extension or ( $mtime1 > $mtime2 ) ) {
         print "compiling $file\n";
         `g++ -c -std=c++11 -Wall -g $file`;
-        `g++ $file_no_extension.o -o $file_no_extension -pthread -lboost_system`;
+        `g++ $file_no_extension.o -o $file_no_extension -pthread -lboost_system -lboost_thread`;
         `rm -f $file_no_extension.o`;
 
         # backup options: -lboost_thread

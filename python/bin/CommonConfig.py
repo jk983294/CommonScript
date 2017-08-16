@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+# coding=utf-8
 import os
 import CommonUtil as util
 import time
@@ -16,13 +17,15 @@ class Config:
             exit(1)
 
         # 上证指数, 深证成指, 沪深300, 上证50, 中小板指, 创业板指
-        self.stock_index = ['000001', '399001', '399300', '000016', '399005', '399006']
+        self.stock_index = ['000001', '399001',
+                            '399300', '000016', '399005', '399006']
         self.backup_dir = '%s/backup/MktData/fundamental/' % self.data_dir_prefix
         self.macro_dir = '%s/MktData/fundamental/macro/' % self.data_dir_prefix
         self.class_info_dir = '%s/MktData/fundamental/class_info/' % self.data_dir_prefix
         self.bank_interest_dir = '%s/MktData/fundamental/bank_interest/' % self.data_dir_prefix
         self.stock_report_dir = '%s/MktData/fundamental/stock_report/' % self.data_dir_prefix
         self.stock_daily_dir = '%s/MktData/stock_daily/' % self.data_dir_prefix
+        self.stock_daily_nfq_dir = '%s/MktData/stock_daily_nfq/' % self.data_dir_prefix
         self.stock_weekly_dir = '%s/MktData/stock_weekly/' % self.data_dir_prefix
 
         self.stock_basics_file = '%s/MktData/fundamental/class_info/stock_basics.csv' % self.data_dir_prefix

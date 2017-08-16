@@ -19,6 +19,7 @@ parser = OptionParser()
 parser.add_option("-f", "--file", dest="filename", help="write report to FILE")
 parser.add_option("-q", "--quiet", action="store_false", dest="verbose", default=True,
                   help="don't print status messages to stdout")
+parser.add_option("-n", type="int", dest="num")
 (options, args) = parser.parse_args()
 print "Filename: %s" % options.filename
 

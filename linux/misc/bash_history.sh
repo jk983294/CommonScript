@@ -34,3 +34,9 @@ history -r                      # restore history by reading history file
 history -c
 history -w
 history -r
+
+
+fc -l                           # list command
+fc -l lsg                       # list last command starts with lsg
+fc -s lsg                       # run last lsg
+fc -s -3                        # run history command which index -3

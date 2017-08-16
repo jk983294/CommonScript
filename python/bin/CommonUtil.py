@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+# coding=utf-8
 import glob
 import tarfile
 import os.path
@@ -162,6 +163,7 @@ def report_missing_file(file_path):
 
 
 if __name__ == '__main__':
+    print timestamp2date_str(time.time())
     print cob2date(20120923)
     print timestamp2date_str(1430323200)
     print date_str2cob('2015-04-30')

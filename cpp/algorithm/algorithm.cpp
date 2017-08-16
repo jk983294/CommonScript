@@ -1,50 +1,47 @@
-#include <iostream>
-#include <map>
 #include <algorithm>
+#include <functional>
+#include <iostream>
+#include <iterator>
+#include <map>
 #include <numeric>
 #include <set>
-#include <iterator>
 #include <vector>
-#include <functional>
 
 using namespace std;
 
-template<typename Type>
-inline std::ostream& operator  <<  (std::ostream& os, const set<Type>& _set) {
-    for(auto itr = _set.begin(); itr != _set.end(); itr++)
-        os << *itr << " ";
+template <typename Type>
+inline std::ostream& operator<<(std::ostream& os, const set<Type>& _set) {
+    for (auto itr = _set.begin(); itr != _set.end(); itr++) os << *itr << " ";
     return os;
 }
 
-template<typename Type>
-inline std::ostream& operator  <<  (std::ostream& os, const vector<Type>& v) {
-    for(auto itr = v.begin(); itr != v.end(); itr++)
-        os << *itr << " ";
+template <typename Type>
+inline std::ostream& operator<<(std::ostream& os, const vector<Type>& v) {
+    for (auto itr = v.begin(); itr != v.end(); itr++) os << *itr << " ";
     return os;
 }
-template<typename Type>
-inline std::ostream& operator  <<  (std::ostream& os, const vector< vector<Type> >& v) {
-    if(v == nullptr) return os;
-    for(auto itr = v.begin(); itr != v.end(); itr++)
-        os << *itr << " ";
+template <typename Type>
+inline std::ostream& operator<<(std::ostream& os, const vector<vector<Type> >& v) {
+    if (v == nullptr) return os;
+    for (auto itr = v.begin(); itr != v.end(); itr++) os << *itr << " ";
     return os;
 }
 
-void functor_demo(){
+void functor_demo() {
     cout << endl << "functor demo :" << endl;
     greater<int> ig;
     cout << ig(4, 6) << endl;
     cout << greater<int>()(6, 4) << endl;
 }
-void sort_algorithm_demo(){
+void sort_algorithm_demo() {
     cout << endl << "sort algorithm demo :" << endl;
-    int ia[] = {0, 7, 3, 11, 5, 9, 4 , 2, 8};
+    int ia[] = {0, 7, 3, 11, 5, 9, 4, 2, 8};
     vector<int> iv(ia, ia + 9);
     vector<int> iv1(9, 0);
     vector<int>::iterator itr;
-    cout  <<  iv  <<  endl;
+    cout << iv << endl;
 
-    //ÄÚ²¿²ÉÓÃ¶ÑËã·¨£¬±£Ö¤Ç°ÃæµÄ[first, middle)ÓĞĞò
+    //å†…éƒ¨é‡‡ç”¨å †ç®—æ³•ï¼Œä¿è¯å‰é¢çš„[first, middle)æœ‰åº
     partial_sort(iv.begin(), iv.begin() + 5, iv.end());
     partial_sort_copy(iv.begin(), iv.end(), iv1.begin(), iv1.begin() + 4, greater<int>());
     cout << "partial sort: " << iv << endl << "partial sort copy: " << iv1 << endl;
@@ -53,20 +50,20 @@ void sort_algorithm_demo(){
     sort(iv.begin(), iv.end(), greater<int>());
     cout << "sort from big to small : " << iv << endl;
 
-    int ia1[] = {1, 3,  5, 7, 2, 4, 6 , 8, 10};
+    int ia1[] = {1, 3, 5, 7, 2, 4, 6, 8, 10};
     vector<int> iv2(ia1, ia1 + 9);
     vector<int> iv3(ia1, ia1 + 9);
     // merge [first, middle) + [middle, end) => [first, end)
     inplace_merge(iv2.begin(), iv2.begin() + 4, iv2.end());
     cout << "inplace merge: " << iv2 << endl;
-    // Ê¹µÚn´óÔªËØ´¦ÓÚµÚnÎ»ÖÃ, ²¢ÇÒ±ÈÕâ¸öÔªËØĞ¡µÄÔªËØ¶¼ÅÅÔÚÕâ¸öÔªËØÖ®Ç°, ±ÈÕâ¸öÔªËØ´óµÄÔªËØ¶¼ÅÅÔÚÕâ¸öÔªËØÖ®ºó, µ«²»ÄÜ±£Ö¤ËûÃÇÊÇÓĞĞòµÄ
+    // ä½¿ç¬¬nå¤§å…ƒç´ å¤„äºç¬¬nä½ç½®, å¹¶ä¸”æ¯”è¿™ä¸ªå…ƒç´ å°çš„å…ƒç´ éƒ½æ’åœ¨è¿™ä¸ªå…ƒç´ ä¹‹å‰, æ¯”è¿™ä¸ªå…ƒç´ å¤§çš„å…ƒç´ éƒ½æ’åœ¨è¿™ä¸ªå…ƒç´ ä¹‹å,
+    // ä½†ä¸èƒ½ä¿è¯ä»–ä»¬æ˜¯æœ‰åºçš„
     nth_element(iv3.begin(), iv3.begin() + 5, iv3.end());
     cout << "nth element: " << iv3 << endl << "5th element: " << *(iv3.begin() + 5) << endl;
-
 }
-void sorted_array_search(){
+void sorted_array_search() {
     cout << endl << "sorted array search :" << endl;
-    int ia[] = {0, 1,  3, 4, 4, 4, 4, 5, 8, 11 };
+    int ia[] = {0, 1, 3, 4, 4, 4, 4, 5, 8, 11};
     vector<int> iv(ia, ia + sizeof(ia) / sizeof(int));
     vector<int>::iterator itr;
     cout << iv << endl;
@@ -76,125 +73,125 @@ void sorted_array_search(){
     cout << "upper bound: " << *itr << endl;
     cout << "binary search: " << binary_search(iv.begin(), iv.end(), 6) << endl;
     vector<int>::iterator lowerb, upperb;
-    // equal_range()·µ»ØfirstºÍlastÖ®¼äµÈÓÚvalµÄÔªËØÇø¼ä.·µ»ØÖµÊÇÒ»¶Ôµü´úÆ÷
+    // equal_range()è¿”å›firstå’Œlastä¹‹é—´ç­‰äºvalçš„å…ƒç´ åŒºé—´.è¿”å›å€¼æ˜¯ä¸€å¯¹è¿­ä»£å™¨
     pair<vector<int>::iterator, vector<int>::iterator> rst = equal_range(iv.begin(), iv.end(), 4);
     lowerb = rst.first;
     upperb = rst.second;
     cout << "equal range: " << *lowerb << " " << *upperb << endl;
 }
 
-void pure_numeric_algorithm(){
+void pure_numeric_algorithm() {
     cout << endl << "pure numeric algorithm :" << endl;
-    int ia[11] = {0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8 };
-    vector<int> iv(ia, ia + 11);                            // {0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8}
-    vector<int> iv2(ia + 6,ia + 8);                         // {6, 6}
+    int ia[11] = {0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8};
+    vector<int> iv(ia, ia + 11);      // {0, 1, 2, 3, 4, 5, 6, 6, 6, 7, 8}
+    vector<int> iv2(ia + 6, ia + 8);  // {6, 6}
     vector<int>::iterator itr;
-    // ÕÒµ½ÏàÁÚÔªËØÏàµÈµÄµÚÒ»¸öÔªËØ
+    // æ‰¾åˆ°ç›¸é‚»å…ƒç´ ç›¸ç­‰çš„ç¬¬ä¸€ä¸ªå…ƒç´ 
     itr = adjacent_find(iv.begin(), iv.end(), equal_to<int>());
     cout << "adjacent find: " << *itr << endl;
-    // ÕÒµ½ÔªËØÖµµÈÓÚ6µÄ¸öÊı
+    // æ‰¾åˆ°å…ƒç´ å€¼ç­‰äº6çš„ä¸ªæ•°
     cout << "count: " << count(iv.begin(), iv.end(), 6) << endl;
-    // ÕÒµ½Ğ¡ÓÚ7µÄÔªËØ¸öÊı
+    // æ‰¾åˆ°å°äº7çš„å…ƒç´ ä¸ªæ•°
     cout << "count if: " << count_if(iv.begin(), iv.end(), bind2nd(less<int>(), 7)) << endl;
-    // ÕÒµ½ÔªËØµÈÓÚ4µÄµÚÒ»¸öÔªËØÎ»ÖÃ
+    // æ‰¾åˆ°å…ƒç´ ç­‰äº4çš„ç¬¬ä¸€ä¸ªå…ƒç´ ä½ç½®
     itr = find(iv.begin(), iv.end(), 4);
     cout << "find: " << *itr << endl;
-    // ÕÒµ½ÔªËØ´óÓÚ2µÄµÚÒ»¸öÔªËØÎ»ÖÃ
+    // æ‰¾åˆ°å…ƒç´ å¤§äº2çš„ç¬¬ä¸€ä¸ªå…ƒç´ ä½ç½®
     itr = find_if(iv.begin(), iv.end(), bind2nd(greater<int>(), 2));
     cout << "find if: " << *itr << endl;
-    // ÕÒµ½ivĞòÁĞÖĞ×îºó×ÓĞòÁĞÆ¥Åä³öÏÖµÄÎ»ÖÃ
+    // æ‰¾åˆ°ivåºåˆ—ä¸­æœ€åå­åºåˆ—åŒ¹é…å‡ºç°çš„ä½ç½®
     itr = find_end(iv.begin(), iv.end(), iv2.begin(), iv2.end());
     cout << "find end: " << itr - iv.begin() << endl;
-    // ÕÒµ½ivĞòÁĞÖĞ×îÏÈ×ÓĞòÁĞÆ¥Åä³öÏÖµÄÎ»ÖÃ
-    itr = find_first_of(iv.begin(), iv.end(), iv2.begin(),iv2.end());
+    // æ‰¾åˆ°ivåºåˆ—ä¸­æœ€å…ˆå­åºåˆ—åŒ¹é…å‡ºç°çš„ä½ç½®
+    itr = find_first_of(iv.begin(), iv.end(), iv2.begin(), iv2.end());
     cout << "find first of: " << itr - iv.begin() << endl;
-    // É¾³ıÔªËØ£¬ÏòÇ°ÒÆ£¬µ«ÊÇÈİÆ÷size²»±ä£¬ºóÃæ»áÊ£ÓàÊı¾İ
+    // åˆ é™¤å…ƒç´ ï¼Œå‘å‰ç§»ï¼Œä½†æ˜¯å®¹å™¨sizeä¸å˜ï¼Œåé¢ä¼šå‰©ä½™æ•°æ®
     remove(iv.begin(), iv.end(), 6);
     cout << "remove: " << iv << endl;
-    vector<int> iv3(12,-1);
-    // É¾³ıÔªËØ£¬½«Êı¾İ¿½±´µ½ĞÂÈİÆ÷£¬ºóÃæ»áÊ£ÓàÊı¾İ
+    vector<int> iv3(12, -1);
+    // åˆ é™¤å…ƒç´ ï¼Œå°†æ•°æ®æ‹·è´åˆ°æ–°å®¹å™¨ï¼Œåé¢ä¼šå‰©ä½™æ•°æ®
     remove_copy(iv.begin(), iv.end(), iv3.begin(), 6);
     cout << "remove copy: " << iv3 << endl;
-    // É¾³ıĞ¡ÓÚ6µÄÔªËØ£¬ºóÃæ»áÊ£ÓàÊı¾İ
+    // åˆ é™¤å°äº6çš„å…ƒç´ ï¼Œåé¢ä¼šå‰©ä½™æ•°æ®
     remove_if(iv.begin(), iv.end(), bind2nd(less<int>(), 6));
     cout << "remove if: " << iv << endl;
-    // É¾³ıĞ¡ÓÚ7µÄÔªËØ£¬²¢¿½±´µ½ĞÂÈİÆ÷
+    // åˆ é™¤å°äº7çš„å…ƒç´ ï¼Œå¹¶æ‹·è´åˆ°æ–°å®¹å™¨
     remove_copy_if(iv.begin(), iv.end(), iv3.begin(), bind2nd(less<int>(), 7));
     cout << "remove copy if: " << iv3 << endl;
-    // ½«ËùÓĞÔªËØÖµÎª6µÄ¸ÄÎª3
+    // å°†æ‰€æœ‰å…ƒç´ å€¼ä¸º6çš„æ”¹ä¸º3
     replace(iv.begin(), iv.end(), 6, 3);
     cout << "replace: " << iv << endl;
-    // ½«ËùÓĞÔªËØÖµÎª3µÄ¸ÄÎª5£¬½á¹û±£´æÔÚĞÂÈİÆ÷ÖĞ
+    // å°†æ‰€æœ‰å…ƒç´ å€¼ä¸º3çš„æ”¹ä¸º5ï¼Œç»“æœä¿å­˜åœ¨æ–°å®¹å™¨ä¸­
     replace_copy(iv.begin(), iv.end(), iv3.begin(), 3, 5);
     cout << "replace copy: " << iv3 << endl;
-    // ½«ËùÓĞÔªËØÖµĞ¡ÓÚ5µÄ¸ÄÎª2
-    replace_if(iv.begin(), iv.end(), bind2nd(less<int>(),5), 2);
+    // å°†æ‰€æœ‰å…ƒç´ å€¼å°äº5çš„æ”¹ä¸º2
+    replace_if(iv.begin(), iv.end(), bind2nd(less<int>(), 5), 2);
     cout << "replace if: " << iv << endl;
-    // ½«ËùÓĞÔªËØÖµÎª8µÄ¸ÄÎª9£¬½á¹û±£´æÔÚĞÂÈİÆ÷ÖĞ
+    // å°†æ‰€æœ‰å…ƒç´ å€¼ä¸º8çš„æ”¹ä¸º9ï¼Œç»“æœä¿å­˜åœ¨æ–°å®¹å™¨ä¸­
     replace_copy_if(iv.begin(), iv.end(), iv3.begin(), bind2nd(equal_to<int>(), 8), 9);
     cout << "replace copy if: " << iv3 << endl;
-    // ·´×ª
+    // åè½¬
     reverse(iv.begin(), iv.end());
     cout << "reverse: " << iv << endl;
-    // ·´×ª£¬½á¹û±£´æÔÚĞÂÈİÆ÷
+    // åè½¬ï¼Œç»“æœä¿å­˜åœ¨æ–°å®¹å™¨
     reverse_copy(iv.begin(), iv.end(), iv3.begin());
     cout << "reverse copy: " << iv3 << endl;
-    // »¥»»ÔªËØ,  [first, middle, last) => [middle, last -1, first, middle - 1], array << shift operator
+    // äº’æ¢å…ƒç´ ,  [first, middle, last) => [middle, last -1, first, middle - 1], array << shift operator
     rotate(iv.begin(), iv.begin() + 4, iv.end());
     cout << "rotate: " << iv << endl;
-    // »¥»»ÔªËØ£¬½á¹û±£´æÔÚĞÂÈİÆ÷
-    rotate_copy(iv.begin(),iv.begin() + 5, iv.end(), iv3.begin());
+    // äº’æ¢å…ƒç´ ï¼Œç»“æœä¿å­˜åœ¨æ–°å®¹å™¨
+    rotate_copy(iv.begin(), iv.begin() + 5, iv.end(), iv3.begin());
     cout << "rotate copy: " << iv3 << endl;
     vector<int> iv4 = {2, 8};
-    // ²éÕÒ×ÓĞòÁĞ³öÏÖµÄµÚÒ»´Î³öÏÖµØµã
+    // æŸ¥æ‰¾å­åºåˆ—å‡ºç°çš„ç¬¬ä¸€æ¬¡å‡ºç°åœ°ç‚¹
     cout << "search:  " << *search(iv.begin(), iv.end(), iv4.begin(), iv4.end()) << endl;
-    // °´ÇøÓò½»»», iv4 <=> iv
+    // æŒ‰åŒºåŸŸäº¤æ¢, iv4 <=> iv
     swap_ranges(iv4.begin(), iv4.end(), iv.begin());
     cout << "swap ranges:  " << iv << endl << iv4 << endl;
-    // ËùÓĞÔªËØ¼õ2, iv -2 => iv
+    // æ‰€æœ‰å…ƒç´ å‡2, iv -2 => iv
     transform(iv.begin(), iv.end(), iv.begin(), bind2nd(minus<int>(), 2));
     cout << "transform:  " << iv << endl;
-    // Çø¼ä¶ÔÓ¦ÔªËØÏà¼Ó, iv4 + iv => iv4
+    // åŒºé—´å¯¹åº”å…ƒç´ ç›¸åŠ , iv4 + iv => iv4
     transform(iv4.begin(), iv4.end(), iv.begin(), iv4.begin(), plus<int>());
     cout << "transform:  " << iv4 << endl;
     /************************************************************************/
     vector<int> iv5(ia, ia + 11);
     vector<int> iv6(ia + 4, ia + 8);
     vector<int> iv7(15);
-    // ×î´óÔªËØÓÎ±ê
+    // æœ€å¤§å…ƒç´ æ¸¸æ ‡
     cout << "max element:  " << *max_element(iv5.begin(), iv5.end()) << endl;
     cout << "min element:  " << *min_element(iv5.begin(), iv5.end()) << endl;
-    // iv6ÖĞÔªËØÊÇ²»ÊÇ¶¼ÔÚiv5ÖĞ£¬ÕâÁ½¸ö±ØĞëÅÅ¹ıĞò
+    // iv6ä¸­å…ƒç´ æ˜¯ä¸æ˜¯éƒ½åœ¨iv5ä¸­ï¼Œè¿™ä¸¤ä¸ªå¿…é¡»æ’è¿‡åº
     cout << "includes:  " << includes(iv5.begin(), iv5.end(), iv6.begin(), iv6.end()) << endl;
-    // Á½¸öÅÅĞòºÅµÄÈİÆ÷ºÏ²¢, iv5 + iv6 => iv7
+    // ä¸¤ä¸ªæ’åºå·çš„å®¹å™¨åˆå¹¶, iv5 + iv6 => iv7
     merge(iv5.begin(), iv5.end(), iv6.begin(), iv6.end(), iv7.begin());
     cout << "merge:  " << iv7 << endl;
-    // Âú×ãÌõ¼şµÄ·ÅÔÚ×ó±ß£¬²»Âú×ãÌõ¼şµÄ·ÅÔÚÓÒ±ß
+    // æ»¡è¶³æ¡ä»¶çš„æ”¾åœ¨å·¦è¾¹ï¼Œä¸æ»¡è¶³æ¡ä»¶çš„æ”¾åœ¨å³è¾¹
     partition(iv7.begin(), iv7.end(), bind2nd(equal_to<int>(), 5));
     cout << "partition:  " << iv7 << endl;
-    // È¥ÖØ£¬ÖØ¸´µÄÔªËØ·ÅÔÚºóÃæ
+    // å»é‡ï¼Œé‡å¤çš„å…ƒç´ æ”¾åœ¨åé¢
     unique(iv5.begin(), iv5.end());
     cout << "unique:  " << iv5 << endl;
-    // È¥ÖØ£¬½á¹û±£´æÔÚĞÂÈİÆ÷
+    // å»é‡ï¼Œç»“æœä¿å­˜åœ¨æ–°å®¹å™¨
     unique_copy(iv5.begin(), iv5.end(), iv7.begin());
     cout << "unique copy:  " << iv7 << endl;
 }
-void heap_algorithm(){
+void heap_algorithm() {
     cout << endl << "heap algorithm :" << endl;
-    int ia1[9] = {0, 1, 2, 3, 4, 8, 9 , 3 , 5 };
+    int ia1[9] = {0, 1, 2, 3, 4, 8, 9, 3, 5};
     vector<int> iv(ia1, ia1 + 9);
-    make_heap(iv.begin(), iv.end(), greater<int>());		//Ä¬ÈÏ×î´ó¶Ñ,ÕâÑù¾ÍÊÇ×îĞ¡¶Ñ
+    make_heap(iv.begin(), iv.end(), greater<int>());  //é»˜è®¤æœ€å¤§å †,è¿™æ ·å°±æ˜¯æœ€å°å †
     cout << iv << endl;
     iv.push_back(7);
-    push_heap(iv.begin(), iv.end(), greater<int>());		//¶ÔĞÂ¼ÓÈëµÄÔªËØµ÷ÕûÎ»ÖÃ
+    push_heap(iv.begin(), iv.end(), greater<int>());  //å¯¹æ–°åŠ å…¥çš„å…ƒç´ è°ƒæ•´ä½ç½®
     cout << iv << endl;
-    pop_heap(iv.begin(), iv.end(), greater<int>());			//¶ÑÊ×É¾³ı·Åµ½ÈİÆ÷Î²
+    pop_heap(iv.begin(), iv.end(), greater<int>());  //å †é¦–åˆ é™¤æ”¾åˆ°å®¹å™¨å°¾
     iv.pop_back();
     cout << iv << endl;
-    sort_heap(iv.begin(), iv.end(), greater<int>());        //¶ÑÅÅĞò
+    sort_heap(iv.begin(), iv.end(), greater<int>());  //å †æ’åº
     cout << iv << endl;
 }
-void set_algorithm(){
+void set_algorithm() {
     cout << endl << "set algorithm :" << endl;
     std::set<int> s1 = {1, 3, 5, 6, 7, 8};
     std::set<int> s2 = {0, 2, 4, 5, 6, 7, 8};
@@ -206,38 +203,36 @@ void set_algorithm(){
     set_symmetric_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), back_inserter(s6));
     cout << s1 << endl << s2 << endl << s3 << endl << s4 << endl << s5 << endl << s6 << endl;
 }
-void basic_algorithm(){
+void basic_algorithm() {
     cout << endl << "basic algorithm :" << endl;
-    int ia[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8 };
+    int ia[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
     vector<int> iv1 = {0, 1, 2, 3, 4};
     vector<int> iv2 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
     cout << iv1 << endl << iv2 << endl;
-    // ·µ»ØÔÚÓÎ±êµÄÄÄ¸öÎ»ÖÃ²»Æ¥Åä
+    // è¿”å›åœ¨æ¸¸æ ‡çš„å“ªä¸ªä½ç½®ä¸åŒ¹é…
     pair<vector<int>::iterator, vector<int>::iterator> p = mismatch(iv1.begin(), iv1.end(), iv2.begin());
-    if(p.first != iv1.end())
-        cout << *(p.first) << endl;
-    if(p.second != iv2.end())
-        cout << *(p.second) << endl;
+    if (p.first != iv1.end()) cout << *(p.first) << endl;
+    if (p.second != iv2.end()) cout << *(p.second) << endl;
 
-    // ±È½ÏÈİÆ÷ÄÚÄÚÈİ
+    // æ¯”è¾ƒå®¹å™¨å†…å†…å®¹
     cout << equal(iv1.begin(), iv1.end(), iv2.begin()) << endl;
     cout << equal(iv1.begin(), iv1.end(), iv2.begin() + 4) << endl;
     cout << equal(iv1.begin(), iv1.end(), iv2.begin() + 4, less<int>()) << endl;
 
-    // Çø¼äÌî³ä
+    // åŒºé—´å¡«å……
     fill(iv1.begin(), iv1.end(), 9);
     cout << iv1 << endl;
-    // Çø¼änÌî³ä
+    // åŒºé—´nå¡«å……
     fill_n(iv1.begin(), 3, 7);
     cout << iv1 << endl;
     vector<int>::iterator iter1, iter2;
     iter1 = iter2 = iv1.begin();
-    // ÓÎ±êÒÆ¶¯
+    // æ¸¸æ ‡ç§»åŠ¨
     advance(iter2, 3);
-    // ½»»»Á½¸öÓÎ±êÄÚÈİ
+    // äº¤æ¢ä¸¤ä¸ªæ¸¸æ ‡å†…å®¹
     iter_swap(iter1, iter2);
     cout << iv1 << endl;
-    // ½»»»Á½¸öÓÎ±êÄÚÈİ
+    // äº¤æ¢ä¸¤ä¸ªæ¸¸æ ‡å†…å®¹
     swap(*iv1.begin(), *iv2.begin());
     cout << iv1 << endl << iv2 << endl;
 
@@ -246,15 +241,15 @@ void basic_algorithm(){
     cout << lexicographical_compare(str_a1, str_a1 + 2, str_a2, str_a2 + 2) << endl;
     cout << lexicographical_compare(str_a1, str_a1 + 2, str_a2, str_a2 + 2, greater<string>()) << endl;
 
-    // È«²¿ÔªËØÏòÇ°ÒÆÒ»¸ñ
+    // å…¨éƒ¨å…ƒç´ å‘å‰ç§»ä¸€æ ¼
     copy(iv2.begin() + 1, iv2.end(), iv2.begin());
     cout << iv2 << endl;
-    // È«²¿ÔªËØÏòºóÒÆÒ»¸ñ
-    copy_backward(iv2.begin(),iv2.end() - 1,iv2.end());
+    // å…¨éƒ¨å…ƒç´ å‘åç§»ä¸€æ ¼
+    copy_backward(iv2.begin(), iv2.end() - 1, iv2.end());
     cout << iv2 << endl;
 }
 
-void stl_numeric_algorithm(){
+void stl_numeric_algorithm() {
     double array[] = {-2, 2, 4, 4, 5};
     double array1[] = {2, 3, 4, 5, 6};
     vector<double> a(array, array + sizeof(array) / sizeof(double));
@@ -264,7 +259,8 @@ void stl_numeric_algorithm(){
     // sigma ( -a[i] )
     cout << "accumulate func: " << accumulate(a.begin(), a.end(), 0.0, minus<double>()) << endl;
     // sigma ( a[i] * b[i] )
-    cout << "inner product func: " << inner_product(a.begin(), a.end(), b.begin(), 0.0, plus<double>(), multiplies<double>()) << endl;
+    cout << "inner product func: "
+         << inner_product(a.begin(), a.end(), b.begin(), 0.0, plus<double>(), multiplies<double>()) << endl;
     adjacent_difference(a.begin(), a.end(), result.begin());
     // result[i] = a[i] - a[i - 1]
     cout << "adjacent difference : " << result << endl;
@@ -276,8 +272,7 @@ void stl_numeric_algorithm(){
     cout << endl;
 }
 
-int main()
-{
+int main() {
     cout << boolalpha;
     stl_numeric_algorithm();
     basic_algorithm();
