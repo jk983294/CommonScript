@@ -54,6 +54,7 @@ alias c="clear"
 alias rm='rm -i'
 alias rmall='rm -rf *'
 alias vi='vim'
+alias vir='vim -R'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
