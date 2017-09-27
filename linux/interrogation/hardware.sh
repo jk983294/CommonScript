@@ -8,3 +8,7 @@ lsusb                                                               # list USB d
 # storage-ctrl, sys, tape, tv, uml, usb, usb-ctrl, vbe, wlan, xen, zip
 hwinfo --hardware_name
 hwinfo --netcard
+
+# show the topology of the system
+sudo apt install hwloc
+lstopo --of png > host.png

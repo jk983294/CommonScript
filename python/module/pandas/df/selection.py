@@ -6,6 +6,7 @@ df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list('ABCD'))
 
 # select a single column, which yields a series, equivalent to df.A
 print df['A']
+print df['A'].tolist()          # get column as python list
 # select multi columns
 print df.loc[:, ['A', 'B']]
 

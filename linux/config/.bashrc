@@ -119,3 +119,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/$USER/perl5"; export PERL_MM_OPT;
 if [ -f /home/$USER/.tbbvars.sh ]; then
     . /home/$USER/.tbbvars.sh
 fi
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"

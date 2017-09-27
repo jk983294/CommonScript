@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#  coding=utf-8
+# coding=utf-8
 import os
 from optparse import OptionParser
 import tushare as ts

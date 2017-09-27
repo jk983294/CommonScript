@@ -4,6 +4,17 @@
 sudo /etc/init.d/networking restart
 systemctl restart network.service
 
+# Debian/Ubuntu
+sudo /etc/rc.d/init.d/nscd restart
+# Linux with systemd:
+sudo systemctl restart network.service
+# Fedora Linux:
+sudo systemctl restart NetworkManager.service
+# Arch Linux/Manjaro with Network Manager:
+sudo systemctl restart NetworkManager.service
+# Arch Linux/Manjaro with Wicd:
+sudo systemctl restart wicd.service
+
 
 hostname                                # show current hostname
 cat /etc/hostname                       # show current hostname
