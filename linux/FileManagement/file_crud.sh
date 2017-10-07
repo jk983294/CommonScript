@@ -55,6 +55,7 @@ rm -rf test/                        # recursive and force, remove all file under
 # /home means all content of home folder and include the folder itself
 rsync -av /home/ /backup/           # default sync not include deletion of source folder
 rsync -av --delete /home/ /backup/  # sync the deletion of source folder
+rsync -avz kun@192.168.31.118:/home/kun/Downloads/ /home/jk/Downloads/  # copy remote data to local directory
 
 
 # dd        duplicate disk, image, create file with certain bytes, backup file, complete disks

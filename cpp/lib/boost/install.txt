@@ -17,8 +17,7 @@ linker for whole project, choose Configuration to All Configurations, VC++ Direc
     x64 Library Directories     E:\boost_1_62_0\lib64-msvc-12.0
 
 sudo apt-cache search boost
-sudo apt-get install libboost-dev
-sudo apt-get remove libboost-dev
+sudo apt-get install libboost-all-dev
 sudo apt-get remove libboost-all-dev
 
 # install in ubuntu with root perm
@@ -30,3 +29,6 @@ vim project-config.jam
 
 g++ syslogem.cpp -L/usr/lib -lboost_system
 LD_LIBRARY_PATH=/usr/lib
+
+# uninstall boost
+just deleting [PREFIX]/lib/libboost*, and [PREFIX]/include/boost* should do it on Unix like platforms

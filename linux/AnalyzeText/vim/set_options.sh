@@ -20,4 +20,5 @@
 :set incsearch              highlight when typing
 :set noincsearch
 :set nocp                   not in compatible mode
+:set bg=dark                dark background
 :syntax on
