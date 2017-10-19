@@ -70,6 +70,7 @@ alias cdgit='cd ~/github/'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias du='du -h -d 1'
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"

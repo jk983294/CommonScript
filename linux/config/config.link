@@ -1,6 +1,7 @@
 ln -s /home/$USER/github/CommonScript/linux/config/.vimrc /home/$USER/.vimrc
 ln -s /home/$USER/github/CommonScript/linux/config/.tmux.conf /home/$USER/.tmux.conf
 ln -s /home/$USER/github/CommonScript/linux/config/.bashrc /home/$USER/.bashrc
+ln -s /home/$USER/github/CommonScript/linux/config/.inputrc /home/$USER/.inputrc
 ln -s /home/$USER/github/CommonScript/linux/config/.perltidyrc /home/$USER/.perltidyrc
 ln -s /home/$USER/github/CommonScript/linux/config/install_config.sh install_config.sh
 

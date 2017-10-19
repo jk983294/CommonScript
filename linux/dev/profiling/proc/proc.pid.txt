@@ -1,0 +1,13 @@
+/proc/pid               process id为pid的进程信息
+/proc/pid/cmdline       进程启动命令
+/proc/pid/cwd           链接到进程当前工作目录
+/proc/pid/environ       进程环境变量列表
+/proc/pid/exe           链接到进程的执行命令文件
+/proc/pid/fd            包含进程相关的所有的文件描述符
+/proc/pid/maps          与进程相关的内存映射信息
+/proc/pid/mem           指代进程持有的内存，不可读
+/proc/pid/root          链接到进程的根目录
+/proc/pid/stat          进程的状态
+/proc/pid/statm         进程使用的内存的状态
+/proc/pid/status        进程状态信息，比stat/statm更具可读性
+/proc/self              链接到当前正在运行的进程

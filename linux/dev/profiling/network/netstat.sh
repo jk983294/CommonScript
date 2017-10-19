@@ -11,7 +11,7 @@
 # s             statistics
 # i             interface
 # g             multicast group
-# nr            route table
+# nr            route table with numerical addresses
 netstat -a                                                  # show all connections
 netstat -at                                                 # show all tcp connections
 netstat -au                                                 # show all udp connections

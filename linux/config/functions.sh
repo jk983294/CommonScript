@@ -5,7 +5,8 @@ is_root() {
 }
 
 getip() {
-    ifconfig | awk '/inet addr:/{print $2}' | sed 's/addr://' | grep -v '127.0.0.1'
+    # ifconfig | awk '/inet addr:/{print $2}' | sed 's/addr://' | grep -v '127.0.0.1'
+    ifconfig | awk '/inet .*:/{print $2}' | sed 's/.*://' | grep -v '127.0.0.1'
 }
 
 # usage regex <regex> <file>, it is good to support reverse search

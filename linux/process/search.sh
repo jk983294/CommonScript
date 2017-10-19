@@ -10,3 +10,12 @@ ps --forest                                 # show children relationship
 # search for process
 ps -ef | grep nginx
 pgrep nginx
+
+# search pid for process
+pidof chrome
+
+# kill those process
+kill -USR2 $(pidof chrome)
+
+# kill those process
+pkill -f chrome
