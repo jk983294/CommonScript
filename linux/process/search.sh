@@ -19,3 +19,9 @@ kill -USR2 $(pidof chrome)
 
 # kill those process
 pkill -f chrome
+
+# sort by memory usage
+ps aux | sort -rnk 4
+
+# sort by CPU usage
+ps aux | sort -nk 3

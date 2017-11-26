@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # It's recommended to use absolute path when sourcing a script
-. ../common/log.sh
+. ../log.sh
 
 echo "1. use default log settings"
 echo

@@ -9,6 +9,13 @@ getip() {
     ifconfig | awk '/inet .*:/{print $2}' | sed 's/.*://' | grep -v '127.0.0.1'
 }
 
+# show time of nanosecond, usage like: daten 1508942856453804254
+daten() {
+    nanosecond=$1
+    second=$(expr $nanosecond / 1000000000)
+    date -d@$second
+}
+
 # usage regex <regex> <file>, it is good to support reverse search
 # example: '!/id jk/' '/id jk/' '//'
 regex(){

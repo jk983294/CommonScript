@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 sort file4.csv
 sort -r file4.csv                           # show in reverse order

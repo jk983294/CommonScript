@@ -27,6 +27,8 @@ CTRL + U
 CTRL + W
 CTRL + K                                            cut
 CTRL + Y                                            Paste things deleted using CTRL + U, CTRL + W, CTRL + K
+Shift + Insert                                      paste
+Ubuntu terminal, select text to Copy, middle-click to Paste
 
 # stop
 CTRL + C                                            terminate, sends a SIGINIT signal

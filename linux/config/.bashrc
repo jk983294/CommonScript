@@ -56,6 +56,7 @@ alias rmall='rm -rf *'
 alias wcl='wc -l'
 alias vi='vim'
 alias vir='vim -R'
+alias shbeauty='ex +"set syn=sh" +"norm gg=G" -cwq'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -67,6 +68,8 @@ alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
 alias chrome='google-chrome'
 alias cdgit='cd ~/github/'
+alias cdm='cd ~/github/midas/install'
+alias cdata='cd ~/Data/ctp'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -76,6 +79,8 @@ alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
 
 alias a='admin 0:8023'
+alias dp='delta_play'
+alias ff='field_extract_facility.pl'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -113,11 +118,26 @@ LIBRARY_PATH="./"; export LIBRARY_PATH;
 LD_LIBRARY_PATH="./"; export LD_LIBRARY_PATH;
 
 # perl lib related, choose 'local::lib'
-PATH="/home/$USER/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/$USER/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/$USER/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/$USER/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/$USER/perl5"; export PERL_MM_OPT;
+if [ -d /home/$USER/perl5/bin ]; then
+    PATH="/home/$USER/perl5/bin${PATH:+:${PATH}}"; export PATH;
+    PERL5LIB="/home/$USER/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+    PERL_LOCAL_LIB_ROOT="/home/$USER/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+    PERL_MB_OPT="--install_base \"/home/$USER/perl5\""; export PERL_MB_OPT;
+    PERL_MM_OPT="INSTALL_BASE=/home/$USER/perl5"; export PERL_MM_OPT;
+fi
+
+# more path
+if [ -d /home/$USER/github/CommonScript/python/bin ]; then
+    PATH="/home/$USER/github/CommonScript/python/bin${PATH:+:${PATH}}"; export PATH;
+fi
+
+if [ -d /home/$USER/github/CommonScript/linux/bin ]; then
+    PATH="/home/$USER/github/CommonScript/linux/bin${PATH:+:${PATH}}"; export PATH;
+fi
+
+if [ -d /home/$USER/github/midas/install ]; then
+    PATH="/home/$USER/github/midas/install${PATH:+:${PATH}}"; export PATH;
+fi
 
 # TBB
 if [ -f /home/$USER/.tbbvars.sh ]; then

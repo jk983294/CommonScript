@@ -9,6 +9,7 @@ import jsonpickle
 import datetime
 import time
 import logging
+from collections import OrderedDict
 
 
 def get_dataframe_from_file(file_path, dt=None):
@@ -162,9 +163,33 @@ def report_missing_file(file_path):
         print "missing:", file_path
 
 
+def ntime2timestamp_string(t):
+    millisecond = int((int(t) % 1e9) / 1e6)
+    ticks = float(t) / 1e9
+    localtime = time.localtime(ticks)
+    return "%s.%s" % (time.strftime("%Y%m%d-%H:%M:%S", localtime), str(millisecond).zfill(3))
+
+
+def ntime2float_string(t):
+    ticks = float(t) / 1e9
+    localtime = time.localtime(ticks)
+    return time.strftime("%Y%m%d.%H%M%S", localtime)
+
+
+def parse_midas_format(line):
+    result = OrderedDict()
+    line = line.strip()
+    if line.endswith(';'):
+        for entry in line[:-1].split(","):
+            if entry:
+                kv = entry.split(' ')
+                result[kv[0]] = kv[1]
+    return result
+
+
 if __name__ == '__main__':
     print timestamp2date_str(time.time())
-    print cob2date(20120923)
+    print cob2date(20120923)                            # 2012-09-23
     print timestamp2date_str(1430323200)
     print date_str2cob('2015-04-30')
     print month_count(2017, 1)
@@ -177,5 +202,7 @@ if __name__ == '__main__':
     print os.path.basename("/a/b/c.txt")
     print os.path.splitext(os.path.basename("/a/b/c.txt"))[0]
     # print get_all_stock_codes()
+    print ntime2timestamp_string(1508942856453804254)       # 20171025.224736
+    parse_midas_format('a 1 ,b 2 ,c ,;')
     print 'test %s %d finished' % ("a", 2)
     print 'test finished'

@@ -1,0 +1,10 @@
+# add this to root, user cannot run this cmd
+# 40 2    * * 2-6   root    /sbin/shutdown >> /var/tmp/logs/shutdown.log.`date '+\%Y\%m\%d'` 2>&1
+# 45 15   * * 1-5   root    /sbin/shutdown >> /var/tmp/logs/shutdown.log.`date '+\%Y\%m\%d'` 2>&1
+
+# flush data
+35 2 * * 2-6 /home/kun/bin/admin 0:8023 close_consumer >> /var/tmp/logs/close_consumer.log.`date '+\%Y\%m\%d'` 2>&1
+40 15 * * 1-5 /home/kun/bin/admin 0:8023 close_consumer >> /var/tmp/logs/close_consumer.log.`date '+\%Y\%m\%d'` 2>&1
+
+# clean up
+30 15 * * 6 /home/kun/github/CommonScript/linux/bin/clean_directory.sh /var/tmp/logs 20

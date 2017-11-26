@@ -29,3 +29,6 @@ grep -w word                                                # word must be delim
 grep -nr pattern folder/*                                   # search pattern under folder recursively, show line number
 
 grep [jk] file                                              # j or k
+
+# -o show only match, it means extract matched text
+egrep -o ',e \w+ ,' data.txt | awk '{ print $2; }' | sort -u    # extract distinct exchange

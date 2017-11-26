@@ -1,0 +1,14 @@
+localhost~\
+feed=ctp~\
+process=node~\
+mode=~\
+instance=~\
+data=admin:8034,raw:8035~\
+enabled=t~\
+start_name=test_node~\
+executable=/home/kun/github/midas/install/node1~\
+cmd_line=-a $RD_ADMIN~\
+input_feed_upstream=~\
+env_file=~\
+environment=TEST_VAR1:"var1",\
+            TEST_VAR2:"$TEST_VAR1.var2"

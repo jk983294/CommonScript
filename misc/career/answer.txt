@@ -8,6 +8,31 @@
 公司是否存在加班现象，如果有的话，是否频繁？
 试用期多久，试用期内薪资如何计算？
 公司主要在做什么，我进来后会做什么，需要什么技术？
+加入贵司需要什么样的个人素质和水平？
+为什么职位仍是空缺着的？Why is the position open?
+如果这个职位现在有/曾经有过员工，那么他们是什么地方出了错所以离开了？他们是怎么取代前任？或者他们为什么要离开？ 提出这些问题应该可以帮助你学会很多，要把“把问题放在桌面上”。If there is/ was an incumbent, what went wrong? Why are they replacing that individual? Or , why did they leave? Asking questions such as these should help you learn a lot and "put issues on the table"
+这个职位要向谁报告，ta的背景是什么？To whom does the position report, and what is his/her background?
+这个职位最重要的职责是什么？What are the most important responsibilities of this position?
+我有什么自主权可以来履行我的职责？What autonomy would I have to perform my responsibilities?
+这个职位对技术要求高吗？How much emphasis is placed on technical skills in this position?
+这个职位对人际交往能力要求高吗？How much emphasis is placed on people skills in this position?
+要需要什么样的学习和培训，能够帮助我胜任这个工作？What educational or training support will be available to help me learn what I need to know to be successful?
+在入职的60-90天内，我能为公司做什么事？哪个是最重要的？What is the most important thing I can do to help your company during the first 60 to 90 days of employment?
+能说说你对这个职位理想人选的要求吗？Describe your perception of an ideal candidate for this position.
+我今天的表现会怎么被评估？ 是否有正式的评估过程，如果有，能向我描述一下吗？How will my performance be judged? Is there a formal evaluation process, and if so, please describe it for me?
+这个级别职位的日常/每周/每月工作是什么？What is a typical workday or week or month for this level of position?
+公司的经营理念是什么？What is the company's management philosophy?
+我主要是继承项目还是启动项目？Will I mainly inherit projects or initiate them?
+你为什么来这个公司，你的背景是什么？What brought you to this company, and what is your background?
+这个职位的职业道路是什么样的？What is a typical career path for this position?
+你如何看待这一领域或部门的工作环境？How do you characterize the working environment of this area or department?
+出差频率是多少？加班情况？How much travel is required? What about overtime?
+公司的目标有哪些？What are some of the company's goals?
+你觉得3年或者5年后，公司会怎样？Where do you see this company in 3 years, 5 years?
+我和我的上司之间的关系是什么样的？What kind of a reporting relationship would exist between my immediate supervisor and me?
+这个职位有什么晋升机会？能给我举个例子吗？What growth opportunities are available for a person starting in this position? Can you give me an example?
+你还想知道什么其他信息，可以帮助你了解我是否能够胜任这个职位？What other information can I give you to help you evaluate my qualifications for this position?
+如果你录用我，我需要什么时候来报到？When would you need me to start if you were to hire me?
 
 disagreement with your boss:
 两个grid，第二个grid是第一个grid某行的具体信息，可以只load一次，双击之后client端直接显示，不需要第二次call去获得，也可以分两次load；
