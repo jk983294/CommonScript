@@ -74,6 +74,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias du='du -h -d 1'
+alias avg='awk "{ sum += \$1; n++; } END { if (n > 0) print ( sum / n); }"'
+alias wordcount='awk "{for(i=1; i<= NF; i++) a[\$i]++} END {for(k in a) print a[k], k}"'
+alias sortn1='sort -n -k1'                      # sort by first column numerically
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
@@ -81,6 +84,8 @@ alias gcc="gcc -std=c++11 -pthread"
 alias a='admin 0:8023'
 alias dp='delta_play'
 alias ff='field_extract_facility.pl'
+alias mdc='md_client.pl'
+alias sql='mysql -u root -p'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

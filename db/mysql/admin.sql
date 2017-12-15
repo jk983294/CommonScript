@@ -1,18 +1,18 @@
 -- connect to server
--- 		mysql -u root -p test
---		mysql -h host -u user -p < batch_file.sql
+--      mysql -u root -p test
+--      mysql -h host -u user -p < batch_file.sql
 
 -- disconnect
---		quit
---		exit
+--      quit
+--      exit
 
 -- ignore current statement
---		\c
+--      \c
 
 -- create a user account
 USE mysql;
-INSERT INTO user (host, user, password, select_priv, insert_priv, update_priv) 
-           VALUES ('localhost', 'guest', PASSWORD('guest123'), 'Y', 'Y', 'Y');
+INSERT INTO user (host, user, password, select_priv, insert_priv, update_priv)
+        VALUES ('localhost', 'guest', PASSWORD('guest123'), 'Y', 'Y', 'Y');
 FLUSH PRIVILEGES;
 SELECT host, user, password FROM user WHERE user = 'guest';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON TUTORIALS.* TO 'guest'@'localhost' IDENTIFIED BY 'guest123';
@@ -39,7 +39,7 @@ SELECT * FROM animals INTO OUTFILE './animals.txt' FIELDS TERMINATED BY ',' ENCL
 
 -- data import
 LOAD DATA LOCAL INFILE '/path/dump.txt' INTO TABLE pet;
-LOAD DATA LOCAL INFILE '/path/dump.txt' INTO TABLE pet FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n';	-- windows specific
+LOAD DATA LOCAL INFILE '/path/dump.txt' INTO TABLE pet FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n';    -- windows specific
 LOAD DATA LOCAL INFILE 'dump.txt' INTO TABLE mytbl (b, c, a);
 -- mysql -u root -p database_name < dump.txt
 -- mysqlimport -u root -p --local database_name dump.txt

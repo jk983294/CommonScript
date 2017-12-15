@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# scroll in tmux
+Ctrl + a [
+Ctrl + a PgUp
+q                                                   # quit scroll mode
+
 # copy
 Ctrl-a [                                            # enter copy mode, space key to start select, enter key finish selection
 Ctrl-a ]                                            # paste

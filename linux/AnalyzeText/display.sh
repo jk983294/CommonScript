@@ -54,3 +54,10 @@ od a.txt
 od -x a.txt                                         # display in hexadecimal
 od -c a.txt                                         # display printable character where possible
 od -d a.txt                                         # display in decimal
+
+# nl show line number
+nl list.txt
+nl -w4 text.txt                                     # number width
+nl -nln text.txt                                    # left align
+nl -nrn sort.txt                                    # right align
+nl -nrz text.txt                                    # right align, 0 padding
