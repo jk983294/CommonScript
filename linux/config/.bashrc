@@ -69,6 +69,7 @@ alias gitpush='git push origin master'
 alias chrome='google-chrome'
 alias cdgit='cd ~/github/'
 alias cdm='cd ~/github/midas/install'
+alias cdvis='cd ~/github/midas/visualization'
 alias cdata='cd ~/Data/ctp'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -80,8 +81,11 @@ alias sortn1='sort -n -k1'                      # sort by first column numerical
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
+alias boostc="~/github/CommonScript/linux/dev/compile/asio_compile.pl"
+alias tbbc="~/github/CommonScript/linux/dev/compile/tbb_compile.pl"
 
 alias a='admin 0:8023'
+alias a3='admin 0:8033'
 alias dp='delta_play'
 alias ff='field_extract_facility.pl'
 alias mdc='md_client.pl'

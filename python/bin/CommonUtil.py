@@ -187,6 +187,12 @@ def parse_midas_format(line):
     return result
 
 
+def to_numeric_array(stringArray):
+    result = []
+    for item in stringArray:
+        result.append(float(item))
+    return result
+
 if __name__ == '__main__':
     print timestamp2date_str(time.time())
     print cob2date(20120923)                            # 2012-09-23

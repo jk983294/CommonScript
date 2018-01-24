@@ -3,6 +3,7 @@ ln -s /home/$USER/github/CommonScript/linux/config/.tmux.conf /home/$USER/.tmux.
 ln -s /home/$USER/github/CommonScript/linux/config/.bashrc /home/$USER/.bashrc
 ln -s /home/$USER/github/CommonScript/linux/config/.inputrc /home/$USER/.inputrc
 ln -s /home/$USER/github/CommonScript/linux/config/.perltidyrc /home/$USER/.perltidyrc
+ln -s /home/$USER/github/CommonScript/linux/config/.jsbeautifyrc /home/$USER/.jsbeautifyrc
 ln -s /home/$USER/github/CommonScript/linux/config/install_config.sh install_config.sh
 
 ln -s /opt/clion/bin/clion.sh clion.sh

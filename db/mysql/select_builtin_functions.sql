@@ -57,6 +57,8 @@ SELECT CURRENT_DATE;
 SELECT CURDATE();
 SELECT MONTH(CURRENT_DATE);
 SELECT name, birth, CURRENT_DATE, TIMESTAMPDIFF(YEAR, birth, CURRENT_DATE) AS age FROM pet;
+select FROM_UNIXTIME(1509550584) valuetime from dual;                   -- convert time_t to datetime
+select UNIX_TIMESTAMP("2017-11-01 23:36:24") valuetime from dual;       -- convert datetime to time_t
 
 -- math
 SELECT STD(PRICE) STD_DEVIATION FROM CARS;
