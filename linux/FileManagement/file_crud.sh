@@ -48,16 +48,6 @@ rmdir test/                         # remove test folder, test MUST be empty
 rm -ri test/                        # remove test folder with asking
 rm -rf test/                        # recursive and force, remove all file under test folder and test folder itself
 
-# rsync
-# a for archive mode, preserve permission
-# v for verbose mode
-# /home/ means all content of home folder but exclude the folder itself
-# /home means all content of home folder and include the folder itself
-rsync -av /home/ /backup/           # default sync not include deletion of source folder
-rsync -av --delete /home/ /backup/  # sync the deletion of source folder
-rsync -avz kun@192.168.31.118:/home/kun/Downloads/ /home/jk/Downloads/  # copy remote data to local directory
-
-
 # dd        duplicate disk, image, create file with certain bytes, backup file, complete disks
 # backup /dev/sda MBR 512 byte in case partition table etc. data lost
 dd if=/dev/sda of=/data/file count=1 bs=512

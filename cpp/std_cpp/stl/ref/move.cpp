@@ -3,19 +3,24 @@
 #include <utility>
 #include <vector>
 
+/**
+ * std::move unconditionally casts its argument to an rvalue
+ */
+
 int main() {
-    std::string foo = "foo-string";
-    std::string bar = "bar-string";
-    std::vector<std::string> myvector;
+    std::string foo{"foo"};
+    std::string bar{"bar"};
+    std::vector<std::string> v;
 
-    myvector.push_back(foo);  // copy, foo won't lose its content
+    v.push_back(foo);  // copy, foo won't lose its content
 
-    // this transfers bar's content into the vector
-    // while bar loses its value, and now is in a valid but unspecified state
-    myvector.push_back(std::move(bar));
+    /**
+     * bar loses its value, and now is in a valid but unspecified state
+     */
+    v.push_back(std::move(bar));
 
-    std::cout << "myvector contains:";
-    for (std::string& x : myvector) std::cout << ' ' << x;
+    std::cout << "vector contains:";
+    for (std::string& x : v) std::cout << ' ' << x;
     std::cout << '\n';
     return 0;
 }
