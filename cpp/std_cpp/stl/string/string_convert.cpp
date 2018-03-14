@@ -8,7 +8,11 @@ int main() {
     double di = std::atof(buffer);
     double di1 = std::strtod(buffer, NULL);
     unsigned long ul = std::strtoul(buffer, NULL, 0);
-    std::cout << i << '\n' << li << '\n' << di << '\n' << di1 << '\n' << ul << '\n';
+    std::cout << std::to_string(i) << '\n'
+              << std::to_string(li) << '\n'
+              << std::to_string(di) << '\n'
+              << std::to_string(di1) << '\n'
+              << std::to_string(ul) << '\n';
 
     // convert with specified base
     char szNumbers[] = "2001 60c0c0 -1101110100110100100000 0x6fffff";

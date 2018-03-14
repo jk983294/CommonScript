@@ -1,50 +1,49 @@
-#include <thread>
-#include <future>
-#include <iostream>
 #include <atomic>
 #include <cassert>
-
+#include <future>
+#include <iostream>
+#include <thread>
 
 /**
  * memory model
  * http://wilburding.github.io/blog/2013/04/07/c-plus-plus-11-atomic-and-memory-model/
- * memory_order_release, ±àÒëÆ÷±£Ö¤²»»á°ÑÆäºóµÄĞ´²Ù×÷ÒÆµ½Ëüºó±ß, ·ñÔòÆäËûÏß³Ì¾Í¿´²»µ½Õâ¸öĞŞ¸ÄÁË
- * memory_order_acquire, ²»»á°ÑÆäºóµÄ¶Á²Ù×÷ÒÆµ½ËüÇ°Ãæ, ·ñÔò¶Áµ½µÄ¾ÍÊÇ¾ÉÊı¾İ
- * memory_order_relaxed, ËµÃ÷Õâ¸ö²Ù×÷³ıÁËÊÇÔ­×ÓµÄÍâ,ÖÜÎ§µÄ²Ù×÷Ëæ±ãÒÆ¶¯£¬±È½ÏÊÊºÏ×ö¼ÆÊıÆ÷
- * memory_order_acq_rel, »ù±¾ÊÇ memory_order_acquire ºÍ memory_order_release µÄºÏÌå
- * memory_order_scq_cst, memory_order_acq_relµÄ¼ÓÇ¿°æ, ³ıÁËÓĞacq_relÓïÒå, »¹±£Ö¤ÊÇsequencially-consistent
- * memory_order_consume, memory_order_acquireµÄÈõ»¯°æ, ËüÖ»±£Ö¤²»°Ñ¸úµ±Ç°loadµÄ±äÁ¿ÓĞÒÀÀµµÄ±äÁ¿reorder, Ã»ÒÀÀµ¹ØÏµµÄËæ±ãÒÆ¶¯
+ * memory_order_release, ç¼–è¯‘å™¨ä¿è¯ä¸ä¼šæŠŠå…¶åçš„å†™æ“ä½œç§»åˆ°å®ƒåè¾¹, å¦åˆ™å…¶ä»–çº¿ç¨‹å°±çœ‹ä¸åˆ°è¿™ä¸ªä¿®æ”¹äº†
+ * memory_order_acquire, ä¸ä¼šæŠŠå…¶åçš„è¯»æ“ä½œç§»åˆ°å®ƒå‰é¢, å¦åˆ™è¯»åˆ°çš„å°±æ˜¯æ—§æ•°æ®
+ * memory_order_relaxed, è¯´æ˜è¿™ä¸ªæ“ä½œé™¤äº†æ˜¯åŸå­çš„å¤–,å‘¨å›´çš„æ“ä½œéšä¾¿ç§»åŠ¨ï¼Œæ¯”è¾ƒé€‚åˆåšè®¡æ•°å™¨
+ * memory_order_acq_rel, åŸºæœ¬æ˜¯ memory_order_acquire å’Œ memory_order_release çš„åˆä½“
+ * memory_order_scq_cst, memory_order_acq_relçš„åŠ å¼ºç‰ˆ, é™¤äº†æœ‰acq_relè¯­ä¹‰, è¿˜ä¿è¯æ˜¯sequencially-consistent
+ * memory_order_consume, memory_order_acquireçš„å¼±åŒ–ç‰ˆ, å®ƒåªä¿è¯ä¸æŠŠè·Ÿå½“å‰loadçš„å˜é‡æœ‰ä¾èµ–çš„å˜é‡reorder,
+ * æ²¡ä¾èµ–å…³ç³»çš„éšä¾¿ç§»åŠ¨
  */
 
 std::atomic<int> flag(0);
 int data = 0;
 
-void thread1()
-{
+void thread1() {
     data = 1;
     flag.store(1, std::memory_order_release);
 }
-void thread2()
-{
-    while(flag.load(std::memory_order_acquire) == 0);
+void thread2() {
+    while (flag.load(std::memory_order_acquire) == 0)
+        ;
     assert(data == 1);
 }
 
-class Foo{};
+class Foo {};
 
 int main() {
     std::atomic<bool> b;
-    bool x1=b.load(std::memory_order_acquire);
+    bool x1 = b.load(std::memory_order_acquire);
     b.store(true);
-    x1=b.exchange(false, std::memory_order_acq_rel);
+    x1 = b.exchange(false, std::memory_order_acq_rel);
 
     Foo some_array[5];
     std::atomic<Foo*> p(some_array);
-    Foo* x=p.fetch_add(2);                          // p¼Ó2£¬²¢·µ»ØÔ­Ê¼Öµ
-    assert(x==some_array);
-    assert(p.load()==&some_array[2]);
-    x=(p-=1);                                       // p¼õ1£¬²¢·µ»ØÔ­Ê¼Öµ
-    assert(x==&some_array[1]);
-    assert(p.load()==&some_array[1]);
+    Foo* x = p.fetch_add(2);  // påŠ 2ï¼Œå¹¶è¿”å›åŸå§‹å€¼
+    assert(x == some_array);
+    assert(p.load() == &some_array[2]);
+    x = (p -= 1);  // på‡1ï¼Œå¹¶è¿”å›åŸå§‹å€¼
+    assert(x == &some_array[1]);
+    assert(p.load() == &some_array[1]);
     return 0;
 }
