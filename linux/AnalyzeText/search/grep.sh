@@ -30,5 +30,9 @@ grep -nr pattern folder/*                                   # search pattern und
 
 grep [jk] file                                              # j or k
 
+grep -A1 pattern                                            # 打印匹配行,再打印匹配行后1行
+grep -B1 pattern                                            # 打印匹配行,再打印匹配行前1行
+grep -C1 pattern                                            # 打印匹配行,再打印匹配行前后各自1行
+
 # -o show only match, it means extract matched text
 egrep -o ',e \w+ ,' data.txt | awk '{ print $2; }' | sort -u    # extract distinct exchange

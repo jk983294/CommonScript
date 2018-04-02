@@ -15,3 +15,6 @@ sed '/./,/^$/!d' afile                          # delete consective empty line
 sed '/./,$!d' afile                             # delete leading empty lines
 
 sed 's/<[^>]*>//g; /^$/d' a.html                # delete html tags
+
+# remove above until target line
+cat ldata.result | sed -n '/target line/,$p'    # only show target line to end, which means also remove first line to target line

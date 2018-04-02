@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/**
+ * Use decltype on auto&& parameters to std::forward them.
+ * auto f = [](auto&& x) { return normalize(std::forward<decltype(x)>(x)); };
+ */
+
 template <typename T, typename U>
 auto add(T t, U u) -> decltype(t + u)  // return type depends on template parameters
 {

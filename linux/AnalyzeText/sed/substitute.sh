@@ -12,3 +12,7 @@ sed 's!/bin/bash!/bin/csh!' /etc/passwd         # use ! for seporator, default i
 
 sed 's/4.2/"&"/' afile                          # & is the matched content including wildcards
 sed 's/\(45\)2/"\1"2/' afile                    # \n is the n-th sub-pattern
+
+# -E enables extended regular expressions (needed for + and grouping)
+# -i inplace edit
+sed -i -E 's/sr.+,id/sr 1 ,ty 1 ,id/g' bk.20180122.prod.b.thiceod
