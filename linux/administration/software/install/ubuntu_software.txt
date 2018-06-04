@@ -17,7 +17,8 @@ sudo rm /var/lib/dpkg/lock
 
 # chrome unlock keyring
 1. rm -f ~/.gnome2/keyrings/login.keyring
-2. open Passwords and Keys, right click Passwords, delete
+2. seahorse &
+3. open Passwords and Keys, right click Passwords, delete
 
 # root space 0 error / boot space 0
 uname -a                                                    # current kernel version

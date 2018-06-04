@@ -15,3 +15,8 @@ crash
 # Typing help within GDB will give you a prompt that will let you see additional commands.
 gdb path/to/the/binary path/to/the/core
 bt
+
+
+# mulithread debug
+# dead lock, several frame hang on pthread_wait or similar call
+thread apply all bt

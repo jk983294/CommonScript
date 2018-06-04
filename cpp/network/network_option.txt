@@ -1,0 +1,36 @@
+NODELAY
+it ensures that packets are sent as quickly as possible regardless of their size.
+it defeats this buffering scheme, so that all packets are sent as soon as they’re ready.
+
+SO_LINGER
+By default, the close() method returns immediately; but the system still tries to send any remaining data.
+If the linger time is set to zero, any unsent packets are thrown away when the socket is closed.
+If SO_LINGER is turned on and the linger time is any positive value, the close() method blocks while waiting the
+specified number of seconds for the data to be sent and the acknowledgments to be received.
+When that number of seconds has passed, the socket is closed and any remaining data is not sent, acknowledgment or no.
+
+SO_TIMEOUT
+Normally when you try to read data from a socket, the read() call blocks as long as necessary to get enough bytes.
+By setting SO_TIMEOUT, you ensure that the call will not block for more than a fixed number of milliseconds.
+Although this read() call failed, you can try to read from the socket again. The next call may succeed.
+
+SO_RCVBUF/SO_SNDBUF
+Larger buffers tend to improve performance for reasonably fast connections (FTP, HTTP)
+whereas slower, dial-up connections (Telnet, games) do better with smaller buffers.
+Of course, the network itself has limits on maximum bandwidth. Set the buffer too high and
+your program will try to send and receive data faster than the network can handle,
+leading to congestion, dropped packets, and slower performance.
+Thus, when you want maximum bandwidth, you need to match the buffer size to the latency of the connection
+so it’s a little less than the bandwidth of the network.
+the buffer is usually set to the smaller of these two (std::min(SO_RCVBUF, SO_SNDBUF)).
+
+SO_KEEPALIVE
+With turned on, client occasionally sends a data packet over an idle connection to make sure the server hasn’t crashed.
+Without SO_KEEPALIVE, an inactive client could live more or less forever without noticing that the server had crashed.
+
+OOBINLINE
+With OOBINLINE, any urgent data that arrives will be placed on the socket’s input stream to be read in the usual way.
+
+SO_REUSEADDR
+With SO_REUSEADDR (turn off by default), another socket is allowed to bind to the port
+even while data may be outstanding for the previous socket.

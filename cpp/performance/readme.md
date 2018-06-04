@@ -12,3 +12,7 @@
 | explicit MyClass(int i_): i(i_){} | MyClass(int i_): i(i_){}      | explicit prevent unnecessary conversion  |
 |                                   |                               | postpone variable declaration as long as possible |
 |       functor                     |     function pointer          | functor can be inlined, function pointer usually not |
+
+
+
+GHz即十亿赫兹(10^9 Hz)
