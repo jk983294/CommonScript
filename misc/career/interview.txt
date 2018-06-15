@@ -1,0 +1,2 @@
+strong fence weak fence
+add cpu cycle for memory hierarchy

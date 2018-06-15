@@ -1,3 +1,9 @@
 1. built with third party library .so with version 1.1, but runtime export library version 1.2
 then change lua file to 1.2, then recompile, symbol still cannot found, gdb without backtrace
 solution: clean all compiled object file, then clean compile, then works
+
+2. memory leak case: OrderManager hold shared_ptr of Order,
+Order hold shared_ptr of OrderManager to return itself back to OrderPool which is in OrderManager,
+this form a circle reference of shared_ptr, so no Order will be released, although it is managed by pool,
+but it is still a memory leak.
+solution: use weak_ptr in Order to point back to OrderManager
