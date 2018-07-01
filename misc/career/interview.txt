@@ -1,2 +1,5 @@
 strong fence weak fence
 add cpu cycle for memory hierarchy
+一个线程写一个int到一个地址，另一个线程读该地址，大概时间是70ns~1us，
+因为不同的L1,L2,L3 cache miss，导致不同的延时，也可能是线程被schedule到另外一个core上，如果是swap out 到磁盘，那就可能是1ms的延时
+系统架构，如何扩容，一台机器接收market data，然后广播出去，配置每台机器只处理其中一部分instruments

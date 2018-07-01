@@ -1,0 +1,28 @@
+Reuters name convention:
+delivery month for future/option:
+January  = F            February = G
+March = H               April = J
+May = K                 June = M
+July = N                August = Q
+September = U           October = V
+November = X            December = Z
+
+Quarter 1 = H
+Quarter 2 = M
+Quarter 3 = U
+Quarter 4 = Z
+
+expiry month for option strikes:
+call                    put
+January  = A            January  = M
+February = B            February = N
+March = C               March = O
+April = D               April = P
+May = E                 May = Q
+June = F                June = R
+July = G                July = S
+August = H              August = T
+September = I           September = U
+October = J             October = V
+November = K            November = W
+December = L            December = X

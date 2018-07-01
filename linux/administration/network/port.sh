@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# check local machine
 lsof -i                                     # list open socket
 lsof -i 4                                   # only ipv4
 lsof -i :22                                 # only show port 22 information
 lsof -p 1385                                # show open files for process
 
+# check remote machine
 nmap                                        # network map
 nmap localhost
 nmap www.baidu.com

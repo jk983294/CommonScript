@@ -1,0 +1,28 @@
+time measure:
+A NIC in, B callback time, C order insert, D NIC out
+solar capture A/D
+solar flare lttng
+Trello / Git
+SysDig / Perf
+Capacity / offset  open / close
+new to no trade queueing
+fill rate
+mbbo / bbo
+1. market data (feed / api)
+2. system (hardware)
+3. trade API
+4. seats
+market 5 - 10 us
+trading 10 - 20 us
+Front 5 us
+seat 50 us
+
+Response <-  Front  <-  Qry
+Return <- Exchange <- Req
+
+Resume Type: Restart / Resume / quick
+topic : public / private / user
+reqInventory : position , short/long 2 msgs
+onRtnTrade  price
+msg type: unknown / NoTradeQueue / PartTradedQueue / AllTraded / removed
+OMS inv_L inv_S inv_L0 inv_S0 inv
