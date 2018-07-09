@@ -8,13 +8,15 @@ print pd.concat(pieces)
 
 # append to row, example show append row 3 to the tail
 df1 = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
-s = df.iloc[3]
-print df.append(s, ignore_index=True)
+s = df1.iloc[3]                             # get row 3
+print df1.append(s, ignore_index=True)
 
 # SQL like join to merge dataframe
 left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
 right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
-print pd.merge(left, right, on='key')
+print left
+print right
+print pd.merge(left, right, on='key')       # inner join
 
 # SQL like group by
 df2 = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',

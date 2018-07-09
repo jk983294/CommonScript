@@ -121,6 +121,7 @@ fi
 
 # user specific aliases and functions
 export EDITOR='vim'
+set -o vi
 C_INCLUDE_PATH="/home/$USER/include"; export C_INCLUDE_PATH;
 CPLUS_INCLUDE_PATH="/home/$USER/include"; export CPLUS_INCLUDE_PATH;
 LIBRARY_PATH="./"; export LIBRARY_PATH;

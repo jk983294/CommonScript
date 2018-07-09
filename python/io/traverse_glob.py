@@ -11,12 +11,12 @@ path_prefix = "//##**----------------"
 
 def ignore_file(fileName):
     return fileName.endswith(".png") or fileName.endswith(".jpeg") or fileName.endswith(".pdf") \
-                or fileName.endswith(".so") or fileName.endswith(".pyc") or fileName.endswith(".gch") \
-                or fileName.endswith(".iml")
+        or fileName.endswith(".so") or fileName.endswith(".pyc") or fileName.endswith(".gch") \
+        or fileName.endswith(".iml")
 
 
 def loop_dir(fileName):
-    return fileName.endswith(".") or fileName.endswith("..")
+    return fileName.endswith(".") or fileName.endswith("..") or fileName.endswith(".git")
 
 
 def read_file(path):
