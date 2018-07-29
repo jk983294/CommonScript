@@ -16,4 +16,4 @@ session.add_all([MyTest(a='b', b='c'), MyTest(a='c', b='d')])
 session.commit()
 
 t1 = session.query(MyTest).filter_by(a='a').first()
-print t1
+print(t1)

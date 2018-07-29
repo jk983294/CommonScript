@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+locate pcap.h
+
 # -user <user name>
 # -group <group name>
 # -perm [-] <octal number>

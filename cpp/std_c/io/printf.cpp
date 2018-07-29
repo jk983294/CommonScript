@@ -8,6 +8,9 @@ int main() {
     float x4 = 42.424242;
     double x5 = 42.424242;
     long double x6 = 42.424242;
+    size_t x7 = 42;
+    ssize_t x8 = 42;
+
     printf("int %d\n", x);
     printf("unsigned int Octal %o\n", x1);
     printf("unsigned int decimal %u\n", x1);
@@ -20,5 +23,8 @@ int main() {
     printf("double valid bit %5g\n", x5);
     printf("double valid bit %5lg\n", x5);
     printf("long double %Lf\n", x6);
+    printf("long unsigned int %zu\n", x7);
+    printf("long unsigned int hex %zx\n", x7);
+    printf("long signed int %zd\n", x8);  // prints as signed decimal
     return 0;
 }

@@ -324,3 +324,7 @@ set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s       " C/C++ style indent
 if exists('$TMUX')
   set term=screen-256color
 endif
+
+"" tags
+set tags+=~/.vim/systags
+set tags+=.tags

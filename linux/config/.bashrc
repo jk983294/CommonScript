@@ -75,12 +75,23 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias du='du -h -d 1'
+
+# text process
 alias avg='awk "{ sum += \$1; n++; } END { if (n > 0) print ( sum / n); }"'
+alias total='awk "{ sum += \$1; } END { print ( sum ); }"'
 alias wordcount='awk "{for(i=1; i<= NF; i++) a[\$i]++} END {for(k in a) print a[k], k}"'
 alias sortn1='sort -n -k1'                      # sort by first column numerically
+alias cut1='cut -f1 -d" "'
+alias cut2='cut -f2 -d" "'
+alias cut3='cut -f3 -d" "'
+alias cut4='cut -f4 -d" "'
+alias cut5='cut -f5 -d" "'
+alias rm_comma='sed -i "s/,/ /g"'
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
+alias make="make -j`nproc`"
+alias gdb='gdb -q'
 alias boostc="~/github/CommonScript/linux/dev/compile/asio_compile.pl"
 alias tbbc="~/github/CommonScript/linux/dev/compile/tbb_compile.pl"
 

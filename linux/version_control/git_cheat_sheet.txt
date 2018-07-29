@@ -54,6 +54,13 @@
     谁，在什么时间，修改了文件的什么内容：
     $ git blame <file>
 
+diff
+    git diff against previous version right after pull:
+    $ git diff HEAD^ HEAD
+    $ git show
+    show diff between branches:
+    $ git diff origin/develop..feature_branch
+
 分支与标签
     列出所有的分支：
     $ git branch
@@ -69,6 +76,8 @@
     $ git branch -d <branch>
     给当前版本打标签：
     $ git tag <tag-name>
+    copy all origin/develop into feature branch
+    $ git rebase origin/develop
 
 更新与发布
     列出当前配置的远程端：

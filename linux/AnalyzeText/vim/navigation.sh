@@ -5,7 +5,7 @@
 # h/j/k/l                           left / down / up / right
 # $/0/^                             line end / line start / line start
 # H/M/L                             screen top(High) / middle / bottom(Low)
-# */#                               current character next occurrence / previous occurrence
+# */#                               current word's (next / previous) occurrence
 # w/b                               start of [ next word / back(previous) ] word
 # e                                 end of next word
 # 5w                                next 5 words, count excluding current word

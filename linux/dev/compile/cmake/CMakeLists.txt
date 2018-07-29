@@ -12,3 +12,26 @@ set(SOURCE_FILES
 )
 
 add_executable(hello ${SOURCE_FILES})
+
+add_library(hello_lib STATIC hello.cpp)
+set_target_properties(hello_lib
+    PROPERTIES
+    PUBLIC_HEADER "hello.h"
+    )
+
+add_library(math_lib SHARED math.cpp)
+set_target_properties(hello_lib
+    PROPERTIES
+    PUBLIC_HEADER "math.h"
+    )
+
+set(CMAKE_INSTALL_PREFIX /opt/version/test)
+
+install(TARGETS hello math_lib hello_lib
+            RUNTIME DESTINATION bin
+            LIBRARY DESTINATION lib
+            ARCHIVE DESTINATION lib/static
+            PUBLIC_HEADER DESTINATION include
+            )
+
+install(TARGETS hello DESTINATION /opt/version/test)
