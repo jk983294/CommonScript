@@ -1,0 +1,3 @@
+When using UDP, only one packet is received per recvfrom call.
+it is impossible for recvfrom to give partial packet.
+if buffer for recvfrom is smaller than packet size, then it will be dropped.

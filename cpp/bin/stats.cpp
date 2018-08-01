@@ -3,6 +3,7 @@
 #include <functional>
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -215,7 +216,7 @@ public:
         if (ds.size()) {
             ostringstream os;
             if (std::abs(ds.get_mean()) < 1) {
-                os << std::fixed << setprecision(12);
+                os << std::fixed << setprecision(9);
             }
             os << "st " << startTime << " ,span " << span << " ,min " << ds.get_min() << " ,max " << ds.get_max()
                << " ,mean " << ds.get_mean() << " ,stddev " << ds.get_standard_deviation();
