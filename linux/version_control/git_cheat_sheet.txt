@@ -60,6 +60,10 @@ diff
     $ git show
     show diff between branches:
     $ git diff origin/develop..feature_branch
+    set vimdiff as tool
+    $ git config --global diff.tool vimdiff
+    $ git config --global difftool.prompt false
+    $ git config --global alias.d difftool
 
 分支与标签
     列出所有的分支：
