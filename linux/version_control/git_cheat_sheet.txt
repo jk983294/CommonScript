@@ -1,3 +1,8 @@
+commit a new feature branch
+    $ git checkout -b feature_branch_name
+    edit, add and commit your files
+    $ git push -u origin feature_branch_name
+
 创建
     generate ssh key
     $ ssh-keygen -t rsa -C "jk983294@gmail.com"
@@ -71,9 +76,7 @@ diff
     切换分支：
     $ git checkout <branch>
     创建并切换到新分支:
-    $ git checkout -b <branch>
-    基于当前分支创建新分支：
-    $ git branch <new-branch>
+    $ git checkout -b <new-branch>
     基于远程分支创建新的可追溯的分支：
     $ git branch --track <new-branch> <remote-branch>
     删除本地分支:
