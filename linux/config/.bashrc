@@ -60,6 +60,8 @@ alias shbeauty='ex +"set syn=sh" +"norm gg=G" -cwq'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias gnear='grep -A5 -B5'
+alias greprw='grep -rw'
 alias psg='ps -ef | grep -i'
 alias lsg='ll | grep -i'
 alias asg='alias | grep -i'
@@ -101,6 +103,7 @@ alias dp='delta_play'
 alias ff='field_extract_facility.pl'
 alias mdc='md_client.pl'
 alias sql='mysql -u root -p'
+alias p3='/usr/bin/python3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -160,12 +163,16 @@ if [ -d /home/$USER/github/midas/install ]; then
     PATH="/home/$USER/github/midas/install${PATH:+:${PATH}}"; export PATH;
 fi
 
+# added by Anaconda3 installer
+if [ -d /opt/anaconda3 ]; then
+    export PATH="/opt/anaconda3/bin:$PATH"
+fi
+if [ -d /opt/miniconda3 ]; then
+    export PATH="/opt/miniconda3/bin:$PATH"
+fi
+
+
 # TBB
 if [ -f /home/$USER/.tbbvars.sh ]; then
     . /home/$USER/.tbbvars.sh
 fi
-
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-export DISPLAY=:0.0
