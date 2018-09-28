@@ -71,3 +71,7 @@ ctrl-alt-b                                      atom-beautify
 apm install atom-beautify
 apm install <package_name>                      install the latest version.
 apm install <package_name>@<package_version>    install a specific version.
+
+
+# menu
+Alt

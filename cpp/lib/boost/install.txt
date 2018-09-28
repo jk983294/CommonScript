@@ -32,3 +32,10 @@ LD_LIBRARY_PATH=/usr/lib
 
 # uninstall boost
 just deleting [PREFIX]/lib/libboost*, and [PREFIX]/include/boost* should do it on Unix like platforms
+
+# build with boost.python
+# edit user-config.jam    location is ./project-config.jam
+using python : 3.5 : /opt/anaconda3/bin/python : /opt/anaconda3/include/python3.5m : /opt/anaconda3/lib ;
+
+./bootstrap.sh --with-python=/opt/anaconda3/bin/python --with-python-version=3.5 --with-python-root=/opt/anaconda3/lib/python3.5
+./b2 install

@@ -10,3 +10,7 @@ gateway 192.168.31.1
 dns-nameserver 192.168.31.1
 
 sudo /etc/init.d/networking restart
+
+
+$ grep IPADDR /etc/sysconfig/network-scripts/ifcfg-em1
+IPADDR=10.18.0.191

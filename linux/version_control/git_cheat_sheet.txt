@@ -116,10 +116,14 @@ diff
     $ git remote set-url origin git+ssh://git@github.com/jk983294/CommonScript.git
 
 合并与重置
+    # If someone has pulled your branch, or you have pushed it somewhere, you should merge into it instead,
+    # to avoid confusion and extra work on the other end.
     将分支合并到当前HEAD中：
-    $ git merge <branch>
+    $ git merge <feature-branch>
+    # git rebase is only suitable when the branch hasn't been distributed, or there will be confusion
+    # and extra work downstream
     将当前HEAD版本重置到分支中:
-    $ git rebase <branch>
+    $ git rebase <feature-branch>
     退出重置:
     $ git rebase --abort
     解决冲突后继续重置：

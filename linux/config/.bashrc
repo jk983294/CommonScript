@@ -176,3 +176,8 @@ fi
 if [ -f /home/$USER/.tbbvars.sh ]; then
     . /home/$USER/.tbbvars.sh
 fi
+
+# python
+if [ -f /home/$USER/github/CommonScript/linux/config/.pythonstartup ]; then
+    export PYTHONSTARTUP="/home/$USER/github/CommonScript/linux/config/.pythonstartup"
+fi

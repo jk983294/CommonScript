@@ -19,6 +19,10 @@ apt-get update                                  # update cache to the latest ver
 ls /var/cache/apt/archives/
 apt-get install vim
 
+# high level package manager
+apt-get install aptitude
+aptitude install npm
+
 # install services
 apt-cache search postfix                        # search cache about postfix
 apt-cache pkgname postfix                       # find cache about package name start with postfix
