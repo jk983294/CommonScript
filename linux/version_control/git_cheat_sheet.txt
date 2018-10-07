@@ -140,8 +140,9 @@ diff
     $ git rebase master
 
 撤销
-    放弃工作目录下的所有修改：
+    放弃工作目录下的所有修改 and pull from remote：
     $ git reset --hard HEAD
+    $ git pull origin master
     移除缓存区的所有文件（i.e. 撤销上次git add）:
     $ git reset HEAD
     放弃某个文件的所有本地修改：
