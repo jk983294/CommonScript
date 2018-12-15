@@ -27,3 +27,7 @@ umask                                                   # show current file mode
 umask 0                                                 # set file mode creation mask to 0, then default perm is rw-rw-rw-
 umask 077                                               # set file mode creation mask to 0, then default perm is rw-------
 umask 002                                               # default umask
+
+# add perm recursively
+ find . -type d -exec chmod +777 {} \;
+ find . -type f -exec chmod +777 {} \;

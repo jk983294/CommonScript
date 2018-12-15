@@ -163,12 +163,18 @@ if [ -d /home/$USER/github/midas/install ]; then
     PATH="/home/$USER/github/midas/install${PATH:+:${PATH}}"; export PATH;
 fi
 
+if [ -d /opt/version/latest/bin ]; then
+    PATH="/opt/version/latest/bin${PATH:+:${PATH}}"; export PATH;
+fi
+
 # added by Anaconda3 installer
 if [ -d /opt/anaconda3 ]; then
     export PATH="/opt/anaconda3/bin:$PATH"
+    alias p3='/opt/anaconda3/bin/python'
 fi
 if [ -d /opt/miniconda3 ]; then
     export PATH="/opt/miniconda3/bin:$PATH"
+    alias p3='/opt/miniconda3/bin/python'
 fi
 
 

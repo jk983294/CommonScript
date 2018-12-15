@@ -28,6 +28,8 @@ commit a new feature branch
     $ git add -p <file>
     提交本地的所有修改：
     $ git commit -a
+    only commit specified directory
+    $ git commit my-dir
     提交之前已标记的变化：
     $ git commit
     附加消息提交：
@@ -76,7 +78,9 @@ diff
     切换分支：
     $ git checkout <branch>
     创建并切换到新分支:
-    $ git checkout -b <new-branch>
+    $ git checkout -b feature_branch_name
+    # first time push your branch to the remote repository
+    $ git push -u origin feature_branch_name
     基于远程分支创建新的可追溯的分支：
     $ git branch --track <new-branch> <remote-branch>
     删除本地分支:

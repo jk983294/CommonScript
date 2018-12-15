@@ -16,7 +16,13 @@ ssh jk@192.168.0.97                         # ssh to remote host with account jk
 
 # key generation, id_rsa, id_rsa.pub
 ssh-keygen -t rsa
+ssh-keygen -t rsa -C "jk983294@gmail.com" -b 4096
 ssh-copy-id -i id_rsa.pub jk@192.168.0.97   # copy public key to remote host's authorized_keys file
+
+# login/copy without password
+ssh-keygen -t rsa -b 2048
+ssh-copy-id id@server
+# then check target machine's ~/.ssh/authorized_keys
 
 # putty client
 # putty key generator, generate key pair

@@ -10,6 +10,7 @@ cal 3 2017                                                          # show March
 date                                                                # current date
 date +%x                                                            # format current date with locale
 date +%F                                                            # 2017-03-12
+date "+%Y%m%d_%H%M%S"                                               # 20181215_102340 for log file name generation
 date --date "4:30pm"
 date --date "1 day 4:30pm"
 date --date "-1 day 4:30pm"
