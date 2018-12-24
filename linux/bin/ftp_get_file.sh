@@ -1,0 +1,19 @@
+#!/bin/sh
+# usage: ftp_get_file.sh REMOTE_SITE REMOTE_USER REMOTE_PASS REMOTE_DIR FILE
+
+REMOTE_SITE=$1
+REMOTE_USER=$2
+REMOTE_PASS=$3
+REMOTE_DIR=$4
+FILE=$5
+
+ftp -n << END_SCRIPT
+open $REMOTE_SITE
+user $REMOTE_USER $REMOTE_PASS
+passive off
+cd $REMOTE_DIR
+bin
+get $FILE
+bye
+END_SCRIPT
+exit 0

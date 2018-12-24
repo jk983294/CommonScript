@@ -73,6 +73,7 @@ alias cdgit='cd ~/github/'
 alias cdm='cd ~/github/midas/install'
 alias cdvis='cd ~/github/midas/visualization'
 alias cdata='cd ~/Data/ctp'
+alias cdconf='cd /opt/version/latest/etc'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -187,3 +188,12 @@ fi
 if [ -f /home/$USER/github/CommonScript/linux/config/.pythonstartup ]; then
     export PYTHONSTARTUP="/home/$USER/github/CommonScript/linux/config/.pythonstartup"
 fi
+
+# git stuff
+if [ -f ~/github/CommonScript/linux/version_control/.git-completion.bash ]; then
+    . ~/github/CommonScript/linux/version_control/.git-completion.bash
+fi
+if [ -f ~/github/CommonScript/linux/version_control/.git-prompt.sh ]; then
+    . ~/github/CommonScript/linux/version_control/.git-prompt.sh
+fi
+export GIT_PS1_SHOWDIRTYSTATE=1

@@ -11,6 +11,7 @@ commit a new feature branch
     复制一个已创建的仓库:
     $ git clone https://github.com/jk983294/CommonScript.git
     $ git clone git@github.com:jk983294/Store.git
+    $ git clone git@github.com:jk983294/Store.git another_name
     创建一个新的本地仓库:
     $ git init
     $ git add .
@@ -20,7 +21,7 @@ commit a new feature branch
 本地修改
     显示工作路径下已修改的文件：
     $ git status
-    显示与上次提交版本文件的不同：
+    查看已被加入但是尚未提交的更改：
     $ git diff
     把当前所有修改添加到下次提交中：
     $ git add
@@ -36,7 +37,7 @@ commit a new feature branch
     $ git commit -am 'message here'
     提交，并将提交时间设置为之前的某个日期:
     git commit --date="`date --date='n day ago'`" -am "Commit Message"
-    修改上次提交, 请勿修改已发布的提交记录!
+    修改更改最后一个commit, 将使你能够重新提供commit消息, 向commit中添加忘记的文件
     $ git commit --amend
     把当前分支中未提交的修改移动到其他分支
     git stash
@@ -50,10 +51,20 @@ commit a new feature branch
     $ git grep "Hello" v2.5
 
 提交历史
-    从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：
+    从最新提交开始，显示所有的提交记录（SHA,作者,时间,标题）：
     $ git log
-    显示所有提交（仅显示提交的hash和message）：
+    显示所有提交（仅显示SHA和message）：
     $ git log --oneline
+    显示所有提交（include file change summary）：
+    $ git log --stat
+    显示所有提交（include file patch details）：
+    $ git log -p
+    $ git log --patch
+    $ git log -p -w             # ignore only space change, it will show word change 忽略空格变化
+    $ git log -p SHA            # only show all commits before that SHA
+    $ git show SHA              # only show SHA commit
+    显示所有提交（include summary and file patch details）：
+    git log -p --stat
     显示某个用户的所有提交：
     $ git log --author="username"
     显示某个文件的所有修改：
@@ -72,21 +83,37 @@ diff
     $ git config --global difftool.prompt false
     $ git config --global alias.d difftool
 
-分支与标签
+标签
+    给当前版本打标签：
+    $ git tag -a v1.0               # -a 注释的标签
+    $ git tag -a v1.0 SHA           # tag to specified commit
+    删除标签
+    $ git tag -d v1.0
+    show all tags
+    $ git tag
+    show all tags with git log
+    $ git log --decorate
+
+
+分支
     列出所有的分支：
     $ git branch
-    切换分支：
+    $ git log --oneline --decorate --graph --all
+    创建分支:
+    $ git branch sidebar
+    $ git branch another_sidebar 42a69f         # create branch another_sidebar with 42a69f commit
+    删掉分支:  #!! 无法删除当前所在的分支。因此要删除sidebar分支，你需要切换到master分支，或者创建并切换到新的分支
+    $ git branch -d sidebar
+    $ git branch -D sidebar                     # force delete even we have new data in that branch
+    切换分支： 从工作目录中删除git跟踪的所有文件和目录(git跟踪的文件存储在仓库中，因此什么也不会丢失), 转到仓库，并提取分支指向的 commit 所对应的所有文件和目录
     $ git checkout <branch>
     创建并切换到新分支:
     $ git checkout -b feature_branch_name
+    $ git checkout -b footer master             # 创建新的footer分支并让分支的起点位置与master分支的一样
     # first time push your branch to the remote repository
     $ git push -u origin feature_branch_name
     基于远程分支创建新的可追溯的分支：
     $ git branch --track <new-branch> <remote-branch>
-    删除本地分支:
-    $ git branch -d <branch>
-    给当前版本打标签：
-    $ git tag <tag-name>
     copy all origin/develop into feature branch
     $ git rebase origin/develop
 
@@ -132,6 +159,13 @@ diff
     $ git rebase --abort
     解决冲突后继续重置：
     $ git rebase --continue
+
+    # conflict
+    $ git merge conflict_test                   # Automatic merge failed; fix conflicts and then commit the result
+    $ git status                                # both modified:   index.html
+    $ vim index.html                            # edit this file to choose the final version
+    $ git cma 'fix conflitct'                   # commit as normal to merge conflict
+
     使用配置好的merge tool 解决冲突：
     $ git mergetool
     在编辑器中手动解决冲突后，标记文件为已解决冲突
@@ -149,13 +183,18 @@ diff
     $ git pull origin master
     移除缓存区的所有文件（i.e. 撤销上次git add）:
     $ git reset HEAD
+    # git reset to previous commit, default --mixed
+    git reset --mixed HEAD~1            # move current HEAD to working directory
+    git reset --soft HEAD~1             # move current HEAD to staging index
+    git reset --hard HEAD~1             # delete current HEAD
     放弃某个文件的所有本地修改：
     $ git checkout file_to_recover
     $ git checkout HEAD <file>
-    重置一个提交（通过创建一个截然不同的新提交）
-    $ git revert <commit>
+    重置一个提交, git会执行和commit中的更改完全相反的更改（通过创建一个截然不同的新提交）
+    $ git revert SHA
     将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
     $ git reset --hard <commit>
+    $ git reset --hard HEAD^                # move back to previous commit
     将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：
     $ git reset <commit>
     将HEAD重置到上一次提交的版本，并保留未提交的本地修改：
@@ -165,6 +204,9 @@ config
     git config --list
     git config --global user.name "jk983294"
     git config --global user.email "jk983294@gmail.com"
+    git config --global color.ui auto
+    git config --global merge.conflictstyle diff3
+    git config --global core.editor "vim"
 
 aliases
     git config --global alias.st status
