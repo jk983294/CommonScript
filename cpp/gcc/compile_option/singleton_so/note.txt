@@ -1,0 +1,26 @@
+add -rdynamic to the link line for the main executable, not for so target
+
+$ nm -C example | grep singleton
+$ nm -C -D  example | grep singleton
+0000000000400f69 W singleton::instance()
+00000000006022d8 B singleton::pInstance
+0000000000400f54 W singleton::singleton()
+0000000000400f54 W singleton::singleton()
+
+even though the singleton::pInstance is present in the executable as a global variable,
+that symbol is not present in the dynamic symbol table,
+and therefore "invisible" to the dynamic linker.
+
+Because the dynamic linker "doesn't know" that example already
+contains a definition of singleton::pInstance,
+it doesn't bind that variable inside hello.so to the existing definition (which is what you really want).
+
+$ make -f Makefile.not.work
+$ nm -C example.without.rdynamic | grep singleton
+$ nm -C -D example.without.rdynamic | grep singleton
+
+Now the definition of singleton::pInstance inside the main executable is visible to the dynamic linker,
+and so it will "reuse" that definition when loading hello.so
+
+$ LD_DEBUG=bindings ./example |& grep pInstance
+     13587:     binding file ./hello.so [0] to ./example [0]: normal symbol `_ZN9singleton9pInstanceE'
