@@ -25,3 +25,6 @@ uname -a                                                    # current kernel ver
 sudo apt-get remove linux-image-                            # two tab
 sudo apt-get remove linux-image-4.8.0-46-generic
 sudo /usr/sbin/update-grub
+
+# E: Unable to correct problems, you have held broken packages.
+aptitude install liblttng-ust-dev

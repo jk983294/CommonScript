@@ -7,3 +7,7 @@ Order hold shared_ptr of OrderManager to return itself back to OrderPool which i
 this form a circle reference of shared_ptr, so no Order will be released, although it is managed by pool,
 but it is still a memory leak.
 solution: use weak_ptr in Order to point back to OrderManager
+
+3. invalid use of incomplete type
+gcc中，在引用某个已经实现的类时：如果只是定义某个类的指针，可以使用class关键字先进行声明，而不需包含头文件；
+但如果涉及到定义某个类的对象或是引用类的某个具体成员时，则必须包含该类的头文件，并且不要加class关键字进行声明。否则，将会出现编译错误！

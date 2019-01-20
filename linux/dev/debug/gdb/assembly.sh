@@ -1,3 +1,7 @@
+si                                                  # assembly level step
+ni                                                  # assembly level next
+x/20i 0x00007ffe4ccd5f96                            # show next 20 instructions from address 0x00007ffe4ccd5f96
+
 # 把断点设置在汇编指令层次函数的开头
 (gdb) b *main
 (gdb) b *func

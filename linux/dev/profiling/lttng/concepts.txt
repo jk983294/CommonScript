@@ -1,0 +1,61 @@
+# core concepts
+
+## tracing session
+## it has name, set of trace files, state of activity (started/stopped),  mode(local, network streaming, snapshot, or live),  channels which have their own event rules.
+## tracing session lasts from the lttng create command to the lttng destroy command
+## tracing session mode dictates where to send the generated trace data
+
+## tracing domain
+## a tracing domain is a namespace for event sources.
+## currently five available tracing domains: Linux kernel, User space, java.util.logging (JUL), log4j, Python
+## specify a tracing domain when creating an event rule
+## you can create channels in the Linux kernel and user space tracing domains
+
+## Channel and ring buffer
+## A channel is an object which is responsible for a set of ring buffers. A channel owns event rules.
+## Each ring buffer is divided into multiple sub-buffers.
+## A channel has at least one ring buffer per CPU. LTTng always records an event to the ring buffer associated to the CPU on which it occurred.
+## channel in the user space tracing domain can use Per-user buffering or Per-process buffering schemes
+## LTTng privileges performance over integrity; when no empty sub-buffer is available, it is acceptable to lose event records
+## event loss mode (Discard mode|Overwrite mode)；  in overwrite mode, the tracer abandons a whole sub-buffer for a new event record, in discard mode, the tracer only discards the event record that doesn’t fit.
+## Switch timer period is an important configurable attribute of a channel to ensure periodic sub-buffer flushing
+
+## Instrumentation point, event rule, event, and event record
+## event rule is a set of conditions which must be all satisfied for LTTng to record an occuring event.
+## conditions: event rule is enabled, instrumentation point’s type is T. instrumentation point’s name matches N, but is not E. instrumentation point’s log level is as severe as L, or is exactly L. fields of the event’s payload satisfy a filter expression F.
+## An event is the consequence of the execution of an instrumentation point
+## An event record is the representation of an event in a sub-buffer
+
+
+## Session daemon
+## responsible for managing tracing sessions and for controlling the various components of LTTng
+## sends control requests to and receives control responses from user space tracing library, LTTng kernel tracer, consumer daemon and relay daemon.
+## receives commands from the tracing control library
+
+## Consumer daemon
+## shares ring buffers with user applications or with the LTTng kernel modules to collect trace data and send it to some location
+## a consumer daemon is always spawned by a session daemon as soon as you create an event rule
+
+## logger
+## The LTTng logger module implements the special /proc/lttng-logger file so that any executable can generate LTTng events by opening and writing to this file.
+
+## Instrumentation
+### a tracepoint provider is a set of compiled functions which provide tracepoints to an application
+### The tracepoint() macro calls those functions.
+### TRACEPOINT_EVENT, (provider_name, tracepoint_name, input arguments, output event fields)
+### A tracepoint class is a class of tracepoints which share the same output event field definitions.
+### when you requires multiple tracepoint definitions with different names, but with the same event fields, then use tracepoint class and instantiate as many tracepoint instances as needed.
+### You can assign an optional log level to a tracepoint definition.  => TRACEPOINT_LOGLEVEL(provider_name, tracepoint_name, log_level)
+### tracef without the burden of creating and building a tracepoint provider package => #include <lttng/tracef.h> tracef("my message: %d (%s)", my_integer, my_string);
+### tracelog => #include <lttng/tracelog.h> tracelog(TRACE_WARNING, "my message: %d (%s)", my_integer, my_string);
+### Prebuilt user space tracing helpers (liblttng-ust-libc-wrapper.so, liblttng-ust-cyg-profile.so, liblttng-ust-dl.so)
+tracepoint(monster, monster_tracepoint, FILE, func, LINE, "mystr");
+fprintf(stdout, "%s:%s:%d\n",__FILE__,__func__,__LINE__);
+
+
+# in main.cpp
+#define TRACEPOINT_CREATE_PROBES
+#define TRACEPOINT_DEFINE
+#define TRACEPOINT_PROBE_DYNAMIC_LINKAGE
+#include "Trace/lttng_trace.h"
+
