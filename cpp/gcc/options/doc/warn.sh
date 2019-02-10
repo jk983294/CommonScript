@@ -1,0 +1,26 @@
+# warn option
+-Wnoexcept                      # warn when a noexcept-expression evaluates to false
+-Wnon-virtual-dtor              # warn when a class has virtual functions and an accessible non-virtual destructor
+-Woverloaded-virtual            # warn when a function declaration hides virtual functions from a base class.
+-Wformat                        # check calls to printf and scanf
+-Wmissing-include-dirs          # warn if a user-supplied include directory does not exist
+-Wsystem-headers                # warnings from system headers are normally suppressed, this option enable it
+-Wshadow                        # warn whenever a local variable or type declaration shadows another variable
+-Wframe-larger-than=len         # warn if the size of a function frame is larger than len bytes
+-Wstack-usage=len               # Warn if the stack usage of a function might be larger than len bytes
+-Wzero-as-null-pointer-constant # Warn when a literal ’0’ is used as null pointer constant
+-Winline                        # Warn if a function that is declared as inline cannot be inlined
+-Wvector-operation-performance  # Warn if vector operation is not implemented via SIMD capabilities of the architecture
+-Woverlength-strings            # Warn about string constants that are longer than the “minimum maximum” length specified in the C standard
+# options to suppress warnings
+-Wall                           # notify all warnings
+-Wextra                         # enables some extra warning flags that are not enabled by ‘-Wall’
+-w                              # ignore all warning messages
+-Werror                         # make all warnings into errors
+-Werror=                        # make the specified warning into an error, -Werror=switch turns the warnings controlled by -Wswitch into errors
+-Wno-error=                     # make exception from -Werror=, -Wno-error=switch makes -Wswitch warnings not be errors, even when -Werror is in effect
+-fsyntax-only                   # check the code for syntax errors, but don’t do anything beyond that
+-fmax-errors=n                  # limits the maximum number of error messages to n
+-Wfatal-errors                  # causes the compiler to abort compilation on the first error
+-pedantic                       # issue all the warnings demanded by strict ISO C++
+-pedantic-errors                # issue errors rather than warnings

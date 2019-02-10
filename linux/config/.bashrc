@@ -51,6 +51,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # aliases
 alias c="clear"
+alias h="history"
 alias rm='rm -i'
 alias rmall='rm -rf *'
 alias wcl='wc -l'
@@ -67,7 +68,15 @@ alias lsg='ll | grep -i'
 alias asg='alias | grep -i'
 alias histg="history | grep -i"
 alias gitpull='git pull origin master'
+alias gitpullo='git pull origin'
+alias gitpulld='git pull origin develop'
 alias gitpush='git push origin master'
+alias gitpushd='git push origin develop'
+alias gitpusho='git push origin'
+alias gitcd='git checkout develop'
+alias gitreset='git reset --hard HEAD'
+alias gitdiff='git d'
+alias gitd='git d HEAD@{1}'
 alias chrome='google-chrome'
 alias cdgit='cd ~/github/'
 alias cdm='cd ~/github/midas/install'
@@ -89,11 +98,13 @@ alias cut2='cut -f2 -d" "'
 alias cut3='cut -f3 -d" "'
 alias cut4='cut -f4 -d" "'
 alias cut5='cut -f5 -d" "'
+alias sql='mysql -u kjiang -p'
 alias rm_comma='sed -i "s/,/ /g"'
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
 alias make="make -j`nproc`"
+alias mcm="make clean; make"
 alias gdb='gdb -q'
 alias boostc="~/github/CommonScript/linux/dev/compile/asio_compile.pl"
 alias tbbc="~/github/CommonScript/linux/dev/compile/tbb_compile.pl"
@@ -104,7 +115,7 @@ alias dp='delta_play'
 alias ff='field_extract_facility.pl'
 alias mdc='md_client.pl'
 alias sql='mysql -u root -p'
-alias p3='/usr/bin/python3'
+alias vimtc='vim /opt/version/latest/etc/trade_config.xml'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

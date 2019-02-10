@@ -1,0 +1,17 @@
+-g / -gxcoff                    # enables use of extra debugging information that only GDB can use
+-g -O3                          # debug optimized code
+-ggdb                           # produce debugging information for use by GDB
+-fsanitize=address              # enable AddressSanitizer, a fast memory error detector, detect out-of-bounds and use-after-free bugs
+-fsanitize=thread               # enable ThreadSanitizer, a fast data race detector, detect data race bugs
+-p                              # generate extra code to write profile information suitable for the analysis program prof
+-pg                             # generate extra code to write profile information suitable for the analysis program gprof
+-fprofile-report                # makes the compiler print some statistics about consistency of the (estimated) profile and effect of individual passes
+-fstack-usage                   # makes the compiler output stack usage information for the program, on a perfunction basis
+-fprofile-arcs                  # add code so that program flow arcs are instrumented, data may be used for profile-directed optimizations (‘-fbranch-probabilities’), or for test coverage analysis (‘-ftest-coverage’)
+--coverage                      # compile and link code instrumented for coverage analysis
+-ftest-coverage                 # produce a notes file that the gcov code-coverage utility can use to show program coverage
+-fdump-translation-unit         # dump a representation of the tree structure for the entire translation unit to a file
+-fdump-class-hierarchy          # dump a representation of each class’s hierarchy and virtual function table layout to a file
+-frandom-seed=string            # use this option to produce reproducibly identical object files
+-print-file-name=library        # print the full absolute name of the library file library that would be used when linking
+-print-search-dirs              # print the name of the configured installation directory and a list of program and library directories gcc searches

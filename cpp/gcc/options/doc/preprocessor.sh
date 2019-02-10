@@ -1,0 +1,7 @@
+-E                              # nothing is done except preprocessing
+-D name                         # #define name 1
+-D name=definition              # #define name definition
+-U name                         # cancel any previous definition of name, either built in or provided with a ‘-D’ option.
+-undef                          # do not predefine any system-specific or GCC-specific macros
+-I dir                          # add the directory dir to the list of directories to be searched for header files.
+-o file                         # write output to file.

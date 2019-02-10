@@ -1,3 +1,7 @@
+# gdb printf
+(gdb) printf "%s", x
+(gdb) call printf("%s", x)
+
 # 打印ASCII字符串
 (gdb) x/s str1
 

@@ -1,0 +1,9 @@
+-llibrary                       # search the library named library (liblibrary.a) when linking.
+-pie                            # Produce a position independent executable on targets, you must also specify the same set of options used for compilation (‘-fpie’ or ‘-fPIE’)
+-rdynamic                       # Pass the flag ‘-export-dynamic’ to the ELF linker, This instructs the linker to add all symbols, not only used ones, to the dynamic symbol table
+-s                              # Remove all symbol table and relocation information from the executable.
+-static                         # this prevents linking with the shared libraries
+-shared                         # Produce a shared object which can then be linked with other objects, you must also specify the same set of options used for compilation (‘-fpic’ or ‘-fPIC’)
+-symbolic                       # Bind references to global symbols when building a shared object
+-Wl,option                      # Pass option as an option to the linker
+-Wl,-rpath=/tmp/lib -L/tmp/lib

@@ -76,6 +76,8 @@ diff
     git diff against previous version right after pull:
     $ git diff HEAD^ HEAD
     $ git show
+    git show diff for one file between two version
+    $ git diff 4208f10 dc8aee4 src/some/thing.cpp
     show diff between branches:
     $ git diff origin/develop..feature_branch
     set vimdiff as tool
