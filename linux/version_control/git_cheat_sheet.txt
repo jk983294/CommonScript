@@ -43,6 +43,21 @@ commit a new feature branch
     git stash
     git checkout branch2
     git stash pop
+    # 保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行git status命令，就会发现当前是一个干净的工作区，没有任何改动
+    git stash
+    git stash save 'message...'
+    # 显示保存进度的列表
+    git stash list
+    # 恢复最新的进度到工作区
+    git stash pop
+    # 恢复最新的进度到工作区和暂存区
+    git stash pop --index
+    # 恢复指定的进度到工作区。stash_id是通过git stash list命令得到的
+    git stash pop stash@{1}
+    # 删除一个存储的进度
+    git stash drop [stash_id]
+    # 删除所有存储的进度
+    git stash clear
 
 搜索
     从当前目录的所有文件中查找文本内容：

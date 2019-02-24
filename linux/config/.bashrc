@@ -115,7 +115,10 @@ alias dp='delta_play'
 alias ff='field_extract_facility.pl'
 alias mdc='md_client.pl'
 alias sql='mysql -u root -p'
-alias vimtc='vim /opt/version/latest/etc/trade_config.xml'
+alias vimt='vim /opt/version/latest/etc/trade_config.xml'
+alias compress='tar -cjvf' # usage: compress linux.git.tar.bz /home/kun/github/linux
+alias perfrecord='perf record -g'
+alias perfreport='perf report -g "graph,0.5,caller"'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -150,8 +153,8 @@ export EDITOR='vim'
 set -o vi
 C_INCLUDE_PATH="/home/$USER/include"; export C_INCLUDE_PATH;
 CPLUS_INCLUDE_PATH="/home/$USER/include"; export CPLUS_INCLUDE_PATH;
-LIBRARY_PATH="./"; export LIBRARY_PATH;
-LD_LIBRARY_PATH="./"; export LD_LIBRARY_PATH;
+LIBRARY_PATH="/home/$USER/lib${LIBRARY_PATH:+:${LIBRARY_PATH}}"; export LIBRARY_PATH;
+LD_LIBRARY_PATH="/home/$USER/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
 
 # perl lib related, choose 'local::lib'
 if [ -d /home/$USER/perl5/bin ]; then
