@@ -100,6 +100,7 @@ alias cut4='cut -f4 -d" "'
 alias cut5='cut -f5 -d" "'
 alias sql='mysql -u kjiang -p'
 alias rm_comma='sed -i "s/,/ /g"'
+alias tailf='tail -f'
 
 alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"

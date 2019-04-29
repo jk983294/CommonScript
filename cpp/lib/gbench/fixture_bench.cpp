@@ -1,15 +1,27 @@
 #include <benchmark/benchmark.h>
 #include <unistd.h>
+#include <iostream>
 #include <thread>
 #include <vector>
 
 using namespace std;
 
+/**
+ * it will try several times util the statistics are stable
+ * each try will setup a fixture and its SetUp and TearDown will be called exactly once
+ */
+
 class MyFixture : public benchmark::Fixture {
 public:
-    void SetUp(const ::benchmark::State& state) { v.reserve(100); }
+    void SetUp(const ::benchmark::State& state) {
+        cout << "SetUp " << v.size() << endl;
+        v.reserve(100);
+    }
 
-    void TearDown(const ::benchmark::State& state) { v.clear(); }
+    void TearDown(const ::benchmark::State& state) {
+        cout << "TearDown " << v.size() << endl;
+        v.clear();
+    }
 
     vector<int> v;
 };
