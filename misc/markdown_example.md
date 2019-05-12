@@ -274,7 +274,7 @@ D-->>A: Dashed open arrow
 
 #### 更多语法参考：[Mermaid 序列图语法参考](https://knsv.github.io/mermaid/#sequence-diagrams)
 
-### 12. 表格支持
+### 12. table
 
 | 项目        | 价格   |  数量  |
 | --------   | -----:  | :----:  |

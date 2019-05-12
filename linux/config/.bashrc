@@ -129,6 +129,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias which2net="lsof -P -i -n"
 alias activeport='netstat -tulanp'
 alias publicipinfo="curl ifconfig.me && curl ifconfig.me/host"            # show your public network ip and host
+alias oip="curl www.trackip.net/ip?json" # show outside ip, not internal ip
 
 # funny
 alias busy="cat /dev/urandom | hexdump -C | grep \"ca fe\""

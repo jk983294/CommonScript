@@ -1,3 +1,9 @@
+# precompile
+gcc -E a.cpp
+
+# assembly
+gcc -S a.cpp
+
 # 打印gcc预定义的宏信息
 gcc -dM -E - < /dev/null
 

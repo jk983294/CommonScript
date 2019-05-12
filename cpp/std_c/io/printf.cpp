@@ -5,7 +5,7 @@ int main() {
     unsigned int x1 = 42;
     long x2 = 42;
     long long x3 = 42;
-    float x4 = 42.424242;
+    float x4 = 42.424242f;
     double x5 = 42.424242;
     long double x6 = 42.424242;
     size_t x7 = 42;
@@ -26,5 +26,8 @@ int main() {
     printf("long unsigned int %zu\n", x7);
     printf("long unsigned int hex %zx\n", x7);
     printf("long signed int %zd\n", x8);  // prints as signed decimal
+
+    // fill 0
+    printf("600%03d.SSE", 1);
     return 0;
 }

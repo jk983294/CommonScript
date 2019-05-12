@@ -33,6 +33,7 @@ tshark -i wlan0 -w mycaptures.pcap                  # capture interface wlan0
 # and                           logical AND of the two adjacent parameters
 # or                            logical OR of the two adjacent parameters
 tshark -f "net 192.168.8.0/24"                      # capture packets from/to all network addresses on network 192.168.8.0
+tshark -i p2p1 -f "dst 69.191.198.34 or src 69.191.198.34" -w mycaptures.pcap   # capture to/from ip
 
 # Yank filter
 # this can be used both capture or read from file
