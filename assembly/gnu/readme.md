@@ -44,12 +44,18 @@ mov %rcx, %rax
 ```gas
 movw (%rsi), %ax
 ```
+int:
 * b - 1 byte operands
 * w - 2 bytes operands
 * l - 4 bytes operands
 * q - 8 bytes operands
 * t - 10 bytes operands
 * o - 16 bytes operands
+
+float:
+* s - 4 bytes float
+* l - 8 bytes double
+* t - long double [80 bits])
 
 ### Memory access
 ```gas
