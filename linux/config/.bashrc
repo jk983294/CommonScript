@@ -83,6 +83,7 @@ alias cdm='cd ~/github/midas/install'
 alias cdvis='cd ~/github/midas/visualization'
 alias cdata='cd ~/Data/ctp'
 alias cdconf='cd /opt/version/latest/etc'
+alias cdz='cd /opt/version/latest/'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -106,6 +107,7 @@ alias g++="g++ -std=c++11 -pthread"
 alias gcc="gcc -std=c++11 -pthread"
 alias make="make -j`nproc`"
 alias mcm="make clean; make"
+alias mi="make install"
 alias gdb='gdb -q'
 alias boostc="~/github/CommonScript/linux/dev/compile/asio_compile.pl"
 alias tbbc="~/github/CommonScript/linux/dev/compile/tbb_compile.pl"
