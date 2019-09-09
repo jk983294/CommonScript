@@ -1,0 +1,29 @@
+import os
+
+"""
+sum() , min() , max() apply to list
+better to use generator rather than create a new list and then apply aggregation function 
+"""
+
+print(sum(x * x for x in [1, 2, 3, 4, 5]))          # 55
+
+
+# Determine if any .py files exist in a directory
+files = os.listdir('.')
+if any(name.endswith('.py') for name in files):
+    print('There be python!')
+else:
+    print('Sorry, no python.')
+
+# Output a tuple as CSV
+s = ('ACME', 50, 123.45)
+print(','.join(str(x) for x in s))                  # ACME,50,123.45
+
+# Data reduction across fields of a data structure
+portfolio = [
+    {'name':'GOOG', 'shares': 50},
+    {'name':'YHOO', 'shares': 75},
+    {'name':'AOL', 'shares': 20},
+    {'name':'SCOX', 'shares': 65}
+]
+print(min(s['shares'] for s in portfolio))          # 20

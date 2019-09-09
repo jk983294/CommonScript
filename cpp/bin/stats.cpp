@@ -1,8 +1,10 @@
 #include <algorithm>
+#include <cmath>
 #include <deque>
 #include <functional>
 #include <iomanip>
 #include <iostream>
+#include <numeric>
 #include <sstream>
 
 using namespace std;

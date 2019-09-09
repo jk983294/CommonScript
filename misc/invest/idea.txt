@@ -28,3 +28,5 @@ checker module validate actions (no market order, over position, buy sell / buy 
 
 you have a fair value price, and a delta price, when sell order < (p - delta) , I buy in
 when buy order > (p + delta), then I sell out
+
+k线开盘收盘，中间点，3条轨迹，当日中间点离开回归后的带，表示趋势转折

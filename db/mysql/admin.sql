@@ -1,5 +1,5 @@
 -- connect to server
---      mysql -u root -p test
+--      mysql -u root -p 
 --      mysql -h host -u user -p < batch_file.sql
 
 -- disconnect

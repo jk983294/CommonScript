@@ -19,3 +19,5 @@ ethtool -A tx off eno1                          # stop module transmit data
 ethtool -K eno1 rx off                          # turn off CRC check
 ethtool -p eno1 10                              # check eno1 in which NIC, it will blink
 ethtool -s eno1 speed 100                       # downgrade send speed
+
+ethtool -S p1p1 | egrep '(err|drop|discard).*[1-9]+'    # check dropped packets
