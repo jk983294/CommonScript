@@ -30,3 +30,6 @@ you have a fair value price, and a delta price, when sell order < (p - delta) , 
 when buy order > (p + delta), then I sell out
 
 k线开盘收盘，中间点，3条轨迹，当日中间点离开回归后的带，表示趋势转折
+Markov chain, states is percentage change of stock or index, yesterday's state to today's states,
+like yesterday increase 0.5%, then today's increase 0-1%, 1%-2% etc's probability
+different group's stocks' probability transition matrix characteristics
