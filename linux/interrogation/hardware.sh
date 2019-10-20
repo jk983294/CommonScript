@@ -12,3 +12,4 @@ hwinfo --netcard
 # show the topology of the system
 sudo apt install hwloc
 lstopo --of png > host.png
+lstopo-no-graphics -.txt | less

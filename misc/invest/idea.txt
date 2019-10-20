@@ -33,3 +33,5 @@ k线开盘收盘，中间点，3条轨迹，当日中间点离开回归后的带
 Markov chain, states is percentage change of stock or index, yesterday's state to today's states,
 like yesterday increase 0.5%, then today's increase 0-1%, 1%-2% etc's probability
 different group's stocks' probability transition matrix characteristics
+* calculate daily return kurtosis, bigger means more extremely movement than random walk, suit for T0,
+calculate N day window kurtosis, then ma of it, it may give some signal
