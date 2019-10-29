@@ -7,5 +7,12 @@ echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor # turn 
 cat /proc/cpuinfo
 cpufreq-info
 
+cpus="2 3"
+for cpu in $cpus
+do
+    echo "performance" > /sys/devices/system/cpu/cpu$cpu/cpufreq/scaling_governor
+    echo 0 > /sys/devices/system/machinecheck/machinecheck$cpu/check_interval
+done
+
 # cpu idle
 grep CONFIG_CPU_IDLE /boot/config-4.15.0-29-generic
