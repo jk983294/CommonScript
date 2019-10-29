@@ -5,6 +5,7 @@ ln -s /home/$USER/github/CommonScript/linux/config/.inputrc /home/$USER/.inputrc
 ln -s /home/$USER/github/CommonScript/linux/config/.perltidyrc /home/$USER/.perltidyrc
 ln -s /home/$USER/github/CommonScript/linux/config/.jsbeautifyrc /home/$USER/.jsbeautifyrc
 ln -s /home/$USER/github/CommonScript/linux/config/install_config.sh install_config.sh
+ln -s /home/$USER/github/CommonScript/linux/config/yapf.style /home/$USER/.config/yapf/style
 
 ln -s /opt/clion/bin/clion.sh clion.sh
 ln -s /opt/idea/bin/idea.sh idea.sh
