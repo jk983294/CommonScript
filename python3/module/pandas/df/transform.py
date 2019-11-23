@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 dates = pd.date_range('20130101', periods=6)
 df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list('ABCD'))
 print(df)
@@ -20,3 +19,10 @@ df.at[dates[0], 'A'] = 0
 df.iat[0, 1] = 0
 df.loc[:, 'D'] = np.array([5] * len(df))
 print(df)
+
+# change column name
+df.rename(columns={'F': 'F1'}, inplace=True)
+print('after change column F to F1\n', df)
+
+# change index column
+print(df.set_index(['A', 'B']))
