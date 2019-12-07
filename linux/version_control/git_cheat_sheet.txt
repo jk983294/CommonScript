@@ -78,6 +78,7 @@ commit a new feature branch
     $ git log -p -w             # ignore only space change, it will show word change 忽略空格变化
     $ git log -p SHA            # only show all commits before that SHA
     $ git show SHA              # only show SHA commit
+    $ git show SHA:file         # show file at that commit
     显示所有提交（include summary and file patch details）：
     git log -p --stat
     显示某个用户的所有提交：

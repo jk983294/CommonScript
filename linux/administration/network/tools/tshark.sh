@@ -75,3 +75,9 @@ tshark -V
 tshark -r capture-output.pcap
 tshark -r cuero_20180720_2.pcap -x | less               # -x show raw content
 tshark -r mycaptures.pcap -Y "frame.number == 6" -x     # show number 6 raw message
+tshark -r mycaptures.pcap -x -V | grep 'Arrival Time'   # show all arrival time
+
+# capture with nano precision
+exanic-capture -H -N -i enp95s0d1 -w /tmp/input_kun.pcap
+exanic-capture -H -N -i enp179s0d1 -w /tmp/output_kun.pcap
+mergecap -F nseclibpcap -w /tmp/merged.pcap /tmp/input_kun.pcap /tmp/output_kun.pcap

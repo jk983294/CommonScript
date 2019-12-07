@@ -2,6 +2,7 @@
 
 # tar for archive
 # c     create a new archive
+# C 	relative path
 # v     verbose
 # f     use archive file
 # z     compress with gzip
@@ -18,9 +19,13 @@ tar -xvf etc.tar
 tar -xzvf etc.tgz
 tar -xjvf etc.tar.bz
 
-# expand to directory foo
+# relative path
 mkdir foo
-tar -xzf bar.tar.gz -C foo
+tar -xzf bar.tar.gz -C foo # expand to relative path foo
+to_archive_path=/a/b/c/to_archive
+to_archive_dir=$(dirname "$to_archive_path")
+to_archive_base=$(basename "$to_archive_path")
+tar -czvf /tmp/archive.tgz -C $to_archive_dir $to_archive_base   # archive to relative path
 
 # check size of the archive
 ls -lh etc.t*

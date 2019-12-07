@@ -40,7 +40,7 @@ try:
     fh.write("This is my test file for exception handling!!")
 except IOError as err:
     print("Error: can\'t find file or read data", file=sys.stderr)
-    raise                                                                       # re-raise the exception
+    raise    # re-raise the exception
 except (ValueError, TypeError):
     print("Handling multiple exceptions within the same except block")
 else:
@@ -49,12 +49,16 @@ else:
 finally:
     print("must execute")
 
-
 # catch all exceptions
 try:
     x = open("file.txt", "r")
 except IOError as e:
     print("Unable to open file.txt")
+
+try:
+    pass
+except:
+    print("catch all")
 
 
 # custom exceptions
