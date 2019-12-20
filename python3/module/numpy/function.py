@@ -1,4 +1,4 @@
-from numpy import *
+import numpy as np
 
 
 def my_func(x):
@@ -7,6 +7,7 @@ def my_func(x):
     else:
         return -x
 
-my_func(2.)                                         # 4.0
-vec_func = vectorize(my_func, otypes=[float])       # declare the return type as float
-vec_func(array([-2, 2]))                            # [ 2.,  4.]
+
+my_func(2.)                                             # 4.0
+vec_func = np.vectorize(my_func, otypes=[float])        # declare the return type as float
+print(vec_func(np.array([-2, 2])))                      # [ 2.,  4.]

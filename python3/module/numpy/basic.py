@@ -4,14 +4,20 @@ import numpy as np
 # element (usually number) is indexed by a tuple of positive integers
 # the number of axes is rank
 
-a = np.arange(15).reshape(3, 5)                                         # [[ 0,  1,  2,  3,  4], [ 5,  6,  7,  8,  9], [10, 11, 12, 13, 14]]
-print(a.shape)                                                          # (3, 5)
-print(a.ndim)                                                           # 2
-print(a.dtype.name)                                                     # int32
-print(a.itemsize)                                                       # 4, the size in bytes of each element of the array, sizeof(int32)
-print(a.size)                                                           # 15
-print(type(a))                                                          # numpy.ndarray
+# matrix
+m = np.arange(6).reshape(2, 3)                                          # [[0 1 2], [3 4 5]]
+print(m.shape)                                                          # (3, 5)
+print(m.ndim)                                                           # 2
+print(m.dtype.name)                                                     # int32
+print(m.itemsize)                                                       # 4, sizeof(int32_t)
+print(m.size)                                                           # 15
+print(type(m))                                                          # numpy.ndarray
 
-# print array
-print(a)
-print(np.arange(10000).reshape(100, 100))                               # automatically skips the central part of the array if too large
+# vector
+v = np.arange(0, 3, 1)                                                  # [0 1 2]
+print(v.shape)                                                          # (3,)
+print(v.ndim)                                                           # 1
+print(v.dtype.name)                                                     # int32
+print(v.itemsize)                                                       # 4, sizeof(int32_t)
+print(v.size)                                                           # 15
+print(type(v))
