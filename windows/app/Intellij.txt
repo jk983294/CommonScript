@@ -1,6 +1,16 @@
 register:
-ĞŞ¸ÄÏµÍ³Ê±¼äÎªnÄêºó£¬ÔÙ¼¤»î30ÌìÊÔÓÃ°æ¡£
-Èç¹ûÒÑ¾­¼¤»î£¬ÔòÉ¾³ı
+ä¿®æ”¹ç³»ç»Ÿæ—¶é—´ä¸ºnå¹´åï¼Œå†æ¿€æ´»30å¤©è¯•ç”¨ç‰ˆã€‚
+å¦‚æœå·²ç»æ¿€æ´»ï¼Œåˆ™åˆ é™¤
 C:\Users\jk\.IntelliJIdea15\config\eval
 C:\Users\jk\.IntelliJIdea15\config\webstorm90.key
-ÖØÆôidea£¬¼´¿ÉÖØĞÂ¼¤»î¡£ÅªºÃÁËÍË³öidea µ÷»ØÕı³£µÄÊ±¼ä IntelliJIdea15ÎªJetBrainsÏµÁĞ²úÆ·Ãû×Ö
+é‡å¯ideaï¼Œå³å¯é‡æ–°æ¿€æ´»ã€‚å¼„å¥½äº†é€€å‡ºidea è°ƒå›æ­£å¸¸çš„æ—¶é—´ IntelliJIdea15ä¸ºJetBrainsç³»åˆ—äº§å“åå­—
+
+# duplicate a line
+Ctrl+D
+# remove a line
+Ctrl+Y
+# move a line
+Shift+Alt+Up
+Shift+Alt+Down
+# add a line
+Shift+Enter

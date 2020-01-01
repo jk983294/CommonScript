@@ -34,3 +34,8 @@ conda update python
 # conda mixed with pip, you should first try conda install over pip intall
 conda install pip
 pip install --upgrade setuptools
+
+# change source
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
