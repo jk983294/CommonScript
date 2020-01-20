@@ -14,3 +14,14 @@ Shift+Alt+Up
 Shift+Alt+Down
 # add a line
 Shift+Enter
+
+Shift+Ctrl+N                            # 打开文件
+Ctrl+E                                  # 打开最近的文件
+Ctrl+Y                                  # 删除一行
+Ctrl+F12                                # 列举出文件的函数，可以输入字母匹配搜索
+Ctrl+Q                                  # 变量、函数等的说明文档
+Ctrl+W                                  # 扩展选择
+Ctrl+Shift+N                            # 最后编辑点
+Shift+F6                                # 重构命名
+Alt+Shift+up/down                       # 代码移动
+Shift+Enter                             # 以新窗口打开
