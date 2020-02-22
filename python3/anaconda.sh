@@ -2,6 +2,7 @@
 
 bash Anaconda-latest-Linux-x86_64.sh
 # change /root/anaconda3 to /opt/anaconda3
+conda update -n base conda                  # update conda
 
 # uninstall
 rm -rf /opt/anaconda3
