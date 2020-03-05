@@ -29,6 +29,8 @@ nmap -iL to_check_ips.txt                   # monitor ip ports defined in file
 netstat -alt                                                # show all listening TCP
 netstat -altpe
 netstat -s
+netstat -auntp | grep 60059                 # check if port be used
+
 
 # ss (show socket)
 # t             tcp

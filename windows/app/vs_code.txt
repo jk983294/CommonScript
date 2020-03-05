@@ -1,0 +1,54 @@
+# key binding                                       Intellij IDEA keybinding
+
+# shortcut                               
+Alt + Click anywhere                                # multi-line edit 
+Shift+Alt                                           # Column (box) selection
+. + Ctrl + Space                                    # auto complete 
+Ctrl + Alt + L                                      # format code 
+Alt + Shift + F                                     # 格式化代码
+Ctrl + Numpad_Plus/Numpad_Minus                     # fold/unfold                    
+Ctrl + Shift + Numpad_Plus/Numpad_Minus             # fold/unfold  all
+Ctrl+B                                              # Toggle Sidebar
+
+# search
+Ctrl + Shift + P                                    # search all possible command
+Ctrl + P                                            # search file
+Ctrl + Shift + F                                    # 查找文件
+Ctrl + K Ctrl + S                                   # shortcut
+Ctrl + K Ctrl + T                                   # change theme
+Ctrl+Shift+O                                        # Go to Symbol in File
+Ctrl+L                                              # Select current line
+Ctrl+Home / Ctrl+End                                # Navigate to beginning and end of file
+F12                                                 # Go to Definition of symbol
+Shift+F12                                           # Go to References
+Shift+Alt+F12                                       # Find All References view
+
+# error/warning
+Ctrl+Shift+M                                        # Quickly jump to errors and warnings in the project
+F8 / Shift+F8                                       # Cycle through errors
+
+
+# line action
+Ctrl + Y                                            # delete line
+Ctrl + D                                            # copy line below
+Ctrl + Shift + up/down                              # move line up/down
+Ctrl + /                                            # 单行注释
+Shift + Alt + A                                     # 多行注释
+Ctrl + Shift + Enter                                # 上方插入一行
+Ctrl + Enter                                        # 下方插入一行
+
+# refactor
+Shift + F6                                          # rename
+F2                                                  # Rename Symbol
+
+# layout
+Ctrl+\                                              # split the editor
+
+# cli
+code .                                              # open code with current directory
+code -r .                                           # open the current directory in the most recently used code window
+code -n                                             # create a new window
+code --diff <file1> <file2>                         # open diff editor
+
+
+         

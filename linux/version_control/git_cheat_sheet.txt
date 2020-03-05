@@ -123,6 +123,7 @@ diff
     删掉分支:  #!! 无法删除当前所在的分支。因此要删除sidebar分支，你需要切换到master分支，或者创建并切换到新的分支
     $ git branch -d sidebar
     $ git branch -D sidebar                     # force delete even we have new data in that branch
+    $ git push origin --delete sidebar          # delete remote branch
     切换分支： 从工作目录中删除git跟踪的所有文件和目录(git跟踪的文件存储在仓库中，因此什么也不会丢失), 转到仓库，并提取分支指向的 commit 所对应的所有文件和目录
     $ git checkout <branch>
     创建并切换到新分支:
