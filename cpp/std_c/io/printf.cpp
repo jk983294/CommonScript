@@ -27,6 +27,8 @@ int main() {
     printf("long unsigned int hex %zx\n", x7);
     printf("long signed int %zd\n", x8);  // prints as signed decimal
 
+    printf("pointer %p\n", &x8);
+
     // fill 0
     printf("600%03d.SSE", 1);
     return 0;
