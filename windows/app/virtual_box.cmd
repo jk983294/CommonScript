@@ -5,10 +5,17 @@ sudo mount -t vboxsf share /mnt/shared
 share /mnt/shared vboxsf rw,gid=100,uid=1000,auto 0 0
 sudo umount -f /mnt/shared
 
+# share folder
+# vm device meun, insert guset additions CD image
+sudo mkdir /media/cdrom
+sudo mount /dev/cdrom /media/cdrom
+apt-get install build-essential linux-headers-`uname -r`
+/media/cdrom/./VBoxLinuxAdditions.run
+
 VirtualBox putty connection:
 sudo apt-get update
 sudo apt-get install ssh
-netstat -tlp                    # ²é¿´ÊÇ·ñ³öÏÖÁËtcp 0 0 *:ssh *:* LISTENµÄ×ÖÑù£¬Èç¹û³öÏÖÁËÔòËµÃ÷ssh°²×°³É¹¦ÁË
-# ÔÚVirtualBoxÉèÖÃÖĞÍø¿¨2Ìí¼ÓÒ»¸öHostOnlyÍø¿¨£¬Íø¿¨1±£³ÖNAT²»±ä
-# Linux¿ÉÒÔÍ¨¹ıNATÍø¿¨·ÃÎÊµ½Internet£¬Ö÷»úÓÖ¿ÉÒÔÍ¨¹ıHostOnlyÍø¿¨·ÃÎÊµ½ĞéÄâ»ú
-ifconfig                        # »ñµÃĞéÄâ»úµÄIP
+netstat -tlp                    # æŸ¥çœ‹æ˜¯å¦å‡ºç°äº†tcp 0 0 *:ssh *:* LISTENçš„å­—æ ·ï¼Œå¦‚æœå‡ºç°äº†åˆ™è¯´æ˜sshå®‰è£…æˆåŠŸäº†
+# åœ¨VirtualBoxè®¾ç½®ä¸­ç½‘å¡2æ·»åŠ ä¸€ä¸ªHostOnlyç½‘å¡ï¼Œç½‘å¡1ä¿æŒNATä¸å˜
+# Linuxå¯ä»¥é€šè¿‡NATç½‘å¡è®¿é—®åˆ°Internetï¼Œä¸»æœºåˆå¯ä»¥é€šè¿‡HostOnlyç½‘å¡è®¿é—®åˆ°è™šæ‹Ÿæœº
+ifconfig                        # è·å¾—è™šæ‹Ÿæœºçš„IP

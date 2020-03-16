@@ -23,3 +23,7 @@ mysql> SET GLOBAL validate_password_number_count = 0;
 $ sudo service mysql stop
 $ sudo service mysql start
 $ mysql_secure_installation # reset password of root
+
+# edit 
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+skip-grant-tables           # add this line to [mysqld] session 

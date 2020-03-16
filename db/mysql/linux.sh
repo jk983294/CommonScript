@@ -5,9 +5,12 @@ sudo apt-get install mysql-client
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install libmysqlcppconn-dev
 
+sudo mysql_secure_installation                  # setup user/passwd
+
 # check if mysql installed successfully
 # tcp        0      0 localhost:mysql         *:*                     LISTEN      8075/mysqld
 sudo netstat -tap | grep mysql
+systemctl status mysql.service
 
 # https://dev.mysql.com/downloads/workbench/
 
