@@ -1,0 +1,1 @@
+time find . > /dev/null             # measure cmd execution time

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+iostat                      # stats since last reboot
+iostat -x                   # extened reports
+iostat -p sda 3 5           # monitor specified device
 iostat -d -k 1 10           # 查看TPS和吞吐量信息(磁盘读写速度单位为KB)
 iostat -d -m 2              # 查看TPS和吞吐量信息(磁盘读写速度单位为MB)
 iostat -d -x -k 1 10        # 查看设备使用率（%util）、响应时间（await）

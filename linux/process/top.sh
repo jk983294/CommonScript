@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-top                                     # monitor, use q to quit
+top                                     # monitor, use q to quit               
+# Shift + M                             sort by Resident memory (RES)
+# Shift + N                             sort by process ID (PID)
+# Shift + T                             sort by Time (TIME+)
 # l                                     toggle on/off load section from uptime
 # t                                     toggle on/off task section
 # m                                     toggle on/off memory utilization section
@@ -15,6 +18,7 @@ top                                     # monitor, use q to quit
 top -n 3                                # maximum number of iterations
 top -n 2 -d 3                           # 3 seconds delay one iteration, so totally 6 seconds
 top -u jk                               # only show jk's process
+top -u $(id -u)                         # show my process
 
 # 进程查看器
 # \ - 增量进程过滤器

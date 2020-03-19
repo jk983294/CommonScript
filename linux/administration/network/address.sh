@@ -6,11 +6,14 @@
 
 # ifconfig (interface config)
 ifconfig                            # display the status of the currently active interfaces
-ip address show                     # display the status of the currently active interfaces
+ip addr show                        # display the status of the currently active interfaces
+ip addr show up                     # show only running network interfaces
+ip -s link show enp0s3              # show specified NIC
 ip a s                              # alias of ip address show
 ip -4 a                             # IPv4
 ip -6 a                             # IPv6
 ip r s                              # ip route show
+ip route                            # ip route show
 ip n s                              # ip neighbor show
 ip ma s                             # ip multicast address show
 ip l                                # display link, interface

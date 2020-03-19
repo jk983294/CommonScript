@@ -1,0 +1,2 @@
+lsusb
+lsusb -v                # detail

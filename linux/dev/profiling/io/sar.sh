@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Collect, report, or save system activity information.
+# Collect, report, or save system activity information. (cpu, memory, IRQ, IO, network), gather from /proc
 # -A            所有报告的总和
 # -u            输出CPU使用情况的统计信息
 # -v            输出inode、文件和其他内核表的统计信息
@@ -14,7 +14,7 @@ sar -u 10 3                                         # 每10秒采样一次，连
 # %user         显示在用户级别(application)运行使用 CPU 总时间的百分比。
 # %nice         显示在用户级别，用于nice操作，所占用 CPU 总时间的百分比。
 # %system       在核心级别(kernel)运行所使用 CPU 总时间的百分比。
-# %iowait       显示用于等待I/O操作占用 CPU 总时间的百分比。
+# %iowait       显示用于等待I/O操作占用 CPU 总时间的百分比。 (!!! high mean bottleneck in IO system)
 # %steal        管理程序(hypervisor)为另一个虚拟进程提供服务而等待虚拟 CPU 的百分比。
 # %idle         显示 CPU 空闲时间占用 CPU 总时间的百分比
 
@@ -23,14 +23,14 @@ sar -r 10 3                                         # 监控内存分页
 # kbmemused     这个值和free命令中的used值基本一致,所以它包括buffer和cache的空间.
 # %memused      这个值是kbmemused和内存总量(不包括swap)的一个百分比.
 # kbbuffers和kbcached    这两个值就是free命令中的buffer和cache.
-# kbcommit      保证当前系统所需要的内存,即为了确保不溢出而需要的内存(RAM+swap).
+# kbcommit      保证当前系统所需要的内存,即为了确保不溢出而需要的内存(RAM+swap). (!!! too small will cause memory thrashing)
 # %commit       这个值是kbcommit与内存总量(包括swap)的一个百分比.
 
 sar -B 10 3                                         # 监控内存分页
 # pgpgin/s      表示每秒从磁盘或SWAP置换到内存的字节数(KB)
 # pgpgout/s     表示每秒从内存置换到磁盘或SWAP的字节数(KB)
 # fault/s       每秒钟系统产生的缺页数,即主缺页与次缺页之和(major + minor)
-# majflt/s      每秒钟产生的主缺页数.
+# majflt/s      每秒钟产生的主缺页数. (high at program startup is normal, !!! but all the time means insufficient main memory)
 # pgfree/s      每秒被放入空闲队列中的页个数
 # pgscank/s     每秒被kswapd扫描的页个数
 # pgscand/s     每秒直接被扫描的页个数
@@ -48,7 +48,7 @@ sar -W 10 3                                         # 监控系统交换活动�
 # pswpin/s      每秒系统换入的交换页面（swap page）数量
 # pswpout/s     每秒系统换出的交换页面（swap page）数量
 
-sar -d 10 3 -p                                      # 报告设备使用情况
+sar -d 10 3 -p                                      # 报告设备使用情况 (hard disk/optical drive/USB)
 # 参数-p可以打印出sda,hdc等磁盘设备名称,如果不用参数-p,设备节点则有可能是dev8-0,dev22-0
 # tps           每秒从物理磁盘I/O的次数.多个逻辑请求会被合并为一个I/O磁盘请求,一次传输的大小是不确定的.
 # rd_sec/s      每秒读扇区的次数.
@@ -56,5 +56,5 @@ sar -d 10 3 -p                                      # 报告设备使用情况
 # avgrq-sz      平均每次设备I/O操作的数据大小(扇区).
 # avgqu-sz      磁盘请求队列的平均长度.
 # await         从请求磁盘操作到系统完成处理,每次请求的平均消耗时间,包括请求队列等待时间,单位是毫秒(1秒=1000毫秒).
-# svctm         系统处理每次请求的平均时间,不包括在请求队列中消耗的时间.
-# %util         I/O请求占CPU的百分比,比率越大,说明越饱和.
+# svctm         系统处理每次请求的平均时间,不包括在请求队列中消耗的时间.    (!!! hign means IO is bottleneck)
+# %util         I/O请求占CPU的百分比,比率越大,说明越饱和.               (!!! hign means IO is bottleneck)

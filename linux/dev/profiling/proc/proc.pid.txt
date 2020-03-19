@@ -11,3 +11,14 @@
 /proc/pid/statm         进程使用的内存的状态
 /proc/pid/status        进程状态信息，比stat/statm更具可读性
 /proc/self              链接到当前正在运行的进程
+
+/proc/devices           Available devices
+/proc/modules           Kernel modules loaded
+/proc/cmdline           Kernel command line, BOOT_IMAGE
+/proc/meminfo           Detailed information about memory usage
+/proc/config.gz         gzip -compressed configuration file of the kernel currently running
+
+# summarized important information from the /proc file system
+procinfo
+procinfo -n5            # every 5s
+procinfo -dn5           # show diff value every 5s

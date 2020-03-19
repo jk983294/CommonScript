@@ -15,3 +15,5 @@ pwconv                                          # move password from /etc/passwd
 pwunconv                                        # opposite way
 usermod jk -c "jiangkun"                        # modify user jk's full user name
 userdel -r jk                                   # remove user jk and its home directory
+
+w                                               # who is logged in to the system and what each user is doing
