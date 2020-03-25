@@ -226,9 +226,13 @@ config
     git config --global color.ui auto
     git config --global merge.conflictstyle diff3
     git config --global core.editor "vim"
+    git config --global diff.tool "vimdiff"
+    git config --global difftool.prompt "false"
 
 aliases
     git config --global alias.st status
     git config --global alias.cma "commit --all -m"
     git config --global alias.pushom "push origin master"
     git config --global alias.pullom "pull origin master"
+    git config --global alias.d "difftool"
+    git config --global alias.logol "log --oneline --decorate --graph --all"

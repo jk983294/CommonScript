@@ -3,3 +3,5 @@
 *.gch
 *.so
 *.o
+*/*/.ipynb_checkpoints
+**/.vscode
