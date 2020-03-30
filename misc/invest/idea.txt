@@ -37,3 +37,17 @@ like yesterday increase 0.5%, then today's increase 0-1%, 1%-2% etc's probabilit
 different group's stocks' probability transition matrix characteristics
 * calculate daily return kurtosis, bigger means more extremely movement than random walk, suit for T0,
 calculate N day window kurtosis, then ma of it, it may give some signal
+
+700个信号，根据某种规则，对可能的数据集的每个维度都做了rank，然后归因出最近起作用的因子，赋予高权重，比如size,回归后斜率（也就是增长幅度），增长时间等
+
+利用的是价格与交易量的关系产生的交易信号，即所谓的“量价背离”，来做日内交易
+买入信号：每一天，当我们在一个长度为[公式]分钟的历史窗口上观察到价格在下降，而交易量在上升的时候，一个买入信号便产生了。我们对历史窗口里的数据做linear regression，通过斜率的正负判断“上升”与“下降”。
+卖出信号：在(在一个长度为[公式]分钟的历史窗口上观察到价格在上升，而交易量已经在下降 or 止损点到达 or 交易日截止) and (持有头寸)，的时候，一个卖出信号便产生
+
+期权策略
+预计高波：Long straddle
+预计小涨：Bull spread
+预计小跌：Bear spread
+预计低波：Short straddle 
+
+rebalance按照3-2-1节奏，10 -> 15， 15 - 3 = 12 + 1 = 13 - 2 = 11 + 1 = 12 - 1 = 11 ...

@@ -1,7 +1,6 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
-import re
 
 df = pd.read_csv('/home/kun/github/math/data/000001.csv')
 
