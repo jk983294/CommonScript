@@ -12,6 +12,7 @@ print(str_pat.findall(text2))               # ['no." Phone says "yes.']
 
 
 # turn off greedy mode
+# （.*）是贪婪匹配, （.*?）是非贪婪匹配
 str_pat = re.compile(r'"(.*?)"')
 print(str_pat.findall(text2))               # ['no.', 'yes.']
 

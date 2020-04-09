@@ -14,9 +14,19 @@ Shift+Alt+Up
 Shift+Alt+Down
 # add a line
 Shift+Enter
+# 全局项目范围内搜索
+Ctrl + Shfit + F
+# 全局替换
+Ctrl + Shfit + R
+# 历史粘贴版
+Ctrl + Shift + V
+# 智能提示
+Alt + Enter
 
+Shift + Shift                           # 万能搜索, 搜索文件名、类名、方法名，搜索目录的技巧是在在关键字前面加斜杠/
 Shift+Ctrl+N                            # 打开文件
 Ctrl+E                                  # 打开最近的文件
+Ctrl + Shift + E                        # 打开最近编辑过的我文件
 Ctrl+Y                                  # 删除一行
 Ctrl+F12                                # 列举出文件的函数，可以输入字母匹配搜索
 Ctrl+Q                                  # 变量、函数等的说明文档

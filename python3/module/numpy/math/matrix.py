@@ -17,11 +17,12 @@ print(la.eig(a))                                # (eigen vector, eigen values)
 # matrix class
 print(np.mat(np.arange(6).reshape([2, 3])))     # [[0 1 2] [3 4 5]]
 
-A = np.matrix('1.0 2.0; 3.0 4.0')               # [[ 1.  2.] [ 3.  4.]]
+A = np.mat('1.0 2.0; 3.0 4.0')                  # [[ 1.  2.] [ 3.  4.]]
 print(A)                                        # [[ 1.  2.] [ 3.  4.]]
 print(A.T)                                      # transpose, [[ 1.  3.] [ 2.  4.]]
+print('A.I', A.I)                               # 逆矩阵, [[-2. 1. ], [ 1.5 -0.5]]
 
-X = np.matrix('5.0 7.0')                        # 1 * 2
+X = np.mat('5.0 7.0')                           # 1 * 2
 Y = X.T                                         # 2 * 1, [[5.] [7.]]
 print(A*Y)                                      # matrix multiplication, [[19.] [43.]]
 print(A.I)                                      # inverse, [[-2.   1. ] [ 1.5 -0.5]]

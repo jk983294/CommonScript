@@ -1,5 +1,5 @@
 import random
-
+import numpy as np
 
 list1 = [1, 2, 3, 4, 5]
 
@@ -18,6 +18,12 @@ print(random.randrange(1, 10, 2))
 print(random.random())
 # random number [0, n]
 print(random.randint(0, 10))
+
+print('np.random.randint(0, 10)', np.random.randint(0, 10))
+print('np.random.randint(0, 10, (2, 2))', np.random.randint(0, 10, (2, 2)))  # matrix
+print('np.random.random()', np.random.random())
+print('np.random.randn(5)', np.random.randn(5))  # n normal dist vector
+print('np.random.randn(2, 2)', np.random.randn(2, 2))  # matrix normal dist
 
 # randomly sample from list
 random.sample(list1, 2)

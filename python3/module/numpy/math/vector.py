@@ -11,8 +11,7 @@ print(np.ceil(w))                                       # [ 1.  1.  1.]
 print(np.floor(w))                                      # [ 0.  0.  0.]
 print(np.round_(w))                                     # [ 0.  0.  0.]
 print(w.round(decimals=1))                              # [ 0.1  0.2  0.5]
-print(np.clip(w, 0.0, 0.3))                             # [ 0.1  0.2  0.3], remove extreme data
-
+print(np.clip(w, 0.0, 0.3))                             # [ 0.1  0.2  0.3], 将数值限制在某个范围, remove extreme data
 
 # pair wise, element wise
 print(a - b)                                            # [20, 29, 38, 47]
