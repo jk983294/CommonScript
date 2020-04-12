@@ -11,6 +11,11 @@ df1 = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
 s = df1.iloc[3]                             # get row 3
 print(df1.append(s, ignore_index=True))
 
+# append new column
+print('shape', df1.shape)
+df1['new_column'] = ['new value'] * df1.shape[0]
+print('after add new column', df1)
+
 # SQL like join to merge dataframe
 left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
 right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
