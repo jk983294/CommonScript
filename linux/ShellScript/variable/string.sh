@@ -43,3 +43,8 @@ newString7=${string:6}                                                          
 
 # string concatenation
 newString8=${newString5}${newString6}                                           # "foldfolder"
+
+# replace
+foo=" . ."
+bar=${foo/ /.}          # replace first blank only
+bar=${foo// /.}         # replace all blanks

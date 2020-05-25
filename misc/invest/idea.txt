@@ -48,6 +48,8 @@ calculate N day window kurtosis, then ma of it, it may give some signal
 预计高波：Long straddle
 预计小涨：Bull spread
 预计小跌：Bear spread
-预计低波：Short straddle 
+预计低波：Short straddle
 
 rebalance按照3-2-1节奏，10 -> 15， 15 - 3 = 12 + 1 = 13 - 2 = 11 + 1 = 12 - 1 = 11 ...
+
+缠论,多角度挖掘市场的自同构性、程序化交易切入点还有多系统比价思想

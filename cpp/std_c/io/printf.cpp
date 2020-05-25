@@ -30,6 +30,10 @@ int main() {
     printf("pointer %p\n", &x8);
 
     // fill 0
-    printf("600%03d.SSE", 1);
+    printf("600%03d.SSE\n", 1);
+
+    // escape
+    printf("escape percent %%\n");
+    printf("escape back slash \\ \n");
     return 0;
 }
