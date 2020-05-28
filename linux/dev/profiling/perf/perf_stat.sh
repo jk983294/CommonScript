@@ -6,6 +6,7 @@ perf stat -e cycles:uk ./bench                                  # measure cycles
 perf stat -e cycles,instructions,cache-misses ./bench           # measure multi events
 perf stat -r 5 sleep ./bench                                    # repeated measurement with stddev info
 perf stat -e cycles:u -a -C 0,2-3 ./bench                       # only perf cpu 0, 2, 3
+perf stat -e dTLB-loads,dTLB-load-misses,iTLB-loads,iTLB-load-misses -p $PID
 
 # attach to existing process
 perf stat -p 2262                                               # perf pid 2262 until it get killed

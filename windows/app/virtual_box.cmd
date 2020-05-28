@@ -6,7 +6,7 @@ share /mnt/shared vboxsf rw,gid=100,uid=1000,auto 0 0
 sudo umount -f /mnt/shared
 
 # share folder
-# vm device meun, insert guset additions CD image
+# device > insert guset additions CD image
 sudo mkdir /media/cdrom
 sudo mount /dev/cdrom /media/cdrom
 apt-get install build-essential linux-headers-`uname -r`
