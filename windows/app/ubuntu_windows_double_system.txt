@@ -1,0 +1,50 @@
+# 安装双系统，dell
+1.U盘 - 8GB+：准备好8GB+的U盘，传输速度越快越好，容量最小为8GB（系统安装使用）
+2.bionic-desktop-amd64.iso - 1.68 GB：ubuntu镜像文件，可转官网下载，下载方法见正文（此版本为Beta）
+3.rufus-2.12.rar - 5.60 MB：U启制作工具，可转官网下载便携版（Protable）
+4.Windows 10 Version 1709 ×64（预装）：要求预装windows（若想安装双系统，必须先于ubuntu安装）
+5.PACNPro.exe - 9.16MB：分区工具，设置ubuntu安装磁盘，也可选用DiskGenius
+
+# 安装准备
+1.解压"3.rufus-2.18.rar"，启用rufus-2.18.exe（可切换语言）
+2.Device：选用插入的U盘
+3.Partition scheme and target system type：选用适用的类型（本篇以GPT+UEFI为例）
+4.其他：默认
+5.ISO Image：点击右边光驱图标（小方框）选取下载好的ubuntu镜像（bionic-desktop-amd64.iso）
+6.start：开始写入，等待完成
+
+安装PACNPro.exe - 9.16MB，并启用软件（也可选用DiskGenius）
+首先分出为ubuntu预留磁盘空间，并删除此空间
+1.将ubuntu安装在一整块磁盘为例：
+整体将磁盘装换为GPT格式，并删除分区（若要求重启，重启即可）；点选相应硬盘（选中为绿色），右键菜单：转换为相应格式
+2.将ubuntu安装在磁盘中部分分区：转换格式可能丢失资料，慎重
+
+
+重启电脑：（连接U盘）
+BOIS：重启进入BOIS，关闭secure boot，退出并保存（P775TM-G - F2）
+UEFI：保存退出后，进入U启，选择UEFI样式U盘选项进入（P775TM-G - F7）
+
+
+
+创建分区：左下角“+”依次为ubuntu创建分区（本例中全部设置为主分区）
+1.大小：512MB；
+   新分区类型：主分区
+   新分区位置：空间起始位置
+   用于：EFI
+
+2.大小：512MB；
+   新分区类型：主分区
+   新分区位置：空间起始位置
+   用于：Ext4
+   挂载点：/Boot
+
+3.大小：16384 MB；
+   新分区类型：主分区
+   新分区位置：空间起始位置
+   用于：交换空间（swap area）（=物理内存*2,8GB也够用）
+
+4.大小：***MB；
+   新分区类型：主分区
+   新分区位置：空间起始位置
+   用于：Ext4
+   挂载点：/
