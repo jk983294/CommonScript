@@ -58,7 +58,7 @@ alias wcl='wc -l'
 alias vi='vim'
 alias vir='vim -R'
 alias shbeauty='ex +"set syn=sh" +"norm gg=G" -cwq'
-alias ll='ls -alF'
+alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
 alias gnear='grep -A5 -B5'
@@ -221,3 +221,9 @@ if [ -f ~/github/CommonScript/linux/version_control/.git-prompt.sh ]; then
     . ~/github/CommonScript/linux/version_control/.git-prompt.sh
 fi
 export GIT_PS1_SHOWDIRTYSTATE=1
+
+
+if [ -d /usr/local/cuda ]; then
+    PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"; export PATH;
+    LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
+fi

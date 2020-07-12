@@ -1,0 +1,13 @@
+services:
+    web:
+        image: "simple_webapp"
+        ports:
+            - 5000:80
+        links:
+            - database
+    database:
+        image: "mongodb"
+    messaging:
+        image: "redis:alpine"
+    orchestration:
+        image: "ansible"

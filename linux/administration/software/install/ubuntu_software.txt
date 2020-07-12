@@ -28,3 +28,6 @@ sudo /usr/sbin/update-grub
 
 # E: Unable to correct problems, you have held broken packages.
 aptitude install liblttng-ust-dev
+
+# edit source
+sudo vim /etc/apt/sources.list

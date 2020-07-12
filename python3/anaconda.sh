@@ -44,3 +44,13 @@ conda config --set show_channel_urls yes
 # remove source
 conda config --show channels
 conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+# requirements.txt
+pip freeze > requirements.txt
+conda install --file requirements.txt
+pip install -r requirements.txt
+
+# uninstall anaconda
+rm -rf /opt/anaconda3
+rm -rf ~/.condarc ~/.conda
+vim ~/.bashrc  # edit path of anaconda

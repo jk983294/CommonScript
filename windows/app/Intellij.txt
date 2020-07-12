@@ -35,3 +35,7 @@ Ctrl+Shift+N                            # 最后编辑点
 Shift+F6                                # 重构命名
 Alt+Shift+up/down                       # 代码移动
 Shift+Enter                             # 以新窗口打开
+
+
+# disable method parameter names
+Languages & Frameworks > C++ > Clangd > Enable clangd server
