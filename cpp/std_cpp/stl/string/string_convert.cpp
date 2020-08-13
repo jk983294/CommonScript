@@ -3,17 +3,15 @@
 
 int main() {
     const char* buffer = "42";
-    int i = std::atoi(buffer);
-    long int li = std::atol(buffer);
-    float fi = std::strtof(buffer, nullptr);
-    double di = std::atof(buffer);
-    double di1 = std::strtod(buffer, nullptr);
-    unsigned long ul = std::strtoul(buffer, nullptr, 0);
+    int i = std::stoi(buffer);
+    long int li = std::stol(buffer);
+    float fi = std::stof(buffer);
+    double di = std::stod(buffer);
+    unsigned long ul = std::stoul(buffer);
     std::cout << std::to_string(i) << '\n'
               << std::to_string(li) << '\n'
               << std::to_string(fi) << '\n'
               << std::to_string(di) << '\n'
-              << std::to_string(di1) << '\n'
               << std::to_string(ul) << '\n';
 
     // convert with specified base

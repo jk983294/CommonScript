@@ -42,7 +42,8 @@ int pid_ok(pid_t p) {
 void check_stdio(FILE* f) {
     struct stat s;
     if (fstat(fileno(f), &s) < 0 && errno == EBADF) {
-        freopen("/dev/null", "w", f);
+        auto ret = freopen("/dev/null", "w", f);
+        if (ret < 0) fprintf(stderr, "freopen error %s\n", strerror(errno));
     }
 }
 

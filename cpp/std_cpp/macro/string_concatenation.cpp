@@ -5,6 +5,7 @@ using namespace std;
 /**
  * string concatenation operator, also known as he token-pasting operator.
  * ## takes the string value of a parameter and concatenates it with another string
+ * #token 表示把macro当成string
  */
 
 #define DECLARE_MY_VAR(type) type my_##type
