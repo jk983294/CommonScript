@@ -14,6 +14,15 @@ s1 = pd.Series([1, 2, 3, 4, 5, 6], index=pd.date_range('20130102', periods=6))
 df['F'] = s1
 print(df)
 
+# add new column
+df['new_column'] = df.apply(lambda row: row['F'] + 1.0, axis=1)
+df['row_number_column'] = np.arange(len(df))
+print('new column added')
+print(df)
+
+# modify existing column
+df['new_column'] = df.apply(lambda row: row['new_column'] + 1.0, axis=1)
+
 # set value
 df.at[dates[0], 'A'] = 0
 df.iat[0, 1] = 0

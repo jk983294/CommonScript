@@ -17,8 +17,8 @@ print(df.head())
 print(df.tail(3))
 
 # display the index, columns, and the underlying numpy data
-print(df.index)
-print(df.columns)
+print('index', df.index)
+print('columns', df.columns)
 print(df.values)
 
 # quick statistic summary: count, mean, std, min, 25%, 50%, 75%, max

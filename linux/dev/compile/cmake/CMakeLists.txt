@@ -20,8 +20,10 @@ set_target_properties(hello_lib
     )
 
 add_library(math_lib SHARED math.cpp)
-set_target_properties(hello_lib
+set_target_properties(math_lib
     PROPERTIES
+    SOVERSION 1
+    VERSION 1.0.0
     PUBLIC_HEADER "math.h"
     )
 
@@ -29,8 +31,12 @@ set(CMAKE_INSTALL_PREFIX /opt/version/test)
 
 install(TARGETS hello math_lib hello_lib
             RUNTIME DESTINATION bin
+                COMPONENT Hello_RunTime
             LIBRARY DESTINATION lib
+                COMPONENT Hello_RunTime
+                # NAMELINK_COMPONENT Hello_Development
             ARCHIVE DESTINATION lib/static
+                COMPONENT Hello_Development
             PUBLIC_HEADER DESTINATION include
             )
 

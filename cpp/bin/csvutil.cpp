@@ -156,12 +156,12 @@ struct Entry {
 };
 
 bool cmp_numeric(const Entry& l, const Entry& r) {
-    if (std::isfinite(l.val) && std::isfinite(l.val))
+    if (std::isfinite(l.val) && std::isfinite(r.val))
         return l.val < r.val;
-    else if (std::isfinite(l.val))
-        return false;
+    else if (!std::isfinite(l.val) && !std::isfinite(r.val))
+        return false;  // 永远让比较函数对相同元素返回false, otherwise violite Strict Weak Ordering
     else
-        return true;
+        return !std::isfinite(l.val);
 }
 
 bool cmp_string(const Entry& l, const Entry& r) { return l.val_str < r.val_str; }
