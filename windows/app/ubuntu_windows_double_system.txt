@@ -19,18 +19,23 @@
 整体将磁盘装换为GPT格式，并删除分区（若要求重启，重启即可）；点选相应硬盘（选中为绿色），右键菜单：转换为相应格式
 2.将ubuntu安装在磁盘中部分分区：转换格式可能丢失资料，慎重
 
+dell
+F2 进入bios, BIOS 设为 UEFI，禁用 Legacy option ROMS 和 secure boot
+F12 选择你要boot的顺序
 
 重启电脑：（连接U盘）
 BOIS：重启进入BOIS，关闭secure boot，退出并保存（P775TM-G - F2）
 UEFI：保存退出后，进入U启，选择UEFI样式U盘选项进入（P775TM-G - F7）
 
 
+windows右键点击此电脑，选择管理 磁盘管理
 
 创建分区：左下角“+”依次为ubuntu创建分区（本例中全部设置为主分区）
 1.大小：512MB；
    新分区类型：主分区
    新分区位置：空间起始位置
    用于：EFI
+   这个就是用启动 ubuntu 的目录，里面会有系统的引导, 这也就是MBR和UEFI的区别！
 
 2.大小：512MB；
    新分区类型：主分区
@@ -48,3 +53,5 @@ UEFI：保存退出后，进入U启，选择UEFI样式U盘选项进入（P775TM-
    新分区位置：空间起始位置
    用于：Ext4
    挂载点：/
+
+选择(device for boot loader installation)安装启动下拉菜单，也就是选efi对应的编号
