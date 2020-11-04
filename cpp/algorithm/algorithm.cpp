@@ -43,11 +43,11 @@ void sort_algorithm_demo() {
 
     //内部采用堆算法，保证前面的[first, middle)有序
     partial_sort(iv.begin(), iv.begin() + 5, iv.end());
-    partial_sort_copy(iv.begin(), iv.end(), iv1.begin(), iv1.begin() + 4, greater<int>());
+    partial_sort_copy(iv.begin(), iv.end(), iv1.begin(), iv1.begin() + 4, greater<>());
     cout << "partial sort: " << iv << endl << "partial sort copy: " << iv1 << endl;
     sort(iv.begin(), iv.end());
     cout << "sort from small to big : " << iv << endl;
-    sort(iv.begin(), iv.end(), greater<int>());
+    sort(iv.begin(), iv.end(), greater<>());
     cout << "sort from big to small : " << iv << endl;
 
     int ia1[] = {1, 3, 5, 7, 2, 4, 6, 8, 10};
@@ -87,7 +87,7 @@ void pure_numeric_algorithm() {
     vector<int> iv2(ia + 6, ia + 8);  // {6, 6}
     vector<int>::iterator itr;
     // 找到相邻元素相等的第一个元素
-    itr = adjacent_find(iv.begin(), iv.end(), equal_to<int>());
+    itr = adjacent_find(iv.begin(), iv.end(), equal_to<>());
     cout << "adjacent find: " << *itr << endl;
     // 找到元素值等于6的个数
     cout << "count: " << count(iv.begin(), iv.end(), 6) << endl;
@@ -152,7 +152,7 @@ void pure_numeric_algorithm() {
     transform(iv.begin(), iv.end(), iv.begin(), bind2nd(minus<int>(), 2));
     cout << "transform:  " << iv << endl;
     // 区间对应元素相加, iv4 + iv => iv4
-    transform(iv4.begin(), iv4.end(), iv.begin(), iv4.begin(), plus<int>());
+    transform(iv4.begin(), iv4.end(), iv.begin(), iv4.begin(), plus<>());
     cout << "transform:  " << iv4 << endl;
     /************************************************************************/
     vector<int> iv5(ia, ia + 11);
@@ -180,15 +180,15 @@ void heap_algorithm() {
     cout << endl << "heap algorithm :" << endl;
     int ia1[9] = {0, 1, 2, 3, 4, 8, 9, 3, 5};
     vector<int> iv(ia1, ia1 + 9);
-    make_heap(iv.begin(), iv.end(), greater<int>());  //默认最大堆,这样就是最小堆
+    make_heap(iv.begin(), iv.end(), greater<>());  //默认最大堆,这样就是最小堆
     cout << iv << endl;
     iv.push_back(7);
-    push_heap(iv.begin(), iv.end(), greater<int>());  //对新加入的元素调整位置
+    push_heap(iv.begin(), iv.end(), greater<>());  //对新加入的元素调整位置
     cout << iv << endl;
-    pop_heap(iv.begin(), iv.end(), greater<int>());  //堆首删除放到容器尾
+    pop_heap(iv.begin(), iv.end(), greater<>());  //堆首删除放到容器尾
     iv.pop_back();
     cout << iv << endl;
-    sort_heap(iv.begin(), iv.end(), greater<int>());  //堆排序
+    sort_heap(iv.begin(), iv.end(), greater<>());  //堆排序
     cout << iv << endl;
 }
 void set_algorithm() {
@@ -217,7 +217,7 @@ void basic_algorithm() {
     // 比较容器内内容
     cout << equal(iv1.begin(), iv1.end(), iv2.begin()) << endl;
     cout << equal(iv1.begin(), iv1.end(), iv2.begin() + 4) << endl;
-    cout << equal(iv1.begin(), iv1.end(), iv2.begin() + 4, less<int>()) << endl;
+    cout << equal(iv1.begin(), iv1.end(), iv2.begin() + 4, less<>()) << endl;
 
     // 区间填充
     fill(iv1.begin(), iv1.end(), 9);
@@ -239,7 +239,7 @@ void basic_algorithm() {
     string str_a1[] = {"jk", "jK1", "jk2"};
     string str_a2[] = {"jk", "jk1", "jk3"};
     cout << lexicographical_compare(str_a1, str_a1 + 2, str_a2, str_a2 + 2) << endl;
-    cout << lexicographical_compare(str_a1, str_a1 + 2, str_a2, str_a2 + 2, greater<string>()) << endl;
+    cout << lexicographical_compare(str_a1, str_a1 + 2, str_a2, str_a2 + 2, greater<>()) << endl;
 
     // 全部元素向前移一格
     copy(iv2.begin() + 1, iv2.end(), iv2.begin());
@@ -257,10 +257,10 @@ void stl_numeric_algorithm() {
     vector<double> result(10);
 
     // sigma ( -a[i] )
-    cout << "accumulate func: " << accumulate(a.begin(), a.end(), 0.0, minus<double>()) << endl;
+    cout << "accumulate func: " << accumulate(a.begin(), a.end(), 0.0, minus<>()) << endl;
     // sigma ( a[i] * b[i] )
-    cout << "inner product func: "
-         << inner_product(a.begin(), a.end(), b.begin(), 0.0, plus<double>(), multiplies<double>()) << endl;
+    cout << "inner product func: " << inner_product(a.begin(), a.end(), b.begin(), 0.0, plus<>(), multiplies<>())
+         << endl;
     adjacent_difference(a.begin(), a.end(), result.begin());
     // result[i] = a[i] - a[i - 1]
     cout << "adjacent difference : " << result << endl;
@@ -270,6 +270,43 @@ void stl_numeric_algorithm() {
     ostream_iterator<double> o(cout, " ");
     copy(result.begin(), result.end(), o);
     cout << endl;
+}
+
+void clamp_demo() {
+    int v = 168;
+    cout << v << " " << std::clamp(v, INT8_MIN, INT8_MAX) << " " << std::clamp(v, 0, UINT8_MAX) << '\n';
+    v = -137;
+    cout << v << " " << std::clamp(v, INT8_MIN, INT8_MAX) << " " << std::clamp(v, 0, UINT8_MAX) << '\n';
+}
+
+/**
+ * reduce differ from accumulate is that it can be executed parallel by par policy
+ */
+void reduce_demo() {
+    vector<int> a = {0, 1, 2, 3, 4};
+    cout << std::reduce(a.begin(), a.end()) << '\n';     // 10
+    cout << std::reduce(a.begin(), a.end(), 0) << '\n';  // 10
+    // cout << std::reduce(std::execution::par, a.begin(), a.end(), 0) << '\n'; // 10, need tbb
+    cout << std::accumulate(a.begin(), a.end(), 0) << '\n';  // 10
+}
+
+void scan_demo() {
+    vector<int> data = {0, 1, 2, 3, 4};
+    vector<int> result;
+    std::cout << "exclusive sum: ";  // 0 0 1 3 6
+    std::exclusive_scan(data.begin(), data.end(), std::back_inserter(result), 0);
+    for (auto d : result) {
+        cout << d << " ";
+    }
+    cout << '\n';
+
+    std::cout << "\ninclusive sum: ";  // 0 1 3 6 10
+    result.clear();
+    std::inclusive_scan(data.begin(), data.end(), std::back_inserter(result));
+    for (auto d : result) {
+        cout << d << " ";
+    }
+    cout << '\n';
 }
 
 int main() {
@@ -282,5 +319,8 @@ int main() {
     sorted_array_search();
     sort_algorithm_demo();
     functor_demo();
+    clamp_demo();
+    reduce_demo();
+    scan_demo();
     return 0;
 }
