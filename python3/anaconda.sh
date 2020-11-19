@@ -54,3 +54,11 @@ pip install -r requirements.txt
 rm -rf /opt/anaconda3
 rm -rf ~/.condarc ~/.conda
 vim ~/.bashrc  # edit path of anaconda
+
+# pip source
+mkdir ~/.pip
+cd ~/.pip
+vim pip.conf
+[global]
+index-url = https://pypi.mirrors.ustc.edu.cn/simple/
+index-url = http://mirrors.aliyun.com/pypi/simple/
