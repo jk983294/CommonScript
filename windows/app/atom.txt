@@ -75,3 +75,10 @@ apm install <package_name>@<package_version>    install a specific version.
 
 # menu
 Alt
+
+# callback must be a function
+# clang-format.coffee and insert an empty function into line 84.
+#from:
+#return @exe("clang-format").run([ @dumpToFile(dumpFile, text) ["--style=file"] ]).finally( -> fs.unlink(dumpFile) )
+#to:
+#return @exe("clang-format").run([ @dumpToFile(dumpFile, text) ["--style=file"] ]).finally( -> fs.unlink(dumpFile, ->) )

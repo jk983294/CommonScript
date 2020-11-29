@@ -37,12 +37,16 @@ conda install pip
 pip install --upgrade setuptools
 
 # change source
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set ssl_verify false
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
 
 # remove source
 conda config --show channels
+conda config --remove-key channels
+conda config --remove channels defaults
 conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 
 # requirements.txt
@@ -62,3 +66,6 @@ vim pip.conf
 [global]
 index-url = https://pypi.mirrors.ustc.edu.cn/simple/
 index-url = http://mirrors.aliyun.com/pypi/simple/
+
+# pip security
+pip install QScintilla --trusted-host mirrors.aliyun.com
