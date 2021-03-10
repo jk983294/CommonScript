@@ -1,6 +1,11 @@
 # run image
 man docker-run                                          # 查 docker run 参数
 docker run -it ubuntu /bin/bash                         # -i STDIN -t tty 交互式
+docker run -it -w /var/log ubuntu /bin/bash             # -w 设置工作路径
+docker run -it -e "WEB_PORT=8080" ubuntu /bin/bash      # -e 设置环境变量
+docker run -it -u kun ubuntu /bin/bash                  # -u 设置启动用户，默认为root
+docker run -it -v /opt/version/latest/:/opt/version/latest/ ubuntu /bin/bash           # -v 挂载宿主机目录到容器中
+docker run -it -v /home/kun/myapp:/opt/myapp:ro ubuntu /bin/bash        # -v 挂载volume read only
 docker run --name kun_bash -it ubuntu /bin/bash         # 给 container 启动 name
 docker run --name kun_daemon_app -d ubuntu /bin/bash -c "while true; do echo hello world; sleep 1; done"    # daemon 启动
 docker run --restart=always --name kun_daemon_app -d ubuntu /bin/bash -c "while true; do echo hello world; sleep 1; done"

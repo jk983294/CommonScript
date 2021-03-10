@@ -8,6 +8,20 @@ docker run -d -P myapp                                  # 公开Dockerfile中EXP
 docker run ubuntu --network=none
 docker run ubuntu --network=host                        # 自动用host port
 
+# docker internal network
+# 每个 container 都会在docker0上分配一个地址
+# 宿主机看到的docker0一般是172网段，container内部看到的是eth0
+# container可以使用内部网络ip来相互访问
+# 缺点是容器重启，内部地址就变了，不能hardcode
+ip a show docker0
+
+# 启动时按名字连接 --link container_name:alias_in_current_container
+# 别名查 cat /etc/hosts
+# 通过别名提供的env来访问, 如 DB_PORT
+# link的容器必须存在在同一宿主机
+docker run -d --name redis zerg/redis
+docker run -it --link redis:db ubuntu /bin/bash
+
 # create user defined network
 docker network create --driver bridge --subnet 182.18.0.0/16 custom_network
 
