@@ -3,3 +3,9 @@ add PATH variable
 add execute permission
 bash -x script_name.sh                                  # debug mode
 echo $?                                                 # last script quit code
+
+# ticks
+sudo !!                                                 # !! 表示之前的命令, append 到后面
+Ctrl + w                                                # 往前 kill word
+Ctrl + u                                                # 往前 kill 所有words
+Ctrl + y                                                # 粘贴删掉的命令

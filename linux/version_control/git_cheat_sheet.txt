@@ -232,6 +232,7 @@ config
 aliases
     git config --global alias.st status
     git config --global alias.cma "commit --all -m"
+    git config --global alias.cm "commit -m"
     git config --global alias.pushom "push origin master"
     git config --global alias.pullom "pull origin master"
     git config --global alias.d "difftool"

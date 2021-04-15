@@ -130,6 +130,8 @@ alias sql='mysql -u $USER -p'
 alias vimt='vim /opt/version/latest/etc/trade_config.xml'
 alias cmd='~/github/protoss/fleet/command/main.py'
 alias draw='/opt/anaconda3/bin/python3 ~/github/protoss/chart/draw_candle.py'
+alias train='/opt/anaconda3/bin/python3 ~/github/protoss/templar/train/train_xgb.py'
+alias show='/opt/anaconda3/bin/python3 ~/github/protoss/templar/comb/show.py'
 alias compress='tar -cjvf' # usage: compress linux.git.tar.bz /home/kun/github/linux
 alias perfrecord='perf record -g'
 alias perfreport='perf report -g "graph,0.5,caller"'
@@ -232,3 +234,5 @@ if [ -d /usr/local/cuda ]; then
     PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"; export PATH;
     LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
 fi
+
+ulimit -c unlimited
