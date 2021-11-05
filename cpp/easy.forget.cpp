@@ -28,4 +28,5 @@ std::unordered_map<int, int> m;
 std::vector<int> vec_key, vec_value;
 std::transform(m.begin(), m.end(), std::back_inserter(vec_key), [](const auto &pair){return pair.first;});
 std::transform(m.begin(), m.end(), std::back_inserter(vec_value), [](const auto &pair){return pair.second;});
+std::copy_if(v.begin(), v.end(), std::back_inserter(v_to), [](const auto &d){return d > 0;});
         
