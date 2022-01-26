@@ -29,4 +29,22 @@ std::vector<int> vec_key, vec_value;
 std::transform(m.begin(), m.end(), std::back_inserter(vec_key), [](const auto &pair){return pair.first;});
 std::transform(m.begin(), m.end(), std::back_inserter(vec_value), [](const auto &pair){return pair.second;});
 std::copy_if(v.begin(), v.end(), std::back_inserter(v_to), [](const auto &d){return d > 0;});
+
+static auto anyone = [](auto&& k, auto&&... args) ->bool { return ((args == k) || ...); };
+if(anyone(x,'x','X','e','E','.')){
+    work();
+}
+
+// Sort based on multiple fields
+bool CompareData(const T& a, const T& b) { 
+   if (a.PrimaryCondition < b.PrimaryCondition) return true;
+   if (b.PrimaryCondition < a.PrimaryCondition) return false;
+
+   // a=b for primary condition, go to secondary
+   if (a.SecondaryCondition < b.SecondaryCondition) return true;
+   if (b.SecondaryCondition < a.SecondaryCondition) return false;
+
+   // ...
+   return false;
+} 
         
