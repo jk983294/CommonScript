@@ -24,7 +24,7 @@
     Passwd -d user_name             删除用户密码也能登陆
     Passwd -S user_name             查询账号密码
     Usermod -l new_user_name old_user_name  为用户改名
-    Userdel –r user_name            删除用户一切
+    Userdel -r user_name            删除用户一切
 
     service [servicename] start/stop/restart        系统服务控制操作
     /etc/init.d/[servicename] start/stop/restart    系统服务控制操作
@@ -52,14 +52,14 @@
     kill -9 pid                 强制杀死一个进程
 
     reboot Init 6               重启LINUX系统
-    Halt Init 0 Shutdown –h now 关闭LINUX系统
+    Halt Init 0 Shutdown -h now 关闭LINUX系统
 
 打包/解压
-    tar -c 创建包 –x 释放包 -v 显示命令过程 –z 代表压缩包
-    tar –cvf benet.tar /home/benet      把/home/benet目录打包
-    tar –zcvf benet.tar.gz /mnt         把目录打包并压缩
-    tar –zxvf benet.tar.gz              压缩包的文件解压恢复
-    tar –jxvf benet.tar.bz2             解压缩
+    tar -c 创建包 -x 释放包 -v 显示命令过程 -z 代表压缩包
+    tar -cvf benet.tar /home/benet      把/home/benet目录打包
+    tar -zcvf benet.tar.gz /mnt         把目录打包并压缩
+    tar -zxvf benet.tar.gz              压缩包的文件解压恢复
+    tar -jxvf benet.tar.bz2             解压缩
 
 make编译
     make 编译
@@ -85,8 +85,8 @@ apt命令
     dpkg -L xxx                             查看软件xxx安装内容
     dpkg -S filename apt-file search filename                   查找文件属于哪个包
     ls /var/cache/apt/archives              查看安装软件时下载包的临时存放目录
-    dpkg –get-selections | grep -v deinstall > ~/somefile       备份当前系统安装的所有包的列表
-    dpkg –set-selections < ~/somefile sudo dselect              从上面备份的安装包的列表文件恢复所有包
+    dpkg -get-selections | grep -v deinstall > ~/somefile       备份当前系统安装的所有包的列表
+    dpkg -set-selections < ~/somefile sudo dselect              从上面备份的安装包的列表文件恢复所有包
 
 
 
@@ -183,7 +183,7 @@ ADSL手工拨号
 
 设置
 配置默认Java使用哪个
-#sudo update-alternatives –config java
+#sudo update-alternatives -config java
 
 修改用户资料
 #sudo chfn userid
@@ -196,7 +196,7 @@ ADSL手工拨号
 
 中文
 转换文件名由GBK为UTF8
-#sudo apt-get install convmv convmv -r -f cp936 -t utf8 –notest –nosmart *
+#sudo apt-get install convmv convmv -r -f cp936 -t utf8 -notest -nosmart *
 
 批量转换src目录下的所有文件内容由GBK到UTF8
 #find src -type d -exec mkdir -p utf8/{} \; find src -type f -exec iconv -f GBK -t UTF-8 {} -o utf8/{} \; mv utf8/* src rm -fr utf8
@@ -251,8 +251,8 @@ gnome-search-tool
 把所有文件名中的大写改为小写
 #rename ‘tr/A-Z/a-z/’ *
 
-删除特殊文件名的文件，如文件名：–help.txt
-#rm — –help.txt 或者 rm ./–help.txt
+删除特殊文件名的文件，如文件名：-help.txt
+#rm — -help.txt 或者 rm ./-help.txt
 
 查看当前目录的子目录
 #ls -d */. 或 echo */.
@@ -355,10 +355,10 @@ Ctrl+l
 #date -s HH:MM
 
 将时间写入CMOS
-#hwclock –systohc
+#hwclock -systohc
 
 读取CMOS时间
-#hwclock –hctosys
+#hwclock -hctosys
 
 从服务器上同步时间
 #sudo ntpdate time.nist.gov
