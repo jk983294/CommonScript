@@ -23,6 +23,10 @@ ListNode* mergeKListsHeap(vector<ListNode*>& lists) {
     return head.next;
 }
 
+// appending vector to vector, a = a + b
+a.insert(a.end(), b.begin(), b.end());
+std::copy(b.begin(), b.end(), std::back_inserter(a));
+
 // collect map vaule to vec
 std::unordered_map<int, int> m;
 std::vector<int> vec_key, vec_value;
