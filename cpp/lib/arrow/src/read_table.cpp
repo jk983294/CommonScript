@@ -30,11 +30,28 @@ std::vector<TOut> get_array_data(std::shared_ptr<arrow::Table>& Tbl, int idx, in
     for (int n = 0; n < NChunks; n++) {
         auto pArray = pChArray->chunk(n);
         int64_t ArrayRows = pArray->length();
-        auto pTypedArray = std::static_pointer_cast<TIn>(pArray);
+        auto pTypedArray = std::dynamic_pointer_cast<TIn>(pArray);
         const auto* pData = pTypedArray->raw_values();
         for (int64_t j = 0; j < ArrayRows; j++) {
             TOut tmp;
             get_data_by_arrow_type_helper(pData[j], tmp);
+            vec[i++] = tmp;
+        }
+    }
+    return vec;
+}
+
+std::vector<std::string> get_array_data_string(std::shared_ptr<arrow::Table>& Tbl, int idx, int64_t rows) {
+    std::vector<std::string> vec(rows);
+    auto pChArray = Tbl->column(idx);
+    int NChunks = pChArray->num_chunks();
+    int i = 0;
+    for (int n = 0; n < NChunks; n++) {
+        std::shared_ptr<arrow::Array> pArray = pChArray->chunk(n);
+        int64_t ArrayRows = pArray->length();
+        auto pTypedArray = std::dynamic_pointer_cast<arrow::StringArray>(pArray);
+        for (int64_t j = 0; j < ArrayRows; j++) {
+            std::string tmp = pTypedArray->GetString(j);
             vec[i++] = tmp;
         }
     }
@@ -66,8 +83,9 @@ int main() {
     std::vector<int> v0 = get_array_data<arrow::Int64Array, int>(table1, 0, row_cnt);
     std::vector<int> v1 = get_array_data<arrow::Int64Array, int>(table1, 1, row_cnt);
     std::vector<int> v2 = get_array_data<arrow::Int64Array, int>(table1, 2, row_cnt);
+    std::vector<std::string> v3 = get_array_data_string(table1, 3, row_cnt);
     for (int i = 0; i < row_cnt; ++i) {
-        printf("%d,%d,%d\n", v0[i], v1[i], v2[i]);
+        printf("%d,%d,%d,%s\n", v0[i], v1[i], v2[i], v3[i].c_str());
     }
     return 0;
 }

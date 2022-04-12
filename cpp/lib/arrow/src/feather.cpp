@@ -51,7 +51,8 @@ int main() {
 // Generate some data for the rest of this example.
 std::shared_ptr<arrow::Table> CreateTable() {
     auto schema = arrow::schema(
-        {arrow::field("a", arrow::int64()), arrow::field("b", arrow::int64()), arrow::field("c", arrow::int64())});
+        {arrow::field("a", arrow::int64()), arrow::field("b", arrow::int64()),
+         arrow::field("c", arrow::int64()), arrow::field("d", arrow::utf8())});
     std::shared_ptr<arrow::Array> array_a;
     std::shared_ptr<arrow::Array> array_b;
     std::shared_ptr<arrow::Array> array_c;
@@ -67,5 +68,11 @@ std::shared_ptr<arrow::Table> CreateTable() {
     builder.AppendValues({1, 2, 1, 2, 1, 2, 1, 2, 1});
     builder.Append(2);
     builder.Finish(&array_c);
-    return arrow::Table::Make(schema, {array_a, array_b, array_c});
+
+    std::shared_ptr<arrow::Array> array_d;
+    arrow::StringBuilder builder1;
+    builder1.AppendValues({"0", "1", "2", "3", "4", "5", "6", "7", "8"});
+    builder1.Append("9");
+    builder1.Finish(&array_d);
+    return arrow::Table::Make(schema, {array_a, array_b, array_c, array_d});
 }
