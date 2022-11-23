@@ -24,6 +24,7 @@ print(tips.groupby('day').agg({'tip': np.mean, 'day': np.size}))
 
 # SELECT smoker, day, COUNT(*), AVG(tip) FROM tips GROUP BY smoker, day;
 print(tips.groupby(['smoker', 'day']).agg({'tip': [np.size, np.mean]}))
+print(tips.groupby(['smoker', 'day']).agg(tip_count=('tip', np.size), tip_mean=('tip', np.mean)))
 
 # Top N rows with offset
 # SELECT * FROM tips ORDER BY tip DESC LIMIT 10 OFFSET 5;

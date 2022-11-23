@@ -19,6 +19,11 @@ int main() {
     std::array<int, 3> a2 = {1, 2, 3};
     std::array<std::string, 2> a3 = {{std::string("a"), "b"}};
 
+    a1[0] = 42;            // seg fault if out of bound
+    std::get<0>(a1) = 42;  // seg fault if out of bound
+    a1.at(0) = 42;         // std::out_of_range if out of bound
+    std::copy(a1.begin(), a1.end(), std::ostream_iterator<int>(std::cout, " "));
+
     std::sort(a1.begin(), a1.end());
     std::reverse_copy(a2.begin(), a2.end(), std::ostream_iterator<int>(std::cout, " "));
 

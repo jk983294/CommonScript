@@ -58,6 +58,22 @@ std::vector<std::string> get_array_data_string(std::shared_ptr<arrow::Table>& Tb
     return vec;
 }
 
+std::vector<bool> get_array_data_bool(std::shared_ptr<arrow::Table>& Tbl, int idx, int64_t rows) {
+    std::vector<bool> vec(rows);
+    auto pChArray = Tbl->column(idx);
+    int NChunks = pChArray->num_chunks();
+    int i = 0;
+    for (int n = 0; n < NChunks; n++) {
+        std::shared_ptr<arrow::Array> pArray = pChArray->chunk(n);
+        int64_t ArrayRows = pArray->length();
+        auto pTypedArray = std::dynamic_pointer_cast<arrow::BooleanArray>(pArray);
+        for (int64_t j = 0; j < ArrayRows; j++) {
+            vec[i++] = pTypedArray->Value(j);
+        }
+    }
+    return vec;
+}
+
 int main() {
     std::string path_ = "/tmp/data1.feather";
     auto table1 = read_feather(path_);

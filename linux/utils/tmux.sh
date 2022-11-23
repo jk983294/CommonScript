@@ -15,6 +15,8 @@ Ctrl-a : new -s my_session                          # create session inside sess
 Ctrl-a s                                            # select a new session for the attached client interactively
 tmux attach                                         # attach to first existing session outside any session
 tmux a -t session-name                              # attach to session-name session
+tmux new -s myshare                                 # create a session named myshare
+tmux -S /tmp/shareds attach -t shared               # attach to socket file /tmp/shareds, named shared
 tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill         # kill all sessions
 
 # window, a window occupies the entire screen and may be split into rectangular panes
