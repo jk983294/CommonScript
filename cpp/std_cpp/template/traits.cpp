@@ -43,7 +43,7 @@ public:
 
 
 template< class T > T findMax(const T* data, const size_t numItems) {
-    T largest = std::numeric_limits< T >::min();	// Obtain the minimum value for type T
+    T largest = std::numeric_limits< T >::lowest();	// Obtain the minimum value for type T
     for(size_t i=0; i < numItems; ++i)
         if (data[i] > largest)
             largest = data[i];
