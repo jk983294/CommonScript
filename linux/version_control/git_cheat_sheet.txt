@@ -209,6 +209,8 @@ diff
     放弃某个文件的所有本地修改：
     $ git checkout file_to_recover
     $ git checkout HEAD <file>
+    move tracked files to untracked
+    $ git rm --cached filename
     重置一个提交, git会执行和commit中的更改完全相反的更改（通过创建一个截然不同的新提交）
     $ git revert SHA
     将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：

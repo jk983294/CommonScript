@@ -1,0 +1,25 @@
+{
+    "height" : 320,
+    "some" : {
+      "complex" : {
+        "path" : "hello"
+      }
+    },
+    "animals" : {
+      "rabbit" : "white",
+      "dog" : "brown",
+      "cat" : "grey"
+    },
+    "fruits" : ["apple", "raspberry", "orange"],
+    "y_def": {
+      "y_consider_exclude": true,
+      "y_consider_tradable": true,
+      "intervals": [{"value": "5min", "skip": "5s"}, {"value": "10min", "skip": "10s"}]
+    },
+    "matrix" : [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+    "mix_attr": {
+      "a_str": "str",
+      "b_int": 1,
+      "c_float": 1.2
+    }
+  }
