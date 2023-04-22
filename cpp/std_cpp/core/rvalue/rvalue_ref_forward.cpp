@@ -14,7 +14,7 @@ using namespace std;
 // When foo is called on an lvalue of type A, then T resolves to A&, the argument type effectively becomes A&
 // When foo is called on an rvalue of type A, then T resolves to A, the argument type becomes A&&
 template <class T>
-void foo(T&& t) {
+void foo(T&& t) {  // universal reference, it can be evaluted to &/const &/&&
     cout << t << endl;
 }
 

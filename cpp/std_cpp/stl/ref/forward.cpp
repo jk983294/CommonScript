@@ -8,14 +8,14 @@
  * Neither std::move nor std::forward do anything at runtime.
  */
 
-void process(const int& x) { std::cout << "lvalue " << x << '\n'; }
+void process(int& x) { std::cout << "lvalue int& " << x << '\n'; }
+void process(const int& x) { std::cout << "lvalue const int& " << x << '\n'; }
 void process(int&& x) { std::cout << "rvalue " << x << '\n'; }
 
 template <class T>
 void log_and_process(T&& x) {
     /**
-     * although x's signature is rvalue reference,
-     * but it actually an lvalue in this function call
+     * x is universal reference, feed it to perfect forwarding
      */
     std::cout << "log_and_process with " << x << '\n';
     process(std::forward<T>(x));
@@ -23,9 +23,9 @@ void log_and_process(T&& x) {
 
 int main() {
     int a = 42;
-
+    const int b = 43;
+    log_and_process(b);
     log_and_process(a);  // lvalue 42
-
     log_and_process(std::move(a));  // rvalue 42
     return 0;
 }
