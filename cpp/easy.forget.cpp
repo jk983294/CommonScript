@@ -50,5 +50,9 @@ bool CompareData(const T& a, const T& b) {
 
    // ...
    return false;
-} 
+}
+
+// vector remove nan inplace
+x.erase(std::remove_if(std::begin(x), std::end(x), [](const auto& value) { return std::isnan(value); }),
+            std::end(x));
         

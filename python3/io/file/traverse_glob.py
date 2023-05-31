@@ -16,7 +16,8 @@ def ignore_file(fileName):
 
 
 def loop_dir(fileName):
-    return fileName.endswith(".") or fileName.endswith("..") or fileName.endswith(".git")
+    return fileName.endswith(".") or fileName.endswith("..") or fileName.endswith(".git") \
+           or fileName.endswith("cmake-build-debug")
 
 
 def read_file(path):
@@ -28,6 +29,7 @@ def read_file(path):
             with open(fileName, 'r') as f:
                 for line in f.readlines():
                     print(line, end='')
+            print('\n')
 
 
 target_dir = '.'
