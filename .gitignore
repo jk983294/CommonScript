@@ -7,3 +7,5 @@
 **/.vscode
 **/install
 **/cmake-build-debug/
+**.lock
+**/target

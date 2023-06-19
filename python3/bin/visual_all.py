@@ -22,6 +22,11 @@ def visual_csv(path_):
     elif 'Date' in df.columns:
         has_date = True
         index_column_name = 'Date'
+    elif 'cob' in df.columns:
+        df['date'] = df['cob'].apply(lambda x: pd.to_datetime(str(x), format='%Y%m%d'))
+        df = df.drop('cob', axis=1)
+        has_date = True
+        index_column_name = 'date'
 
     print(has_index, has_date, index_column_name)
 
@@ -37,7 +42,7 @@ def visual_csv(path_):
 if __name__ == '__main__':
     def parse_args():
         import argparse
-        default_path = '/tmp/a.csv'
+        default_path = '/tmp/data.csv'
         parser = argparse.ArgumentParser(description='read file and visualize it')
         parser.add_argument('path', nargs='?', type=str, default=default_path, help='file path')
         args = parser.parse_args()
