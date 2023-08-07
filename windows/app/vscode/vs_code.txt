@@ -1,0 +1,99 @@
+# key binding                                       File > Preferences > Keyboard Shortcuts
+# auto save                                         File > Auto Save
+
+# shortcut                               
+. + Ctrl + Space                                    # auto complete 
+Ctrl+B                                              # Toggle Sidebar
+
+# search
+Ctrl + Shift + P / F1                               # open palette
+Ctrl + ,                                            # user setting
+Ctrl + P                                            # open palette to search file names
+Ctrl + P @                                          # open palette to search symbol in current file
+Ctrl + Shift + .                                    # open palette to search symbol in current file
+Ctrl + P #                                          # search symbol in whole project
+Ctrl + T                                            # search symbol in whole project
+Ctrl + P >                                          # open palette to search command
+Ctrl + Shift + F                                    # 查找文件
+Ctrl + K + Ctrl + S                                 # Keyboard Shortcut panel
+Ctrl + K Ctrl + T                                   # change theme
+Ctrl + F                                            # search in file
+Ctrl + H                                            # search & replace in file
+F3                                                  # find next
+Shift + F3                                          # find prev
+Ctrl+Home / Ctrl+End                                # Navigate to beginning and end of file
+
+
+# C++
+Ctrl + T                                            # search symbol
+Ctrl + Alt + L                                      # format code
+Ctrl+Shift+O                                        # Go to Symbol in File
+F12                                                 # Go to Definition of symbol
+Ctrl + Shift + \                                    # Go to block end "}"
+Shift+F12                                           # Go to References
+Shift+Alt+F12                                       # Find All References view
+Alt + Shift + F                                     # 格式化代码
+Ctrl + K + Ctrl [/]                                 # fold/unfold                    
+Ctrl + Shift + K + Ctrl [/]                         # fold/unfold all
+Ctrl + Shift + K + Ctrl [/]                         # fold/unfold all
+
+# C++ refactor
+Shift + F6                                          # rename
+F2                                                  # Rename Symbol
+
+# C++ error/warning
+Ctrl+Shift+M                                        # Quickly jump to errors and warnings in the project
+F8 / Shift+F8                                       # Cycle through errors
+
+# CMAKE
+> CMAKE: Select Variant                             # choose compiler, debug/release mode
+
+# edit
+Ctrl + Y                                            # delete line
+Ctrl + D                                            # copy line below
+Alt + up/down                                       # move line up/down
+Ctrl + /                                            # 单行注释
+Shift + Alt + A                                     # 多行注释
+Ctrl + Shift + Enter                                # 上方插入一行
+Ctrl + Enter                                        # 下方插入一行
+Ctrl + Z                                            # undo
+Ctrl + Alt + Z                                      # redo
+Ctrl + L                                            # Select current line
+Alt + Click                                         # multi-line edit 
+Shift+Alt                                           # Column (box) selection
+Alt + Enter                                         # select all find to modify
+
+# Navigate
+Ctrl + Alt + -                                      # go back
+Ctrl + Shift + -                                    # go forward
+Ctrl + Shift + Tab                                  # go to history
+Ctrl + G                                            # Select line to go
+Ctrl + ->                                           # jump to next word
+Ctrl + <-                                           # jump to prev word
+Ctrl + P :                                          # jump to line number
+
+# file
+Ctrl + N                                            # open new file
+Ctrl + W                                            # close file
+Ctrl + K P                                          # copy curretnt file path, ctrl + shift + v paste into terminal
+Ctrl + K O                                          # open curretnt file to another vscode
+Ctrl + K R                                          # open curretnt file in file system
+
+# layout
+Ctrl + \                                            # split the editor
+Ctrl + Shift+ N                                     # new vscode
+Ctrl + `                                            # terminal panel
+
+# cli
+code .                                              # open code with current directory
+code -r .                                           # open the current directory in the most recently used code window
+code -n                                             # create a new window
+code --diff <file1> <file2>                         # open diff editor
+
+# extension
+Auto-Open Markdown Preview
+Better Comments
+Code Spell Checker
+Git History
+vscode-icons
+Clang-Format

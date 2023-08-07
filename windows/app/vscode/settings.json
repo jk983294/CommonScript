@@ -1,0 +1,20 @@
+{
+    "editor.fontSize": 18,
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": null,
+    "r.bracketedPaste": true,
+    "r.rpath.linux": "/usr/bin/R",
+    "r.rterm.linux": "/opt/anaconda3/bin/radian",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.condaPath": "/opt/anaconda3/bin/conda",
+    "python.defaultInterpreterPath": "/opt/anaconda3/bin/python",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "explorer.confirmDelete": false,
+    "cmake.configureOnOpen": true,
+    "files.autoSave": "afterDelay",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontFamily": "monospace",
+    "workbench.iconTheme": "vscode-icons"
+}
