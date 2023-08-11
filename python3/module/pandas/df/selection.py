@@ -33,6 +33,11 @@ print(df.iat[1, 1])
 
 
 # boolean select
+def select_func(val):
+    return val > 0
+
+
+print(df[[select_func(val) for val in df.A]])
 print(df[df.A > 0])
 
 df1 = pd.DataFrame([[1, 2, 3], [1, 3, 4], [2, 4, 3]],

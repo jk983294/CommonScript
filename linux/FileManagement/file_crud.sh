@@ -23,7 +23,8 @@ cp -i file1 ..                      # copy with interaction if the same file alr
 cp -p file1 ..                      # copy and perserve permission
 cp -i file* ..                      # copy all files start with file to parent directory
 cp -R files/ backup/                # copy files folder to backup folder recursively
-echo /dir1 /dir2 /dir3 | xargs -n 1 cp -v /path/tocopy              # copy tocopy to several destinations
+echo /dir1 /dir2 /dir3 | xargs -n 1 cp -v path_src              # copy tocopy to several destinations
+git show sha --name-only | grep pattern | xargs -I{} cp {} path_dest
 
 # move and rename
 mv file5 filenewname                # rename
