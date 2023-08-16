@@ -1,0 +1,11 @@
+# logpoints
+right click choose to add logpoint
+add msg like: print {variable} here
+
+# conditional breakpoint
+right click choose to add
+add expression: variable > 10
+
+# inline breakpoint
+move cursor to function where you want to put breakpoint
+then Run > New Breakpoint > Inline Breakpoint

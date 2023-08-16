@@ -3,6 +3,11 @@ commit a new feature branch
     edit, add and commit your files
     $ git push -u origin feature_branch_name
 
+stash
+    $ git stash
+    recover to last stashed status
+    $ git stash pop
+
 创建
     generate ssh key
     $ ssh-keygen -t rsa -C "jk983294@gmail.com"
@@ -80,6 +85,8 @@ commit a new feature branch
     $ git log -p -w             # ignore only space change, it will show word change 忽略空格变化
     $ git log -p SHA            # only show all commits before that SHA
     $ git show SHA              # only show SHA commit
+    $ git show SHA --name-only              # only show committed files
+    $ git show sha --name-only | grep pattern | xargs -I{} cp -v {} path_dest
     $ git show SHA:file         # show file at that commit
     显示所有提交（include summary and file patch details）：
     git log -p --stat
@@ -210,6 +217,7 @@ diff
     git reset --hard HEAD~1             # delete current HEAD
     放弃某个文件的所有本地修改：
     $ git checkout file_to_recover
+    $ git restore file_to_recover
     $ git checkout HEAD <file>
     move tracked files to untracked
     $ git rm --cached filename

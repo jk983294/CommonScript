@@ -16,5 +16,8 @@
     "files.autoSave": "afterDelay",
     "editor.minimap.enabled": false,
     "terminal.integrated.fontFamily": "monospace",
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "window.openFoldersInNewWindow": "on",
+    "problems.decorations.enabled": false,
+    "editor.mouseWheelZoom": true
 }

@@ -4,29 +4,34 @@
 # shortcut                               
 . + Ctrl + Space                                    # auto complete 
 Ctrl+B                                              # Toggle Sidebar
+Ctrl + R                                            # open recent project
 
 # search
 Ctrl + Shift + P / F1                               # open palette
 Ctrl + ,                                            # user setting
-Ctrl + P                                            # open palette to search file names
+Ctrl + P + file:line:column                         # quick open
 Ctrl + P @                                          # open palette to search symbol in current file
 Ctrl + Shift + .                                    # open palette to search symbol in current file
 Ctrl + P #                                          # search symbol in whole project
 Ctrl + T                                            # search symbol in whole project
 Ctrl + P >                                          # open palette to search command
 Ctrl + Shift + F                                    # 查找文件
+Alt + Shift + F                                     # 查找文件 within folder
 Ctrl + K + Ctrl + S                                 # Keyboard Shortcut panel
-Ctrl + K Ctrl + T                                   # change theme
+palette + fold all
+palette + unfold all
+palette + new search editor                         # open search editor, save it for next usage
+
+
+# search & replace in file
 Ctrl + F                                            # search in file
 Ctrl + H                                            # search & replace in file
+Ctrl + Enter                                        # input multi lines in search box
 F3                                                  # find next
 Shift + F3                                          # find prev
-Ctrl+Home / Ctrl+End                                # Navigate to beginning and end of file
-
 
 # C++
 Ctrl + T                                            # search symbol
-Ctrl + Alt + L                                      # format code
 Ctrl+Shift+O                                        # Go to Symbol in File
 F12                                                 # Go to Definition of symbol
 Ctrl + Shift + \                                    # Go to block end "}"
@@ -36,6 +41,7 @@ Alt + Shift + F                                     # 格式化代码
 Ctrl + K + Ctrl [/]                                 # fold/unfold                    
 Ctrl + Shift + K + Ctrl [/]                         # fold/unfold all
 Ctrl + Shift + K + Ctrl [/]                         # fold/unfold all
+Ctrl+Shift+I                                        # format
 
 # C++ refactor
 Shift + F6                                          # rename
@@ -67,28 +73,31 @@ Alt + Enter                                         # select all find to modify
 Ctrl + Alt + -                                      # go back
 Ctrl + Shift + -                                    # go forward
 Ctrl + Shift + Tab                                  # go to history
-Ctrl + G                                            # Select line to go
+Ctrl + G + line:column                              # Select line to go
 Ctrl + ->                                           # jump to next word
 Ctrl + <-                                           # jump to prev word
 Ctrl + P :                                          # jump to line number
+Ctrl+Home / Ctrl+End                                # Navigate to beginning and end of file
 
 # file
 Ctrl + N                                            # open new file
 Ctrl + W                                            # close file
-Ctrl + K P                                          # copy curretnt file path, ctrl + shift + v paste into terminal
-Ctrl + K O                                          # open curretnt file to another vscode
-Ctrl + K R                                          # open curretnt file in file system
+Ctrl + K P                                          # copy current file path, ctrl + shift + v paste into terminal
+Ctrl + K O                                          # open current file to another vscode
+Ctrl + K R                                          # open current file in file system
 
 # layout
 Ctrl + \                                            # split the editor
 Ctrl + Shift+ N                                     # new vscode
 Ctrl + `                                            # terminal panel
+Ctrl + B                                            # toggle side bar
 
 # cli
 code .                                              # open code with current directory
 code -r .                                           # open the current directory in the most recently used code window
 code -n                                             # create a new window
 code --diff <file1> <file2>                         # open diff editor
+code -d <file1> <file2>                             # open diff editor
 
 # extension
 Auto-Open Markdown Preview

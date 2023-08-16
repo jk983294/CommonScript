@@ -1,0 +1,25 @@
+{
+    // https://snippet-generator.app/
+    "for item": {
+        "prefix": "fi",
+        "body": [
+            "for (auto& item : ${1:var}) {",
+            "\t$2",
+            "}"
+        ]
+    },
+    "print data": {
+        "prefix": "penum",
+        "body": [
+            "printf(\"%${1|d,f,s|}\", $2);"
+        ]
+    },
+    "my comment": {
+        "prefix": "mc",
+        "body": [
+            "$BLOCK_COMMENT_START*",
+            " * $0",
+            " $BLOCK_COMMENT_END"
+        ]
+    }
+}
