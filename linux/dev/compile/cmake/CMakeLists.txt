@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.5.1)
 
 project(hello)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules")
+
+include(Findlz4Alt)
+include(FindzstdAlt) # find ./cmake_modules/FindzstdAlt.cmake
+
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall ")
 message ("cxx Flags: " ${CMAKE_CXX_FLAGS})
 

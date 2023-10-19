@@ -7,6 +7,9 @@ if __name__ == '__main__':
     print('read from {}'.format(path_))
     print(df.head())
 
+    reader = pa.ipc.open_file(path_)
+    reader.schema  # check schema
+
     path_ = "/tmp/test.table.feather"
     table = feather.read_table(path_)
     print('read from {}'.format(path_))

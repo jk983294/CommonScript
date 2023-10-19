@@ -12,6 +12,9 @@ copy_if(v.begin(), v.end(), target.begin(), [](int x) { return x > 5; });  // co
 
 return v.back();  // retun vector's last element, useful for return dp last result
 
+std::vector<int> tick(n, 0);
+std::iota(tick.begin(), tick.end(), 1);
+
 /**
  * head node technical get rid of first node null check
  */

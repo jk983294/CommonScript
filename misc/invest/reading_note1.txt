@@ -157,3 +157,38 @@ Low-volatility anomaly is buying stocks in the bottom decile (low-volatility sto
 大多数失败的交易者自尊心太強,自我意识太强,不愿认错。
 他们所犯的错误是交易过于频繁,对于交易时机没有精挑细选。市场价格一有波动,他们就想动手交易。所以他们不会耐心等待交易良机,而是最终染上交易的强迫症。大多数人缺乏耐心,而“具有耐心”是成功交易者的重要特征。
 音符间的空白造就了音乐。与此相类似,投资或交易时也要有休息、观望的时候,这点对于投资或交易的成功至关重要。
+
+The New Market Wizards
+If the variance is not finite, it means that lurking somewhere out there are more extreme scenarios than you might imagine.
+The best strategy is not some optimized weighting scheme, but rather weighting each indicator by 1 or 0. If the indicator is good enough to be used at all, it’s good enough to be weighted equally with the other ones. If it can’t meet that standard, don’t bother with it.
+How should you apportion your assets among different trades? Again, I would argue that the division should be equal.
+The size of an angle on a bar chart is not invariant to changes of scale. If you fall prey to this influence, you’re letting the chart maker’s practical and aesthetic considerations impinge on your trading.
+I’d rather buy when the market is strong than wait for a retracement.
+You shouldn’t plan to risk more than 2 percent on a trade.
+Watch idly while profit-taking opportunities arise, but in adversity run like a jackrabbit.
+human nature does not operate to maximize gain but rather to maximize the chance of a gain. The desire to maximize the number of winning trades (or minimize the number of losing trades) works against the trader.
+The general idea is that what works most of the time is nearly the opposite of what works in the long run.
+Don’t worry about what the markets are going to do, worry about what you are going to do in response to the markets.
+you can’t win if you’re trading at a leverage size that makes you fearful of the market.
+risk management rules: a 1.5 percent maximum loss limit on a single position and 4 percent on the entire portfolio for any given day.
+In chemical industry, the key factor seems to be capacity. The ideal time to buy the chemical stocks is after a lot of capacity has left the industry and there’s a catalyst that you believe will trigger an increase in demand. Conversely, the ideal time to sell these stocks is when there are lots of announcements for new plants, not when the earnings turn down.
+you could be right on a market and still end up losing if you use excessive leverage.
+a firm believer in predicting price direction, but not magnitude.
+He’ll make a trade against the crowd at a conservative level that he can afford, and then get out if he’s wrong. 
+We were making judgments only about whether an option was overpriced or underpriced relative to other options, not about whether it was mispriced relative to the underlying market.
+Theoretically, the largest bet you can make should be one-fiftieth of your capital.
+even if you have the edge, there are going to be periods of significant losses. When that happens, you have to cut back your bet size in order to avoid the possibility of ruin.
+a distinct tendency for implied volatility being higher. generally speaking, I believe the buyer of options has the disadvantage.
+Stress in trading is a sign that something is wrong. If you feel stress, think about the cause, and then act to eliminate the problem.
+
+Kenneth H. Shaleen - Volume And Open Interest
+Volume is a measure of urgency. Nothing creates more urgency in a market than a losing position.
+The ideal situation for a healthy bull market: Price up - Volume up, Price down - Volume down.
+The ideal situation for a healthy bear market: Price down - Volume up, Price up - Volume down.
+The urgent need to close out losing positions produces "blowoff volume." 
+Volume of extremely high magnitude is a warning signal that the price trend is in the process of exhausting itself.
+Often blowoff volume will occur one trading session before the ultimate high or low price posting.
+When open interest declines, fuel is being removed and the prevailing price trend is running on borrowed time.
+For a healthy, strong price trend to continue, open interest ideally should increase, or at least not decline.
+Declining open interest means the prevailing price trend has become very unhealthy.
+A more likely bear market scenario is finding open interest declining. Declining price and declining open interest are classic characteristics of a liquidating market.

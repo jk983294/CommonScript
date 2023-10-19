@@ -9,3 +9,4 @@
 **/cmake-build-debug/
 **.lock
 **/target
+**/__pycache__/

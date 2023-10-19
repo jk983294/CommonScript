@@ -18,7 +18,8 @@ stash
     $ git clone git@github.com:jk983294/Store.git
     $ git clone git@github.com:jk983294/Store.git another_name
     # fast clone
-    $ git clone https://github.com/unicode-org/icu.git --branch main --single-branch --depth 1
+    $ git clone --branch main --single-branch --depth 1 https://github.com/unicode-org/icu.git
+    $ git clone --branch master --single-branch --depth 1 https://github.com/unicode-org/icu.git
     创建一个新的本地仓库:
     $ git init
     $ git add .
@@ -249,3 +250,8 @@ aliases
     git config --global alias.pullom "pull origin master"
     git config --global alias.d "difftool"
     git config --global alias.logol "log --oneline --decorate --graph --all"
+    git config --global alias.logn "log -n 1"
+    git config --global alias.cd1 "--branch master --single-branch --depth 1"
+
+# remove an alias
+git config --global --unset alias.logn
