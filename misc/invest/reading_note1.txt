@@ -192,3 +192,6 @@ When open interest declines, fuel is being removed and the prevailing price tren
 For a healthy, strong price trend to continue, open interest ideally should increase, or at least not decline.
 Declining open interest means the prevailing price trend has become very unhealthy.
 A more likely bear market scenario is finding open interest declining. Declining price and declining open interest are classic characteristics of a liquidating market.
+In the speculators' market, volume on a daily basis often exceeds the level of open interest.
+Open interest normally declines in the initial stages of a new bear market.
+Price down, open interest down is not an automatic signal to initiate new long positions, since it can be early bear market.
