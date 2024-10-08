@@ -10,3 +10,4 @@
 **.lock
 **/target
 **/__pycache__/
+**/a.out
