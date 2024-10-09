@@ -12,12 +12,11 @@
 namespace ipc = boost::interprocess;
 
 /**
- * g++ -std=c++17 ipc.cpp -lrt
+ * g++ -std=c++17 ipc_writer_first.cpp -lrt
  */
 
 constexpr size_t MAX_LEN = 101; // extra 1 in case allocation fail
-constexpr size_t REAL_LEN = 100;
-constexpr int RING_BUF_LEN = 10;
+constexpr size_t REAL_LEN = 80;
 
 struct MyValue {
     int idx;
@@ -25,16 +24,14 @@ struct MyValue {
 };
 
 struct MyData {
-    using mutex_t = ipc::interprocess_sharable_mutex;
-    MyValue value[RING_BUF_LEN];
-    mutex_t mtx[RING_BUF_LEN];
-    std::atomic_int reader_idx = 0;
-    std::atomic_int writer_idx = 0;
+    MyValue value;
+    std::atomic_uint64_t writer_idx = 0;
 
-    auto& get_reader_mutex() { return mtx[reader_idx]; }
-    auto& get_writer_mutex() { return mtx[writer_idx]; }
-    auto& get_reader_data() { return value[reader_idx]; }
-    void write_data(const MyValue& d) { value[writer_idx] = d; }
+    void write_data(const MyValue& d) {
+        writer_idx += 1;
+        value = d;
+        writer_idx += 1;
+    }
 };
 
 struct ShmManager {
@@ -52,42 +49,21 @@ struct ShmManager {
         else open_read();
     }
 
-    bool write(int ukey, MyValue& data) {
+    void write(int ukey, MyValue& data) {
         auto& d_ = m_pData[ukey2idx(ukey)];
-        int i = 0;
-        bool ret = false;
-        for (; i < RING_BUF_LEN; ++i) {
-            ipc::scoped_lock lock(d_.get_writer_mutex(), ipc::defer_lock);
-            if (d_.writer_idx.load() != d_.reader_idx.load() && lock.try_lock()) {
-                d_.write_data(data);
-                lock.unlock();
-
-                d_.reader_idx = d_.writer_idx.load();
-                d_.writer_idx = (d_.writer_idx.load() + 1) % RING_BUF_LEN;
-                ret = true;
-                break;
-            } else {
-                d_.writer_idx = (d_.writer_idx.load() + 1) % RING_BUF_LEN;
-            }
-        }
-
-        if (!ret && i >= RING_BUF_LEN) {
-            printf("Error, no slot to write %d\n", ukey);
-        }
-        return ret;
+        d_.write_data(data);
     }
 
-    bool read(int ukey, MyValue& data) {
+    void read(int ukey, MyValue& data) {
         auto& d_ = m_pData[ukey2idx(ukey)];
 
-        ipc::sharable_lock lock(d_.get_reader_mutex(), ipc::defer_lock);
-
-        // if (lock.try_lock_for(std::chrono::microseconds(1))) {
-        if (lock.try_lock()) {
-            data = d_.get_reader_data();
-            return true;
+        while (true) {
+            uint64_t old = d_.writer_idx.load(std::memory_order_acquire);
+            if (old % 2 == 1) continue; // writer is writing
+            data = d_.value;
+            uint64_t new_ = d_.writer_idx.load(std::memory_order_acquire);
+            if (old == new_) return;
         }
-        return false;
     }
 
 private:
