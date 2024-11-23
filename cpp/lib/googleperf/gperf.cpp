@@ -7,8 +7,9 @@
 using namespace std;
 
 /**
+ * apt-get install google-perftools libgoogle-perftools-dev
  * g++ -O3 gperf.cpp -o gperf -L/usr/local/lib/ -lprofiler -Wl,-rpath=/usr/local/lib/
- * pprof ./gperf test_capture.prof --web
+ * google-pprof ./gperf test_capture.prof --web
  */
 
 template <typename T, template <typename> class Dist>
