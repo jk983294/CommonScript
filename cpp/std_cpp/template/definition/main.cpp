@@ -5,7 +5,7 @@ using namespace std;
 
 /**
  * provide a definition in cpp file
- * espically needed in so
+ * especially needed in so
  */
 constexpr size_t TypeID<float>::id;
 constexpr size_t TypeID<double>::id;
