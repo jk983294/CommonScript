@@ -58,4 +58,14 @@ bool CompareData(const T& a, const T& b) {
 // vector remove nan inplace
 x.erase(std::remove_if(std::begin(x), std::end(x), [](const auto& value) { return std::isnan(value); }),
             std::end(x));
-        
+
+// struct field upper bound
+struct Data {
+    int64_t usec;
+};
+Data tmp;
+tmp.usec = tgt_usec;
+auto itr = std::upper_bound(vec.begin(), vec.end(), tmp, [](auto& l, auto& r) {
+    return l.usec < r.usec;
+});
+      

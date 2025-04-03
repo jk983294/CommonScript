@@ -224,6 +224,7 @@ diff
     $ git rm --cached filename
     重置一个提交, git会执行和commit中的更改完全相反的更改（通过创建一个截然不同的新提交）
     $ git revert SHA
+    $ git revert HEAD
     将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
     $ git reset --hard <commit>
     $ git reset --hard HEAD^                # move back to previous commit
