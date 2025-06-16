@@ -1,13 +1,10 @@
 {
     "editor.fontSize": 18,
-    "explorer.confirmDelete": false,
     "editor.formatOnSave": true,
     "editor.fontLigatures": null,
     "r.bracketedPaste": true,
     "r.rpath.linux": "/usr/bin/R",
-    "r.sessionWatcher": true,
     "r.rterm.linux": "/opt/anaconda3/bin/radian",
-    "r.alwaysUseActiveTerminal": true,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
@@ -15,18 +12,52 @@
     "python.defaultInterpreterPath": "/opt/anaconda3/bin/python",
     "terminal.integrated.sendKeybindingsToShell": true,
     "explorer.confirmDelete": false,
-    "r.rterm.option": [
-        "--no-site-file"
-    ],
-    "extensions.ignoreRecommendations": true,
     "cmake.configureOnOpen": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "git.openRepositoryInParentFolders": "never",
     "files.autoSave": "afterDelay",
     "editor.minimap.enabled": false,
     "terminal.integrated.fontFamily": "monospace",
     "workbench.iconTheme": "vscode-icons",
     "window.openFoldersInNewWindow": "on",
+    "cSpell.ignoreWords": [
+        "null",
+        "cppdbg",
+        "ipynb",
+        "jupyter",
+        "notebook"
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
     "problems.decorations.enabled": false,
-    "editor.mouseWheelZoom": true
+    "editor.mouseWheelZoom": true,
+    "r.lsp.diagnostics": false,
+    "cSpell.userWords": [
+        "byrow",
+        "horiz",
+        "INTSXP",
+        "ohlc",
+        "pcor",
+        "rbindlist",
+        "ticktime",
+        "ukey",
+        "xlab",
+        "xlim",
+        "ylab"
+    ],
+    "git.openRepositoryInParentFolders": "always",
+    "security.workspace.trust.untrustedFiles": "open",
+    "cmake.showOptionsMovedNotification": false,
+    "terminal.integrated.inheritEnv": false,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "git.ignoreLegacyWarning": true,
+    "update.mode": "none"
 }

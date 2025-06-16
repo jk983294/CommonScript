@@ -119,8 +119,10 @@ alias rmcore="rm -f core.*"
 alias gdb='gdb -q'
 alias boostc="~/github/CommonScript/linux/dev/compile/asio_compile.pl"
 alias tbbc="~/github/CommonScript/linux/dev/compile/tbb_compile.pl"
-alias rbuild="R CMD build"
+alias rbuild="Rscript -e 'devtools::build(binary=T)'"
 alias rinstall="R CMD INSTALL"
+alias cmaker="cmake -DCMAKE_BUILD_TYPE=Release"
+alias cmaked="cmake -DCMAKE_BUILD_TYPE=Debug"
 
 alias a='admin 0:8023'
 alias a3='admin 0:8033'

@@ -12,3 +12,6 @@ alias gdb="gdb -q"
 # 列出函数的名字
 (gdb) info functions
 (gdb) info functions thread_*
+
+# new source
+(gdb) directory /path/to/source/files
