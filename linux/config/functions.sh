@@ -70,6 +70,22 @@ lost(){
 	awk "NR==FNR{a[\$0]=1;next}!a[\$0]" $1 $2
 }
 
+gdiffcp() {
+    sha=$1
+    dest=$2
+    if ! [ ${#sha} -gt 3 ] ; then
+        echo "'$sha' is not a valid sha"
+        return 1
+    fi
+
+    if [ ! -d "$dest" ] ; then
+        echo "'$dest' is not a dest folder"
+        return 1
+    fi
+
+    git diff $sha HEAD --name-only | xargs -I{} cp --parents -v {} $dest
+}
+
 export COLOR_NC='\e[0m' # No Color
 export COLOR_WHITE='\e[1;37m'
 export COLOR_BLACK='\e[0;30m'
