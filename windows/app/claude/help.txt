@@ -1,0 +1,3 @@
+what can Claude Code do?
+how do I use slash commands in Claude Code?
+can Claude Code work with Docker?

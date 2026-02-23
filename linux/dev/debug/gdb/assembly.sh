@@ -31,6 +31,7 @@ x/20i 0x00007ffe4ccd5f96                            # show next 20 instructions 
 (gdb) disassemble main
 (gdb) set disassembly-flavor intel          # 格式改为intel格式
 (gdb) disassemble main
+(gdb) disassemble /s 0x00007fff             # crash address
 
 # 显示程序机器码
 (gdb) disassemble /r main

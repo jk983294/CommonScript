@@ -1,0 +1,29 @@
+claude	            Start interactive mode	                        claude
+claude "task"	    Run a one-time task	                            claude "fix the build error"
+claude -p "query"	Run one-off query, then exit	                claude -p "explain this function"
+claude -c	        Continue most recent conversation	            claude -c
+claude -r	        Resume a previous conversation	                claude -r
+claude commit	    Create a Git commit	                            claude commit
+/clear	            Clear conversation history	                    > /clear
+/help	            Show available commands	                        > /help
+/model	            Show available model
+/config	            Show available config
+/memory	            Show available memory
+/review	            review a pull request
+/pr-comments	    get comments from pull request
+exit or Ctrl+C	    Exit Claude Code	                            > exit
+Ctrl+L	            clear terminal screen
+Esc+Esc             edit previous msg
+
+
+# Run a single prompt and exit (print mode)
+$ claude -p "Write a function to calculate Fibonacci numbers"
+
+# Using a pipe to provide stdin
+$ echo "Explain this code" | claude -p
+
+# Output in JSON format with metadata
+$ claude -p "Generate a hello world function" --output-format json
+
+# Stream JSON output as it arrives
+$ claude -p "Build a React component" --output-format stream-json

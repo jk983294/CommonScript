@@ -86,6 +86,20 @@ gdiffcp() {
     git diff $sha HEAD --name-only | xargs -I{} cp --parents -v {} $dest
 }
 
+get_prev_biz_day() {
+    local dow
+    dow=$(date +%w)
+    local days_ago
+    if [ "$dow" -eq 1 ]; then       # Monday
+        days_ago=3
+    elif [ "$dow" -eq 0 ]; then     # Sunday
+        days_ago=2
+    else                            # All other days (Tue-Sat)
+        days_ago=1
+    fi
+    date -d "$days_ago days ago" +"%Y%m%d"
+}
+
 export COLOR_NC='\e[0m' # No Color
 export COLOR_WHITE='\e[1;37m'
 export COLOR_BLACK='\e[0;30m'

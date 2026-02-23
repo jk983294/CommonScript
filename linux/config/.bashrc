@@ -123,6 +123,7 @@ alias rbuild="Rscript -e 'devtools::build(binary=T)'"
 alias rinstall="R CMD INSTALL"
 alias cmaker="cmake -DCMAKE_BUILD_TYPE=Release"
 alias cmaked="cmake -DCMAKE_BUILD_TYPE=Debug"
+alias cmakec="rm -rf CMakeCache.txt && rm -rf CMakeFiles"
 
 alias a='admin 0:8023'
 alias a3='admin 0:8033'
@@ -239,4 +240,9 @@ if [ -d /usr/local/cuda ]; then
     LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
 fi
 
-ulimit -c unlimited
+#ulimit -c unlimited
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export CODEBUDDY_API_KEY="sk-f5kucsl8joqo"

@@ -1,0 +1,28 @@
+what does this project do?
+give me an overview of this codebase
+explain the main architecture patterns used here
+what are the key data models?
+what technologies does this project use?
+where is the main entry point?
+explain the folder structure
+tell me a plan how we're going to fix it, give me an to-do list
+can you figure out what is in this project. think hard
+let's execute that plan
+do not write any code right now
+Explain the logic in @src/utils/auth.js
+What's the structure of @src/components?
+make a plan to ...
+give suggestions to ...
+
+# Find relevant code
+find the files that handle user authentication 
+
+# Refactor code
+find deprecated API usage in our codebase 
+suggest how to refactor utils.js to use modern JavaScript features 
+
+
+# in vscode
+what file i am in
+#select some code
+can you explain those code I select

@@ -88,7 +88,7 @@ stash
     $ git show SHA              # only show SHA commit
     $ git show SHA --name-only              # only show committed files
     $ git show sha --name-only | grep pattern | xargs -I{} cp -v {} path_dest   # cp changed file to dest folder
-    $ git diff sha HEAD --name-only | grep pattern | xargs -I{} cp -v {} path_dest   # cp changed file to dest folder
+    $ git diff sha HEAD --name-only | grep pattern | xargs -I{} cp --parents -v {} path_dest   # cp changed file to dest folder
     $ git show SHA:file         # show file at that commit
     显示所有提交（include summary and file patch details）：
     git log -p --stat
