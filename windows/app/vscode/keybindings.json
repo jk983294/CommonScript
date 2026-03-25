@@ -55,6 +55,11 @@
         "when": "canNavigateBack"
     },
     {
+        "key": "ctrl+enter",
+        "command": "r.runSelection",
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
+    {
         "key": "shift+alt+c",
         "command": "copyFilePath",
         "when": "!editorFocus"
